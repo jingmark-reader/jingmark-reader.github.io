@@ -3,327 +3,440 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aura Reader — 境相阅读 · A warm Markdown reader & writer</title>
-<meta name="description" content="Local-first Markdown reader & writer. 20 themes, native Word export, direct file read/write. No server, no uploads.">
+<title data-i18n="page.title">Aura Reader · A warm Markdown reader & writer for the browser</title>
+<meta name="description" data-i18n="meta.desc" content="Local-first Markdown reader & writer with 46 warm themes, native Word export, split-preview, and direct file read/write. No uploads, no server.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aura-reader.com/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aura-reader.com/">
+<meta property="og:site_name" content="Aura Reader">
+<meta property="og:title" content="Aura Reader · A warm Markdown reader & writer">
+<meta property="og:description" content="Local-first Markdown reader with 46 warm themes, native Word export, split-preview, and direct file read/write. No uploads, no server.">
+<meta property="og:image" content="https://aura-reader.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aura Reader · A warm Markdown reader & writer">
+<meta name="twitter:description" content="Local-first Markdown reader with 46 warm themes, native Word export, split-preview, and direct file read/write. No uploads, no server.">
+<meta name="twitter:image" content="https://aura-reader.com/og-image.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Aura Reader",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Chrome, Edge, Brave, Arc (Chromium 86+)",
+  "description": "Local-first Markdown reader & writer with 46 warm themes, native Word export, split-preview, and direct file read/write.",
+  "url": "https://aura-reader.com/",
+  "image": "https://aura-reader.com/og-image.png",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD",
+    "category": "One-time purchase"
+  }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<!-- Critical Latin fonts (above-the-fold): load synchronously, small -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
+<!-- CJK fonts: large, load asynchronously so they never block first paint / LCP -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap"></noscript>
 <style>
-  :root{
-    --bg:#faf8f5; --bg-alt:#f5f0ea; --primary:#8b5e3c; --primary-light:#b8845a;
-    --primary-dim:#a07456; --text-dark:#3d3327; --text-muted:#7a6b5d; --card:#fdfbf8;
-    --border:#e0d6c8; --border-light:#ede5d8;
-    --night-bg:#252019; --night-deep:#1c1814; --night-text:#e8ddd0; --night-muted:#b0a395;
-    --accent-green:#5a7a4e; --accent-blue:#4a6a8a;
-    --radius:16px; --radius-sm:10px; --shadow:0 12px 40px rgba(60,50,35,.06);
-    --shadow-lg:0 20px 60px rgba(60,50,35,.10);
-    --serif:"Noto Serif SC",Georgia,serif; --sans:"Inter",-apple-system,"Segoe UI",Roboto,sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);background:var(--bg);color:var(--text-dark);line-height:1.6;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1440px;margin:0 auto;padding:0 120px}
-  a{text-decoration:none;color:inherit}
-  button{font-family:var(--sans)}
+:root{
+  --bg:#faf6ef; --bg-alt:#f4ece0; --paper:#fffdf8; --card:#fffdf8;
+  --ink:#2c2620; --ink-soft:#4a4138; --muted:#837259; --muted-2:#9a8a72;
+  --primary:#9a6a43; --primary-2:#b9824f; --primary-soft:#f1e3d3;
+  --line:#ece1d2; --line-strong:#e0d2bf;
+  --sage:#6f8a5e; --sage-soft:#e7efe1;
+  --night:#26201a; --night-2:#1d1813; --night-text:#ece2d4; --night-muted:#b3a392;
+  --radius:18px; --radius-sm:12px; --radius-lg:26px;
+  --shadow-sm:0 4px 16px rgba(70,55,38,.06);
+  --shadow:0 14px 44px rgba(70,55,38,.09);
+  --shadow-lg:0 30px 80px rgba(70,55,38,.14);
+  --serif:"Fraunces","Noto Serif SC",Georgia,serif;
+  --sans:"Inter","Noto Sans SC","Noto Sans JP","Noto Sans KR","Noto Sans Arabic",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --maxw:1200px; --pad:48px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+a{text-decoration:none;color:inherit}
+button{font-family:var(--sans);cursor:pointer}
+section{position:relative}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.16;letter-spacing:-.01em;color:var(--ink)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--primary)}
+.eyebrow::before{content:"";width:24px;height:1.5px;background:var(--primary);opacity:.6}
 
-  /* ---------- Nav ---------- */
-  nav{position:sticky;top:0;z-index:50;background:rgba(250,248,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#b8845a,#8b5e3c);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .brand .name{font-weight:600;font-size:20px;color:var(--text-dark)}
-  .nav-links{display:flex;align-items:center;gap:32px}
-  .nav-links a{font-size:15px;font-weight:500;color:var(--text-muted);transition:color .2s}
-  .nav-links a:hover{color:var(--primary)}
-  .nav-login{color:var(--primary)!important;font-weight:600}
-  .lang-switch{display:flex;border:1px solid var(--border);border-radius:20px;overflow:hidden;font-size:13px;font-weight:600}
-  .lang-switch button{border:none;background:transparent;padding:6px 12px;cursor:pointer;color:var(--text-muted);font-family:var(--sans)}
-  .lang-switch button.active{background:var(--primary);color:#fff}
-  .btn-install{background:var(--primary);color:#fff;border:none;border-radius:8px;height:40px;padding:0 20px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:opacity .2s}
-  .btn-install:hover{opacity:.9}
+/* ---------- NAV ---------- */
+nav#nav{position:sticky;top:0;z-index:60;background:rgba(250,246,239,.82);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s,background .3s}
+nav#nav.scrolled{border-color:var(--line);box-shadow:0 6px 24px rgba(70,55,38,.05)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(140deg,#b9824f,#9a6a43);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(154,106,67,.28)}
+.brand .name{font-family:var(--serif);font-weight:600;font-size:19px;color:var(--ink)}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a.navlink{font-size:14.5px;font-weight:500;color:var(--muted);padding:9px 14px;border-radius:10px;transition:color .2s,background .2s}
+.nav-links a.navlink:hover{color:var(--primary);background:var(--primary-soft)}
+.nav-login{color:var(--primary)!important;font-weight:600}
 
-  /* ---------- Hero ---------- */
-  .hero{padding:48px 0 120px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px}
-  .eyebrow{font-size:14px;font-weight:500;letter-spacing:.08em;color:var(--primary);margin-top:8px}
-  .hero h1{font-family:var(--serif);font-weight:700;font-size:64px;line-height:1.15;color:var(--text-dark);max-width:960px}
-  .hero .sub{font-size:20px;color:var(--text-muted);max-width:760px;white-space:pre-line}
-  .cta-row{display:flex;gap:16px;margin-top:8px}
-  .btn-primary{background:var(--primary);color:#fff;border:none;border-radius:12px;height:52px;padding:0 32px;font-size:16px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:opacity .2s}
-  .btn-primary:hover{opacity:.9}
-  .btn-ghost{background:#f5ebe0;color:var(--primary);border:none;border-radius:12px;height:52px;padding:0 32px;font-size:16px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .2s}
-  .btn-ghost:hover{background:#efe2d3}
-  .reader-mock{width:880px;max-width:100%;height:380px;background:#fff;border:1px solid var(--border);border-radius:20px;display:flex;overflow:hidden;box-shadow:var(--shadow-lg);margin-top:16px;margin-bottom:48px}
-  .reader-mock .sidebar{width:210px;background:#f5f0ea;padding:20px 16px;display:flex;flex-direction:column;gap:6px;border-right:1px solid var(--border)}
-  .reader-mock .sidebar .sb-title{font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
-  .reader-mock .file{height:30px;border-radius:6px;display:flex;align-items:center;padding:0 10px;gap:8px}
-  .reader-mock .file .dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
-  .reader-mock .file.a{background:#e8ddc9}
-  .reader-mock .file.a .dot{background:var(--primary)}
-  .reader-mock .file.b,.reader-mock .file.c{background:#efe8df}
-  .reader-mock .file.b .dot{background:var(--primary-light)}
-  .reader-mock .file.c .dot{background:var(--accent-green)}
-  .reader-mock .file span.lbl{height:8px;background:var(--text-muted);border-radius:2px;flex:1;opacity:.5}
-  .reader-mock .file.a span.lbl{opacity:.7}
-  .reader-mock .content{flex:1;background:#fdfbf8;padding:32px 40px;display:flex;flex-direction:column;gap:14px}
-  .reader-mock .h1{width:220px;height:28px;background:var(--text-dark);border-radius:4px}
-  .reader-mock .p{height:10px;background:var(--text-muted);border-radius:2px;opacity:.55}
-  .reader-mock .p.short{width:280px}
-  .reader-mock .p.mid{width:420px}
-  .reader-mock .quote{height:72px;background:#f5f0ea;border-left:3px solid var(--primary);border-radius:0 8px 8px 0;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
-  .reader-mock .quote span{height:8px;background:var(--primary-light);border-radius:2px;width:100%;opacity:.6}
-  .reader-mock .quote span.s{width:200px}
-  .reader-mock .code{height:40px;background:#f0ead8;border-radius:6px;display:flex;align-items:center;gap:8px;padding:0 12px}
-  .reader-mock .code .ln{width:12px;height:8px;background:var(--primary);border-radius:1px;opacity:.4}
-  .reader-mock .code .ln:nth-child(2){width:60px;opacity:.6}
-  .reader-mock .code .ln:nth-child(3){width:40px;opacity:.5}
+/* language dropdown */
+.lang-dropdown{position:relative}
+.lang-current{display:flex;align-items:center;gap:7px;background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:8px 12px;font-size:13.5px;font-weight:600;color:var(--ink-soft);font-family:var(--sans);transition:border-color .2s,box-shadow .2s}
+.lang-current:hover{border-color:var(--line-strong);box-shadow:var(--shadow-sm)}
+.lang-current .chev{width:14px;height:14px;opacity:.55;transition:transform .2s}
+.lang-dropdown.open .lang-current .chev{transform:rotate(180deg)}
+.lang-panel{position:absolute;top:calc(100% + 10px);right:0;min-width:210px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);padding:8px;display:none;max-height:min(70vh,420px);overflow-y:auto;z-index:80}
+.lang-dropdown.open .lang-panel{display:block;animation:pop .16s ease}
+@keyframes pop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.lang-item{display:flex;align-items:center;gap:11px;width:100%;background:none;border:none;padding:9px 11px;border-radius:9px;text-align:left;font-family:var(--sans);font-size:14px;color:var(--ink-soft);transition:background .15s}
+.lang-item:hover{background:var(--primary-soft)}
+.lang-item.active{background:var(--primary-soft);color:var(--primary);font-weight:600}
+.lang-item .lang-dot{width:26px;height:26px;border-radius:8px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--primary);flex-shrink:0}
+.lang-item.active .lang-dot{background:var(--primary);color:#fff}
+.nav-toggle{display:none;width:42px;height:42px;border:1px solid var(--line);background:var(--paper);border-radius:11px;align-items:center;justify-content:center}
+.nav-toggle span{display:block;width:18px;height:2px;background:var(--ink);position:relative}
+.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink)}
+.nav-toggle span::before{top:-6px}.nav-toggle span::after{top:6px}
 
-  /* ---------- Diff banner ---------- */
-  .diff{background:var(--bg-alt);padding:48px 0}
-  .diff-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-  .diff-item{padding:0 24px;display:flex;flex-direction:column;gap:10px}
-  .diff-item + .diff-item{border-left:1px solid var(--border)}
-  .diff-ico{width:48px;height:48px;border-radius:12px;background:#f5ebe0;display:flex;align-items:center;justify-content:center}
-  .diff-item h3{font-size:18px;font-weight:600;color:var(--text-dark)}
-  .diff-item p{font-size:14px;color:var(--text-muted)}
+/* ---------- HERO ---------- */
+.hero{padding:78px 0 40px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(900px 460px at 78% -8%,rgba(185,130,79,.16),transparent 60%),
+  radial-gradient(700px 380px at 8% 8%,rgba(111,138,94,.10),transparent 60%);pointer-events:none}
+.hero-inner{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px}
+.hero h1{font-size:clamp(38px,5.4vw,66px);max-width:18ch;font-weight:600}
+.hero .sub{font-size:clamp(16px,1.5vw,20px);color:var(--muted);max-width:60ch;line-height:1.7}
+.hero-install{display:inline-flex;align-items:center;gap:14px;padding:18px 20px;background:rgba(255,253,248,.88);border:1px solid var(--line);border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 12px 32px rgba(154,106,67,.14);margin-top:14px;flex-wrap:wrap;justify-content:center}
+.hero-install .hi-item{display:inline-flex;align-items:center;gap:12px;height:58px;padding:0 22px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink);font-size:15.5px;font-weight:600;text-decoration:none;transition:transform .18s,background .2s,border-color .2s,box-shadow .2s;box-shadow:0 4px 12px rgba(70,55,38,.04)}
+.hero-install .hi-item img{width:32px;height:32px;flex-shrink:0;display:block;object-fit:contain}
+.hero-install .hi-item:hover{transform:translateY(-2px);background:#fff;border-color:var(--primary-2);box-shadow:0 14px 28px rgba(154,106,67,.20)}
+.hero-install .hi-soon{font-size:10px;font-weight:700;color:var(--sage);background:var(--sage-soft);padding:3px 8px;border-radius:6px;letter-spacing:.06em;margin-left:2px}
+html[dir="rtl"] .hero-install{direction:ltr}
+@media (max-width:640px){.hero-install{padding:14px;gap:10px;border-radius:32px}.hero-install .hi-item{height:50px;padding:0 16px;font-size:14.5px;gap:10px}.hero-install .hi-item img{width:28px;height:28px}.hero-install .hi-soon{padding:2px 6px;font-size:9.5px}}
 
-  /* ---------- Section shells ---------- */
-  section.block{padding:120px 0}
-  .block.alt{background:var(--bg-alt)}
-  .sec-head{text-align:center;max-width:960px;margin:0 auto 48px;display:flex;flex-direction:column;gap:16px}
-  .sec-head h2{font-family:var(--serif);font-weight:700;font-size:40px;color:var(--text-dark)}
-  .sec-head p{font-size:18px;color:var(--text-muted)}
+/* reader mock */
+.mock{width:100%;max-width:960px;margin:30px auto 0;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);overflow:hidden;text-align:left;direction:ltr;border:1px solid var(--line-strong)}
+.mock img{display:block;width:100%;height:auto}
 
-  /* ---------- Feature cards ---------- */
-  .card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:16px;transition:border-color .2s,box-shadow .2s}
-  .card:hover{border-color:var(--primary-light);box-shadow:var(--shadow)}
-  .card .ico{width:48px;height:48px;border-radius:12px;background:#f5ebe0;display:flex;align-items:center;justify-content:center}
-  .card h3{font-size:18px;font-weight:600;color:var(--text-dark)}
-  .card p{font-size:14px;color:var(--text-muted)}
+/* ---------- SECTION SHELL ---------- */
+.block{padding:96px 0}
+.block.alt{background:var(--bg-alt)}
+.sec-head{text-align:center;max-width:760px;margin:0 auto 54px;display:flex;flex-direction:column;gap:14px;align-items:center}
+.sec-head h2{font-size:clamp(28px,3.4vw,42px)}
+.sec-head p{font-size:17px;color:var(--muted);line-height:1.7}
 
-  /* ---------- Theme cards ---------- */
-  .theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .theme-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s}
-  .theme-card:hover{border-color:var(--primary-light);box-shadow:var(--shadow)}
-  .theme-card .swatch{height:130px;display:flex;align-items:flex-end;padding:16px}
-  .theme-card .swatch .sample{width:100%;display:flex;flex-direction:column;gap:5px}
-  .theme-card .swatch .sample .bar{height:6px;border-radius:2px}
-  .theme-card .swatch .sample .bar.title{height:10px;width:40%}
-  .theme-card .swatch .sample .bar.body{width:90%}
-  .theme-card .swatch .sample .bar.body.short{width:60%}
-  .theme-card.dark{background:var(--night-bg);border-color:#43392c}
-  .theme-card .meta{padding:20px}
-  .theme-card h3{font-size:16px;font-weight:600;color:var(--text-dark);margin-bottom:6px}
-  .theme-card.dark h3{color:var(--night-text)}
-  .theme-card .meta p{font-size:13px;color:var(--text-muted)}
-  .theme-card.dark .meta p{color:var(--night-muted)}
-  .theme-badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-top:8px}
-  .theme-badge.free{background:#e8f0e4;color:var(--accent-green)}
-  .theme-badge.pro{background:#f0e7db;color:var(--primary)}
+/* ---------- PILLARS ---------- */
+.pillars{background:var(--bg-alt);padding:64px 0}
+.pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.pillar{padding:0 26px;display:flex;flex-direction:column;gap:12px}
+.pillar + .pillar{border-left:1px solid var(--line-strong)}
+.pillar .ico{width:46px;height:46px;border-radius:13px;background:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm)}
+.pillar h3{font-size:17px;font-family:var(--sans);font-weight:700}
+.pillar p{font-size:14px;color:var(--muted);line-height:1.65}
+/* Marketing slot 4: WeChat in Chinese, typeset otherwise (CSS-driven via body.lang-zh) */
+#pillarWechat{display:none}
+body.lang-zh #pillarWechat{display:flex}
+#pillarTypeset{display:flex}
+body.lang-zh #pillarTypeset{display:none}
 
-  /* ---------- Privacy ---------- */
-  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-  .trust{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:12px}
-  .trust .ico{width:40px;height:40px}
-  .trust h3{font-size:16px;font-weight:600;color:var(--text-dark)}
-  .trust p{font-size:13px;color:var(--text-muted)}
+/* ---------- FEATURES ---------- */
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;display:flex;flex-direction:column;gap:13px;transition:transform .2s,box-shadow .2s,border-color .2s;position:relative;overflow:hidden}
+.feat::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(185,130,79,.05),transparent 45%);opacity:0;transition:opacity .25s}
+.feat:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line-strong)}
+.feat:hover::after{opacity:1}
+.feat .ico{width:44px;height:44px;border-radius:12px;background:var(--primary-soft);display:flex;align-items:center;justify-content:center;color:var(--primary)}
+.feat h3{font-size:16.5px;font-family:var(--sans);font-weight:700}
+.feat p{font-size:13.6px;color:var(--muted);line-height:1.62}
 
-  /* ---------- Steps ---------- */
-  .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .step{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
-  .step .num{width:48px;height:48px;border-radius:24px;background:#f5ebe0;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600;color:var(--primary)}
-  .step h3{font-size:20px;font-weight:600;color:var(--text-dark)}
-  .step p{font-size:15px;color:var(--text-muted)}
+/* ---------- THEMES ---------- */
+.theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.theme-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s}
+.theme-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line-strong)}
+.theme-card .shot{height:240px;overflow:hidden;background:var(--bg-alt);position:relative}
+.theme-card .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .3s}
+.theme-card:hover .shot img{transform:scale(1.03)}
+.theme-card .meta{padding:18px 20px 22px}
+.theme-card .meta h3{font-size:16px;font-family:var(--sans);font-weight:700;margin-bottom:5px}
+.theme-card .meta p{font-size:13px;color:var(--muted)}
+.theme-card.dark{background:var(--night);border-color:#3a3026}
+.theme-card.dark .meta h3{color:var(--night-text)}
+.theme-card.dark .meta p{color:var(--night-muted)}
+/* Theme slot 6: WeChat in Chinese, typeset otherwise. */
+#themeWechat{display:none}
+body.lang-zh #themeWechat{display:flex}
+#themeTypeset{display:flex}
+body.lang-zh #themeTypeset{display:none}
 
-  /* ---------- Pricing ---------- */
-  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:840px;margin:0 auto}
-  .price-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column;gap:20px;position:relative}
-  .price-card.pro{border-color:var(--primary);border-width:2px;box-shadow:var(--shadow)}
-  .price-tag{position:absolute;top:-12px;right:24px;background:var(--primary);color:#fff;font-size:12px;font-weight:600;padding:4px 12px;border-radius:6px}
-  .price-plan{font-size:18px;font-weight:600;color:var(--text-dark)}
-  .price-amount{font-size:42px;font-weight:700;color:var(--text-dark);line-height:1}
-  .price-amount .unit{font-size:16px;font-weight:500;color:var(--text-muted)}
-  .price-amount .free{color:var(--accent-green)}
-  .price-feat{list-style:none;display:flex;flex-direction:column;gap:12px}
-  .price-feat li{font-size:14px;color:var(--text-muted);display:flex;align-items:flex-start;gap:8px}
-  .price-feat li::before{content:"";width:16px;height:16px;border-radius:50%;background:#e8f0e4;flex-shrink:0;margin-top:2px;background-image:url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z' fill='%235a7a4e'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
-  .price-feat li.no::before{background:#f0e7db;background-image:url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 13H5v-2h14v2z' fill='%238b5e3c'/%3E%3C/svg%3E")}
-  .price-btn{margin-top:8px;height:48px;border-radius:10px;border:none;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:opacity .2s}
-  .price-btn.free-btn{background:#f5ebe0;color:var(--primary)}
-  .price-btn.pro-btn{background:var(--primary);color:#fff}
-  .price-btn:hover{opacity:.9}
+/* ---------- PRIVACY ---------- */
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.trust{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;display:flex;flex-direction:column;gap:12px}
+.trust .ico{width:42px;height:42px;color:var(--sage)}
+.trust h3{font-size:16px;font-family:var(--sans);font-weight:700}
+.trust p{font-size:13.6px;color:var(--muted);line-height:1.62}
 
-  /* ---------- FAQ ---------- */
-  .faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:0}
-  .faq-item{border-bottom:1px solid var(--border)}
-  .faq-q{width:100%;text-align:left;background:none;border:none;padding:24px 0;font-size:17px;font-weight:600;color:var(--text-dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--sans)}
-  .faq-q .arrow{width:20px;height:20px;transition:transform .2s;flex-shrink:0;color:var(--primary)}
-  .faq-q.open .arrow{transform:rotate(180deg)}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
-  .faq-a.open{max-height:240px}
-  .faq-a p{padding:0 0 24px;font-size:15px;color:var(--text-muted);line-height:1.7}
+/* ---------- STEPS ---------- */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 26px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.step .num{width:50px;height:50px;border-radius:50%;background:var(--primary-soft);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;color:var(--primary)}
+.step h3{font-size:19px;font-family:var(--sans);font-weight:700}
+.step p{font-size:14.5px;color:var(--muted);line-height:1.65}
 
-  /* ---------- Download / Browser stores ---------- */
-  .download{background:var(--primary);padding:120px 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:32px}
-  .download h2{font-family:var(--serif);font-weight:700;font-size:40px;color:#fff;max-width:820px}
-  .download .dl-sub{font-size:18px;color:#f5ebe0;max-width:640px}
-  .browser-badges{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
-  .browser-badge{background:#fff;border-radius:14px;padding:20px 28px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;color:inherit;position:relative;min-width:220px}
-  .browser-badge:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.15)}
-  .browser-badge .b-logo{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-  .browser-badge .b-text{text-align:left}
-  .browser-badge .b-label{font-size:11px;color:var(--text-muted);font-weight:500;letter-spacing:.02em}
-  .browser-badge .b-name{font-size:18px;font-weight:700;color:var(--text-dark)}
-  .browser-badge .b-soon{position:absolute;top:-8px;right:12px;background:var(--accent-green);color:#fff;font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;white-space:nowrap}
-  .dl-note{font-size:14px;color:#e8ddd0;max-width:480px}
-  .dl-note a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+/* ---------- PRICING ---------- */
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:880px;margin:0 auto}
+/* Pro feature slot 6: WeChat in Chinese, typeset otherwise. */
+#proWechat{display:none}
+body.lang-zh #proWechat{display:flex}
+#proTypeset{display:flex}
+body.lang-zh #proTypeset{display:none}
 
-  /* ---------- Footer ---------- */
-  footer{background:var(--text-dark);padding:64px 0;display:flex;flex-direction:column;align-items:center;gap:24px}
-  .foot-brand{display:flex;align-items:center;gap:12px}
-  .foot-brand .logo{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#b8845a,#8b5e3c);display:flex;align-items:center;justify-content:center}
-  .foot-brand .name{font-size:18px;font-weight:600;color:var(--night-text)}
-  .foot-links{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
-  .foot-links a{font-size:14px;color:var(--night-muted);transition:color .2s}
-  .foot-links a:hover{color:#fff}
-  .foot-copy{font-size:13px;color:#8a7d6f;text-align:center}
+.price-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:36px 32px;display:flex;flex-direction:column;gap:18px;position:relative}
+.price-card.pro{border-color:var(--primary);border-width:2px;box-shadow:var(--shadow);background:linear-gradient(180deg,#fff9f0 0%,var(--card) 38%)}
+.price-card.pro::before{content:"";position:absolute;inset:-2px;border-radius:var(--radius-lg);padding:2px;background:linear-gradient(140deg,#c89870,#9a6a43 38%,#9a6a43 62%,#c89870);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.7}
+.price-tag{position:absolute;top:-13px;right:26px;background:var(--primary);color:#fff;font-size:12px;font-weight:700;padding:5px 13px;border-radius:8px;letter-spacing:.04em}
+.price-plan{font-size:15px;font-weight:700;letter-spacing:.02em;color:var(--muted);text-transform:uppercase}
+.price-amount{font-family:var(--serif);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;line-height:1}
+.price-amount .now{font-size:54px;font-weight:700;color:var(--primary);letter-spacing:-1.5px}
+.price-amount .was{font-size:22px;font-weight:500;color:var(--muted-2);text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:rgba(154,106,67,.5);position:relative;top:-6px}
+.price-amount .save{display:inline-block;font-family:var(--sans);font-size:12px;font-weight:700;color:#5b6f48;background:linear-gradient(180deg,#e3eed8,#d4e2c6);padding:5px 11px;border-radius:20px;letter-spacing:.04em;position:relative;top:-12px;border:1px solid rgba(95,116,72,.18)}
+.price-amount .unit,.price-card .unit{font-family:var(--sans);font-size:13.5px;font-weight:500;color:var(--muted);display:block;margin-top:8px}
+.price-early{margin-top:4px;font-size:13px;color:var(--sage);font-weight:600;display:flex;align-items:center;gap:7px}
+.price-early::before{content:"";width:7px;height:7px;border-radius:50%;background:#80a566;box-shadow:0 0 0 4px rgba(128,165,102,.22);animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 4px rgba(128,165,102,.22)}50%{box-shadow:0 0 0 7px rgba(128,165,102,0)}}
+.price-note{font-size:12.5px;color:var(--muted-2)}
+.price-feat{list-style:none;display:flex;flex-direction:column;gap:12px}
+.price-feat li{font-size:14px;color:var(--ink-soft);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.price-feat li::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--sage-soft);flex-shrink:0;margin-top:1px;background-image:url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z' fill='%236f8a5e'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.price-btn{margin-top:auto;height:54px;border-radius:14px;border:none;font-size:15.5px;font-weight:700;letter-spacing:.01em;transition:transform .18s,box-shadow .22s,background .22s,color .22s;position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.price-btn.free-btn{background:#fff;color:var(--primary);border:1.5px solid var(--primary);box-shadow:0 4px 12px rgba(154,106,67,.08)}
+.price-btn.free-btn:hover{background:var(--primary);color:#fff;transform:translateY(-2px);box-shadow:0 12px 26px rgba(154,106,67,.22)}
+.price-btn.free-btn:hover .arr{transform:translateX(3px)}
+.price-btn.free-btn .arr{width:18px;height:18px;transition:transform .22s ease}
+.price-btn.pro-btn{background:linear-gradient(135deg,#b07a4d 0%,#9a6a43 50%,#7d5536 100%);color:#fff;box-shadow:0 12px 26px rgba(154,106,67,.32),inset 0 1px 0 rgba(255,255,255,.18)}
+.price-btn.pro-btn:hover{transform:translateY(-3px);box-shadow:0 22px 40px rgba(154,106,67,.42),inset 0 1px 0 rgba(255,255,255,.25);background:linear-gradient(135deg,#b9824f 0%,#9a6a43 50%,#6e4a2e 100%)}
+.price-btn .pro-btn-text,.price-btn .free-btn-text{display:inline-flex;align-items:center;gap:6px;position:relative;z-index:1}
+.price-btn .sheen{position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.34) 50%,transparent 100%);pointer-events:none;transition:left .85s ease}
+.price-btn.pro-btn:hover .sheen{left:140%}
 
-  /* ---------- Auth Modal ---------- */
-  .auth-overlay{position:fixed;inset:0;background:rgba(30,25,20,.55);backdrop-filter:blur(4px);z-index:100;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
-  .auth-overlay.show{opacity:1;pointer-events:auto}
-  .auth-modal{background:var(--card);border-radius:20px;width:400px;max-width:calc(100vw - 48px);padding:36px 32px;box-shadow:0 24px 80px rgba(0,0,0,.25);transform:translateY(12px);transition:transform .25s}
-  .auth-overlay.show .auth-modal{transform:translateY(0)}
-  .auth-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border:none;background:transparent;font-size:20px;color:var(--text-muted);cursor:pointer;border-radius:8px;transition:background .2s}
-  .auth-close:hover{background:var(--bg-alt)}
-  .auth-logo{display:flex;align-items:center;gap:10px;margin-bottom:20px}
-  .auth-logo .logo{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#b8845a,#8b5e3c);display:flex;align-items:center;justify-content:center}
-  .auth-logo .name{font-weight:600;font-size:16px;color:var(--text-dark)}
-  .auth-tabs{display:flex;gap:0;margin-bottom:24px;border-bottom:2px solid var(--border)}
-  .auth-tab{flex:1;padding:10px 0;text-align:center;font-size:15px;font-weight:600;color:var(--text-muted);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s;font-family:var(--sans)}
-  .auth-tab.active{color:var(--primary);border-bottom-color:var(--primary)}
-  .auth-form{display:flex;flex-direction:column;gap:16px}
-  .auth-form.hidden{display:none}
-  .auth-form .field{display:flex;flex-direction:column;gap:6px}
-  .auth-form label{font-size:13px;font-weight:500;color:var(--text-muted)}
-  .auth-form input{height:44px;border:1px solid var(--border);border-radius:10px;padding:0 14px;font-size:15px;font-family:var(--sans);color:var(--text-dark);background:#fff;outline:none;transition:border-color .2s}
-  .auth-form input:focus{border-color:var(--primary)}
-  .auth-btn{height:46px;border:none;border-radius:10px;background:var(--primary);color:#fff;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:opacity .2s;margin-top:4px}
-  .auth-btn:hover{opacity:.9}
-  .auth-btn:disabled{opacity:.6;cursor:not-allowed}
-  .auth-alert{font-size:13px;padding:10px 14px;border-radius:8px;display:none}
-  .auth-alert.show{display:block}
-  .auth-alert.error{background:#fdf0f0;color:#c0392b}
-  .auth-alert.success{background:#f0f8f0;color:var(--accent-green)}
-  .auth-user{display:none;text-align:center;flex-direction:column;gap:16px}
-  .auth-user.show{display:flex}
-  .auth-user .email{font-size:15px;color:var(--text-dark);font-weight:500}
-  .auth-user .plan{display:inline-block;font-size:12px;font-weight:600;padding:4px 12px;border-radius:6px}
-  .auth-user .plan.free{background:#e8f0e4;color:var(--accent-green)}
-  .auth-user .plan.pro{background:#f0e7db;color:var(--primary)}
-  .auth-upgrade{display:block;text-align:center;padding:12px;border-radius:10px;background:var(--primary);color:#fff;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
-  .auth-logout{background:none;border:none;color:var(--text-muted);font-size:14px;cursor:pointer;font-family:var(--sans);padding:8px}
-  .auth-logout:hover{color:var(--primary)}
-  .auth-forgot{text-align:center;font-size:13px;color:var(--primary);text-decoration:none;margin-top:4px;cursor:pointer}
-  .auth-forgot:hover{text-decoration:underline}
-  .auth-reset-hint{font-size:13px;color:var(--text-muted);text-align:center;margin-bottom:4px;line-height:1.5}
+/* ---------- FAQ ---------- */
+.faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:24px 4px;font-size:17px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--sans)}
+.faq-q .arr{width:20px;height:20px;flex-shrink:0;color:var(--primary);transition:transform .25s}
+.faq-q.open .arr{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 4px 24px;font-size:15px;color:var(--muted);line-height:1.72}
 
-  /* ---------- Responsive ---------- */
-  @media (max-width:1100px){
-    .wrap{padding:0 48px}
-    .hero h1{font-size:48px}
-    .card-grid{grid-template-columns:repeat(2,1fr)}
-    .diff-grid,.trust-grid{grid-template-columns:repeat(2,1fr)}
-    .diff-item:nth-child(3){border-left:none}
-  }
-  @media (max-width:680px){
-    .wrap{padding:0 24px}
-    nav .nav-links a:not(.nav-login){display:none}
-    .hero{padding:72px 0}
-    .hero h1{font-size:36px}
-    .hero .sub{font-size:17px}
-    .reader-mock{height:260px}
-    .reader-mock .sidebar{width:140px}
-    section.block{padding:72px 0}
-    .sec-head h2,.download h2,.cta h2{font-size:28px}
-    .card-grid,.theme-grid,.steps-grid,.diff-grid,.trust-grid{grid-template-columns:1fr}
-    .diff-item + .diff-item{border-left:none;border-top:1px solid var(--border);padding-top:24px}
-    .browser-badges{flex-direction:column;align-items:stretch}
-    .browser-badge{min-width:auto}
-    .price-grid{gap:16px}
-    .price-card{padding:24px 18px}
-    .price-amount{font-size:32px}
-    .price-feat li{font-size:13px}
-  }
+/* ---------- DOWNLOAD ---------- */
+.download{background:linear-gradient(150deg,#9a6a43,#7d5536);padding:96px 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:30px;color:#fff}
+.download h2{color:#fff;font-size:clamp(28px,3.4vw,42px);max-width:18ch}
+.download .dl-sub{color:#f1e3d3;font-size:17px;max-width:54ch}
+.browser-badges{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.browser-badge{background:#fff;border-radius:16px;padding:18px 26px;display:flex;align-items:center;gap:14px;transition:transform .18s,box-shadow .2s;text-decoration:none;color:inherit;position:relative;min-width:210px}
+.browser-badge:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.18)}
+.browser-badge[aria-disabled="true"]{cursor:default}
+.browser-badge[aria-disabled="true"]:hover{transform:none;box-shadow:none}
+.browser-badge .b-logo{width:40px;height:40px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.browser-badge .b-logo img{width:40px;height:40px;object-fit:contain;display:block}
+.browser-badge .b-label{font-size:11px;color:var(--muted);font-weight:500}
+.browser-badge .b-name{font-size:18px;font-weight:700;color:var(--ink)}
+.browser-badge .b-soon{position:absolute;top:-9px;right:12px;background:var(--sage);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:6px;white-space:nowrap}
+.dl-note{font-size:13.5px;color:#ecdcc8;max-width:480px}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--night);padding:58px 0 40px;color:var(--night-muted)}
+.foot-inner{display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.foot-brand{display:flex;align-items:center;gap:11px}
+.foot-brand .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(140deg,#b9824f,#9a6a43);display:flex;align-items:center;justify-content:center}
+.foot-brand .name{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--night-text)}
+.foot-tag{font-size:14px;color:var(--night-muted)}
+.foot-links{display:flex;gap:26px;flex-wrap:wrap;justify-content:center}
+.foot-links a{font-size:13.5px;color:var(--night-muted);transition:color .2s}
+.foot-links a:hover{color:#fff}
+.foot-copy{font-size:12.5px;color:#8a7d6f}
+
+/* ---------- AUTH MODAL ---------- */
+.auth-overlay{position:fixed;inset:0;background:rgba(30,25,20,.55);backdrop-filter:blur(4px);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.auth-overlay.show{opacity:1;pointer-events:auto}
+.auth-modal{background:var(--card);border-radius:22px;width:410px;max-width:calc(100vw - 40px);padding:34px 30px;box-shadow:var(--shadow-lg);transform:translateY(14px);transition:transform .25s;max-height:92vh;overflow-y:auto}
+.auth-overlay.show .auth-modal{transform:translateY(0)}
+.auth-close{position:absolute;top:18px;right:18px;width:32px;height:32px;border:none;background:transparent;font-size:20px;color:var(--muted);border-radius:8px;transition:background .2s}
+.auth-close:hover{background:var(--bg-alt)}
+.auth-logo{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.auth-logo .logo{width:32px;height:32px;border-radius:9px;background:linear-gradient(140deg,#b9824f,#9a6a43);display:flex;align-items:center;justify-content:center}
+.auth-logo .name{font-family:var(--serif);font-weight:600;font-size:17px}
+.auth-tabs{display:flex;border-bottom:2px solid var(--line);margin-bottom:22px}
+.auth-tab{flex:1;padding:10px 0;text-align:center;font-size:14.5px;font-weight:600;color:var(--muted);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s;font-family:var(--sans)}
+.auth-tab.active{color:var(--primary);border-bottom-color:var(--primary)}
+.auth-form{display:flex;flex-direction:column;gap:14px}
+.auth-form.hidden{display:none}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:13px;font-weight:500;color:var(--muted)}
+.field input{height:44px;border:1px solid var(--line);border-radius:11px;padding:0 14px;font-size:15px;font-family:var(--sans);color:var(--ink);background:#fff;outline:none;transition:border-color .2s}
+.field input:focus{border-color:var(--primary)}
+.auth-btn{height:46px;border:none;border-radius:11px;background:var(--primary);color:#fff;font-size:15px;font-weight:600;transition:opacity .2s;margin-top:4px}
+.auth-btn:hover{opacity:.92}
+.auth-btn:disabled{opacity:.6;cursor:not-allowed}
+.auth-alert{font-size:13px;padding:10px 14px;border-radius:9px;display:none}
+.auth-alert.show{display:block}
+.auth-alert.error{background:#fdf0f0;color:#c0392b}
+.auth-alert.success{background:#f0f8f0;color:var(--sage)}
+.auth-forgot{text-align:center;font-size:13px;color:var(--primary);text-decoration:none;margin-top:4px}
+.auth-forgot:hover{text-decoration:underline}
+.auth-user{display:none;flex-direction:column;gap:16px;text-align:center}
+.auth-user.show{display:flex}
+.auth-user .email{font-size:15px;color:var(--ink);font-weight:600}
+.auth-user .plan{display:inline-block;font-size:12px;font-weight:700;padding:4px 13px;border-radius:7px;align-self:center}
+.auth-user .plan.free{background:var(--sage-soft);color:var(--sage)}
+.auth-user .plan.pro{background:var(--primary-soft);color:var(--primary)}
+.auth-upgrade{display:block;text-align:center;padding:12px;border-radius:11px;background:var(--primary);color:#fff;font-size:14px;font-weight:600;text-decoration:none}
+.auth-upgrade:hover{opacity:.92}
+.auth-logout{background:none;border:none;color:var(--muted);font-size:14px;cursor:pointer;font-family:var(--sans);padding:8px}
+.auth-logout:hover{color:var(--primary)}
+
+/* ---------- REVEAL ---------- */
+[data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+[data-reveal].in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1080px){
+  .wrap{padding:0 32px}
+  .feat-grid,.trust-grid{grid-template-columns:repeat(2,1fr)}
+  .pillar-grid{grid-template-columns:repeat(2,1fr);gap:28px 0}
+  .pillar{padding:18px 24px}
+  .pillar:nth-child(3),.pillar:nth-child(4){border-left:none}
+  .pillar:nth-child(2),.pillar:nth-child(4){border-left:1px solid var(--line-strong)}
+}
+@media (max-width:760px){
+  :root{--pad:20px}
+  .nav-links{position:absolute;top:74px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:10px 20px 18px;display:none;box-shadow:var(--shadow)}
+  .nav-links.open{display:flex}
+  .nav-links a.navlink{padding:13px 6px;border-radius:8px}
+  .lang-dropdown{margin-top:8px}
+  .lang-panel{position:static;box-shadow:none;border:none;padding:6px 0 0;max-height:none}
+  .nav-toggle{display:flex}
+  .block{padding:64px 0}
+  .feat-grid,.trust-grid,.theme-grid,.steps-grid,.price-grid{grid-template-columns:1fr}
+  .pillar-grid{grid-template-columns:1fr}
+  .pillar + .pillar{border-left:none;border-top:1px solid var(--line-strong);padding-top:22px}
+  .pillar:nth-child(2),.pillar:nth-child(4){border-left:none}
+  .price-tag{right:18px}
+}
+
+/* ---------- RTL ---------- */
+html[dir="rtl"] body{direction:rtl}
+html[dir="rtl"] .nav-links{ } 
+html[dir="rtl"] .lang-panel{right:auto;left:0}
+html[dir="rtl"] .hero::before{transform:scaleX(-1)}
+html[dir="rtl"] .mock{text-align:right}
+html[dir="rtl"] .mock-theme{margin-left:0;margin-right:auto}
+html[dir="rtl"] .mock-quote{border-left:none;border-right:3px solid var(--primary);border-radius:10px 0 0 10px}
+html[dir="rtl"] .mock-list div::before{content:"";display:none}
+html[dir="rtl"] .mock-list div::after{content:"•";color:var(--primary);font-weight:700;order:-1;margin-left:9px}
+html[dir="rtl"] .mock-table .tr>div:first-child{border-right:none;border-left:1px solid var(--line)}
+html[dir="rtl"] .faq-q{text-align:right}
+html[dir="rtl"] .price-card.pro .price-tag{right:auto;left:26px}
+html[dir="rtl"] .eyebrow::before{order:2}
+html[dir="rtl"] .foot-links,.browser-badges{direction:ltr}
+html[dir="rtl"] .auth-close{right:auto;left:18px}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<nav id="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="#">
       <span class="logo" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 40 40" fill="none"><rect x="9" y="8" width="11" height="24" rx="2" fill="#fff"/><rect x="20" y="8" width="11" height="24" rx="2" fill="#fff" opacity=".85"/><rect x="19" y="8" width="2" height="24" fill="#b8845a"/></svg>
+        <svg width="20" height="20" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10.5" rx="4.5" ry="5.5" fill="#fff4d8" fill-opacity="0.4"/><circle cx="24" cy="10.5" r="1.6" fill="#fffaf0"/><path d="M23 12.5L12.2 35c-.5 1 .5 1.3 1.5 1.3H17c1 0 1.5-.3 2-1.3l2.5-6.5H23Z" fill="#fffdf8"/><path d="M25 12.5L35.8 35c.5 1-.5 1.3-1.5 1.3H31c-1 0-1.5-.3-2-1.3l-2.5-6.5H25Z" fill="#fffdf8" fill-opacity="0.85"/><path d="M21.8 27 24 23.2 26.2 27Z" fill="#9a6a43"/></svg>
       </span>
-      <span class="name" data-i18n="brand"></span>
+      <span class="name" data-i18n="brand">Aura Reader</span>
     </a>
-    <div class="nav-links">
-      <a href="#features" data-i18n="nav.features"></a>
-      <a href="#pricing" data-i18n="nav.pricing"></a>
-      <a href="https://aura-reader.github.io/login.html" target="_blank" class="nav-login" data-i18n="nav.login" onclick="openAuthModal();return false"></a>
-      <span class="lang-switch">
-        <button id="lang-zh" onclick="setLang('zh')">中</button>
-        <button id="lang-en" class="active" onclick="setLang('en')">EN</button>
-      </span>
+    <button class="nav-toggle" id="navToggle" aria-label="menu"><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a class="navlink" href="#features" data-i18n="nav.features">Features</a>
+      <a class="navlink" href="#themes" data-i18n="nav.themes">Themes</a>
+      <a class="navlink" href="#pricing" data-i18n="nav.pricing">Pricing</a>
+      <a class="navlink" href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a class="navlink nav-login" href="#" data-i18n="nav.login" onclick="openAuthModal();return false">Sign in</a>
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-current" aria-label="language">
+          <span class="lang-current-label">English</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-panel"></div>
+      </div>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="hero wrap">
-  <span class="eyebrow" data-i18n="hero.eyebrow"></span>
-  <h1 data-i18n="hero.title"></h1>
-  <p class="sub" data-i18n="hero.sub"></p>
-  <div class="cta-row">
-    <button class="btn-primary" data-i18n="hero.cta1" onclick="document.getElementById('download').scrollIntoView()"></button>
-    <button class="btn-ghost" data-i18n="hero.cta2" onclick="document.getElementById('themes').scrollIntoView()"></button>
-  </div>
-  <div class="reader-mock" aria-hidden="true">
-    <div class="sidebar">
-      <span class="sb-title">files</span>
-      <span class="file a"><span class="dot"></span><span class="lbl"></span></span>
-      <span class="file b"><span class="dot"></span><span class="lbl"></span></span>
-      <span class="file c"><span class="dot"></span><span class="lbl"></span></span>
+<header class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow" data-i18n="hero.eyebrow">Local-first · Zero setup · Reads &amp; writes your files</span>
+    <h1 data-i18n="hero.title">A calm Markdown reader, made for the browser</h1>
+    <p class="sub" data-i18n="hero.sub">Read and write Markdown like turning the pages of a paper book — warm themes, offline by design, your files never leave your device.</p>
+
+    <!-- hero install strip: prominent install pills for supported browsers -->
+    <div class="hero-install" data-reveal>
+      <a class="hi-item" href="#download">
+        <img src="Chrome.png" alt="Chrome"><span data-i18n="dl.chrome">Chrome</span><span class="hi-soon" data-i18n="dl.soon">Soon</span>
+      </a>
+      <a class="hi-item" href="#download">
+        <img src="Edge.png" alt="Edge"><span data-i18n="dl.edge">Edge</span><span class="hi-soon" data-i18n="dl.soon">Soon</span>
+      </a>
+      <a class="hi-item" href="#download">
+        <img src="Firefox.png" alt="Firefox"><span data-i18n="dl.firefox">Firefox</span><span class="hi-soon" data-i18n="dl.soon">Soon</span>
+      </a>
     </div>
-    <div class="content">
-      <span class="h1"></span>
-      <span class="p mid"></span>
-      <span class="p"></span>
-      <span class="p short"></span>
-      <span class="quote"><span></span><span class="s"></span></span>
-      <span class="code"><span class="ln"></span><span class="ln"></span><span class="ln"></span></span>
+
+    <!-- product mock -->
+    <div class="mock" data-reveal>
+      <img src="assets/hero-mockup.svg" alt="Aura Reader paper-realm interface: warm window, library sidebar and writing view" loading="eager" width="1200" height="720">
     </div>
   </div>
 </header>
 
-<!-- DIFF BANNER -->
-<section class="diff">
-  <div class="wrap diff-grid">
-    <div class="diff-item">
-      <span class="diff-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3zm-1 13l-3-3 1.4-1.4L11 12.2l4.6-4.6L17 9l-6 6z" fill="#8b5e3c"/></svg></span>
-      <h3 data-i18n="diff1.title"></h3><p data-i18n="diff1.desc"></p>
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="wrap pillar-grid">
+    <div class="pillar" data-reveal>
+      <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9a6a43" stroke-width="1.8"><path d="M12 2L4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3zm-1 13l-3-3 1.4-1.4L11 12.2l4.6-4.6L17 9l-6 6z"/></svg></span>
+      <h3 data-i18n="diff1.title">Local-first, no uploads</h3>
+      <p data-i18n="diff1.desc">No servers and no account required. Everything runs in your browser; your files never leave your device.</p>
     </div>
-    <div class="diff-item">
-      <span class="diff-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" fill="#8b5e3c"/></svg></span>
-      <h3 data-i18n="diff2.title"></h3><p data-i18n="diff2.desc"></p>
+    <div class="pillar" data-reveal>
+      <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9a6a43" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></span>
+      <h3 data-i18n="diff2.title">Direct file read &amp; write</h3>
+      <p data-i18n="diff2.desc">Open real .md files through the File System Access API and save edits straight back — no copies, no sync conflicts.</p>
     </div>
-    <div class="diff-item">
-      <span class="diff-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="#8b5e3c"/></svg></span>
-      <h3 data-i18n="diff3.title"></h3><p data-i18n="diff3.desc"></p>
+    <div class="pillar" data-reveal>
+      <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9a6a43" stroke-width="1.8"><path d="M4 4h13l3 3v13a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1zm3 8h10M7 15h7"/></svg></span>
+      <h3 data-i18n="diff3.title">Native Word export</h3>
+      <p data-i18n="diff3.desc">Export genuine, editable Word documents — real Word objects, not flattened pasted HTML.</p>
     </div>
-    <div class="diff-item">
-      <span class="diff-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v12h2V3h10V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" fill="#8b5e3c"/></svg></span>
-      <h3 data-i18n="diff4.title"></h3><p data-i18n="diff4.desc"></p>
+    <div class="pillar" data-reveal id="pillarWechat">
+      <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9a6a43" stroke-width="1.8"><path d="M4 12a8 8 0 0114-5l2 2M20 12a8 8 0 01-14 5l-2-2M18 4v3h-3M6 20v-3h3"/></svg></span>
+      <h3 data-i18n="diff4.title">WeChat-ready copy</h3>
+      <p data-i18n="diff4.desc">Your chosen theme's styling is inlined so pasted content keeps its look inside the WeChat editor.</p>
+    </div>
+    <div class="pillar" data-reveal id="pillarTypeset">
+      <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9a6a43" stroke-width="1.8"><path d="M5 6h14M5 10h9M5 14h14M5 18h9"/></svg></span>
+      <h3 data-i18n="diff4t.title">Print-ready typesetting</h3>
+      <p data-i18n="diff4t.desc">Vertical rhythm, a locked measure, and tuned spacing make long reads feel effortless.</p>
     </div>
   </div>
 </section>
@@ -331,43 +444,20 @@
 <!-- FEATURES -->
 <section class="block" id="features">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 data-i18n="feat.title"></h2>
-      <p data-i18n="feat.sub"></p>
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow" data-i18n="nav.features">Features</span>
+      <h2 data-i18n="feat.title">A reader built for Markdown</h2>
+      <p data-i18n="feat.sub">Warm, focused, and endlessly customizable — every session feels like reading on paper.</p>
     </div>
-    <div class="card-grid">
-      <div class="card">
-        <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" fill="#8b5e3c"/></svg></span>
-        <h3 data-i18n="f1.title"></h3><p data-i18n="f1.desc"></p>
-      </div>
-      <div class="card">
-        <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="#8b5e3c"/></svg></span>
-        <h3 data-i18n="f2.title"></h3><p data-i18n="f2.desc"></p>
-      </div>
-      <div class="card">
-        <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" fill="#8b5e3c"/></svg></span>
-        <h3 data-i18n="f3.title"></h3><p data-i18n="f3.desc"></p>
-      </div>
-      <div class="card">
-        <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="#8b5e3c"/></svg></span>
-        <h3 data-i18n="f4.title"></h3><p data-i18n="f4.desc"></p>
-      </div>
-      <div class="card">
-        <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="#8b5e3c"/></svg></span>
-        <h3 data-i18n="f5.title"></h3><p data-i18n="f5.desc"></p>
-      </div>
-      <div class="card">
-        <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M10 2a8 8 0 105.3 14l4.7 4.7 1.4-1.4-4.7-4.7A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z" fill="#8b5e3c"/></svg></span>
-        <h3 data-i18n="f6.title"></h3><p data-i18n="f6.desc"></p>
-      </div>
-      <div class="card">
-        <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="#8b5e3c"/></svg></span>
-        <h3 data-i18n="f7.title"></h3><p data-i18n="f7.desc"></p>
-      </div>
-      <div class="card">
-        <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M13 3a9 9 0 00-9 9H1l4 4 4-4H6a7 7 0 117 7 7 7 0 01-6.3-4H4.5A9 9 0 1013 3zm-1 5v5l4 2 .75-1.23L13.5 11.5h-3z" fill="#8b5e3c"/></svg></span>
-        <h3 data-i18n="f8.title"></h3><p data-i18n="f8.desc"></p>
-      </div>
+    <div class="feat-grid">
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 109 9 9 9 0 00-9-9zm1 4v5l3 2"/></svg></span><h3 data-i18n="f1.title">46 themes, 6 families</h3><p data-i18n="f1.desc">Aura, Paper, Rhythm, Archive, Dark, and Editorial families for reading, writing, and typesetting.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h16M4 16h10M4 12h16M4 8h10"/></svg></span><h3 data-i18n="f2.title">WYSIWYG editing</h3><p data-i18n="f2.desc">Edit what you see and write changes back to the original file — no duplicate copies.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h7l2 2h9v10a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1z"/></svg></span><h3 data-i18n="f3.title">Folder library</h3><p data-i18n="f3.desc">Multiple roots, instant search, image preview — manage docs like a bookshelf.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg></span><h3 data-i18n="f4.title">One-click export</h3><p data-i18n="f4.desc">Export to HTML, PDF, or native editable Word to share or archive.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h11M4 12h11M4 19h7M18 4v16M18 4l2 2-2 2M18 20l-2-2 2-2"/></svg></span><h3 data-i18n="f5.title">Tabs &amp; outline</h3><p data-i18n="f5.desc">Multi-tab editing, heading outline navigation, live KaTeX math and Mermaid diagrams.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 4a7 7 0 105 12l5 5M8 11h6"/></svg></span><h3 data-i18n="f6.title">Search &amp; drag</h3><p data-i18n="f6.desc">Instant filtering and cross-folder drag to move files with image links auto-rewritten.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c-4 0-7 3-7 7 0 5 7 11 7 11s7-6 7-11c0-4-3-7-7-7zm0 5a2 2 0 110 4 2 2 0 010-4z"/></svg></span><h3 data-i18n="f7.title">Save web docs</h3><p data-i18n="f7.desc">Save Markdown pages from the web to your local library for offline reading.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 109 9M21 12V3M21 12l-5-2 5-2"/></svg></span><h3 data-i18n="f8.title">Session restore</h3><p data-i18n="f8.desc">Open tabs and paths persist; everything returns after a reload — no re-authorizing.</p></div>
     </div>
   </div>
 </section>
@@ -375,147 +465,94 @@
 <!-- THEMES -->
 <section class="block alt" id="themes">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 data-i18n="themes.title"></h2>
-      <p data-i18n="themes.sub"></p>
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow" data-i18n="nav.themes">Themes</span>
+      <h2 data-i18n="themes.title">46 themes across 6 families</h2>
+      <p data-i18n="themes.sub">Aura · Paper · Rhythm · Archive · Dark · Editorial — for reading, writing, and typesetting.</p>
     </div>
     <div class="theme-grid">
-      <div class="theme-card">
-        <div class="swatch" style="background:linear-gradient(135deg,#faf8f5,#f5ebe0)">
-          <div class="sample"><span class="bar title" style="background:#8b5e3c"></span><span class="bar body" style="background:#7a6b5d;opacity:.5"></span><span class="bar body short" style="background:#7a6b5d;opacity:.5"></span></div>
-        </div>
-        <div class="meta">
-          <h3 data-i18n="t1.name"></h3><p data-i18n="t1.desc"></p>
-          <span class="theme-badge free" data-i18n="badge.free"></span>
-        </div>
-      </div>
-      <div class="theme-card">
-        <div class="swatch" style="background:linear-gradient(135deg,#f5f0e8,#ede5d8)">
-          <div class="sample"><span class="bar title" style="background:#3d3327"></span><span class="bar body" style="background:#7a6b5d;opacity:.5"></span><span class="bar body short" style="background:#7a6b5d;opacity:.5"></span></div>
-        </div>
-        <div class="meta">
-          <h3 data-i18n="t2.name"></h3><p data-i18n="t2.desc"></p>
-          <span class="theme-badge free" data-i18n="badge.free"></span>
-        </div>
-      </div>
-      <div class="theme-card">
-        <div class="swatch" style="background:linear-gradient(135deg,#f0f4ec,#e0e8d8)">
-          <div class="sample"><span class="bar title" style="background:#5a7a4e"></span><span class="bar body" style="background:#6a8a5e;opacity:.5"></span><span class="bar body short" style="background:#6a8a5e;opacity:.5"></span></div>
-        </div>
-        <div class="meta">
-          <h3 data-i18n="t3.name"></h3><p data-i18n="t3.desc"></p>
-          <span class="theme-badge pro" data-i18n="badge.pro"></span>
-        </div>
-      </div>
-      <div class="theme-card">
-        <div class="swatch" style="background:linear-gradient(135deg,#f0e7db,#e5d8c5)">
-          <div class="sample"><span class="bar title" style="background:#6b4a2e"></span><span class="bar body" style="background:#8a7a6a;opacity:.5"></span><span class="bar body short" style="background:#8a7a6a;opacity:.5"></span></div>
-        </div>
-        <div class="meta">
-          <h3 data-i18n="t4.name"></h3><p data-i18n="t4.desc"></p>
-          <span class="theme-badge pro" data-i18n="badge.pro"></span>
-        </div>
-      </div>
-      <div class="theme-card dark">
-        <div class="swatch" style="background:linear-gradient(135deg,#1c1814,#2d2620)">
-          <div class="sample"><span class="bar title" style="background:#e8ddd0"></span><span class="bar body" style="background:#b0a395;opacity:.5"></span><span class="bar body short" style="background:#b0a395;opacity:.5"></span></div>
-        </div>
-        <div class="meta">
-          <h3 data-i18n="t5.name"></h3><p data-i18n="t5.desc"></p>
-          <span class="theme-badge pro" data-i18n="badge.pro"></span>
-        </div>
-      </div>
-      <div class="theme-card">
-        <div class="swatch" style="background:linear-gradient(135deg,#f2f7f4,#e8f0eb)">
-          <div class="sample"><span class="bar title" style="background:#3a6a4e"></span><span class="bar body" style="background:#5a8a6e;opacity:.5"></span><span class="bar body short" style="background:#5a8a6e;opacity:.5"></span></div>
-        </div>
-        <div class="meta">
-          <h3 data-i18n="t6.name"></h3><p data-i18n="t6.desc"></p>
-          <span class="theme-badge pro" data-i18n="badge.pro"></span>
-        </div>
-      </div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/mobai.svg" alt="Aura Warm theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t1.name">Aura · Warm</h3><p data-i18n="t1.desc">Amber-brown · Serif body · Paper-book feel</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/xuanzhi.svg" alt="Paper Letter theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t2.name">Paper · Letter</h3><p data-i18n="t2.desc">Rice-paper cream · Eastern typography · Classic</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/mori-journal.svg" alt="Rhythm Journal theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t3.name">Rhythm · Journal</h3><p data-i18n="t3.desc">Forest green · Washi tape · Fresh</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/cream-orange.svg" alt="Archive Cream theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t4.name">Archive · Cream</h3><p data-i18n="t4.desc">Dessert tones · Rounded · Cozy</p></div></div>
+      <div class="theme-card dark" data-reveal><div class="shot"><img src="assets/themes/night-film.svg" alt="Dark Night Film theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t5.name">Dark · Night Film</h3><p data-i18n="t5.desc">Cinema dark · Immersive · Easy on the eyes</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/mono-editorial.svg" alt="Editorial Mono theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t6t.name">Editorial · Mono</h3><p data-i18n="t6t.desc">Monochrome · Swiss grid · Magazine polish</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- PRIVACY -->
-<section class="block">
+<section class="block" id="privacy">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 data-i18n="privacy.title"></h2>
-      <p data-i18n="privacy.sub"></p>
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Privacy</span>
+      <h2 data-i18n="privacy.title">Your documents stay on your device</h2>
+      <p data-i18n="privacy.sub">Local-first and upload-free: we only touch folders you explicitly authorize, sanitize every render with DOMPurify, bundle third-party libraries locally, and ask for the minimum permissions.</p>
     </div>
     <div class="trust-grid">
-      <div class="trust">
-        <span class="ico" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3zm-1 13l-3-3 1.4-1.4L11 12.2l4.6-4.6L17 9l-6 6z" fill="#8b5e3c"/></svg></span>
-        <h3 data-i18n="p1.title"></h3><p data-i18n="p1.desc"></p>
-      </div>
-      <div class="trust">
-        <span class="ico" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" fill="#8b5e3c"/></svg></span>
-        <h3 data-i18n="p2.title"></h3><p data-i18n="p2.desc"></p>
-      </div>
-      <div class="trust">
-        <span class="ico" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" fill="#8b5e3c"/></svg></span>
-        <h3 data-i18n="p3.title"></h3><p data-i18n="p3.desc"></p>
-      </div>
-      <div class="trust">
-        <span class="ico" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5zm0 2.2L18.5 7 12 10.8 5.5 7 12 4.2zM5 8.8l6 3.4v6.6l-6-3.4V8.8zm14 0v6.6l-6 3.4v-6.6l6-3.4z" fill="#8b5e3c"/></svg></span>
-        <h3 data-i18n="p4.title"></h3><p data-i18n="p4.desc"></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="block alt" id="pricing">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 data-i18n="pricing.title"></h2>
-      <p data-i18n="pricing.sub"></p>
-    </div>
-    <div class="price-grid">
-      <div class="price-card">
-        <div class="price-plan" data-i18n="price.free.plan"></div>
-        <div class="price-amount"><span class="free" data-i18n="price.free.cost"></span></div>
-        <ul class="price-feat">
-          <li data-i18n="price.free.f1"></li>
-          <li data-i18n="price.free.f2"></li>
-          <li data-i18n="price.free.f3"></li>
-          <li class="no" data-i18n="price.free.f4"></li>
-          <li class="no" data-i18n="price.free.f5"></li>
-          <li class="no" data-i18n="price.free.f6"></li>
-        </ul>
-        <button class="price-btn free-btn" data-i18n="price.free.btn" onclick="document.getElementById('download').scrollIntoView()"></button>
-      </div>
-      <div class="price-card pro">
-        <span class="price-tag" data-i18n="price.pro.tag"></span>
-        <div class="price-plan" data-i18n="price.pro.plan"></div>
-        <div class="price-amount" data-i18n-html="price.pro.cost"></div>
-        <ul class="price-feat">
-          <li data-i18n="price.pro.f1"></li>
-          <li data-i18n="price.pro.f2"></li>
-          <li data-i18n="price.pro.f3"></li>
-          <li data-i18n="price.pro.f4"></li>
-          <li data-i18n="price.pro.f5"></li>
-          <li data-i18n="price.pro.f6"></li>
-        </ul>
-        <button class="price-btn pro-btn" data-i18n="price.pro.btn" onclick="window.open('https://creem.io/payment/prod_6uXEIs0CjyYKzcJn6J6jJF','_blank')"></button>
-      </div>
+      <div class="trust" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/></svg></span><h3 data-i18n="p1.title">No uploads</h3><p data-i18n="p1.desc">Nothing is sent to a server; all processing stays on your machine.</p></div>
+      <div class="trust" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h7l2 2h9v10a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1z"/></svg></span><h3 data-i18n="p2.title">Authorized folders only</h3><p data-i18n="p2.desc">We read and write only folders you allow, and you can revoke access anytime.</p></div>
+      <div class="trust" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V6l8-4z"/></svg></span><h3 data-i18n="p3.title">Sanitized &amp; strict CSP</h3><p data-i18n="p3.desc">Rendering and export are double-sanitized; only local scripts ever run.</p></div>
+      <div class="trust" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8zM3 8l9 5 9-5M12 13v8"/></svg></span><h3 data-i18n="p4.title">Libraries bundled locally</h3><p data-i18n="p4.desc">marked, Vditor, and docx ship inside the extension — no remote loads.</p></div>
     </div>
   </div>
 </section>
 
 <!-- STEPS -->
-<section class="block">
+<section class="block alt" id="steps">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 data-i18n="steps.title"></h2>
-      <p data-i18n="steps.sub"></p>
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">How it works</span>
+      <h2 data-i18n="steps.title">Three steps to paper-like reading</h2>
+      <p data-i18n="steps.sub">No complex setup — as simple as opening a book.</p>
     </div>
     <div class="steps-grid">
-      <div class="step"><div class="num">1</div><h3 data-i18n="s1.title"></h3><p data-i18n="s1.desc"></p></div>
-      <div class="step"><div class="num">2</div><h3 data-i18n="s2.title"></h3><p data-i18n="s2.desc"></p></div>
-      <div class="step"><div class="num">3</div><h3 data-i18n="s3.title"></h3><p data-i18n="s3.desc"></p></div>
+      <div class="step" data-reveal><span class="num">1</span><h3 data-i18n="s1.title">Pick a folder</h3><p data-i18n="s1.desc">Authorize one or more local Markdown folders as your library roots and browse them recursively.</p></div>
+      <div class="step" data-reveal><span class="num">2</span><h3 data-i18n="s2.title">Pick a theme</h3><p data-i18n="s2.desc">Choose from 46 themes across six families and switch the look in one click.</p></div>
+      <div class="step" data-reveal><span class="num">3</span><h3 data-i18n="s3.title">Edit &amp; write back</h3><p data-i18n="s3.desc">Edits save straight to the original .md, or export to HTML, PDF, or native Word.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="block" id="pricing">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow" data-i18n="nav.pricing">Pricing</span>
+      <h2 data-i18n="pricing.title">Start free, upgrade when you need</h2>
+      <p data-i18n="pricing.sub">Reading is free forever. Unlock themes, export, and editing with a one-time Pro purchase.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card" data-reveal>
+        <div class="price-plan" data-i18n="price.free.plan">Free</div>
+        <div class="price-amount" data-i18n="price.free.cost">Free forever</div>
+        <ul class="price-feat">
+          <li data-i18n="price.free.f1">Markdown rendering &amp; reading</li>
+          <li data-i18n="price.free.f2">6 curated themes</li>
+          <li data-i18n="price.free.f3">Single-root folder browsing</li>
+          <li data-i18n="price.free.f4">Local files stay on your device</li>
+          <li data-i18n="price.free.f5">Recent folders &amp; quick open</li>
+          <li data-i18n="price.free.f6">Keyboard shortcuts &amp; search</li>
+        </ul>
+        <a class="price-btn free-btn" href="#download"><span class="free-btn-text" data-i18n="price.free.btn">Add to browser</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></a>
+      </div>
+      <div class="price-card pro" data-reveal>
+        <span class="price-tag" data-i18n="price.pro.tag">Most popular</span>
+        <div class="price-plan" data-i18n="price.pro.plan">Pro</div>
+        <div class="price-amount" data-i18n-html="price.pro.cost"><span class="now">$4.99</span><span class="was">$9.99</span><span class="save">Save 50%</span></div>
+        <p class="price-early" data-i18n="price.pro.early">Limited early bird · reverts to $9.99</p>
+        <span class="unit" data-i18n="price.pro.note">One-time purchase · Lifetime updates</span>
+        <ul class="price-feat">
+          <li data-i18n="price.pro.f1">All 46 themes (six families)</li>
+          <li data-i18n="price.pro.f2">Native Word / PDF / HTML export</li>
+          <li data-i18n="price.pro.f3">WYSIWYG editing with auto write-back</li>
+          <li data-i18n="price.pro.f4">Multi-root folder management</li>
+          <li data-i18n="price.pro.f5">Save web docs to your library</li>
+          <li data-i18n="price.pro.f6" id="proWechat">WeChat one-click publishing</li>
+          <li data-i18n="price.pro.f6t" id="proTypeset">Print-grade typesetting engine</li>
+        </ul>
+        <a class="price-btn pro-btn" href="https://creem.io/payment/prod_6uXEIs0CjyYKzcJn6J6jJF" target="_blank" rel="noopener"><span class="pro-btn-text" data-i18n="price.pro.btn">Get Pro for $4.99 →</span><span class="sheen" aria-hidden="true"></span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -523,26 +560,43 @@
 <!-- FAQ -->
 <section class="block alt" id="faq">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 data-i18n="faq.title"></h2>
-      <p data-i18n="faq.sub"></p>
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow" data-i18n="nav.faq">FAQ</span>
+      <h2 data-i18n="faq.title">Frequently asked questions</h2>
+      <p data-i18n="faq.sub">Answers about privacy, features, and purchasing.</p>
     </div>
-    <div class="faq-list" id="faqList">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q1"></span><svg class="arrow" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a1"></p></div>
+    <div class="faq-list">
+      <div class="faq-item" data-reveal>
+        <button class="faq-q"><span data-i18n="faq.q1">Are my files uploaded to a server?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a1">No. Aura Reader is local-first — every file read and write happens in your browser through the File System Access API. Nothing is uploaded. Pro status is verified by email; only your email and payment state are stored.</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q2"></span><svg class="arrow" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a2"></p></div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q"><span data-i18n="faq.q2">What is the difference between Free and Pro?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a2">Free includes full Markdown reading, 6 curated themes, and single-root browsing. Pro unlocks all 46 themes, native Word/PDF export, WYSIWYG editing with write-back, multi-root management, split-preview, saving web docs, and more. Reading stays free forever.</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q3"></span><svg class="arrow" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a3"></p></div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q"><span data-i18n="faq.q3">Which browsers are supported?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a3">Any Chromium-based browser (Chrome, Edge, Brave, Arc, and so on) with File System Access API support (Chrome 86+).</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q4"></span><svg class="arrow" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a4"></p></div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q"><span data-i18n="faq.q4">How do I activate Pro after buying?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a4">Click 'Upgrade' in the extension, sign in with your email, and pay through Creem. Your Pro status syncs automatically. In regions without Creem, an activation key will be available soon.</p></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q"><span data-i18n="faq.q5">Can I use Pro on multiple computers?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a5">Pro is tied to your email account and works across devices. Activation keys are issued per device for offline activation — sign in on any computer to access Pro features.</p></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q"><span data-i18n="faq.q6">Does it support math equations and diagrams?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a6">Yes. Aura Reader renders KaTeX math formulas and Mermaid diagrams natively — just write standard LaTeX or Mermaid syntax in your Markdown.</p></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q"><span data-i18n="faq.q7">How many languages are supported?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a7">The interface is available in 13 languages: English, 中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Português, Русский, Tiếng Việt, Svenska, and العربية (RTL).</p></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q"><span data-i18n="faq.q8">Can I preview before exporting?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a8">Yes. The split-preview mode shows your content in narrow (680px), medium (820px), or wide (960px) widths, with a fullscreen option for distraction-free proofreading.</p></div>
       </div>
     </div>
   </div>
@@ -550,444 +604,97 @@
 
 <!-- DOWNLOAD -->
 <section class="download" id="download">
-  <h2 data-i18n="dl.title"></h2>
-  <p class="dl-sub" data-i18n="dl.sub"></p>
-  <div class="browser-badges">
-    <a class="browser-badge" href="#" onclick="return false">
-      <span class="b-logo">
-        <svg width="40" height="40" viewBox="0 0 48 48" fill="none"><path d="M6.68 14A20 20 0 0 1 41.32 14L31.79 19.5A9 9 0 0 0 16.21 19.5Z" fill="#ea4335"/><path d="M24 44A20 20 0 0 1 6.68 14L16.21 19.5A9 9 0 0 0 24 33Z" fill="#34a853"/><path d="M41.32 14A20 20 0 0 1 24 44L24 33A9 9 0 0 0 31.79 19.5Z" fill="#fbbc05"/><circle cx="24" cy="24" r="8" fill="#4285f4"/></svg>
-      </span>
-      <span class="b-text">
-        <div class="b-name" data-i18n="dl.chrome.name"></div>
-      </span>
-    </a>
-    <a class="browser-badge" href="#" onclick="return false">
-      <span class="b-logo">
-        <svg width="40" height="40" viewBox="0 0 48 48" fill="none"><defs><linearGradient id="edge-g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0078d4"/><stop offset="100%" stop-color="#00bdf2"/></linearGradient></defs><path d="M24 4C13 4 4 12 4 22c0 4 1 7 3 10 0-7 5-13 12-15 6-1 12 2 15 7 2 4 2 8 0 12 5-3 8-9 8-15 0-9-8-17-18-17z" fill="url(#edge-g)"/><path d="M7 32c3 6 9 10 17 10 7 0 13-4 16-10-3 4-8 6-13 6-8 0-14-4-17-10-1 1-2 3-3 4z" fill="#0050b0"/></svg>
-      </span>
-      <span class="b-text">
-        <div class="b-name" data-i18n="dl.edge.name"></div>
-      </span>
-    </a>
-    <a class="browser-badge" href="#" onclick="return false">
-      <span class="b-logo">
-        <svg width="40" height="40" viewBox="0 0 48 48" fill="none"><defs><radialGradient id="ff-bg" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#ff9500"/><stop offset="50%" stop-color="#ff6b35"/><stop offset="100%" stop-color="#e8590c"/></radialGradient></defs><circle cx="24" cy="24" r="20" fill="url(#ff-bg)"/><path d="M14 14c-2 2-3 5-3 8 0 6 5 10 11 10 3 0 6-1 8-3-2 1-4 1-6 0-4-2-6-6-6-10 0-2 1-4 2-5-2-1-4-1-6 0z" fill="#fff" opacity="0.25"/><circle cx="20" cy="26" r="2.5" fill="#3d3327"/><circle cx="28" cy="26" r="2.5" fill="#3d3327"/><path d="M21 31c0-1 1-2 3-2s3 1 3 2" stroke="#3d3327" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-      </span>
-      <span class="b-text">
-        <div class="b-name" data-i18n="dl.firefox.name"></div>
-      </span>
-    </a>
+  <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:30px">
+    <div class="sec-head" data-reveal style="margin:0">
+      <h2 data-i18n="dl.title" style="color:#fff">Choose your browser and start reading</h2>
+      <p class="dl-sub" data-i18n="dl.sub">No account, no server — install and feel the paper-book calm right away.</p>
+    </div>
+    <div class="browser-badges">
+      <a class="browser-badge" aria-disabled="true" onclick="return false">
+        <span class="b-logo"><img src="Chrome.png" alt="Chrome"></span>
+        <span class="b-text"><span class="b-label" data-i18n="nav.install">Add to browser</span><span class="b-name" data-i18n="dl.chrome">Chrome</span></span>
+        <span class="b-soon" data-i18n="dl.soon">Soon</span>
+      </a>
+      <a class="browser-badge" aria-disabled="true" onclick="return false">
+        <span class="b-logo"><img src="Edge.png" alt="Edge"></span>
+        <span class="b-text"><span class="b-label" data-i18n="nav.install">Add to browser</span><span class="b-name" data-i18n="dl.edge">Edge</span></span>
+        <span class="b-soon" data-i18n="dl.soon">Soon</span>
+      </a>
+      <a class="browser-badge" aria-disabled="true" onclick="return false">
+        <span class="b-logo"><img src="Firefox.png" alt="Firefox"></span>
+        <span class="b-text"><span class="b-label" data-i18n="nav.install">Add to browser</span><span class="b-name" data-i18n="dl.firefox">Firefox</span></span>
+        <span class="b-soon" data-i18n="dl.soon">Soon</span>
+      </a>
+    </div>
+    <p class="dl-note" data-i18n="dl.note">Coming soon to Chromium browsers (Chrome, Edge, Brave, Arc). Firefox to follow.</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="foot-brand">
-    <span class="logo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><rect x="9" y="8" width="11" height="24" rx="2" fill="#fff"/><rect x="20" y="8" width="11" height="24" rx="2" fill="#fff" opacity=".85"/><rect x="19" y="8" width="2" height="24" fill="#b8845a"/></svg></span>
-    <span class="name" data-i18n="brand"></span>
+  <div class="wrap foot-inner">
+    <div class="foot-brand">
+      <span class="logo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10.5" rx="4.5" ry="5.5" fill="#fff4d8" fill-opacity="0.4"/><circle cx="24" cy="10.5" r="1.6" fill="#fffaf0"/><path d="M23 12.5L12.2 35c-.5 1 .5 1.3 1.5 1.3H17c1 0 1.5-.3 2-1.3l2.5-6.5H23Z" fill="#fffdf8"/><path d="M25 12.5L35.8 35c.5 1-.5 1.3-1.5 1.3H31c-1 0-1.5-.3-2-1.3l-2.5-6.5H25Z" fill="#fffdf8" fill-opacity="0.85"/><path d="M21.8 27 24 23.2 26.2 27Z" fill="#9a6a43"/></svg></span>
+      <span class="name" data-i18n="brand">Aura Reader</span>
+    </div>
+    <p class="foot-tag" data-i18n="footer.tagline">Crafted for readers who love paper.</p>
+    <div class="foot-links">
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#themes" data-i18n="nav.themes">Themes</a>
+      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#" data-i18n="nav.login" onclick="openAuthModal();return false">Sign in</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="mailto:hello@aura-reader.com">Contact</a>
+    </div>
+    <p class="foot-copy" data-i18n="footer.copy">© 2026 Aura Reader · A warm Markdown reader &amp; writer for the browser.</p>
   </div>
-  <div class="foot-links">
-    <a href="#features" data-i18n="nav.features"></a>
-    <a href="#themes" data-i18n="nav.themes"></a>
-    <a href="#pricing" data-i18n="nav.pricing"></a>
-    <a href="#faq" data-i18n="nav.faq"></a>
-    <a href="https://github.com/aura-reader" target="_blank" data-i18n="nav.github"></a>
-    <a href="https://aura-reader.github.io/login.html" target="_blank" data-i18n="nav.login" onclick="openAuthModal();return false"></a>
-  </div>
-  <div class="foot-copy" data-i18n="footer.copy"></div>
 </footer>
 
 <!-- AUTH MODAL -->
-<div class="auth-overlay" id="authOverlay" onclick="if(event.target===this)closeAuthModal()">
-  <div class="auth-modal" style="position:relative">
-    <button class="auth-close" onclick="closeAuthModal()">&times;</button>
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-modal">
+    <button class="auth-close" onclick="closeAuthModal()" aria-label="close">×</button>
     <div class="auth-logo">
-      <span class="logo"><svg width="16" height="16" viewBox="0 0 40 40" fill="none"><rect x="9" y="8" width="11" height="24" rx="2" fill="#fff"/><rect x="20" y="8" width="11" height="24" rx="2" fill="#fff" opacity=".85"/><rect x="19" y="8" width="2" height="24" fill="#b8845a"/></svg></span>
-      <span class="name" data-i18n="brand"></span>
+      <span class="logo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10.5" rx="4.5" ry="5.5" fill="#fff4d8" fill-opacity="0.4"/><circle cx="24" cy="10.5" r="1.6" fill="#fffaf0"/><path d="M23 12.5L12.2 35c-.5 1 .5 1.3 1.5 1.3H17c1 0 1.5-.3 2-1.3l2.5-6.5H23Z" fill="#fffdf8"/><path d="M25 12.5L35.8 35c.5 1-.5 1.3-1.5 1.3H31c-1 0-1.5-.3-2-1.3l-2.5-6.5H25Z" fill="#fffdf8" fill-opacity="0.85"/><path d="M21.8 27 24 23.2 26.2 27Z" fill="#9a6a43"/></svg></span>
+      <span class="name" data-i18n="brand">Aura Reader</span>
     </div>
-    <div class="auth-alert" id="authAlert"></div>
-    <!-- Forms -->
     <div id="authForms">
       <div class="auth-tabs">
-        <button class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')" data-i18n="auth.login"></button>
-        <button class="auth-tab" id="tabRegister" onclick="switchAuthTab('register')" data-i18n="auth.register"></button>
+        <button class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')" data-i18n="auth.login">Sign in</button>
+        <button class="auth-tab" id="tabRegister" onclick="switchAuthTab('register')" data-i18n="auth.register">Create account</button>
       </div>
       <form class="auth-form" id="loginForm" onsubmit="return doLogin(event)">
-        <div class="field"><label data-i18n="auth.email"></label><input type="email" id="loginEmail" placeholder="you@example.com" required></div>
-        <div class="field"><label data-i18n="auth.password"></label><input type="password" id="loginPassword" placeholder="********" required></div>
-        <button type="submit" class="auth-btn" id="loginBtn" data-i18n="auth.login"></button>
-        <a href="#" class="auth-forgot" onclick="switchAuthView('reset');return false" data-i18n="auth.forgot"></a>
+        <div class="field"><label data-i18n="auth.email">Email</label><input id="loginEmail" type="email" autocomplete="username" placeholder="you@example.com"></div>
+        <div class="field"><label data-i18n="auth.password">Password</label><input id="loginPassword" type="password" autocomplete="current-password"></div>
+        <button class="auth-btn" id="loginBtn" type="submit" data-i18n="auth.login">Sign in</button>
+        <a class="auth-forgot" onclick="switchAuthView('reset')" data-i18n="auth.forgot">Forgot password?</a>
       </form>
       <form class="auth-form hidden" id="registerForm" onsubmit="return doRegister(event)">
-        <div class="field"><label data-i18n="auth.email"></label><input type="email" id="regEmail" placeholder="you@example.com" required></div>
-        <div class="field"><label data-i18n="auth.password"></label><input type="password" id="regPassword" placeholder="********" required></div>
-        <div class="field"><label data-i18n="auth.confirm"></label><input type="password" id="regPassword2" placeholder="********" required></div>
-        <button type="submit" class="auth-btn" id="registerBtn" data-i18n="auth.register"></button>
+        <div class="field"><label data-i18n="auth.email">Email</label><input id="regEmail" type="email" autocomplete="username"></div>
+        <div class="field"><label data-i18n="auth.password">Password</label><input id="regPassword" type="password" autocomplete="new-password"></div>
+        <div class="field"><label data-i18n="auth.confirm">Confirm password</label><input id="regPassword2" type="password" autocomplete="new-password"></div>
+        <button class="auth-btn" id="registerBtn" type="submit" data-i18n="auth.register">Create account</button>
       </form>
-      <!-- Reset request form -->
       <form class="auth-form hidden" id="resetForm" onsubmit="return doResetRequest(event)">
-        <p class="auth-reset-hint" data-i18n="auth.resetHint"></p>
-        <div class="field"><label data-i18n="auth.email"></label><input type="email" id="resetEmail" placeholder="you@example.com" required></div>
-        <button type="submit" class="auth-btn" id="resetBtn" data-i18n="auth.sendReset"></button>
-        <a href="#" class="auth-forgot" onclick="switchAuthView('login');return false" data-i18n="auth.backLogin"></a>
+        <p class="auth-reset-hint" data-i18n="auth.resetHint" style="font-size:13px;color:var(--muted);text-align:center;margin-bottom:4px;line-height:1.5">Enter your registered email and we'll send a password reset link</p>
+        <div class="field"><label data-i18n="auth.email">Email</label><input id="resetEmail" type="email"></div>
+        <button class="auth-btn" id="resetBtn" type="submit" data-i18n="auth.sendReset">Send reset email</button>
+        <a class="auth-forgot" onclick="switchAuthView('login')" data-i18n="auth.backLogin">Back to sign in</a>
       </form>
+      <div class="auth-alert" id="authAlert"></div>
     </div>
-    <!-- Logged in view -->
     <div class="auth-user" id="authUser">
       <div class="email" id="authUserEmail"></div>
-      <div><span class="plan free" id="authUserPlan">Free</span></div>
-      <a class="auth-upgrade" id="authUpgrade" href="https://creem.io/payment/prod_6uXEIs0CjyYKzcJn6J6jJF" target="_blank" data-i18n="auth.upgrade"></a>
-      <button class="auth-logout" onclick="doLogout()" data-i18n="auth.logout"></button>
+      <span class="plan free" id="authUserPlan">Free</span>
+      <a class="auth-upgrade" id="authUpgrade" href="https://creem.io/payment/prod_6uXEIs0CjyYKzcJn6J6jJF" target="_blank" data-i18n="auth.upgrade">Get Pro · $9.99</a>
+      <button class="auth-logout" onclick="doLogout()" data-i18n="auth.logout">Sign out</button>
     </div>
   </div>
 </div>
 
-<script>
-const I18N = {
-  zh:{
-    "brand":"境相阅读",
-    "nav.features":"功能","nav.themes":"主题","nav.pricing":"价格","nav.faq":"常见问题","nav.download":"下载","nav.install":"安装扩展","nav.github":"GitHub","nav.login":"登录",
-    "hero.eyebrow":"本地优先 · 零部署 · 文件系统直读直写",
-    "hero.title":"专为浏览器设计的轻量Markdown工具",
-    "hero.sub":"享受阅读，享受写作",
-    "hero.cta1":"安装扩展","hero.cta2":"浏览主题",
-    "badge.free":"免费","badge.pro":"Pro",
-    "diff1.title":"本地优先 · 零部署","diff1.desc":"不依赖服务器、不上传数据，全部在本机处理。",
-    "diff2.title":"文件系统直读直写","diff2.desc":"通过 File System Access API 直接读写原文件，编辑不产生副本。",
-    "diff3.title":"原生 Word 导出","diff3.desc":"导出可再编辑的 Word 文档对象，而非粘贴 HTML。",
-    "diff4.title":"公众号一键复制","diff4.desc":"按所选主题样式全内联，复制到公众号编辑器不丢格式。",
-    "feat.title":"为 Markdown 打造的阅读器","feat.sub":"温润、专注、可定制，让每一次阅读都有纸书般的质感",
-    "f1.title":"20 套主题","f1.desc":"六大分类（境相/纸墨/气韵/暗夜/档案/公众号），覆盖阅读、写作、排版多种场景。",
-    "f2.title":"所见即所得编辑","f2.desc":"编辑后自动写回原文件，不产生副本。",
-    "f3.title":"文件夹浏览","f3.desc":"多根目录、搜索过滤、图片预览，像管理书架一样管理文档。",
-    "f4.title":"一键导出","f4.desc":"导出 HTML / PDF / 原生可编辑 Word 文档（真 Word 对象，非粘贴 HTML）。",
-    "f5.title":"多标签与大纲","f5.desc":"多标签编辑器；左侧大纲按标题导航；KaTeX 公式与 Mermaid 图表实时渲染。",
-    "f6.title":"搜索与拖拽","f6.desc":"即时搜索过滤文件，跨文件夹拖拽移动并自动改写图片引用。",
-    "f7.title":"保存外部文档","f7.desc":"将网络上的 Markdown 文档保存到本地，离线阅读不受限。",
-    "f8.title":"会话恢复","f8.desc":"打开的标签与路径持久化，刷新后自动恢复，无需重新授权。",
-    "themes.title":"20 套主题 · 六大分类","themes.sub":"境相 / 纸墨 / 气韵 / 暗夜 / 档案 / 公众号，覆盖阅读、写作、排版、公众号多种场景。",
-    "t1.name":"境相 · 温润","t1.desc":"琥珀暖棕 · 衬线正文 · 纸质书感",
-    "t2.name":"纸墨 · 宋笺","t2.desc":"米黄宣纸 · 东方排版 · 古典气息",
-    "t3.name":"气韵 · 森手帐","t3.desc":"森林绿调 · 手账排版 · 自然清新",
-    "t4.name":"档案 · 拿铁","t4.desc":"咖啡暖调 · 圆润字重 · 慵懒午后",
-    "t5.name":"暗夜 · 夜航","t5.desc":"深色胶片 · 沉浸阅读 · 护眼专注",
-    "t6.name":"公众号 · 清新","t6.desc":"清新绿白 · 微信排版 · 一键出图",
-    "privacy.title":"你的文档，始终留在本地","privacy.sub":"本地优先，零上传：所有内容在浏览器 File System Access 权限下仅访问你明确授权的目录；渲染与导出均经 DOMPurify 净化，第三方库本地打包，权限最小化。",
-    "p1.title":"零上传","p1.desc":"不上传任何数据，内容仅在本机处理。",
-    "p2.title":"仅访问授权目录","p2.desc":"只在你明确授权的目录内读写，权限可随时收回。",
-    "p3.title":"净化 + 严格 CSP","p3.desc":"渲染与导出双重净化，脚本仅本地资源。",
-    "p4.title":"第三方库本地打包","p4.desc":"marked / Vditor / docx 本地打包，不加载远程。",
-    "pricing.title":"免费开始，按需升级","pricing.sub":"阅读永久免费；主题、导出、编辑等高级功能可一次性解锁 Pro",
-    "price.free.plan":"Free","price.free.cost":"免费",
-    "price.free.f1":"Markdown 渲染与阅读","price.free.f2":"2 套基础主题（Native · 温润）","price.free.f3":"文件夹浏览（单根目录）",
-    "price.free.f4":"全部 20 套主题","price.free.f5":"原生 Word / PDF 导出","price.free.f6":"所见即所得编辑与写回",
-    "price.free.btn":"免费安装",
-    "price.pro.tag":"推荐","price.pro.plan":"Pro","price.pro.cost":"$12.99 <span class='unit'>一次性买断</span>",
-    "price.pro.f1":"全部 20 套主题（六大分类）","price.pro.f2":"原生 Word / PDF / HTML 导出","price.pro.f3":"所见即所得编辑，自动写回原文件",
-    "price.pro.f4":"多根目录文件夹管理","price.pro.f5":"保存外部文档到本地","price.pro.f6":"终身更新，无需续费",
-    "price.pro.btn":"购买 Pro · $12.99",
-    "steps.title":"三步开启纸书阅读","steps.sub":"无需复杂配置，像打开一本书一样简单",
-    "s1.title":"选择文件夹","s1.desc":"授权一个或多个本地 Markdown 文件夹，作为知识库根目录，递归浏览。",
-    "s2.title":"选主题","s2.desc":"从 20 套主题中挑选适合的场景，一键切换排版风格。",
-    "s3.title":"编辑并写回原文件","s3.desc":"修改自动写回 .md 原文件，或导出 HTML / PDF / 原生 Word 分享存档。",
-    "faq.title":"常见问题","faq.sub":"关于隐私、功能和购买的解答",
-    "faq.q1":"我的文件会上传到服务器吗？","faq.a1":"不会。Aura Reader 是本地优先架构，所有文件读写都在你的浏览器内通过 File System Access API 完成，不会上传到任何服务器。Pro 付费状态通过邮箱验证，仅存储你的邮箱和付费状态。",
-    "faq.q2":"Pro 和免费版有什么区别？","faq.a2":"免费版包含完整的 Markdown 阅读、2 套基础主题和单根目录浏览。Pro 解锁全部 20 套主题、原生 Word/PDF 导出、所见即所得编辑写回、多根目录管理、保存外部文档等高级功能。阅读功能永久免费。",
-    "faq.q3":"支持哪些浏览器？","faq.a3":"基于 Chromium 的浏览器（Chrome、Edge、Brave、Arc 等）均可使用，需要支持 File System Access API（Chrome 86+）。",
-    "faq.q4":"购买 Pro 后如何激活？","faq.a4":"点击插件内的「升级」按钮，使用邮箱注册并完成支付。支付成功后插件自动同步 Pro 状态。",
-    "dl.title":"选择你的浏览器，开始阅读","dl.sub":"安装后无需注册、无需服务器，立即体验温润的纸书阅读感",
-    "dl.chrome.name":"Chrome",
-    "dl.edge.name":"Edge",
-    "dl.firefox.name":"Firefox",
-    "dl.note":"",
-    "footer.copy":"© 2026 境相阅读 Aura Reader · 一款为 Markdown 打造的温润阅读器",
-    "auth.login":"登录","auth.register":"注册","auth.email":"邮箱","auth.password":"密码","auth.confirm":"确认密码",
-    "auth.upgrade":"购买 Pro · $12.99","auth.logout":"退出登录","auth.errEmpty":"请填写所有字段","auth.errShort":"密码至少 8 位","auth.errMatch":"两次密码不一致","auth.errNetwork":"网络错误，请检查连接后重试","auth.errFail":"操作失败，请重试","auth.successReg":"注册成功！","auth.welcome":"已登录",
-    "auth.forgot":"忘记密码？","auth.resetHint":"输入注册邮箱，我们将发送密码重置链接","auth.sendReset":"发送重置邮件","auth.backLogin":"返回登录","auth.resetSent":"重置邮件已发送，请检查邮箱","auth.resetSuccess":"密码重置成功！请重新登录"
-  },
-  en:{
-    "brand":"Aura Reader",
-    "nav.features":"Features","nav.themes":"Themes","nav.pricing":"Pricing","nav.faq":"FAQ","nav.download":"Download","nav.install":"Install","nav.github":"GitHub","nav.login":"Sign In",
-    "hero.eyebrow":"Local-first · Zero deployment · Direct file read/write",
-    "hero.title":"A lightweight Markdown tool built for browsers",
-    "hero.sub":"Enjoy reading, enjoy writing",
-    "hero.cta1":"Install","hero.cta2":"Themes",
-    "badge.free":"Free","badge.pro":"Pro",
-    "diff1.title":"Local-first · Zero deployment","diff1.desc":"No server, no uploads. Everything stays on your machine.",
-    "diff2.title":"Direct file read/write","diff2.desc":"Read and write original files via File System Access API. No duplicate copies.",
-    "diff3.title":"Native Word export","diff3.desc":"Export truly editable Word documents, not pasted HTML.",
-    "diff4.title":"WeChat-ready copy","diff4.desc":"Inline-styled by your chosen theme — paste into the WeChat editor without breaking formatting.",
-    "feat.title":"A Markdown reader built for makers","feat.sub":"Warm, focused, and customizable — every read feels like paper.",
-    "f1.title":"20 themes","f1.desc":"Six families: Aura, Paper, Rhythm, Dark, Archive, WeChat.",
-    "f2.title":"WYSIWYG editing","f2.desc":"Edit as you see; auto-saves back to the original file, no duplicates.",
-    "f3.title":"Folder browsing","f3.desc":"Multiple roots, search, image preview, manage docs like a bookshelf.",
-    "f4.title":"One-click export","f4.desc":"Export HTML / PDF / native editable Word (real Word objects, not pasted HTML).",
-    "f5.title":"Tabs & outline","f5.desc":"Multi-tab editor, heading outline, live KaTeX math and Mermaid diagrams.",
-    "f6.title":"Search & drag","f6.desc":"Instant search and drag files across folders; image references auto-rewritten.",
-    "f7.title":"Save external docs","f7.desc":"Save Markdown documents from the web to your local folders for offline reading.",
-    "f8.title":"Session restore","f8.desc":"Open tabs and paths persist; automatically restored after reload.",
-    "themes.title":"20 Themes · Six Families","themes.sub":"Aura, Paper, Rhythm, Dark, Archive, WeChat — covering reading, writing, layout, and publishing.",
-    "t1.name":"Amber","t1.desc":"Warm amber · Serif body · Paper-book feel",
-    "t2.name":"Native","t2.desc":"GitHub-style · Technical docs · Universal",
-    "t3.name":"Forest","t3.desc":"Forest green · Journal layout · Natural",
-    "t4.name":"Latte","t4.desc":"Coffee tones · Rounded weight · Lazy afternoon",
-    "t5.name":"Night Film","t5.desc":"Dark film · Immersive · Eye-friendly",
-    "t6.name":"WeChat Fresh","t6.desc":"Fresh green · WeChat layout · One-click export",
-    "privacy.title":"Your docs stay on your machine","privacy.sub":"Local-first, zero uploads: content is only accessed under explicit directory permissions; rendering and exports are sanitized with DOMPurify, third-party libraries are bundled locally, permissions are minimized.",
-    "p1.title":"No uploads","p1.desc":"No data leaves your machine; everything stays local.",
-    "p2.title":"Authorized folders only","p2.desc":"Only read and write folders you explicitly authorize. Revoke anytime.",
-    "p3.title":"Sanitized + strict CSP","p3.desc":"Double-sanitized rendering and export; scripts from local sources only.",
-    "p4.title":"Libraries bundled locally","p4.desc":"marked / Vditor / docx bundled locally; no remote loading.",
-    "pricing.title":"Start free, upgrade when you need","pricing.sub":"Reading is free forever; themes, export, and editing unlock with a one-time Pro purchase",
-    "price.free.plan":"Free","price.free.cost":"$0",
-    "price.free.f1":"Markdown rendering & reading","price.free.f2":"2 base themes (Native · Amber)","price.free.f3":"Folder browsing (single root)",
-    "price.free.f4":"All 20 themes","price.free.f5":"Native Word / PDF export","price.free.f6":"WYSIWYG editing & write-back",
-    "price.free.btn":"Install Free",
-    "price.pro.tag":"Recommended","price.pro.plan":"Pro","price.pro.cost":"$12.99 <span class='unit'>one-time</span>",
-    "price.pro.f1":"All 20 themes (six families)","price.pro.f2":"Native Word / PDF / HTML export","price.pro.f3":"WYSIWYG editing, auto write-back",
-    "price.pro.f4":"Multi-root folder management","price.pro.f5":"Save external documents locally","price.pro.f6":"Lifetime updates, no subscription",
-    "price.pro.btn":"Buy Pro · $12.99",
-    "steps.title":"Get started in three steps","steps.sub":"No complex setup — as easy as opening a book",
-    "s1.title":"Pick a folder","s1.desc":"Authorize one or more local Markdown folders as roots and browse recursively.",
-    "s2.title":"Pick a theme","s2.desc":"Choose from 20 themes across six families, switch layout style in one click.",
-    "s3.title":"Edit & write back","s3.desc":"Edits auto-save back to the original .md, or export to HTML / PDF / native Word.",
-    "faq.title":"Frequently Asked Questions","faq.sub":"Answers about privacy, features, and purchasing",
-    "faq.q1":"Are my files uploaded to a server?","faq.a1":"No. Aura Reader is local-first — all file reads and writes happen in your browser via the File System Access API. Nothing is uploaded. Pro status is verified by email; only your email and payment status are stored.",
-    "faq.q2":"What's the difference between Free and Pro?","faq.a2":"Free includes full Markdown reading, 2 base themes, and single-root folder browsing. Pro unlocks all 20 themes, native Word/PDF export, WYSIWYG editing with write-back, multi-root management, saving external documents, and more. Reading is free forever.",
-    "faq.q3":"Which browsers are supported?","faq.a3":"Any Chromium-based browser (Chrome, Edge, Brave, Arc, etc.) with File System Access API support (Chrome 86+).",
-    "faq.q4":"How do I activate Pro after purchasing?","faq.a4":"Click the 'Upgrade' button in the extension, register with your email, and complete payment. Pro status syncs automatically.",
-    "dl.title":"Choose your browser and start reading","dl.sub":"No account, no server — install and experience a paper-book feel immediately",
-    "dl.chrome.name":"Chrome",
-    "dl.edge.name":"Edge",
-    "dl.firefox.name":"Firefox",
-    "dl.note":"",
-    "footer.copy":"© 2026 Aura Reader · A warm Markdown reader and writer",
-    "auth.login":"Login","auth.register":"Register","auth.email":"Email","auth.password":"Password","auth.confirm":"Confirm Password",
-    "auth.upgrade":"Buy Pro · $12.99","auth.logout":"Log Out","auth.errEmpty":"Please fill in all fields","auth.errShort":"Password must be at least 8 characters","auth.errMatch":"Passwords do not match","auth.errNetwork":"Network error. Please check your connection.","auth.errFail":"Operation failed. Please try again.","auth.successReg":"Account created!","auth.welcome":"Logged in",
-    "auth.forgot":"Forgot password?","auth.resetHint":"Enter your registered email and we'll send you a password reset link","auth.sendReset":"Send Reset Email","auth.backLogin":"Back to Login","auth.resetSent":"Reset email sent. Please check your inbox.","auth.resetSuccess":"Password reset successful! Please log in again."
-  }
-};
-let currentLang = "en";
-function setLang(lang){
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-i18n]").forEach(el=>{
-    const key = el.getAttribute("data-i18n");
-    const val = I18N[lang][key];
-    if(val!==undefined) el.textContent = val;
-  });
-  document.querySelectorAll("[data-i18n-html]").forEach(el=>{
-    const key = el.getAttribute("data-i18n-html");
-    const val = I18N[lang][key];
-    if(val!==undefined) el.innerHTML = val;
-  });
-  document.getElementById("lang-zh").classList.toggle("active", lang==="zh");
-  document.getElementById("lang-en").classList.toggle("active", lang==="en");
-  updateNavAuth();
-}
-function toggleFaq(btn){
-  btn.classList.toggle("open");
-  const ans = btn.nextElementSibling;
-  ans.classList.toggle("open");
-}
-
-// ---------- Auth Modal ----------
-const AUTH_API = 'https://aura-reader-api.fenghua25.workers.dev';
-const AUTH_TOKEN_KEY = 'aura-jwt';
-const AUTH_STATUS_KEY = 'aura-pro-status';
-
-function updateNavAuth(){
-  const navLinks = document.querySelectorAll('[data-i18n="nav.login"]');
-  const token = localStorage.getItem(AUTH_TOKEN_KEY);
-  if(token){
-    let email = null;
-    try { email = JSON.parse(atob(token.split('.')[1])).email; } catch {}
-    navLinks.forEach(el => {
-      if(email){
-        el.textContent = email.split('@')[0];
-      } else {
-        el.textContent = currentLang === 'zh' ? '我的账户' : 'Account';
-      }
-    });
-  } else {
-    navLinks.forEach(el => {
-      el.textContent = I18N[currentLang]['nav.login'];
-    });
-  }
-}
-
-function openAuthModal(){
-  const overlay = document.getElementById('authOverlay');
-  overlay.classList.add('show');
-  if(localStorage.getItem(AUTH_TOKEN_KEY)){
-    checkAuthStatus();
-  }
-}
-function closeAuthModal(){
-  document.getElementById('authOverlay').classList.remove('show');
-}
-function switchAuthTab(tab){
-  const tl = document.getElementById('tabLogin');
-  const tr = document.getElementById('tabRegister');
-  const lf = document.getElementById('loginForm');
-  const rf = document.getElementById('registerForm');
-  const resetF = document.getElementById('resetForm');
-  const alertEl = document.getElementById('authAlert');
-  alertEl.classList.remove('show','error','success');
-  resetF.classList.add('hidden');
-  if(tab === 'login'){
-    tl.classList.add('active'); tr.classList.remove('active');
-    lf.classList.remove('hidden'); rf.classList.add('hidden');
-  } else {
-    tr.classList.add('active'); tl.classList.remove('active');
-    rf.classList.remove('hidden'); lf.classList.add('hidden');
-  }
-}
-function switchAuthView(view){
-  const lf = document.getElementById('loginForm');
-  const rf = document.getElementById('registerForm');
-  const resetF = document.getElementById('resetForm');
-  const tl = document.getElementById('tabLogin');
-  const tr = document.getElementById('tabRegister');
-  const alertEl = document.getElementById('authAlert');
-  alertEl.classList.remove('show','error','success');
-  if(view === 'reset'){
-    lf.classList.add('hidden'); rf.classList.add('hidden');
-    resetF.classList.remove('hidden');
-    tl.classList.remove('active'); tr.classList.remove('active');
-  } else {
-    resetF.classList.add('hidden');
-    lf.classList.remove('hidden'); rf.classList.add('hidden');
-    tl.classList.add('active'); tr.classList.remove('active');
-  }
-}
-function showAuthAlert(type, msg){
-  const el = document.getElementById('authAlert');
-  el.textContent = msg;
-  el.className = 'auth-alert show ' + type;
-}
-function getAuthEmail(){
-  const token = localStorage.getItem(AUTH_TOKEN_KEY);
-  if(!token) return null;
-  try { return JSON.parse(atob(token.split('.')[1])).email; } catch { return null; }
-}
-async function doLogin(e){
-  e.preventDefault();
-  const email = document.getElementById('loginEmail').value.trim();
-  const password = document.getElementById('loginPassword').value;
-  const t = I18N[currentLang];
-  if(!email || !password){ showAuthAlert('error', t['auth.errEmpty']); return false; }
-  const btn = document.getElementById('loginBtn');
-  btn.disabled = true;
-  try {
-    const res = await fetch(AUTH_API + '/api/auth/login', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({email, password})
-    });
-    const data = await res.json();
-    if(data.token){
-      localStorage.setItem(AUTH_TOKEN_KEY, data.token);
-      await checkAuthStatus();
-    } else {
-      showAuthAlert('error', data.error || t['auth.errFail']);
-    }
-  } catch { showAuthAlert('error', t['auth.errNetwork']); }
-  btn.disabled = false;
-  return false;
-}
-async function doRegister(e){
-  e.preventDefault();
-  const email = document.getElementById('regEmail').value.trim();
-  const password = document.getElementById('regPassword').value;
-  const password2 = document.getElementById('regPassword2').value;
-  const t = I18N[currentLang];
-  if(!email || !password){ showAuthAlert('error', t['auth.errEmpty']); return false; }
-  if(password.length < 8){ showAuthAlert('error', t['auth.errShort']); return false; }
-  if(password !== password2){ showAuthAlert('error', t['auth.errMatch']); return false; }
-  const btn = document.getElementById('registerBtn');
-  btn.disabled = true;
-  try {
-    const res = await fetch(AUTH_API + '/api/auth/register', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({email, password})
-    });
-    const data = await res.json();
-    if(data.token){
-      localStorage.setItem(AUTH_TOKEN_KEY, data.token);
-      await checkAuthStatus();
-    } else {
-      showAuthAlert('error', data.error || t['auth.errFail']);
-    }
-  } catch { showAuthAlert('error', t['auth.errNetwork']); }
-  btn.disabled = false;
-  return false;
-}
-async function doResetRequest(e){
-  e.preventDefault();
-  const email = document.getElementById('resetEmail').value.trim();
-  const t = I18N[currentLang];
-  if(!email){ showAuthAlert('error', t['auth.errEmpty']); return false; }
-  const btn = document.getElementById('resetBtn');
-  btn.disabled = true;
-  try {
-    await fetch(AUTH_API + '/api/auth/reset-request', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({email})
-    });
-    showAuthAlert('success', t['auth.resetSent']);
-  } catch { showAuthAlert('error', t['auth.errNetwork']); }
-  btn.disabled = false;
-  return false;
-}
-async function checkAuthStatus(){
-  const token = localStorage.getItem(AUTH_TOKEN_KEY);
-  if(!token) return;
-  const email = getAuthEmail();
-  document.getElementById('authUserEmail').textContent = email || '';
-  document.getElementById('authForms').style.display = 'none';
-  document.getElementById('authUser').classList.add('show');
-  try {
-    const res = await fetch(AUTH_API + '/api/user/status', {
-      headers: {'Authorization': 'Bearer ' + token}
-    });
-    if(res.status === 401){
-      localStorage.removeItem(AUTH_TOKEN_KEY);
-      localStorage.removeItem(AUTH_STATUS_KEY);
-      document.getElementById('authForms').style.display = '';
-      document.getElementById('authUser').classList.remove('show');
-      return;
-    }
-    const data = await res.json();
-    localStorage.setItem(AUTH_STATUS_KEY, JSON.stringify({paid:data.paid, plan:data.plan, cachedAt:Date.now()}));
-    const badge = document.getElementById('authUserPlan');
-    const upgrade = document.getElementById('authUpgrade');
-    if(data.paid){
-      badge.textContent = 'Pro'; badge.className = 'plan pro';
-      upgrade.style.display = 'none';
-    } else {
-      badge.textContent = 'Free'; badge.className = 'plan free';
-      upgrade.style.display = '';
-    }
-  } catch {
-    const cached = JSON.parse(localStorage.getItem(AUTH_STATUS_KEY) || '{}');
-    const badge = document.getElementById('authUserPlan');
-    if(cached.paid){ badge.textContent = 'Pro'; badge.className = 'plan pro'; }
-  }
-  updateNavAuth();
-}
-function doLogout(){
-  localStorage.removeItem(AUTH_TOKEN_KEY);
-  localStorage.removeItem(AUTH_STATUS_KEY);
-  document.getElementById('authUser').classList.remove('show');
-  document.getElementById('authForms').style.display = '';
-  document.getElementById('loginForm').classList.remove('hidden');
-  document.getElementById('registerForm').classList.add('hidden');
-  document.getElementById('tabLogin').classList.add('active');
-  document.getElementById('tabRegister').classList.remove('active');
-  updateNavAuth();
-}
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeAuthModal(); });
-setLang(currentLang);
-</script>
+<script src="assets/app.js"></script>
 </body>
 </html>

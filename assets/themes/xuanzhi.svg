@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" font-family="'PingFang SC', 'Segoe UI', sans-serif">
+  <rect width="600" height="400" fill="#fbf6ea"/>
+  <!-- window chrome -->
+  <rect x="0" y="0" width="600" height="44" fill="#fffaf0"/>
+  <circle cx="22" cy="22" r="6" fill="#e8a09a"/>
+  <circle cx="42" cy="22" r="6" fill="#e6c98a"/>
+  <circle cx="62" cy="22" r="6" fill="#a6cf9b"/>
+  <rect x="250" y="14" width="300" height="16" rx="8" fill="#efe6d6"/>
+  <!-- sidebar -->
+  <rect x="0" y="44" width="150" height="356" fill="#fffaf0"/>
+  <text x="22" y="58" font-family="'PingFang SC', 'Segoe UI', sans-serif" font-size="11" letter-spacing="1.5" fill="#7a6a52" opacity=".8">LIBRARY</text>
+  
+    <rect x="22" y="70" width="106" height="20" rx="5" fill="#fffef9"/>
+    <rect x="22" y="70" width="4" height="20" rx="2" fill="#b9824f" opacity=".8"/>
+    <rect x="36" y="76" width="64" height="8" rx="4" fill="#7a6a52" opacity=".5"/>
+    <rect x="22" y="104" width="106" height="20" rx="5" fill="#fffef9"/>
+    <rect x="22" y="104" width="4" height="20" rx="2" fill="#b9824f" opacity=".8"/>
+    <rect x="36" y="110" width="52" height="8" rx="4" fill="#7a6a52" opacity=".5"/>
+    <rect x="22" y="138" width="106" height="20" rx="5" fill="#fffef9"/>
+    <rect x="22" y="138" width="4" height="20" rx="2" fill="#b9824f" opacity=".8"/>
+    <rect x="36" y="144" width="72" height="8" rx="4" fill="#7a6a52" opacity=".5"/>
+    <rect x="22" y="172" width="106" height="20" rx="5" fill="#fffef9"/>
+    <rect x="22" y="172" width="4" height="20" rx="2" fill="#b9824f" opacity=".8"/>
+    <rect x="36" y="178" width="44" height="8" rx="4" fill="#7a6a52" opacity=".5"/>
+  <!-- content -->
+  <text x="188" y="96" font-family="Georgia, 'Songti SC', serif" font-size="30" font-weight="700" fill="#3a3024">宣纸 · 信笺</text>
+  <text x="188" y="120" font-family="'PingFang SC', 'Segoe UI', sans-serif" font-size="13" fill="#b9824f">Rice-paper cream</text>
+  <line x1="188" y1="138" x2="572" y2="138" stroke="rgba(44,38,32,.10)"/>
+  <text x="188" y="232" font-family="'PingFang SC', 'Segoe UI', sans-serif" font-size="14" fill="rgba(44,38,32,.45)">以宣纸般的米色为底，衬线正文温润如</text><text x="188" y="258" font-family="'PingFang SC', 'Segoe UI', sans-serif" font-size="14" fill="rgba(44,38,32,.45)">信笺，适合长篇书写与东方排版。</text>
+  <!-- quote / code block -->
+  <rect x="188" y="290" width="384" height="64" rx="10" fill="#fffef9" stroke="rgba(44,38,32,.10)"/>
+  <rect x="188" y="290" width="5" height="64" rx="2.5" fill="#b9824f"/>
+  <text x="208" y="314" font-family="Georgia, 'Songti SC', serif" font-style="italic" font-size="15" fill="#3a3024">“落笔如有神，纸上生清风。”</text>
+  <text x="208" y="336" font-family="'PingFang SC', 'Segoe UI', sans-serif" font-size="11" fill="#7a6a52" opacity=".8">— Aura Reader</text>
+</svg>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" role="img" aria-label="Aura Reader paper-realm interface">
+  <defs>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#9a6a43" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <!-- canvas -->
+  <rect width="1200" height="720" fill="#faf6ef"/>
+  <!-- window -->
+  <g filter="url(#cardShadow)">
+    <rect x="32" y="32" width="1136" height="656" rx="14" fill="#f6efe2" stroke="#e6d8bb" stroke-width="1"/>
+    <!-- title bar -->
+    <rect x="32" y="32" width="1136" height="56" rx="14" fill="#eee2cc"/>
+    <rect x="32" y="74" width="1136" height="14" fill="#eee2cc"/>
+    
+  <circle cx="62" cy="60" r="9" fill="#e8b7a0"/>
+  <circle cx="88" cy="60" r="9" fill="#e8d4a0"/>
+  <circle cx="114" cy="60" r="9" fill="#b9d6a0"/>
+
+    
+  <g transform="translate(232, 44)">
+    <rect width="220" height="32" rx="6" fill="#faf6ef" stroke="#e6d8bb"/>
+    <text x="20" y="22" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#3d2f22">reading-notes.md</text>
+    <circle cx="200" cy="17" r="4" fill="#cdb892"/>
+  </g>
+
+    
+  <g transform="translate(948, 50)" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6b5544">
+    <rect x="0"   y="0" width="50" height="22" rx="4" fill="#faf6ef"/>
+    <text x="25"  y="15" text-anchor="middle">Today</text>
+    <rect x="56"  y="0" width="64" height="22" rx="4" fill="#faf6ef"/>
+    <text x="88"  y="15" text-anchor="middle">Search</text>
+    <rect x="126" y="0" width="62" height="22" rx="4" fill="#9a6a43"/>
+    <text x="157" y="15" text-anchor="middle" fill="#faf6ef" font-weight="600">Edit</text>
+  </g>
+
+  </g>
+  <!-- sidebar -->
+  <rect x="32" y="88" width="260" height="600" fill="#efe4cf"/>
+  <line x1="292" y1="88" x2="292" y2="688" stroke="#e6d8bb" stroke-width="1"/>
+  
+  <g transform="translate(60, 116)" font-family="Inter, system-ui, sans-serif">
+    <text x="0" y="0" font-size="11" font-weight="700" fill="#6b5544" letter-spacing="1.5">LIBRARY · 24</text>
+  </g>
+
+  
+    <g transform="translate(54, 158)" font-family="Inter, system-ui, sans-serif">
+      <rect x="54" y="140" width="224" height="34" rx="6" fill="#e6d8bb"/>
+      <rect x="6" y="6" width="8" height="8" rx="2" fill="#9a6a43"/>
+      <text x="22" y="12" font-size="13" font-weight="600" fill="#3d2f22">Reading notes</text>
+      <text x="200" y="12" font-size="11" fill="#6b5544" opacity=".7">now</text>
+    </g>
+    <g transform="translate(54, 198)" font-family="Inter, system-ui, sans-serif">
+      
+      <rect x="6" y="6" width="8" height="8" rx="2" fill="#b8965a"/>
+      <text x="22" y="12" font-size="13" font-weight="500" fill="#6b5544">Webhook design</text>
+      <text x="200" y="12" font-size="11" fill="#6b5544" opacity=".7">2h</text>
+    </g>
+    <g transform="translate(54, 238)" font-family="Inter, system-ui, sans-serif">
+      
+      <rect x="6" y="6" width="8" height="8" rx="2" fill="#8a6e44"/>
+      <text x="22" y="12" font-size="13" font-weight="500" fill="#6b5544">Wave journal</text>
+      <text x="200" y="12" font-size="11" fill="#6b5544" opacity=".7">1d</text>
+    </g>
+    <g transform="translate(54, 278)" font-family="Inter, system-ui, sans-serif">
+      
+      <rect x="6" y="6" width="8" height="8" rx="2" fill="#a87f3a"/>
+      <text x="22" y="12" font-size="13" font-weight="500" fill="#6b5544">Paper sketches</text>
+      <text x="200" y="12" font-size="11" fill="#6b5544" opacity=".7">3d</text>
+    </g>
+    <g transform="translate(54, 318)" font-family="Inter, system-ui, sans-serif">
+      
+      <rect x="6" y="6" width="8" height="8" rx="2" fill="#9a6a43"/>
+      <text x="22" y="12" font-size="13" font-weight="500" fill="#6b5544">Quote garden</text>
+      <text x="200" y="12" font-size="11" fill="#6b5544" opacity=".7">1w</text>
+    </g>
+    <g transform="translate(54, 358)" font-family="Inter, system-ui, sans-serif">
+      
+      <rect x="6" y="6" width="8" height="8" rx="2" fill="#b8965a"/>
+      <text x="22" y="12" font-size="13" font-weight="500" fill="#6b5544">Field notes</text>
+      <text x="200" y="12" font-size="11" fill="#6b5544" opacity=".7">2w</text>
+    </g>
+  <!-- content -->
+  
+  <g transform="translate(328, 142)" font-family="'Fraunces', 'Noto Serif SC', serif">
+    <text x="0" y="0" font-size="42" font-weight="700" fill="#3d2f22" letter-spacing="-1">晨光里的</text>
+    <text x="0" y="50" font-size="42" font-weight="700" fill="#3d2f22" letter-spacing="-1">阅读笔记</text>
+  </g>
+
+  
+  <g transform="translate(328, 258)" font-family="Inter, system-ui, sans-serif" font-size="12">
+    <text x="0" y="0" font-weight="600" fill="#9a6a43" letter-spacing="0.5">FENG · AUG 27, 2026</text>
+    <text x="200" y="0" font-weight="500" fill="#6b5544">·  8 min read  ·  Paper Realm #3</text>
+  </g>
+
+  
+  <line x1="328" y1="278" x2="1072" y2="278" stroke="#e6d8bb" stroke-width="1.5"/>
+
+  
+  <rect x="328" y="304" width="640" height="12" rx="3" fill="#3d2f22" opacity="0.85"/><rect x="328" y="324" width="600" height="12" rx="3" fill="#3d2f22" opacity="0.77"/><rect x="328" y="344" width="510" height="12" rx="3" fill="#3d2f22" opacity="0.69"/>
+
+  
+  <g transform="translate(328, 388)">
+    <rect x="0" y="0" width="4" height="62" fill="#9a6a43"/>
+    <text x="20" y="22" font-family="'Fraunces', serif" font-size="22" font-weight="600" font-style="italic" fill="#3d2f22">“The morning sun makes even</text>
+    <text x="20" y="50" font-family="'Fraunces', serif" font-size="22" font-weight="600" font-style="italic" fill="#3d2f22">a long shadow feel warm.”</text>
+  </g>
+
+  
+  <rect x="328" y="484" width="560" height="12" rx="3" fill="#3d2f22" opacity="0.85"/><rect x="328" y="504" width="520" height="12" rx="3" fill="#3d2f22" opacity="0.77"/><rect x="328" y="524" width="480" height="12" rx="3" fill="#3d2f22" opacity="0.69"/><rect x="328" y="544" width="380" height="12" rx="3" fill="#3d2f22" opacity="0.61"/>
+
+  
+  <g transform="translate(328, 582)" font-family="Inter, system-ui, sans-serif" font-size="11">
+    <rect x="0" y="0" width="78" height="22" rx="11" fill="#e6d8bb"/>
+    <text x="39" y="15" text-anchor="middle" fill="#6b5544" font-weight="500">reading</text>
+    <rect x="86" y="0" width="68" height="22" rx="11" fill="#e6d8bb"/>
+    <text x="120" y="15" text-anchor="middle" fill="#6b5544" font-weight="500">paper</text>
+    <rect x="162" y="0" width="92" height="22" rx="11" fill="#e6d8bb"/>
+    <text x="208" y="15" text-anchor="middle" fill="#6b5544" font-weight="500">morning</text>
+  </g>
+
+  
+  <rect x="816" y="522" width="2" height="14" fill="#9a6a43"/>
+
+</svg>
