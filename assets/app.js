@@ -1,4 +1,4 @@
-﻿/* =============================================================
+/* =============================================================
  * JingMark — Landing page i18n + UI logic
  * 13 languages: en zh zh-tw ja ko fr de es pt ru vi sv ar
  * Single source of truth for all copy. Key parity enforced.
@@ -1983,7 +1983,7 @@
 
   /* ============================ UI logic ============================ */
   const STORE_KEY = 'jingmark-lang';
-  const CREEM_URL = 'https://creem.io/payment/prod_6uXEIs0CjyYKzcJn6J6jJF';
+  const CREEM_URL = 'https://www.creem.io/payment/prod_2CZgvuTFBQXMiyF0owBU8g';
   const AUTH_API = 'https://jingmark-api.fenghua25.workers.dev';
   const AUTH_TOKEN_KEY = 'jingmark-jwt';
   const AUTH_STATUS_KEY = 'jingmark-pro-status';
@@ -2194,6 +2194,15 @@
     if (!token) return null;
     try { return JSON.parse(atob(token.split('.')[1])).email; } catch (e) { return null; }
   }
+  // Checkout: metadata carries the JingMark account email so the Creem webhook
+  // can activate the right account even if the payer uses another mailbox.
+  function buildCheckoutUrl() {
+    const email = getAuthEmail();
+    return CREEM_URL + (email ? '?metadata%5Bjingmark_email%5D=' + encodeURIComponent(email) : '');
+  }
+  function refreshCheckoutLinks() {
+    document.querySelectorAll('a[href^="' + CREEM_URL + '"]').forEach(function (a) { a.href = buildCheckoutUrl(); });
+  }
   async function doLogin(e) {
     e.preventDefault();
     const email = document.getElementById('loginEmail').value.trim();
@@ -2256,7 +2265,7 @@
       const badge = document.getElementById('authUserPlan');
       const upgrade = document.getElementById('authUpgrade');
       if (data.paid) { badge.textContent = 'Pro'; badge.className = 'plan pro'; if (upgrade) upgrade.style.display = 'none'; }
-      else { badge.textContent = 'Free'; badge.className = 'plan free'; if (upgrade) upgrade.style.display = ''; }
+      else { badge.textContent = 'Free'; badge.className = 'plan free'; if (upgrade) { upgrade.style.display = ''; upgrade.href = buildCheckoutUrl(); } }
     } catch (e) {
       const cached = JSON.parse(localStorage.getItem(AUTH_STATUS_KEY) || '{}');
       const badge = document.getElementById('authUserPlan');
@@ -2288,6 +2297,8 @@
     // Click on the dimmed overlay (outside the modal card) closes the modal
     const authOverlay = document.getElementById('authOverlay');
     if (authOverlay) authOverlay.addEventListener('click', function (e) { if (e.target === authOverlay) closeAuthModal(); });
+    // Inject the logged-in email into static checkout links (#authUpgrade / .price-btn)
+    refreshCheckoutLinks();
   });
 
   /* Expose auth handlers so the inline on* handlers in index.html can reach them.

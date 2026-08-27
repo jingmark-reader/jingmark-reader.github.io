@@ -116,8 +116,12 @@
   <script>
     const API_BASE = 'https://jingmark-api.fenghua25.workers.dev';
     const TOKEN_KEY = 'jingmark-jwt';
-    // Creem checkout URL
-    const CREEM_CHECKOUT_URL = 'https://creem.io/payment/prod_6uXEIs0CjyYKzcJn6J6jJF';
+    // Creem checkout URL：metadata 带登录邮箱，webhook 据此开通对应账户
+    const CREEM_CHECKOUT_URL = 'https://www.creem.io/payment/prod_2CZgvuTFBQXMiyF0owBU8g';
+    function checkoutUrl() {
+      const email = getEmail();
+      return CREEM_CHECKOUT_URL + (email ? '?metadata%5Bjingmark_email%5D=' + encodeURIComponent(email) : '');
+    }
 
     function getToken() { return localStorage.getItem(TOKEN_KEY); }
     function clearToken() { localStorage.removeItem(TOKEN_KEY); localStorage.removeItem('jingmark-pro-status'); }
@@ -203,7 +207,7 @@
       btn.disabled = true;
 
       // Open Creem checkout in new tab
-      window.open(CREEM_CHECKOUT_URL, '_blank');
+      window.open(checkoutUrl(), '_blank');
 
       // Switch to processing view
       freePlanView.classList.add('hidden');
