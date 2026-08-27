@@ -30,7 +30,7 @@
       <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Reset Password</button>
     </form>
     <div id="loginLink" style="display:none;margin-top:16px;">
-      <a href="https://jingmark.github.io">Back to Home</a>
+      <a href="https://jingmark-reader.github.io">Back to Home</a>
     </div>
   </div>
 
@@ -100,7 +100,7 @@ async function doReset(e){
       document.getElementById('resetForm').style.display = 'none';
       document.getElementById('loginLink').style.display = 'block';
       document.querySelector('#loginLink a').textContent = T.loginLink;
-      setTimeout(() => { window.location.href = 'https://jingmark.github.io'; }, 3000);
+      setTimeout(() => { window.location.href = 'https://jingmark-reader.github.io'; }, 3000);
     } else {
       showAlert('error', data.error === 'Invalid or expired token' || data.error === 'Token expired' ? T.errToken : T.errFail);
     }

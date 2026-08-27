@@ -58,7 +58,7 @@ const FOOT = `
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
     <a href="changelog.html">Changelog</a>
-    <a href="mailto:hello@aura-reader.com">Contact</a>
+    <a href="mailto:hello@jingmark-reader.com">Contact</a>
     <a href="index.html">Home</a>
   </div>
   <p class="foot-copy">© 2026 JingMark · A warm Markdown reader &amp; writer for the browser.</p>
@@ -93,7 +93,7 @@ const privacy = HEAD("Privacy Policy") + `
   <p>JingMark is not directed at children under 13 and we do not knowingly collect their data.</p>
 
   <h2>6. Changes &amp; contact</h2>
-  <p>We may update this policy and will post the new version here. Questions? Email <a href="mailto:hello@aura-reader.com">hello@aura-reader.com</a>.</p>
+  <p>We may update this policy and will post the new version here. Questions? Email <a href="mailto:hello@jingmark-reader.com">hello@jingmark-reader.com</a>.</p>
 </main>` + FOOT;
 
 const terms = HEAD("Terms of Service") + `
@@ -124,7 +124,7 @@ const terms = HEAD("Terms of Service") + `
   <p>The software is provided without warranty. We may suspend access for abuse. These terms may change; continued use after changes constitutes acceptance.</p>
 
   <h2>7. Contact</h2>
-  <p>Questions? Email <a href="mailto:hello@aura-reader.com">hello@aura-reader.com</a>.</p>
+  <p>Questions? Email <a href="mailto:hello@jingmark-reader.com">hello@jingmark-reader.com</a>.</p>
 </main>` + FOOT;
 
 const changelog = HEAD("Changelog") + `
