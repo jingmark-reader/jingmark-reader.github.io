@@ -31,5 +31,5 @@
   <rect x="188" y="290" width="384" height="64" rx="10" fill="#fffdf8" stroke="rgba(44,38,32,.10)"/>
   <rect x="188" y="290" width="5" height="64" rx="2.5" fill="#9a6a43"/>
   <text x="208" y="314" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="15" fill="#2c2620">“Reading should feel like turning pages.”</text>
-  <text x="208" y="336" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#6b5d4b" opacity=".8">— Aura Reader</text>
+  <text x="208" y="336" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#6b5d4b" opacity=".8">— JingMark</text>
 </svg>

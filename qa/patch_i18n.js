@@ -1,8 +1,8 @@
 const fs = require('fs');
-const path = 'D:/开发/插件/aura-reader-pages/assets/app.js';
+const path = 'D:/开发/插件/jingmark-pages/assets/app.js';
 let src = fs.readFileSync(path, 'utf8');
 
-const updates = JSON.parse(fs.readFileSync('D:/开发/插件/aura-reader-pages/qa/updates.json', 'utf8'));
+const updates = JSON.parse(fs.readFileSync('D:/开发/插件/jingmark-pages/qa/updates.json', 'utf8'));
 
 // 1) Extract I18N literal via brace matching
 const startIdx = src.indexOf('const I18N =');

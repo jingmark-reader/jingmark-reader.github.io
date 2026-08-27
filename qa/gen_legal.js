@@ -38,8 +38,8 @@ const HEAD = (title) => `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${title} · Aura Reader</title>
-<meta name="description" content="${title} for Aura Reader, a local-first Markdown reader & writer.">
+<title>${title} · JingMark</title>
+<meta name="description" content="${title} for JingMark, a local-first Markdown reader & writer.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
@@ -47,7 +47,7 @@ const HEAD = (title) => `<!DOCTYPE html>
 </head>
 <body>
 <header class="nav"><div class="nav-inner">
-  <a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10.5" rx="4.5" ry="5.5" fill="#fff4d8" fill-opacity="0.4"/><circle cx="24" cy="10.5" r="1.6" fill="#fffaf0"/><path d="M23 12.5L12.2 35c-.5 1 .5 1.3 1.5 1.3H17c1 0 1.5-.3 2-1.3l2.5-6.5H23Z" fill="#fffdf8"/><path d="M25 12.5L35.8 35c.5 1-.5 1.3-1.5 1.3H31c-1 0-1.5-.3-2-1.3l-2.5-6.5H25Z" fill="#fffdf8" fill-opacity="0.85"/><path d="M21.8 27 24 23.2 26.2 27Z" fill="#9a6a43"/></svg></span>Aura Reader</a>
+  <a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10.5" rx="4.5" ry="5.5" fill="#fff4d8" fill-opacity="0.4"/><circle cx="24" cy="10.5" r="1.6" fill="#fffaf0"/><path d="M23 12.5L12.2 35c-.5 1 .5 1.3 1.5 1.3H17c1 0 1.5-.3 2-1.3l2.5-6.5H23Z" fill="#fffdf8"/><path d="M25 12.5L35.8 35c.5 1-.5 1.3-1.5 1.3H31c-1 0-1.5-.3-2-1.3l-2.5-6.5H25Z" fill="#fffdf8" fill-opacity="0.85"/><path d="M21.8 27 24 23.2 26.2 27Z" fill="#9a6a43"/></svg></span>JingMark</a>
   <a class="back" href="index.html">&larr; Back to home</a>
 </div></header>`;
 
@@ -61,7 +61,7 @@ const FOOT = `
     <a href="mailto:hello@aura-reader.com">Contact</a>
     <a href="index.html">Home</a>
   </div>
-  <p class="foot-copy">© 2026 Aura Reader · A warm Markdown reader &amp; writer for the browser.</p>
+  <p class="foot-copy">© 2026 JingMark · A warm Markdown reader &amp; writer for the browser.</p>
 </div></footer>
 </body>
 </html>`;
@@ -72,7 +72,7 @@ const privacy = HEAD("Privacy Policy") + `
   <h1>Privacy Policy</h1>
   <p class="updated">Last updated: August 2026</p>
 
-  <div class="card"><strong>Aura Reader is local-first.</strong> Every file you open and edit stays on your device. We do not upload, sync, or transmit your documents to any server.</div>
+  <div class="card"><strong>JingMark is local-first.</strong> Every file you open and edit stays on your device. We do not upload, sync, or transmit your documents to any server.</div>
 
   <h2>1. What we collect</h2>
   <ul>
@@ -81,16 +81,16 @@ const privacy = HEAD("Privacy Policy") + `
   </ul>
 
   <h2>2. File access</h2>
-  <p>Aura Reader reads and writes only the folders you explicitly authorize through the File System Access API. You can revoke access at any time from your browser's site settings. We never read files outside the folders you choose.</p>
+  <p>JingMark reads and writes only the folders you explicitly authorize through the File System Access API. You can revoke access at any time from your browser's site settings. We never read files outside the folders you choose.</p>
 
   <h2>3. Payments</h2>
-  <p>Pro purchases are processed by our payment partner <strong>Creem</strong>. Aura Reader never stores your card details; payment information is handled entirely by Creem under their own privacy policy.</p>
+  <p>Pro purchases are processed by our payment partner <strong>Creem</strong>. JingMark never stores your card details; payment information is handled entirely by Creem under their own privacy policy.</p>
 
   <h2>4. Rendering &amp; security</h2>
   <p>All Markdown rendering and export happen locally. Every render is sanitized (DOMPurify), third-party libraries (marked, Vditor, docx) are bundled inside the extension, and only local scripts ever run under a strict Content Security Policy.</p>
 
   <h2>5. Children</h2>
-  <p>Aura Reader is not directed at children under 13 and we do not knowingly collect their data.</p>
+  <p>JingMark is not directed at children under 13 and we do not knowingly collect their data.</p>
 
   <h2>6. Changes &amp; contact</h2>
   <p>We may update this policy and will post the new version here. Questions? Email <a href="mailto:hello@aura-reader.com">hello@aura-reader.com</a>.</p>
@@ -103,10 +103,10 @@ const terms = HEAD("Terms of Service") + `
   <p class="updated">Last updated: August 2026</p>
 
   <h2>1. Acceptance</h2>
-  <p>By installing or using Aura Reader you agree to these terms. The extension is provided "as is" for reading and writing Markdown on your own device.</p>
+  <p>By installing or using JingMark you agree to these terms. The extension is provided "as is" for reading and writing Markdown on your own device.</p>
 
   <h2>2. License &amp; use</h2>
-  <p>Aura Reader is licensed for personal and commercial use. You may not reverse-engineer, redistribute, or use the software to violate any law.</p>
+  <p>JingMark is licensed for personal and commercial use. You may not reverse-engineer, redistribute, or use the software to violate any law.</p>
 
   <h2>3. Pro license</h2>
   <ul>
@@ -118,7 +118,7 @@ const terms = HEAD("Terms of Service") + `
   <p>Payments are handled by Creem. Refunds follow Creem's refund policy and applicable consumer law. Activation keys are issued per device for offline use.</p>
 
   <h2>5. Intellectual property</h2>
-  <p>The software, name, and brand assets are owned by Aura Reader. Your documents remain entirely yours.</p>
+  <p>The software, name, and brand assets are owned by JingMark. Your documents remain entirely yours.</p>
 
   <h2>6. Disclaimer &amp; termination</h2>
   <p>The software is provided without warranty. We may suspend access for abuse. These terms may change; continued use after changes constitutes acceptance.</p>
@@ -131,7 +131,7 @@ const changelog = HEAD("Changelog") + `
 <main>
   <span class="eyebrow">Product</span>
   <h1>Changelog</h1>
-  <p class="updated">Release notes for Aura Reader</p>
+  <p class="updated">Release notes for JingMark</p>
 
   <div class="card cl"><span class="ver">v1.0.0</span><div><strong>Local-first reader</strong><br>Markdown reading &amp; writing through the File System Access API, 6 curated themes, folder library, and local-first privacy.</div></div>
   <div class="card cl"><span class="ver">v1.1.0</span><div><strong>Theme expansion</strong><br>Grew to <strong>46 themes across 6 families</strong> (Aura, Paper, Rhythm, Archive, Dark, Editorial) with a one-click switcher.</div></div>

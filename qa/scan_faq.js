@@ -10,8 +10,8 @@ const windowStub = new Proxy(function(){}, {
 const sb = { window: windowStub, document: stub, localStorage: stub, fetch:()=>Promise.resolve(stub), console };
 vm.createContext(sb);
 vm.runInContext(code, sb);
-const I18N = store.AURA_I18N;
-const LANGS = store.AURA_LANGS;
+const I18N = store.JINGMARK_I18N;
+const LANGS = store.JINGMARK_LANGS;
 if(!I18N){ console.log("NO_I18N"); process.exit(1); }
 
 const faqKeys = Object.keys(I18N.en).filter(k=>k.startsWith("faq."));

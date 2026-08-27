@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aura Reader — Reset Password</title>
+<title>JingMark — Reset Password</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <div class="page">
   <div class="logo">
     <div class="logo-mark"></div>
-    <span class="logo-text">Aura Reader</span>
+    <span class="logo-text">JingMark</span>
   </div>
 
   <div id="alert" class="alert hidden"></div>
@@ -30,16 +30,16 @@
       <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Reset Password</button>
     </form>
     <div id="loginLink" style="display:none;margin-top:16px;">
-      <a href="https://aura-reader.github.io">Back to Home</a>
+      <a href="https://jingmark.github.io">Back to Home</a>
     </div>
   </div>
 
   <div class="page-footer">
-    <p>Aura Reader · <a href="index.html">Home</a> · <a href="login.html">Login</a></p>
+    <p>JingMark · <a href="index.html">Home</a> · <a href="login.html">Login</a></p>
   </div>
 </div>
 <script>
-const API = 'https://aura-reader-api.fenghua25.workers.dev';
+const API = 'https://jingmark-api.fenghua25.workers.dev';
 const urlParams = new URLSearchParams(window.location.search);
 const token = urlParams.get('token');
 
@@ -100,7 +100,7 @@ async function doReset(e){
       document.getElementById('resetForm').style.display = 'none';
       document.getElementById('loginLink').style.display = 'block';
       document.querySelector('#loginLink a').textContent = T.loginLink;
-      setTimeout(() => { window.location.href = 'https://aura-reader.github.io'; }, 3000);
+      setTimeout(() => { window.location.href = 'https://jingmark.github.io'; }, 3000);
     } else {
       showAlert('error', data.error === 'Invalid or expired token' || data.error === 'Token expired' ? T.errToken : T.errFail);
     }

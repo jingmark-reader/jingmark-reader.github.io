@@ -7,7 +7,7 @@ const ws = new Proxy(function(){}, { get: (t,p)=> (p in store) ? store[p] : stub
 const sandbox = { window: ws, document: stub, localStorage: stub, fetch: ()=> Promise.resolve(stub), console };
 vm.createContext(sandbox);
 vm.runInContext(code, sandbox);
-const I = store.AURA_I18N;
+const I = store.JINGMARK_I18N;
 for (const lg of Object.keys(I)) {
   const v = I[lg];
   console.log(lg.padEnd(6), '| cost:', v['price.pro.cost'], '| early:', v['price.pro.early'], '| btn:', v['price.pro.btn']);

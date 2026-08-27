@@ -97,7 +97,7 @@ function svg(t) {
   <rect x="188" y="${232+t.para.length*26+6}" width="384" height="64" rx="10" fill="${t.card}" stroke="${lineCol}"/>
   <rect x="188" y="${232+t.para.length*26+6}" width="5" height="64" rx="2.5" fill="${t.accent}"/>
   <text x="208" y="${232+t.para.length*26+30}" font-family="${t.serif}" font-style="italic" font-size="15" fill="${t.ink}">${esc(t.quote)}</text>
-  <text x="208" y="${232+t.para.length*26+52}" font-family="${t.sans}" font-size="11" fill="${t.soft}" opacity=".8">— Aura Reader</text>
+  <text x="208" y="${232+t.para.length*26+52}" font-family="${t.sans}" font-size="11" fill="${t.soft}" opacity=".8">— JingMark</text>
 </svg>`;
 }
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}

@@ -31,5 +31,5 @@
   <rect x="188" y="290" width="384" height="64" rx="10" fill="#ffffff" stroke="rgba(44,38,32,.10)"/>
   <rect x="188" y="290" width="5" height="64" rx="2.5" fill="#111111"/>
   <text x="208" y="314" font-family="Georgia, serif" font-style="italic" font-size="15" fill="#1a1a1a">“Structure is the style.”</text>
-  <text x="208" y="336" font-family="'Courier New', 'SFMono-Regular', monospace" font-size="11" fill="#6b6b6b" opacity=".8">— Aura Reader</text>
+  <text x="208" y="336" font-family="'Courier New', 'SFMono-Regular', monospace" font-size="11" fill="#6b6b6b" opacity=".8">— JingMark</text>
 </svg>

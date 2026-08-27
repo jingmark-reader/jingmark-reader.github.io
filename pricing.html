@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aura Reader Pro · Pricing</title>
+  <title>JingMark Pro · Pricing</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="page">
     <div class="logo">
       <div class="logo-mark"></div>
-      <span class="logo-text">Aura Reader</span>
+      <span class="logo-text">JingMark</span>
     </div>
 
     <div id="alertBox" class="alert alert-error hidden"></div>
@@ -19,7 +19,7 @@
     <!-- Not logged in -->
     <div id="loginPrompt">
       <div class="card text-center">
-        <h1 style="font-size:22px;margin-bottom:12px;font-family:var(--font-serif);">Aura Reader Pro</h1>
+        <h1 style="font-size:22px;margin-bottom:12px;font-family:var(--font-serif);">JingMark Pro</h1>
         <p class="text-muted mb-24">One-time purchase. Lifetime updates.</p>
 
         <div class="price-tag">
@@ -88,7 +88,7 @@
         <span class="badge badge-pro">Pro</span>
         <p class="text-muted mt-24" style="font-size:14px;">
           Your Pro status has been synced to the extension.<br>
-          You can close this page and return to Aura Reader.
+          You can close this page and return to JingMark.
         </p>
       </div>
     </div>
@@ -109,18 +109,18 @@
     </div>
 
     <div class="page-footer">
-      <p>Aura Reader · <a href="index.html">Home</a> · <a href="login.html">Login</a></p>
+      <p>JingMark · <a href="index.html">Home</a> · <a href="login.html">Login</a></p>
     </div>
   </div>
 
   <script>
-    const API_BASE = 'https://aura-reader-api.fenghua25.workers.dev';
-    const TOKEN_KEY = 'aura-jwt';
+    const API_BASE = 'https://jingmark-api.fenghua25.workers.dev';
+    const TOKEN_KEY = 'jingmark-jwt';
     // Creem checkout URL
     const CREEM_CHECKOUT_URL = 'https://creem.io/payment/prod_6uXEIs0CjyYKzcJn6J6jJF';
 
     function getToken() { return localStorage.getItem(TOKEN_KEY); }
-    function clearToken() { localStorage.removeItem(TOKEN_KEY); localStorage.removeItem('aura-pro-status'); }
+    function clearToken() { localStorage.removeItem(TOKEN_KEY); localStorage.removeItem('jingmark-pro-status'); }
     function getEmail() {
       const token = getToken();
       if (!token) return null;
@@ -167,14 +167,14 @@
         }
         const data = await res.json();
         paid = data.paid;
-        localStorage.setItem('aura-pro-status', JSON.stringify({
+        localStorage.setItem('jingmark-pro-status', JSON.stringify({
           paid: data.paid,
           plan: data.plan,
           cachedAt: Date.now()
         }));
       } catch (err) {
         try {
-          const cached = JSON.parse(localStorage.getItem('aura-pro-status') || '{}');
+          const cached = JSON.parse(localStorage.getItem('jingmark-pro-status') || '{}');
           paid = cached.paid || false;
         } catch { paid = false; }
       }
@@ -225,7 +225,7 @@
             const data = await res.json();
             if (data.paid) {
               clearInterval(pollInterval);
-              localStorage.setItem('aura-pro-status', JSON.stringify({
+              localStorage.setItem('jingmark-pro-status', JSON.stringify({
                 paid: data.paid,
                 plan: data.plan,
                 cachedAt: Date.now()
@@ -260,7 +260,7 @@
             const data = await res.json();
             if (data.paid) {
               clearInterval(pollInterval);
-              localStorage.setItem('aura-pro-status', JSON.stringify({
+              localStorage.setItem('jingmark-pro-status', JSON.stringify({
                 paid: data.paid,
                 plan: data.plan,
                 cachedAt: Date.now()

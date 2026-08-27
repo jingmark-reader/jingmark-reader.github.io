@@ -1,5 +1,5 @@
 ﻿/* =============================================================
- * Aura Reader — Landing page i18n + UI logic
+ * JingMark — Landing page i18n + UI logic
  * 13 languages: en zh zh-tw ja ko fr de es pt ru vi sv ar
  * Single source of truth for all copy. Key parity enforced.
  * ============================================================= */
@@ -26,7 +26,7 @@
   /* ---- Dictionary ---- */
   const I18N = {
   "en": {
-    "brand": "Aura Reader",
+    "brand": "JingMark",
     "nav.features": "Features",
     "nav.themes": "Themes",
     "nav.pricing": "Pricing",
@@ -127,7 +127,7 @@
     "faq.title": "Frequently asked questions",
     "faq.sub": "Answers about privacy, features, and purchasing.",
     "faq.q1": "Are my files uploaded to a server?",
-    "faq.a1": "No. Aura Reader is local-first — every file read and write happens in your browser through the File System Access API. Nothing is uploaded. Pro status is verified by email; only your email and payment state are stored.",
+    "faq.a1": "No. JingMark is local-first — every file read and write happens in your browser through the File System Access API. Nothing is uploaded. Pro status is verified by email; only your email and payment state are stored.",
     "faq.q2": "What is the difference between Free and Pro?",
     "faq.a2": "Free includes full Markdown reading, 6 curated themes, and single-root browsing. Pro unlocks all 46 themes, native Word/PDF export, WYSIWYG editing with write-back, multi-root management, split-preview, saving web docs, and more. Reading stays free forever.",
     "faq.q3": "Which browsers are supported?",
@@ -137,7 +137,7 @@
     "faq.q5": "Can I use Pro on multiple computers?",
     "faq.a5": "Pro is tied to your email account and works across devices. Activation keys are issued per device for offline use, so you can sign in on any computer to access Pro features.",
     "faq.q6": "Does it support math equations and diagrams?",
-    "faq.a6": "Yes. Aura Reader renders KaTeX math formulas and Mermaid diagrams natively — just write standard LaTeX or Mermaid syntax in your Markdown.",
+    "faq.a6": "Yes. JingMark renders KaTeX math formulas and Mermaid diagrams natively — just write standard LaTeX or Mermaid syntax in your Markdown.",
     "faq.q7": "How many languages are supported?",
     "faq.a7": "The interface is available in 13 languages: English, 中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Português, Русский, Tiếng Việt, Svenska, and العربية (RTL).",
     "faq.q8": "Can I preview before exporting?",
@@ -150,7 +150,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "Coming soon to Chromium browsers (Chrome, Edge, Brave, Arc). Firefox to follow.",
     "dl.soon": "Coming soon",
-    "footer.copy": "© 2026 Aura Reader · A warm Markdown reader & writer for the browser.",
+    "footer.copy": "© 2026 JingMark · A warm Markdown reader & writer for the browser.",
     "footer.tagline": "Crafted for readers who love paper.",
     "auth.login": "Sign in",
     "auth.register": "Create account",
@@ -173,7 +173,7 @@
     "auth.resetSent": "Reset email sent. Please check your inbox.",
     "auth.resetSuccess": "Password reset successful! Please sign in again.",
     "meta.desc": "Local-first Markdown reader & writer. 22 hand-crafted themes, native Word export, and direct file read/write. No uploads, no server.",
-    "page.title": "Aura Reader · A warm Markdown reader & writer for the browser"
+    "page.title": "JingMark · A warm Markdown reader & writer for the browser"
   },
   "zh": {
     "brand": "境相阅读",
@@ -277,7 +277,7 @@
     "faq.title": "常见问题",
     "faq.sub": "关于隐私、功能与购买的答疑。",
     "faq.q1": "我的文件会上传到服务器吗？",
-    "faq.a1": "不会。Aura Reader 是本地优先架构，所有文件读写都在你的浏览器内通过 File System Access API 完成，不会上传到任何服务器。Pro 付费状态通过邮箱验证，仅存储你的邮箱与付费状态。",
+    "faq.a1": "不会。JingMark 是本地优先架构，所有文件读写都在你的浏览器内通过 File System Access API 完成，不会上传到任何服务器。Pro 付费状态通过邮箱验证，仅存储你的邮箱与付费状态。",
     "faq.q2": "免费版和 Pro 有什么区别？",
     "faq.a2": "免费版包含完整的 Markdown 阅读、6 套精选主题与单根目录浏览。Pro 解锁全部 46 套主题、原生 Word/PDF 导出、所见即所得编辑写回、多根目录管理、收藏网页文档、公众号推送等更多能力。阅读功能永久免费。",
     "faq.q3": "支持哪些浏览器？",
@@ -287,7 +287,7 @@
     "faq.q5": "我可以在多台电脑上使用 Pro 吗？",
     "faq.a5": "Pro 与你的邮箱账户绑定，可在多台设备间通用。离线激活按设备发放激活 Key，因此在任意电脑登录即可使用 Pro 功能。",
     "faq.q6": "是否支持数学公式与图表？",
-    "faq.a6": "支持。Aura Reader 原生渲染 KaTeX 数学公式与 Mermaid 图表——只需在 Markdown 中书写标准 LaTeX 或 Mermaid 语法即可。",
+    "faq.a6": "支持。JingMark 原生渲染 KaTeX 数学公式与 Mermaid 图表——只需在 Markdown 中书写标准 LaTeX 或 Mermaid 语法即可。",
     "faq.q7": "支持多少种语言？",
     "faq.a7": "界面提供 13 种语言：English、中文、繁體中文、日本語、한국어、Français、Deutsch、Español、Português、Русский、Tiếng Việt、Svenska 与 العربية（RTL）。",
     "faq.q8": "导出前可以预览吗？",
@@ -300,7 +300,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "即将上架 Chrome、Edge 等 Chromium 浏览器，Firefox 随后支持。",
     "dl.soon": "即将推出",
-    "footer.copy": "© 2026 境相阅读 Aura Reader · 一款为 Markdown 打造的温润阅读器",
+    "footer.copy": "© 2026 境相阅读 JingMark · 一款为 Markdown 打造的温润阅读器",
     "footer.tagline": "为爱纸书的人而做。",
     "auth.login": "登录",
     "auth.register": "注册",
@@ -427,7 +427,7 @@
     "faq.title": "常見問題",
     "faq.sub": "關於隱私、功能與購買的答疑。",
     "faq.q1": "我的檔案會上傳到伺服器嗎？",
-    "faq.a1": "不會。Aura Reader 是本地優先架構，所有檔案讀寫都在你的瀏覽器內透過 File System Access API 完成，不會上傳到任何伺服器。Pro 付費狀態透過郵箱驗證，僅儲存你的郵箱與付費狀態。",
+    "faq.a1": "不會。JingMark 是本地優先架構，所有檔案讀寫都在你的瀏覽器內透過 File System Access API 完成，不會上傳到任何伺服器。Pro 付費狀態透過郵箱驗證，僅儲存你的郵箱與付費狀態。",
     "faq.q2": "免費版和 Pro 有什麼差別？",
     "faq.a2": "免費版包含完整的 Markdown 閱讀、6 套精選主題與單根目錄瀏覽。Pro 解鎖全部 46 套主題、原生 Word/PDF 匯出、所見即所得編輯寫回、多根目錄管理、收藏網頁文件、公眾號推送等更多能力。閱讀功能永久免費。",
     "faq.q3": "支援哪些瀏覽器？",
@@ -437,7 +437,7 @@
     "faq.q5": "我可以在多台電腦上使用 Pro 嗎？",
     "faq.a5": "Pro 與你的郵箱帳號綁定，可在多台裝置間通用。離線啟用會依裝置發放啟用 Key，因此在任意電腦登入即可使用 Pro 功能。",
     "faq.q6": "是否支援數學公式與圖表？",
-    "faq.a6": "支援。Aura Reader 原生渲染 KaTeX 數學公式與 Mermaid 圖表——只需在 Markdown 中書寫標準 LaTeX 或 Mermaid 語法即可。",
+    "faq.a6": "支援。JingMark 原生渲染 KaTeX 數學公式與 Mermaid 圖表——只需在 Markdown 中書寫標準 LaTeX 或 Mermaid 語法即可。",
     "faq.q7": "支援多少種語言？",
     "faq.a7": "介面提供 13 種語言：English、中文、繁體中文、日本語、한국어、Français、Deutsch、Español、Português、Русский、Tiếng Việt、Svenska 與 العربية（RTL）。",
     "faq.q8": "匯出前可以預覽嗎？",
@@ -450,7 +450,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "即將上架 Chrome、Edge 等 Chromium 瀏覽器，Firefox 隨後支援。",
     "dl.soon": "即將推出",
-    "footer.copy": "© 2026 境相閱讀 Aura Reader · 一款為 Markdown 打造的溫潤閱讀器",
+    "footer.copy": "© 2026 境相閱讀 JingMark · 一款為 Markdown 打造的溫潤閱讀器",
     "footer.tagline": "為愛紙本書的人而做。",
     "auth.login": "登入",
     "auth.register": "註冊",
@@ -476,7 +476,7 @@
     "page.title": "境相閱讀 · 溫潤的 Markdown 閱讀與寫作擴充"
   },
   "ja": {
-    "brand": "Aura Reader",
+    "brand": "JingMark",
     "nav.features": "機能",
     "nav.themes": "テーマ",
     "nav.pricing": "料金",
@@ -577,7 +577,7 @@
     "faq.title": "よくある質問",
     "faq.sub": "プライバシー・機能・購入についての回答。",
     "faq.q1": "ファイルはサーバーにアップロードされますか？",
-    "faq.a1": "いいえ。Aura Reader はローカル優先です。すべての読み書きはブラウザ内の File System Access API で行われ、アップロードはありません。Pro の状態はメールで検証され、保存されるのはメールアドレスと支払い状況のみです。",
+    "faq.a1": "いいえ。JingMark はローカル優先です。すべての読み書きはブラウザ内の File System Access API で行われ、アップロードはありません。Pro の状態はメールで検証され、保存されるのはメールアドレスと支払い状況のみです。",
     "faq.q2": "無料版と Pro の違いは？",
     "faq.a2": "無料版は Markdown の全文閲覧、6 つの厳選テーマ、単一ルートの閲覧を含みます。Pro は全 46 テーマ、ネイティブ Word/PDF 書き出し、WYSIWYG 編集と書き戻し、複数ルート管理、Web 文書の保存などを解放します。読書は永久無料です。",
     "faq.q3": "対応ブラウザは？",
@@ -587,7 +587,7 @@
     "faq.q5": "Pro を複数のパソコンで使えますか？",
     "faq.a5": "Pro はメールアカウントに紐づき、複数のデバイスで共通して使えます。オフライン有効化はデバイスごとにアクティベーション キーを発行するため、どのパソコンからでもログインして Pro 機能を利用できます。",
     "faq.q6": "数式や図表に対応していますか？",
-    "faq.a6": "はい。Aura Reader は KaTeX の数式と Mermaid の図表をネイティブに描画します——Markdown に標準的な LaTeX または Mermaid の構文を書くだけで大丈夫です。",
+    "faq.a6": "はい。JingMark は KaTeX の数式と Mermaid の図表をネイティブに描画します——Markdown に標準的な LaTeX または Mermaid の構文を書くだけで大丈夫です。",
     "faq.q7": "対応言語はいくつありますか？",
     "faq.a7": "インターフェイスは 13 言語に対応しています：English、中文、繁體中文、日本語、한국어、Français、Deutsch、Español、Português、Русский、Tiếng Việt、Svenska、العربية（RTL）。",
     "faq.q8": "書き出し前にプレビューできますか？",
@@ -600,7 +600,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "Chromium 系ブラウザで最も快適。Firefox 対応は準備中。",
     "dl.soon": "近日公開",
-    "footer.copy": "© 2026 Aura Reader · ブラウザのための温かな Markdown リーダー＆ライター",
+    "footer.copy": "© 2026 JingMark · ブラウザのための温かな Markdown リーダー＆ライター",
     "footer.tagline": "紙の本を愛する人のために。",
     "auth.login": "ログイン",
     "auth.register": "アカウント作成",
@@ -623,10 +623,10 @@
     "auth.resetSent": "再設定メールを送信しました。受信箱をご確認ください。",
     "auth.resetSuccess": "パスワードの再設定が完了しました。再度ログインしてください。",
     "meta.desc": "ローカル優先の Markdown リーダー＆ライター。22 のテーマ、ネイティブ Word 書き出し、ファイルの直接読み書き。アップロードなし、サーバーなし。",
-    "page.title": "Aura Reader · ブラウザ向けの温かい Markdown リーダー＆ライター"
+    "page.title": "JingMark · ブラウザ向けの温かい Markdown リーダー＆ライター"
   },
   "ko": {
-    "brand": "Aura Reader",
+    "brand": "JingMark",
     "nav.features": "기능",
     "nav.themes": "테마",
     "nav.pricing": "가격",
@@ -727,7 +727,7 @@
     "faq.title": "자주 묻는 질문",
     "faq.sub": "개인정보·기능·구매에 대한 답변.",
     "faq.q1": "내 파일이 서버에 업로드되나요?",
-    "faq.a1": "아니요. Aura Reader는 로컬 우선입니다. 모든 읽기와 쓰기는 브라우저의 File System Access API에서 이루어지며 업로드되지 않습니다. Pro 상태는 이메일로 확인되며, 저장되는 것은 이메일과 결제 상태뿐입니다.",
+    "faq.a1": "아니요. JingMark는 로컬 우선입니다. 모든 읽기와 쓰기는 브라우저의 File System Access API에서 이루어지며 업로드되지 않습니다. Pro 상태는 이메일로 확인되며, 저장되는 것은 이메일과 결제 상태뿐입니다.",
     "faq.q2": "무료와 Pro의 차이는?",
     "faq.a2": "무료는 Markdown 전체 읽기, 6개 엄선 테마, 단일 루트 탐색을 포함합니다. Pro는 전체 46 테마, 네이티브 Word/PDF 내보내기, WYSIWYG 편집 및 저장, 다중 루트 관리, 웹 문서 저장 등을 해제합니다. 읽기는 영구 무료입니다.",
     "faq.q3": "지원하는 브라우저는?",
@@ -737,7 +737,7 @@
     "faq.q5": "Pro를 여러 대의 컴퓨터에서 사용할 수 있나요?",
     "faq.a5": "Pro는 이메일 계정에 연결되어 여러 기기에서 공통으로 사용할 수 있습니다. 오프라인 정품 인증은 기기별로 활성화 키를 발급하므로, 어떤 컴퓨터에서든 로그인해 Pro 기능을 이용할 수 있습니다.",
     "faq.q6": "수식과 다이어그램을 지원하나요?",
-    "faq.a6": "예. Aura Reader는 KaTeX 수식과 Mermaid 다이어그램을 네이티브로 렌더링합니다——Markdown에 표준 LaTeX 또는 Mermaid 구문을 작성하기만 하면 됩니다.",
+    "faq.a6": "예. JingMark는 KaTeX 수식과 Mermaid 다이어그램을 네이티브로 렌더링합니다——Markdown에 표준 LaTeX 또는 Mermaid 구문을 작성하기만 하면 됩니다.",
     "faq.q7": "몇 개의 언어를 지원하나요?",
     "faq.a7": "인터페이스는 13개 언어를 지원합니다: English, 中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Português, Русский, Tiếng Việt, Svenska, العربية(RTL).",
     "faq.q8": "내보내기 전에 미리보기할 수 있나요?",
@@ -750,7 +750,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "Chromium 계열에서 가장 쾌적. Firefox 지원 준비 중.",
     "dl.soon": "곧 출시",
-    "footer.copy": "© 2026 Aura Reader · 브라우저를 위한 따뜻한 Markdown 리더＆라이터",
+    "footer.copy": "© 2026 JingMark · 브라우저를 위한 따뜻한 Markdown 리더＆라이터",
     "footer.tagline": "종이책을 사랑하는 이들을 위해.",
     "auth.login": "로그인",
     "auth.register": "계정 만들기",
@@ -773,10 +773,10 @@
     "auth.resetSent": "재설정 메일을 보냈습니다. 받은 편지를 확인하세요.",
     "auth.resetSuccess": "비밀번호 재설정 완료! 다시 로그인하세요.",
     "meta.desc": "로컬 우선 Markdown 리더 & 라이터. 22개 테마, 네이티브 Word 내보내기, 파일 직접 읽기/쓰기. 업로드 없음, 서버 없음.",
-    "page.title": "Aura Reader · 브라우저용 따뜻한 Markdown 리더 & 라이터"
+    "page.title": "JingMark · 브라우저용 따뜻한 Markdown 리더 & 라이터"
   },
   "fr": {
-    "brand": "Aura Reader",
+    "brand": "JingMark",
     "nav.features": "Fonctionnalités",
     "nav.themes": "Thèmes",
     "nav.pricing": "Tarifs",
@@ -877,7 +877,7 @@
     "faq.title": "Questions fréquentes",
     "faq.sub": "Réponses sur la confidentialité, les fonctionnalités et l'achat.",
     "faq.q1": "Mes fichiers sont-ils envoyés sur un serveur ?",
-    "faq.a1": "Non. Aura Reader est local d'abord — toute lecture et écriture se fait dans votre navigateur via l'API File System Access. Rien n'est envoyé. Le statut Pro est vérifié par e-mail ; seuls votre e-mail et l'état du paiement sont stockés.",
+    "faq.a1": "Non. JingMark est local d'abord — toute lecture et écriture se fait dans votre navigateur via l'API File System Access. Rien n'est envoyé. Le statut Pro est vérifié par e-mail ; seuls votre e-mail et l'état du paiement sont stockés.",
     "faq.q2": "Quelle est la différence entre Gratuit et Pro ?",
     "faq.a2": "Gratuit inclut la lecture complète Markdown, 6 thèmes sélectionnés et la navigation à racine unique. Pro débloque les 46 thèmes, l'export Word/PDF natif, l'édition WYSIWYG avec réécriture, la gestion multi-racines, la sauvegarde de docs web et plus. La lecture reste gratuite à toujours.",
     "faq.q3": "Quels navigateurs sont pris en charge ?",
@@ -887,7 +887,7 @@
     "faq.q5": "Puis-je utiliser Pro sur plusieurs ordinateurs ?",
     "faq.a5": "Pro est lié à votre compte e-mail et fonctionne sur plusieurs appareils. Les clés d'activation sont délivrées par appareil pour une utilisation hors ligne, vous pouvez donc vous connecter sur n'importe quel ordinateur pour accéder aux fonctions Pro.",
     "faq.q6": "Prenez-vous en charge les équations mathématiques et les diagrammes ?",
-    "faq.a6": "Oui. Aura Reader rend nativement les formules KaTeX et les diagrammes Mermaid — il suffit d'écrire la syntaxe LaTeX ou Mermaid standard dans votre Markdown.",
+    "faq.a6": "Oui. JingMark rend nativement les formules KaTeX et les diagrammes Mermaid — il suffit d'écrire la syntaxe LaTeX ou Mermaid standard dans votre Markdown.",
     "faq.q7": "Combien de langues sont prises en charge ?",
     "faq.a7": "L'interface est disponible en 13 langues : English, 中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Português, Русский, Tiếng Việt, Svenska et العربية (RTL).",
     "faq.q8": "Puis-je prévisualiser avant l'export ?",
@@ -900,7 +900,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "Idéal sur les navigateurs Chromium. Le support Firefox arrive bientôt.",
     "dl.soon": "Bientôt disponible",
-    "footer.copy": "© 2026 Aura Reader · Un lecteur & éditeur Markdown chaleureux pour le navigateur",
+    "footer.copy": "© 2026 JingMark · Un lecteur & éditeur Markdown chaleureux pour le navigateur",
     "footer.tagline": "Conçu pour les lecteurs amoureux du papier.",
     "auth.login": "Se connecter",
     "auth.register": "Créer un compte",
@@ -923,10 +923,10 @@
     "auth.resetSent": "E-mail de réinitialisation envoyé. Vérifiez votre boîte de réception.",
     "auth.resetSuccess": "Mot de passe réinitialisé ! Veuillez vous reconnecter.",
     "meta.desc": "Lecteur & éditeur Markdown local-first. 46 thèmes, export Word natif, lecture/écriture directe des fichiers. Sans upload, sans serveur.",
-    "page.title": "Aura Reader · Lecteur et éditeur Markdown chaleureux pour le navigateur"
+    "page.title": "JingMark · Lecteur et éditeur Markdown chaleureux pour le navigateur"
   },
   "de": {
-    "brand": "Aura Reader",
+    "brand": "JingMark",
     "nav.features": "Funktionen",
     "nav.themes": "Themen",
     "nav.pricing": "Preise",
@@ -1027,7 +1027,7 @@
     "faq.title": "Häufige Fragen",
     "faq.sub": "Antworten zu Datenschutz, Funktionen und Kauf.",
     "faq.q1": "Werden meine Dateien auf einen Server hochgeladen?",
-    "faq.a1": "Nein. Aura Reader ist lokal zuerst — jedes Lesen und Schreiben erfolgt im Browser über die File System Access API. Es wird nichts hochgeladen. Der Pro-Status wird per E-Mail verifiziert; nur Ihre E-Mail und der Zahlungsstatus werden gespeichert.",
+    "faq.a1": "Nein. JingMark ist lokal zuerst — jedes Lesen und Schreiben erfolgt im Browser über die File System Access API. Es wird nichts hochgeladen. Der Pro-Status wird per E-Mail verifiziert; nur Ihre E-Mail und der Zahlungsstatus werden gespeichert.",
     "faq.q2": "Was ist der Unterschied zwischen Kostenlos und Pro?",
     "faq.a2": "Kostenlos umfasst das vollständige Markdown-Lesen, 6 ausgewählte Themen und die Navigation mit einer Wurzel. Pro schaltet alle 46 Themen, nativen Word/PDF-Export, WYSIWYG-Bearbeitung mit Rückschreiben, Mehrfach-Wurzeln, Web-Doc-Speicherung und mehr frei. Lesen bleibt für immer kostenlos.",
     "faq.q3": "Welche Browser werden unterstützt?",
@@ -1037,7 +1037,7 @@
     "faq.q5": "Kann ich Pro auf mehreren Computern nutzen?",
     "faq.a5": "Pro ist an Ihr E-Mail-Konto gebunden und funktioniert geräteübergreifend. Aktivierungsschlüssel werden pro Gerät für die Offline-Nutzung ausgestellt, sodass Sie sich auf jedem Computer anmelden und Pro-Funktionen nutzen können.",
     "faq.q6": "Werden mathematische Formeln und Diagramme unterstützt?",
-    "faq.a6": "Ja. Aura Reader rendert KaTeX-Formeln und Mermaid-Diagramme nativ — schreiben Sie einfach Standard-LaTeX- oder Mermaid-Syntax in Ihr Markdown.",
+    "faq.a6": "Ja. JingMark rendert KaTeX-Formeln und Mermaid-Diagramme nativ — schreiben Sie einfach Standard-LaTeX- oder Mermaid-Syntax in Ihr Markdown.",
     "faq.q7": "Wie viele Sprachen werden unterstützt?",
     "faq.a7": "Die Oberfläche ist in 13 Sprachen verfügbar: English, 中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Português, Русский, Tiếng Việt, Svenska und العربية (RTL).",
     "faq.q8": "Kann ich vor dem Export eine Vorschau ansehen?",
@@ -1050,7 +1050,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "Am besten auf Chromium-Browsern. Firefox-Unterstützung folgt bald.",
     "dl.soon": "Demnächst verfügbar",
-    "footer.copy": "© 2026 Aura Reader · Ein warmer Markdown-Leser & -Schreiber für den Browser",
+    "footer.copy": "© 2026 JingMark · Ein warmer Markdown-Leser & -Schreiber für den Browser",
     "footer.tagline": "Gemacht für Leser, die Papier lieben.",
     "auth.login": "Anmelden",
     "auth.register": "Konto erstellen",
@@ -1073,10 +1073,10 @@
     "auth.resetSent": "Reset-E-Mail gesendet. Bitte Postfach prüfen.",
     "auth.resetSuccess": "Passwort zurückgesetzt! Bitte erneut anmelden.",
     "meta.desc": "Lokal-first Markdown-Reader & -Writer. 46 Themen, nativer Word-Export, direktes Lesen/Schreiben von Dateien. Kein Upload, kein Server.",
-    "page.title": "Aura Reader · Warmer Markdown-Reader & -Writer für den Browser"
+    "page.title": "JingMark · Warmer Markdown-Reader & -Writer für den Browser"
   },
   "es": {
-    "brand": "Aura Reader",
+    "brand": "JingMark",
     "nav.features": "Funciones",
     "nav.themes": "Temas",
     "nav.pricing": "Precios",
@@ -1177,7 +1177,7 @@
     "faq.title": "Preguntas frecuentes",
     "faq.sub": "Respuestas sobre privacidad, funciones y compra.",
     "faq.q1": "¿Se suben mis archivos a un servidor?",
-    "faq.a1": "No. Aura Reader es local primero — toda lectura y escritura ocurre en tu navegador mediante la API File System Access. Nada se sube. El estado Pro se verifica por correo; solo se guardan tu correo y el estado de pago.",
+    "faq.a1": "No. JingMark es local primero — toda lectura y escritura ocurre en tu navegador mediante la API File System Access. Nada se sube. El estado Pro se verifica por correo; solo se guardan tu correo y el estado de pago.",
     "faq.q2": "¿Cuál es la diferencia entre Gratis y Pro?",
     "faq.a2": "Gratis incluye la lectura completa de Markdown, 6 temas seleccionados y la navegación con raíz única. Pro desbloquea los 46 temas, el export nativo Word/PDF, la edición WYSIWYG con reescritura, la gestión multi-raíz, guardar docs web y más. Leer sigue siendo gratis para siempre.",
     "faq.q3": "¿Qué navegadores se admiten?",
@@ -1187,7 +1187,7 @@
     "faq.q5": "¿Puedo usar Pro en varios ordenadores?",
     "faq.a5": "Pro está vinculado a tu cuenta de correo y funciona en varios dispositivos. Las claves de activación se emiten por dispositivo para uso sin conexión, así que puedes iniciar sesión en cualquier ordenador para acceder a las funciones Pro.",
     "faq.q6": "¿Admite ecuaciones matemáticas y diagramas?",
-    "faq.a6": "Sí. Aura Reader renderiza fórmulas KaTeX y diagramas Mermaid de forma nativa — solo tienes que escribir la sintaxis LaTeX o Mermaid estándar en tu Markdown.",
+    "faq.a6": "Sí. JingMark renderiza fórmulas KaTeX y diagramas Mermaid de forma nativa — solo tienes que escribir la sintaxis LaTeX o Mermaid estándar en tu Markdown.",
     "faq.q7": "¿Cuántos idiomas se admiten?",
     "faq.a7": "La interfaz está disponible en 13 idiomas: English, 中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Português, Русский, Tiếng Việt, Svenska y العربية (RTL).",
     "faq.q8": "¿Puedo previsualizar antes de exportar?",
@@ -1200,7 +1200,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "Mejor en navegadores Chromium. Soporte de Firefox próximamente.",
     "dl.soon": "Próximamente",
-    "footer.copy": "© 2026 Aura Reader · Un cálido lector y editor Markdown para el navegador",
+    "footer.copy": "© 2026 JingMark · Un cálido lector y editor Markdown para el navegador",
     "footer.tagline": "Hecho para lectores que aman el papel.",
     "auth.login": "Iniciar sesión",
     "auth.register": "Crear cuenta",
@@ -1223,10 +1223,10 @@
     "auth.resetSent": "Correo de restablecimiento enviado. Revisa tu bandeja de entrada.",
     "auth.resetSuccess": "¡Contraseña restablecida! Inicia sesión de nuevo.",
     "meta.desc": "Lector y editor Markdown local-first. 46 temas, export nativo Word, lectura/escritura directa de archivos. Sin subidas, sin servidor.",
-    "page.title": "Aura Reader · Lector y editor Markdown cálido para el navegador"
+    "page.title": "JingMark · Lector y editor Markdown cálido para el navegador"
   },
   "pt": {
-    "brand": "Aura Reader",
+    "brand": "JingMark",
     "nav.features": "Recursos",
     "nav.themes": "Temas",
     "nav.pricing": "Preços",
@@ -1327,7 +1327,7 @@
     "faq.title": "Perguntas frequentes",
     "faq.sub": "Respostas sobre privacidade, recursos e compra.",
     "faq.q1": "Meus arquivos são enviados a um servidor?",
-    "faq.a1": "Não. O Aura Reader é local primeiro — toda leitura e escrita acontece no navegador via API File System Access. Nada é enviado. O status Pro é verificado por e-mail; só são armazenados seu e-mail e o estado do pagamento.",
+    "faq.a1": "Não. O JingMark é local primeiro — toda leitura e escrita acontece no navegador via API File System Access. Nada é enviado. O status Pro é verificado por e-mail; só são armazenados seu e-mail e o estado do pagamento.",
     "faq.q2": "Qual a diferença entre Grátis e Pro?",
     "faq.a2": "Grátis inclui a leitura completa de Markdown, 6 temas selecionados e a navegação com raiz única. Pro libera os 46 temas, o export nativo Word/PDF, a edição WYSIWYG com reescrita, a gestão multi-raiz, salvar docs web e mais. Ler segue grátis para sempre.",
     "faq.q3": "Quais navegadores são suportados?",
@@ -1337,7 +1337,7 @@
     "faq.q5": "Posso usar o Pro em vários computadores?",
     "faq.a5": "O Pro está vinculado à sua conta de e-mail e funciona em vários dispositivos. As chaves de ativação são emitidas por dispositivo para uso offline, então você pode entrar em qualquer computador para acessar os recursos Pro.",
     "faq.q6": "Você suporta equações matemáticas e diagramas?",
-    "faq.a6": "Sim. O Aura Reader renderiza fórmulas KaTeX e diagramas Mermaid nativamente — basta escrever a sintaxe LaTeX ou Mermaid padrão no seu Markdown.",
+    "faq.a6": "Sim. O JingMark renderiza fórmulas KaTeX e diagramas Mermaid nativamente — basta escrever a sintaxe LaTeX ou Mermaid padrão no seu Markdown.",
     "faq.q7": "Quantos idiomas são suportados?",
     "faq.a7": "A interface está disponível em 13 idiomas: English, 中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Português, Русский, Tiếng Việt, Svenska e العربية (RTL).",
     "faq.q8": "Posso visualizar antes de exportar?",
@@ -1350,7 +1350,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "Melhor em navegadores Chromium. Suporte a Firefox em breve.",
     "dl.soon": "Em breve",
-    "footer.copy": "© 2026 Aura Reader · Um caloroso leitor e editor Markdown para o navegador",
+    "footer.copy": "© 2026 JingMark · Um caloroso leitor e editor Markdown para o navegador",
     "footer.tagline": "Feito para leitores que amam o papel.",
     "auth.login": "Entrar",
     "auth.register": "Criar conta",
@@ -1373,10 +1373,10 @@
     "auth.resetSent": "E-mail de redefinição enviado. Verifique sua caixa de entrada.",
     "auth.resetSuccess": "Senha redefinida! Faça login novamente.",
     "meta.desc": "Leitor e editor Markdown local-first. 46 temas, export nativo Word, leitura/escrita direta de arquivos. Sem uploads, sem servidor.",
-    "page.title": "Aura Reader · Leitor e editor Markdown caloroso para o navegador"
+    "page.title": "JingMark · Leitor e editor Markdown caloroso para o navegador"
   },
   "ru": {
-    "brand": "Aura Reader",
+    "brand": "JingMark",
     "nav.features": "Возможности",
     "nav.themes": "Темы",
     "nav.pricing": "Цены",
@@ -1477,7 +1477,7 @@
     "faq.title": "Часто задаваемые вопросы",
     "faq.sub": "Ответы о приватности, возможностях и покупке.",
     "faq.q1": "Мои файлы загружаются на сервер?",
-    "faq.a1": "Нет. Aura Reader сначала локальный — любое чтение и запись происходят в браузере через File System Access API. Ничего не загружается. Статус Pro проверяется по почте; сохраняются только ваш e-mail и состояние оплаты.",
+    "faq.a1": "Нет. JingMark сначала локальный — любое чтение и запись происходят в браузере через File System Access API. Ничего не загружается. Статус Pro проверяется по почте; сохраняются только ваш e-mail и состояние оплаты.",
     "faq.q2": "В чём разница между Бесплатно и Pro?",
     "faq.a2": "Бесплатно включает полное чтение Markdown, 6 отборных тем и навигацию с одним корнем. Pro открывает все 46 тем, нативный экспорт Word/PDF, редактирование WYSIWYG с автозаписью, управление несколькими корнями, сохранение веб-доков и другое. Чтение остаётся бесплатным навсегда.",
     "faq.q3": "Какие браузеры поддерживаются?",
@@ -1487,7 +1487,7 @@
     "faq.q5": "Можно ли использовать Pro на нескольких компьютерах?",
     "faq.a5": "Pro привязан к вашей учётной записи электронной почты и работает на разных устройствах. Ключи активации выдаются для каждого устройства для автономного использования, поэтому вы можете войти с любого компьютера и получить доступ к функциям Pro.",
     "faq.q6": "Поддерживаются ли математические формулы и диаграммы?",
-    "faq.a6": "Да. Aura Reader отображает формулы KaTeX и диаграммы Mermaid встроенными средствами — достаточно написать стандартный синтаксис LaTeX или Mermaid в вашем Markdown.",
+    "faq.a6": "Да. JingMark отображает формулы KaTeX и диаграммы Mermaid встроенными средствами — достаточно написать стандартный синтаксис LaTeX или Mermaid в вашем Markdown.",
     "faq.q7": "Сколько языков поддерживается?",
     "faq.a7": "Интерфейс доступен на 13 языках: English, 中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Português, Русский, Tiếng Việt, Svenska и العربية (RTL).",
     "faq.q8": "Можно ли предварительно просмотреть перед экспортом?",
@@ -1500,7 +1500,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "Лучше всего на браузерах Chromium. Поддержка Firefox скоро.",
     "dl.soon": "Скоро",
-    "footer.copy": "© 2026 Aura Reader · Тёплый редактор и читалка Markdown для браузера",
+    "footer.copy": "© 2026 JingMark · Тёплый редактор и читалка Markdown для браузера",
     "footer.tagline": "Создано для тех, кто любит бумагу.",
     "auth.login": "Войти",
     "auth.register": "Создать аккаунт",
@@ -1523,10 +1523,10 @@
     "auth.resetSent": "Письмо для сброса отправлено. Проверьте почту.",
     "auth.resetSuccess": "Пароль сброшен! Войдите снова.",
     "meta.desc": "Локальный Markdown-ридер и редактор. 46 тем, нативный экспорт Word, прямое чтение/запись файлов. Без загрузок, без сервера.",
-    "page.title": "Aura Reader · Тёплый Markdown-ридер и редактор для браузера"
+    "page.title": "JingMark · Тёплый Markdown-ридер и редактор для браузера"
   },
   "vi": {
-    "brand": "Aura Reader",
+    "brand": "JingMark",
     "nav.features": "Tính năng",
     "nav.themes": "Chủ đề",
     "nav.pricing": "Giá",
@@ -1627,7 +1627,7 @@
     "faq.title": "Câu hỏi thường gặp",
     "faq.sub": "Trả lời về riêng tư, tính năng và mua hàng.",
     "faq.q1": "Tệp của tôi có được tải lên máy chủ không?",
-    "faq.a1": "Không. Aura Reader ưu tiên cục bộ — mọi đọc/ghi đều diễn ra trong trình duyệt qua File System Access API. Không tải lên gì cả. Trạng thái Pro xác thực qua email; chỉ lưu email và trạng thái thanh toán của bạn.",
+    "faq.a1": "Không. JingMark ưu tiên cục bộ — mọi đọc/ghi đều diễn ra trong trình duyệt qua File System Access API. Không tải lên gì cả. Trạng thái Pro xác thực qua email; chỉ lưu email và trạng thái thanh toán của bạn.",
     "faq.q2": "Khác biệt giữa Miễn phí và Pro?",
     "faq.a2": "Miễn phí gồm đọc Markdown đầy đủ, 6 chủ đề tuyển chọn và duyệt một gốc. Pro mở khoá 46 chủ đề, xuất Word/PDF gốc, soạn WYSIWYG ghi lại, quản lý nhiều gốc, lưu tài liệu web và hơn thế. Đọc vẫn miễn phí mãi mãi.",
     "faq.q3": "Trình duyệt nào được hỗ trợ?",
@@ -1637,7 +1637,7 @@
     "faq.q5": "Tôi có thể dùng Pro trên nhiều máy tính không?",
     "faq.a5": "Pro được liên kết với tài khoản email của bạn và hoạt động trên nhiều thiết bị. Khóa kích hoạt được cấp cho từng thiết bị để dùng ngoại tuyến, vì vậy bạn có thể đăng nhập trên bất kỳ máy tính nào để sử dụng tính năng Pro.",
     "faq.q6": "Có hỗ trợ công thức toán học và sơ đồ không?",
-    "faq.a6": "Có. Aura Reader hiển thị trực tiếp công thức KaTeX và sơ đồ Mermaid — bạn chỉ cần viết cú pháp LaTeX hoặc Mermaid chuẩn trong Markdown.",
+    "faq.a6": "Có. JingMark hiển thị trực tiếp công thức KaTeX và sơ đồ Mermaid — bạn chỉ cần viết cú pháp LaTeX hoặc Mermaid chuẩn trong Markdown.",
     "faq.q7": "Có bao nhiêu ngôn ngữ được hỗ trợ?",
     "faq.a7": "Giao diện hỗ trợ 13 ngôn ngữ: English, 中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Português, Русский, Tiếng Việt, Svenska và العربية (RTL).",
     "faq.q8": "Tôi có thể xem trước trước khi xuất không?",
@@ -1650,7 +1650,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "Tốt nhất trên trình duyệt Chromium. Hỗ trợ Firefox sắp có.",
     "dl.soon": "Sắp ra mắt",
-    "footer.copy": "© 2026 Aura Reader · Trình đọc & soạn Markdown ấm áp cho trình duyệt",
+    "footer.copy": "© 2026 JingMark · Trình đọc & soạn Markdown ấm áp cho trình duyệt",
     "footer.tagline": "Dành cho người yêu giấy.",
     "auth.login": "Đăng nhập",
     "auth.register": "Tạo tài khoản",
@@ -1673,10 +1673,10 @@
     "auth.resetSent": "Email đặt lại đã gửi. Kiểm tra hộp thư.",
     "auth.resetSuccess": "Đặt lại mật khẩu thành công! Vui lòng đăng nhập lại.",
     "meta.desc": "Trình đọc & soạn Markdown ưu tiên cục bộ. 46 chủ đề, xuất Word gốc, đọc/ghi trực tiếp tệp. Không tải lên, không máy chủ.",
-    "page.title": "Aura Reader · Trình đọc & soạn Markdown ấm áp cho trình duyệt"
+    "page.title": "JingMark · Trình đọc & soạn Markdown ấm áp cho trình duyệt"
   },
   "sv": {
-    "brand": "Aura Reader",
+    "brand": "JingMark",
     "nav.features": "Funktioner",
     "nav.themes": "Teman",
     "nav.pricing": "Priser",
@@ -1777,7 +1777,7 @@
     "faq.title": "Vanliga frågor",
     "faq.sub": "Svar om integritet, funktioner och köp.",
     "faq.q1": "Laddas mina filer upp till en server?",
-    "faq.a1": "Nej. Aura Reader är lokal först — all läsning och skrivning sker i webbläsaren via File System Access API. Inget laddas upp. Pro-status verifieras via e-post; endast din e-post och betalningsstatus lagras.",
+    "faq.a1": "Nej. JingMark är lokal först — all läsning och skrivning sker i webbläsaren via File System Access API. Inget laddas upp. Pro-status verifieras via e-post; endast din e-post och betalningsstatus lagras.",
     "faq.q2": "Vad skiljer Gratis och Pro?",
     "faq.a2": "Gratis innehåller fullständig Markdown-läsning, 6 utvalda teman och navigering med en rot. Pro låser upp alla 46 teman, navt Word/PDF-export, WYSIWYG-redigering med tillbakaskrivning, hantering med flera rötter, sparande av webbdok och mer. Läsning är gratis för alltid.",
     "faq.q3": "Vilka webbläsare stöds?",
@@ -1787,7 +1787,7 @@
     "faq.q5": "Kan jag använda Pro på flera datorer?",
     "faq.a5": "Pro är kopplad till ditt e-postkonto och fungerar på flera enheter. Aktiveringsnycklar utfärdas per enhet för offlineanvändning, så du kan logga in på valfri dator för att komma åt Pro-funktionerna.",
     "faq.q6": "Stöds matematiska formler och diagram?",
-    "faq.a6": "Ja. Aura Reader återger KaTeX-formler och Mermaid-diagram nativt — du skriver bara standard LaTeX- eller Mermaid-syntax i din Markdown.",
+    "faq.a6": "Ja. JingMark återger KaTeX-formler och Mermaid-diagram nativt — du skriver bara standard LaTeX- eller Mermaid-syntax i din Markdown.",
     "faq.q7": "Hur många språk stöds?",
     "faq.a7": "Gränssnittet finns på 13 språk: English, 中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Português, Русский, Tiếng Việt, Svenska och العربية (RTL).",
     "faq.q8": "Kan jag förhandsgranska innan jag exporterar?",
@@ -1800,7 +1800,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "Bäst på Chromium-webbläsare. Firefox-stöd kommer snart.",
     "dl.soon": "Kommer snart",
-    "footer.copy": "© 2026 Aura Reader · En varm Markdown-läsare & -skrivare för webbläsaren",
+    "footer.copy": "© 2026 JingMark · En varm Markdown-läsare & -skrivare för webbläsaren",
     "footer.tagline": "Gjord för läsare som älskar papper.",
     "auth.login": "Logga in",
     "auth.register": "Skapa konto",
@@ -1823,10 +1823,10 @@
     "auth.resetSent": "Återställningsmejl skickat. Kolla inkorgen.",
     "auth.resetSuccess": "Lösenordet återställt! Logga in igen.",
     "meta.desc": "Lokal-first Markdown-läsare & -skrivare. 46 teman, navt Word-export, direkt läsning/skrivning av filer. Inga uppladdningar, ingen server.",
-    "page.title": "Aura Reader · Varm Markdown-läsare & -skrivare för webbläsaren"
+    "page.title": "JingMark · Varm Markdown-läsare & -skrivare för webbläsaren"
   },
   "ar": {
-    "brand": "Aura Reader",
+    "brand": "JingMark",
     "nav.features": "المزايا",
     "nav.themes": "السمات",
     "nav.pricing": "الأسعار",
@@ -1927,7 +1927,7 @@
     "faq.title": "الأسئلة الشائعة",
     "faq.sub": "إجابات عن الخصوصية والمزايا والشراء.",
     "faq.q1": "هل تُرفع ملفاتي إلى خادم؟",
-    "faq.a1": "لا. Aura Reader محلي أولًا — كل قراءة وكتابة تحدث في متصفحك عبر File System Access API. لا شيء يُرفع. تُتحقق حالة Pro عبر البريد؛ لا يُخزَّن سوى بريدك وحالة الدفع.",
+    "faq.a1": "لا. JingMark محلي أولًا — كل قراءة وكتابة تحدث في متصفحك عبر File System Access API. لا شيء يُرفع. تُتحقق حالة Pro عبر البريد؛ لا يُخزَّن سوى بريدك وحالة الدفع.",
     "faq.q2": "ما الفرق بين المجاني وPro؟",
     "faq.a2": "يتضمن المجاني القراءة الكاملة لـ Markdown، 6 سمات مختارة، وتصفّحاً بجذر واحد. يفتح Pro كل السمات الـ46، وتصدير Word/PDF الأصلي، وتحرير WYSIWYG مع كتابة تلقائية، وإدارة مجلدات متعددة الجذور، وحفظ مستندات الويب، والمزيد. تبقى القراءة مجانية للأبد.",
     "faq.q3": "أي المتصفحات مدعومة؟",
@@ -1937,7 +1937,7 @@
     "faq.q5": "هل يمكنني استخدام Pro على عدة أجهزة كمبيوتر؟",
     "faq.a5": "يرتبط Pro بحساب بريدك الإلكتروني ويعمل عبر عدة أجهزة. تُصدر مفاتيح التفعيل لكل جهاز للاستخدام دون اتصال، لذا يمكنك تسجيل الدخول من أي جهاز كمبيوتر للوصول إلى ميزات Pro.",
     "faq.q6": "هل يدعم المعادلات الرياضية والرسوم البيانية؟",
-    "faq.a6": "نعم. يعرض Aura Reader معادلات KaTeX ومخططات Mermaid أصليًا — ما عليك سوى كتابة صيغة LaTeX أو Mermaid القياسية في Markdown الخاص بك.",
+    "faq.a6": "نعم. يعرض JingMark معادلات KaTeX ومخططات Mermaid أصليًا — ما عليك سوى كتابة صيغة LaTeX أو Mermaid القياسية في Markdown الخاص بك.",
     "faq.q7": "كم عدد اللغات المدعومة؟",
     "faq.a7": "الواجهة متوفرة بـ 13 لغة: English و中文 و繁體中文 و日本語 و한국어 وFrançais وDeutsch وEspañol وPortuguês وРусский وTiếng Việt وSvenska والعربية (RTL).",
     "faq.q8": "هل يمكنني معاينة المحتوى قبل التصدير؟",
@@ -1950,7 +1950,7 @@
     "dl.firefox": "Firefox",
     "dl.note": "أفضل على متصفحات Chromium. دعم Firefox قريبًا.",
     "dl.soon": "قريبًا",
-    "footer.copy": "© 2026 Aura Reader · قارئ وكاتب Markdown دافئ للمتصفح",
+    "footer.copy": "© 2026 JingMark · قارئ وكاتب Markdown دافئ للمتصفح",
     "footer.tagline": "صُنع لقرّاء يحبون الورق.",
     "auth.login": "تسجيل الدخول",
     "auth.register": "إنشاء حساب",
@@ -1973,20 +1973,20 @@
     "auth.resetSent": "أُرسل بريد إعادة التعيين. تحقق من صندوق الوارد.",
     "auth.resetSuccess": "تمت إعادة تعيين كلمة المرور! سجّل الدخول مجددًا.",
     "meta.desc": "قارئ وكاتب Markdown محلي الأولوية. 46 سمة، تصدير Word أصلي، قراءة وكتابة مباشرة للملفات. بلا رفع، بلا خادم.",
-    "page.title": "Aura Reader · قارئ وكاتب Markdown دافئ للمتصفح"
+    "page.title": "JingMark · قارئ وكاتب Markdown دافئ للمتصفح"
   }
 };
 
   /* expose for inline debugging */
-  window.AURA_I18N = I18N;
-  window.AURA_LANGS = LANGS;
+  window.JINGMARK_I18N = I18N;
+  window.JINGMARK_LANGS = LANGS;
 
   /* ============================ UI logic ============================ */
-  const STORE_KEY = 'aura-lang';
+  const STORE_KEY = 'jingmark-lang';
   const CREEM_URL = 'https://creem.io/payment/prod_6uXEIs0CjyYKzcJn6J6jJF';
-  const AUTH_API = 'https://aura-reader-api.fenghua25.workers.dev';
-  const AUTH_TOKEN_KEY = 'aura-jwt';
-  const AUTH_STATUS_KEY = 'aura-pro-status';
+  const AUTH_API = 'https://jingmark-api.fenghua25.workers.dev';
+  const AUTH_TOKEN_KEY = 'jingmark-jwt';
+  const AUTH_STATUS_KEY = 'jingmark-pro-status';
 
   function getLangMeta(code) { return LANGS.find(function (l) { return l.code === code; }) || null; }
 

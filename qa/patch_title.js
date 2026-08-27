@@ -1,21 +1,21 @@
 const fs = require('fs');
-const path = 'D:/开发/插件/aura-reader-pages/assets/app.js';
+const path = 'D:/开发/插件/jingmark-pages/assets/app.js';
 let src = fs.readFileSync(path, 'utf8');
 
 const titles = {
-  en: 'Aura Reader · A warm Markdown reader & writer for the browser',
+  en: 'JingMark · A warm Markdown reader & writer for the browser',
   zh: '境相阅读 · 温润的 Markdown 阅读与写作扩展',
   'zh-tw': '境相閱讀 · 溫潤的 Markdown 閱讀與寫作擴充',
-  ja: 'Aura Reader · ブラウザ向けの温かい Markdown リーダー＆ライター',
-  ko: 'Aura Reader · 브라우저용 따뜻한 Markdown 리더 & 라이터',
-  fr: 'Aura Reader · Lecteur et éditeur Markdown chaleureux pour le navigateur',
-  de: 'Aura Reader · Warmer Markdown-Reader & -Writer für den Browser',
-  es: 'Aura Reader · Lector y editor Markdown cálido para el navegador',
-  pt: 'Aura Reader · Leitor e editor Markdown caloroso para o navegador',
-  ru: 'Aura Reader · Тёплый Markdown-ридер и редактор для браузера',
-  vi: 'Aura Reader · Trình đọc & soạn Markdown ấm áp cho trình duyệt',
-  sv: 'Aura Reader · Varm Markdown-läsare & -skrivare för webbläsaren',
-  ar: 'Aura Reader · قارئ وكاتب Markdown دافئ للمتصفح'
+  ja: 'JingMark · ブラウザ向けの温かい Markdown リーダー＆ライター',
+  ko: 'JingMark · 브라우저용 따뜻한 Markdown 리더 & 라이터',
+  fr: 'JingMark · Lecteur et éditeur Markdown chaleureux pour le navigateur',
+  de: 'JingMark · Warmer Markdown-Reader & -Writer für den Browser',
+  es: 'JingMark · Lector y editor Markdown cálido para el navegador',
+  pt: 'JingMark · Leitor e editor Markdown caloroso para o navegador',
+  ru: 'JingMark · Тёплый Markdown-ридер и редактор для браузера',
+  vi: 'JingMark · Trình đọc & soạn Markdown ấm áp cho trình duyệt',
+  sv: 'JingMark · Varm Markdown-läsare & -skrivare för webbläsaren',
+  ar: 'JingMark · قارئ وكاتب Markdown دافئ للمتصفح'
 };
 
 // Extract I18N literal

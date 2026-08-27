@@ -163,7 +163,7 @@ const cursor = `
 `;
 
 const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Aura Reader paper-realm interface">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="JingMark paper-realm interface">
   <defs>
     <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%">
       <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#9a6a43" flood-opacity="0.22"/>
