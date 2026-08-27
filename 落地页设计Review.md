@@ -1,8 +1,8 @@
-# Aura Reader 落地页设计 Review
+# JingMark 落地页设计 Review
 
 > **Reviewer**：平面设计师 / 交互设计师 / SEO 顾问视角
 > **日期**：2026-08-27
-> **Review 范围**：`aura-reader-pages/`（index.html 主落地页、pricing.html、login.html、reset.html、assets/）
+> **Review 范围**：`jingmark-pages/`（index.html 主落地页、pricing.html、login.html、reset.html、assets/）
 > **产品现状基准**：46 套主题 · 6 大分类 · 13 种语言 · 6 套免费主题 · Pro $9.99 买断（早鸟 $4.99）
 
 ---
@@ -148,36 +148,36 @@
 
 当前只有：
 ```html
-<title>Aura Reader · A warm Markdown reader & writer for the browser</title>
+<title>JingMark · A warm Markdown reader & writer for the browser</title>
 <meta name="description" content="Local-first Markdown reader & writer with warm paper-realm themes, native Word export, and direct file read/write. No uploads, no server.">
 ```
 
 建议补充：
 ```html
 <!-- 基础 -->
-<link rel="canonical" href="https://aura-reader.com/">
+<link rel="canonical" href="https://jingmark-reader.github.io/">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://aura-reader.com/">
-<meta property="og:title" content="Aura Reader · A warm Markdown reader & writer">
+<meta property="og:url" content="https://jingmark-reader.github.io/">
+<meta property="og:title" content="JingMark · A warm Markdown reader & writer">
 <meta property="og:description" content="Local-first Markdown reader with 46 warm themes, native Word export, and direct file read/write. No uploads, no server.">
-<meta property="og:image" content="https://aura-reader.com/og-image.png">
-<meta property="og:site_name" content="Aura Reader">
+<meta property="og:image" content="https://jingmark-reader.github.io/og-image.png">
+<meta property="og:site_name" content="JingMark">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Aura Reader · A warm Markdown reader & writer">
+<meta name="twitter:title" content="JingMark · A warm Markdown reader & writer">
 <meta name="twitter:description" content="...">
-<meta name="twitter:image" content="https://aura-reader.com/og-image.png">
+<meta name="twitter:image" content="https://jingmark-reader.github.io/og-image.png">
 
 <!-- 结构化数据 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Aura Reader",
+  "name": "JingMark",
   "applicationCategory": "ProductivityApplication",
   "operatingSystem": "Chrome, Edge, Brave, Arc (Chromium 86+)",
   "description": "...",
@@ -196,7 +196,7 @@
 | 页面 | 主关键词 | 长尾关键词 |
 |------|---------|-----------|
 | 首页 | markdown reader, markdown editor chrome extension | "markdown reader chrome extension", "local markdown editor", "markdown to word chrome", "warm markdown themes" |
-| 定价页 | aura reader pro, markdown editor pricing | "markdown editor one-time purchase", "markdown pro features" |
+| 定价页 | jingmark pro, markdown editor pricing | "markdown editor one-time purchase", "markdown pro features" |
 
 ---
 
@@ -387,10 +387,10 @@ Noto Sans Arabic (3 weights)
 
 确认后我将：
 1. 输出 SVG 格式的图形标（单色/反白/彩色三版）
-2. 输出横版标准组合（图形 + "Aura Reader" 字标）
+2. 输出横版标准组合（图形 + "JingMark" 字标）
 3. 替换 index.html、pricing.html、login.html、reset.html 中的 Logo
 4. 生成 favicon.svg
 
 ---
 
-*Review by Aura Reader Design Review · 2026-08-27*
+*Review by JingMark Design Review · 2026-08-27*

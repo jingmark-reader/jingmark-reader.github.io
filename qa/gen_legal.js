@@ -1,4 +1,11 @@
-const fs = require("fs");
+/* =============================================================
+ * JingMark — Legal page generator (English only)
+ * Produces two static English pages:
+ *   privacy.html, terms.html
+ * No per-language variants, no Changelog page.
+ * Run: node qa/gen_legal.js
+ * ============================================================= */
+const fs = require('fs');
 
 const CSS = `
 :root{
@@ -23,8 +30,6 @@ p{font-size:15.5px;color:var(--ink-soft,#4a4138);margin:10px 0}
 ul{margin:10px 0 10px 22px;font-size:15.5px;color:var(--ink-soft,#4a4138)}
 li{margin:6px 0}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px 20px;margin:14px 0}
-.cl{display:flex;gap:10px;align-items:baseline}
-.ver{font-family:var(--serif);font-weight:700;color:var(--primary);min-width:84px}
 footer{background:var(--night);color:var(--night-muted);margin-top:60px;padding:40px 24px}
 .foot-inner{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
 .foot-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
@@ -33,13 +38,68 @@ footer{background:var(--night);color:var(--night-muted);margin-top:60px;padding:
 .foot-copy{font-size:12.5px}
 `;
 
-const HEAD = (title) => `<!DOCTYPE html>
+const LOGO = `<svg width="18" height="18" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10.5" rx="4.5" ry="5.5" fill="#fff4d8" fill-opacity="0.4"/><circle cx="24" cy="10.5" r="1.6" fill="#fffaf0"/><path d="M23 12.5L12.2 35c-.5 1 .5 1.3 1.5 1.3H17c1 0 1.5-.3 2-1.3l2.5-6.5H23Z" fill="#fffdf8"/><path d="M25 12.5L35.8 35c.5 1-.5 1.3-1.5 1.3H31c-1 0-1.5-.3-2-1.3l-2.5-6.5H25Z" fill="#fffdf8" fill-opacity="0.85"/><path d="M21.8 27 24 23.2 26.2 27Z" fill="#9a6a43"/></svg>`;
+
+/* ===================== English content ===================== */
+const T = {
+  back: `← Back to home`, home: `Home`, privacy: `Privacy`, terms: `Terms`,
+  copy: `© 2026 JingMark · A warm Markdown reader &amp; writer for the browser.`,
+  privacyPage: {
+    eyebrow: `Legal`, title: `Privacy Policy`, updated: `Last updated: August 2026`,
+    intro: `<strong>JingMark is local-first.</strong> Every file you open and edit stays on your device. We do not upload, sync, or transmit your documents to any server.`,
+    sections: [
+      { h: `1. What we collect`, body: `<ul><li><strong>For free users:</strong> nothing. No account is required to read and write Markdown.</li><li><strong>For Pro users:</strong> only your email address and payment state (active / inactive), used to verify and sync your Pro license.</li></ul>` },
+      { h: `2. File access`, body: `<p>JingMark reads and writes only the folders you explicitly authorize through the File System Access API. You can revoke access at any time from your browser’s site settings. We never read files outside the folders you choose.</p>` },
+      { h: `3. Payments`, body: `<p>Pro purchases are processed by our payment partner <strong>Creem</strong>. JingMark never stores your card details; payment information is handled entirely by Creem under their own privacy policy.</p>` },
+      { h: `4. Rendering &amp; security`, body: `<p>All Markdown rendering and export happen locally. Every render is sanitized (DOMPurify), third-party libraries (marked, Vditor, docx) are bundled inside the extension, and only local scripts ever run under a strict Content Security Policy.</p>` },
+      { h: `5. Children`, body: `<p>JingMark is not directed at children under 13 and we do not knowingly collect their data.</p>` },
+      { h: `6. Changes`, body: `<p>We may update this policy and will post the new version here.</p>` }
+    ]
+  },
+  termsPage: {
+    eyebrow: `Legal`, title: `Terms of Service`, updated: `Last updated: August 2026`,
+    sections: [
+      { h: `1. Acceptance`, body: `<p>By installing or using JingMark you agree to these terms. The extension is provided “as is” for reading and writing Markdown on your own device.</p>` },
+      { h: `2. License &amp; use`, body: `<p>JingMark is licensed for personal and commercial use. You may not reverse-engineer, redistribute, or use the software to violate any law.</p>` },
+      { h: `3. Pro license`, body: `<ul><li>Pro is a <strong>one-time purchase</strong> that unlocks all 46 themes, native Word/PDF export, WYSIWYG editing, multi-root management, and more.</li><li>Pro is tied to the email account used at purchase and works across the devices you sign in to.</li></ul>` },
+      { h: `4. Payments &amp; refunds`, body: `<p>Payments are handled by Creem. Refunds follow Creem’s refund policy and applicable consumer law. Activation keys are issued per device for offline use.</p>` },
+      { h: `5. Intellectual property`, body: `<p>The software, name, and brand assets are owned by JingMark. Your documents remain entirely yours.</p>` },
+      { h: `6. Disclaimer &amp; termination`, body: `<p>The software is provided without warranty. We may suspend access for abuse. These terms may change; continued use after changes constitutes acceptance.</p>` }
+    ]
+  }
+};
+
+/* ===================== Render ===================== */
+function footer(t) {
+  return `
+<footer><div class="foot-inner">
+  <div class="foot-links">
+    <a href="privacy.html">${t.privacy}</a>
+    <a href="terms.html">${t.terms}</a>
+    <a href="index.html">${t.home}</a>
+  </div>
+  <p class="foot-copy">${t.copy}</p>
+</div></footer>`;
+}
+
+function renderPage(kind) {
+  const data = T[kind + 'Page'];
+  const introHtml = data.intro ? `\n  <div class="card">${data.intro}</div>` : '';
+  const mainInner = `
+  <span class="eyebrow">${data.eyebrow}</span>
+  <h1>${data.title}</h1>
+  <p class="updated">${data.updated}</p>${introHtml}
+${data.sections.map(function (s) {
+  return `  <h2>${s.h}</h2>\n  ${s.body}`;
+}).join('\n')}`;
+
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${title} · JingMark</title>
-<meta name="description" content="${title} for JingMark, a local-first Markdown reader & writer.">
+<title>${data.title} · JingMark</title>
+<meta name="description" content="${data.title} for JingMark, a local-first Markdown reader &amp; writer.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
@@ -47,100 +107,15 @@ const HEAD = (title) => `<!DOCTYPE html>
 </head>
 <body>
 <header class="nav"><div class="nav-inner">
-  <a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10.5" rx="4.5" ry="5.5" fill="#fff4d8" fill-opacity="0.4"/><circle cx="24" cy="10.5" r="1.6" fill="#fffaf0"/><path d="M23 12.5L12.2 35c-.5 1 .5 1.3 1.5 1.3H17c1 0 1.5-.3 2-1.3l2.5-6.5H23Z" fill="#fffdf8"/><path d="M25 12.5L35.8 35c.5 1-.5 1.3-1.5 1.3H31c-1 0-1.5-.3-2-1.3l-2.5-6.5H25Z" fill="#fffdf8" fill-opacity="0.85"/><path d="M21.8 27 24 23.2 26.2 27Z" fill="#9a6a43"/></svg></span>JingMark</a>
-  <a class="back" href="index.html">&larr; Back to home</a>
-</div></header>`;
-
-const FOOT = `
-
-<footer><div class="foot-inner">
-  <div class="foot-links">
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <a href="changelog.html">Changelog</a>
-    <a href="mailto:hello@jingmark-reader.com">Contact</a>
-    <a href="index.html">Home</a>
-  </div>
-  <p class="foot-copy">© 2026 JingMark · A warm Markdown reader &amp; writer for the browser.</p>
-</div></footer>
+  <a class="brand" href="index.html"><span class="logo" aria-hidden="true">${LOGO}</span>JingMark</a>
+  <a class="back" href="index.html">${T.back}</a>
+</div></header>
+<main>${mainInner}</main>${footer(T)}
 </body>
 </html>`;
+}
 
-const privacy = HEAD("Privacy Policy") + `
-<main>
-  <span class="eyebrow">Legal</span>
-  <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: August 2026</p>
-
-  <div class="card"><strong>JingMark is local-first.</strong> Every file you open and edit stays on your device. We do not upload, sync, or transmit your documents to any server.</div>
-
-  <h2>1. What we collect</h2>
-  <ul>
-    <li><strong>For free users:</strong> nothing. No account is required to read and write Markdown.</li>
-    <li><strong>For Pro users:</strong> only your email address and payment state (active / inactive), used to verify and sync your Pro license.</li>
-  </ul>
-
-  <h2>2. File access</h2>
-  <p>JingMark reads and writes only the folders you explicitly authorize through the File System Access API. You can revoke access at any time from your browser's site settings. We never read files outside the folders you choose.</p>
-
-  <h2>3. Payments</h2>
-  <p>Pro purchases are processed by our payment partner <strong>Creem</strong>. JingMark never stores your card details; payment information is handled entirely by Creem under their own privacy policy.</p>
-
-  <h2>4. Rendering &amp; security</h2>
-  <p>All Markdown rendering and export happen locally. Every render is sanitized (DOMPurify), third-party libraries (marked, Vditor, docx) are bundled inside the extension, and only local scripts ever run under a strict Content Security Policy.</p>
-
-  <h2>5. Children</h2>
-  <p>JingMark is not directed at children under 13 and we do not knowingly collect their data.</p>
-
-  <h2>6. Changes &amp; contact</h2>
-  <p>We may update this policy and will post the new version here. Questions? Email <a href="mailto:hello@jingmark-reader.com">hello@jingmark-reader.com</a>.</p>
-</main>` + FOOT;
-
-const terms = HEAD("Terms of Service") + `
-<main>
-  <span class="eyebrow">Legal</span>
-  <h1>Terms of Service</h1>
-  <p class="updated">Last updated: August 2026</p>
-
-  <h2>1. Acceptance</h2>
-  <p>By installing or using JingMark you agree to these terms. The extension is provided "as is" for reading and writing Markdown on your own device.</p>
-
-  <h2>2. License &amp; use</h2>
-  <p>JingMark is licensed for personal and commercial use. You may not reverse-engineer, redistribute, or use the software to violate any law.</p>
-
-  <h2>3. Pro license</h2>
-  <ul>
-    <li>Pro is a <strong>one-time purchase</strong> that unlocks all 46 themes, native Word/PDF export, WYSIWYG editing, multi-root management, and more.</li>
-    <li>Pro is tied to the email account used at purchase and works across the devices you sign in to.</li>
-  </ul>
-
-  <h2>4. Payments &amp; refunds</h2>
-  <p>Payments are handled by Creem. Refunds follow Creem's refund policy and applicable consumer law. Activation keys are issued per device for offline use.</p>
-
-  <h2>5. Intellectual property</h2>
-  <p>The software, name, and brand assets are owned by JingMark. Your documents remain entirely yours.</p>
-
-  <h2>6. Disclaimer &amp; termination</h2>
-  <p>The software is provided without warranty. We may suspend access for abuse. These terms may change; continued use after changes constitutes acceptance.</p>
-
-  <h2>7. Contact</h2>
-  <p>Questions? Email <a href="mailto:hello@jingmark-reader.com">hello@jingmark-reader.com</a>.</p>
-</main>` + FOOT;
-
-const changelog = HEAD("Changelog") + `
-<main>
-  <span class="eyebrow">Product</span>
-  <h1>Changelog</h1>
-  <p class="updated">Release notes for JingMark</p>
-
-  <div class="card cl"><span class="ver">v1.0.0</span><div><strong>Local-first reader</strong><br>Markdown reading &amp; writing through the File System Access API, 6 curated themes, folder library, and local-first privacy.</div></div>
-  <div class="card cl"><span class="ver">v1.1.0</span><div><strong>Theme expansion</strong><br>Grew to <strong>46 themes across 6 families</strong> (Aura, Paper, Rhythm, Archive, Dark, Editorial) with a one-click switcher.</div></div>
-  <div class="card cl"><span class="ver">v1.2.0</span><div><strong>Native export</strong><br>Genuine editable Word export, plus PDF and HTML, with sanitized rendering.</div></div>
-  <div class="card cl"><span class="ver">v1.3.0</span><div><strong>Pro &amp; editing</strong><br>WYSIWYG editing with write-back, multi-root management, web-doc saving, and Pro license via Creem.</div></div>
-  <div class="card cl"><span class="ver">v1.4.0</span><div><strong>International</strong><br>Interface localized into 13 languages including RTL (Arabic), KaTeX math and Mermaid diagrams.</div></div>
-</main>` + FOOT;
-
-fs.writeFileSync("privacy.html", privacy);
-fs.writeFileSync("terms.html", terms);
-fs.writeFileSync("changelog.html", changelog);
-console.log("wrote privacy.html, terms.html, changelog.html");
+/* ===================== Emit ===================== */
+fs.writeFileSync('privacy.html', renderPage('privacy'));
+fs.writeFileSync('terms.html', renderPage('terms'));
+console.log('Generated privacy.html + terms.html (English only).');
