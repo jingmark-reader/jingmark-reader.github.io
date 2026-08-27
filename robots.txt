@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aura-reader.com/sitemap.xml
+Sitemap: https://jingmark.github.io/sitemap.xml
