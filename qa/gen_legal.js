@@ -41,8 +41,9 @@ footer{background:var(--night);color:var(--night-muted);margin-top:60px;padding:
 const LOGO = `<svg width="18" height="18" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10.5" rx="4.5" ry="5.5" fill="#fff4d8" fill-opacity="0.4"/><circle cx="24" cy="10.5" r="1.6" fill="#fffaf0"/><path d="M23 12.5L12.2 35c-.5 1 .5 1.3 1.5 1.3H17c1 0 1.5-.3 2-1.3l2.5-6.5H23Z" fill="#fffdf8"/><path d="M25 12.5L35.8 35c.5 1-.5 1.3-1.5 1.3H31c-1 0-1.5-.3-2-1.3l-2.5-6.5H25Z" fill="#fffdf8" fill-opacity="0.85"/><path d="M21.8 27 24 23.2 26.2 27Z" fill="#9a6a43"/></svg>`;
 
 /* ===================== English content ===================== */
+const CONTACT = `<p>Support &amp; legal contact: <a href="mailto:fenghua25@gmail.com">fenghua25@gmail.com</a> (replies within 2 business days).</p>`;
 const T = {
-  back: `← Back to home`, home: `Home`, privacy: `Privacy`, terms: `Terms`,
+  back: `← Back to home`, home: `Home`, privacy: `Privacy`, terms: `Terms`, contact: `Support`,
   copy: `© 2026 JingMark · A warm Markdown reader &amp; writer for the browser.`,
   privacyPage: {
     eyebrow: `Legal`, title: `Privacy Policy`, updated: `Last updated: August 2026`,
@@ -53,7 +54,8 @@ const T = {
       { h: `3. Payments`, body: `<p>Pro purchases are processed by our payment partner <strong>Creem</strong>. JingMark never stores your card details; payment information is handled entirely by Creem under their own privacy policy.</p>` },
       { h: `4. Rendering &amp; security`, body: `<p>All Markdown rendering and export happen locally. Every render is sanitized (DOMPurify), third-party libraries (marked, Vditor, docx) are bundled inside the extension, and only local scripts ever run under a strict Content Security Policy.</p>` },
       { h: `5. Children`, body: `<p>JingMark is not directed at children under 13 and we do not knowingly collect their data.</p>` },
-      { h: `6. Changes`, body: `<p>We may update this policy and will post the new version here.</p>` }
+      { h: `6. Changes`, body: `<p>We may update this policy and will post the new version here.</p>` },
+      { h: `7. How to contact us`, body: CONTACT }
     ]
   },
   termsPage: {
@@ -64,7 +66,8 @@ const T = {
       { h: `3. Pro license`, body: `<ul><li>Pro is a <strong>one-time purchase</strong> that unlocks all 46 themes, native Word/PDF export, WYSIWYG editing, multi-root management, and more.</li><li>Pro is tied to the email account used at purchase and works across the devices you sign in to.</li></ul>` },
       { h: `4. Payments &amp; refunds`, body: `<p>Payments are handled by Creem. Refunds follow Creem’s refund policy and applicable consumer law. Activation keys are issued per device for offline use.</p>` },
       { h: `5. Intellectual property`, body: `<p>The software, name, and brand assets are owned by JingMark. Your documents remain entirely yours.</p>` },
-      { h: `6. Disclaimer &amp; termination`, body: `<p>The software is provided without warranty. We may suspend access for abuse. These terms may change; continued use after changes constitutes acceptance.</p>` }
+      { h: `6. Disclaimer &amp; termination`, body: `<p>The software is provided without warranty. We may suspend access for abuse. These terms may change; continued use after changes constitutes acceptance.</p>` },
+      { h: `7. Contact`, body: CONTACT }
     ]
   }
 };
@@ -77,6 +80,7 @@ function footer(t) {
     <a href="privacy.html">${t.privacy}</a>
     <a href="terms.html">${t.terms}</a>
     <a href="index.html">${t.home}</a>
+    <a href="mailto:fenghua25@gmail.com">${t.contact}</a>
   </div>
   <p class="foot-copy">${t.copy}</p>
 </div></footer>`;
