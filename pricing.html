@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JingMark Pro · Pricing</title>
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* 早鸟价三段式（与首页 price.pro.cost 口径一致）：现价/划线原价/省钱标签 */
+    .price-amount .now{font-size:46px;font-weight:700;color:var(--primary);letter-spacing:-1.5px}
+    .price-amount .was{font-size:20px;font-weight:500;color:var(--muted-2);text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:rgba(154,106,67,.5);position:relative;top:-6px;margin-left:6px}
+    .price-amount .save{display:inline-block;font-family:var(--sans);font-size:12px;font-weight:700;color:#5b6f48;background:linear-gradient(180deg,#e3eed8,#d4e2c6);padding:5px 11px;border-radius:20px;letter-spacing:.04em;position:relative;top:-12px;margin-left:10px;border:1px solid rgba(95,116,72,.18)}
+  </style>
 </head>
 <body>
   <div class="page">
@@ -23,7 +29,7 @@
         <p class="text-muted mb-24">One-time purchase. Lifetime updates.</p>
 
         <div class="price-tag">
-          <span class="price-amount">$9.99</span>
+          <span class="price-amount"><span class="now">$4.99</span><span class="was">$9.99</span><span class="save">Save 50%</span></span>
           <div class="price-period">one-time payment</div>
         </div>
 
@@ -53,7 +59,7 @@
         <p class="text-muted mb-24">Unlock everything. One-time payment.</p>
 
         <div class="price-tag">
-          <span class="price-amount">$9.99</span>
+          <span class="price-amount"><span class="now">$4.99</span><span class="was">$9.99</span><span class="save">Save 50%</span></span>
           <div class="price-period">one-time payment · lifetime updates</div>
         </div>
 
@@ -67,7 +73,7 @@
         </ul>
 
         <button class="btn btn-primary btn-block btn-lg" id="checkoutBtn">
-          <span class="btn-text">Buy Now — $9.99</span>
+          <span class="btn-text">Buy Now — $4.99</span>
           <span class="spinner hidden" id="checkoutSpinner"></span>
         </button>
 
@@ -129,8 +135,11 @@
       const token = getToken();
       if (!token) return null;
       try {
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        return payload.email;
+        // JWT payload 段是 base64url：-/_ 需归一为标准 base64 并补齐 padding
+        let seg = String(token).split('.')[1] || '';
+        seg = seg.replace(/-/g, '+').replace(/_/g, '/');
+        while (seg.length % 4) seg += '=';
+        return JSON.parse(atob(seg)).email;
       } catch { return null; }
     }
 

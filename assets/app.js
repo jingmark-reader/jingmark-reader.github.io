@@ -2143,13 +2143,24 @@
   }
 
   /* ============================ Auth modal ============================ */
+  // 解析本站 JWT 的 payload（base64url：-/_ 归一 + 补 padding，否则含 -/_ 的
+  // token 在此抛错、邮箱静默变 null——导航显示空白、结账 metadata 缺失）
+  function parseJwtEmail(token) {
+    try {
+      let seg = String(token).split('.')[1] || '';
+      seg = seg.replace(/-/g, '+').replace(/_/g, '/');
+      while (seg.length % 4) seg += '=';
+      return JSON.parse(atob(seg)).email || null;
+    } catch (e) { return null; }
+  }
+
   function updateNavAuth() {
     const navLinks = document.querySelectorAll('[data-i18n="nav.login"]');
     const token = localStorage.getItem(AUTH_TOKEN_KEY);
     const t = I18N[currentLang];
     if (token) {
       let email = null;
-      try { email = JSON.parse(atob(token.split('.')[1])).email; } catch (e) {}
+      try { email = parseJwtEmail(token); } catch (e) {}
       navLinks.forEach(function (el) {
         el.textContent = email ? email.split('@')[0] : (t['auth.welcome'] || 'Account');
       });
@@ -2192,7 +2203,7 @@
   function getAuthEmail() {
     const token = localStorage.getItem(AUTH_TOKEN_KEY);
     if (!token) return null;
-    try { return JSON.parse(atob(token.split('.')[1])).email; } catch (e) { return null; }
+    return parseJwtEmail(token);
   }
   // Checkout: metadata carries the JingMark account email so the Creem webhook
   // can activate the right account even if the payer uses another mailbox.

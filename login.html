@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JingMark · Login</title>
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Google OAuth 按钮（仅本页使用） */
+    .oauth-divider { display: flex; align-items: center; gap: 12px; margin: 18px 0 14px; color: #9a8b76; font-size: 12px; }
+    .oauth-divider::before, .oauth-divider::after { content: ''; flex: 1; height: 1px; background: #e8e0d2; }
+    .btn-google {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: #ffffff; color: #3d3327;
+      border: 1px solid #d9cfc0; border-radius: 10px;
+      padding: 11px 16px; font-size: 14px; font-weight: 600; cursor: pointer;
+    }
+    .btn-google:hover { background: #faf7f2; }
+    .btn-google:disabled { opacity: 0.6; cursor: wait; }
+    .btn-google svg { flex: none; }
+  </style>
 </head>
 <body>
   <div class="page">
@@ -57,6 +71,16 @@
       </button>
     </form>
 
+    <!-- Google OAuth（Worker 未配置时由 JS 隐藏；对登录/注册两态通用，未注册邮箱会自动建号） -->
+    <div id="googleSection" class="hidden">
+      <div class="oauth-divider"><span>or</span></div>
+      <button type="button" class="btn btn-google btn-block" id="googleBtn">
+        <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C36.9 40.4 44 35 44 24c0-1.3-.1-2.7-.4-3.9z"/></svg>
+        <span class="btn-text">Continue with Google</span>
+        <span class="spinner hidden" id="googleSpinner"></span>
+      </button>
+    </div>
+
     <!-- Logged In View -->
     <div id="loggedInView" class="hidden">
       <div class="card text-center">
@@ -68,7 +92,7 @@
           <p class="text-muted mt-8" style="font-size:13px;">You can close this page and return to JingMark.</p>
         </div>
         <div id="upgradeCta" class="mt-24">
-          <a href="pricing.html" class="btn btn-primary btn-block">Upgrade to Pro — $12.99</a>
+          <a href="pricing.html" class="btn btn-primary btn-block">Upgrade to Pro — $4.99</a>
         </div>
         <button class="btn btn-outline btn-block mt-16" id="logoutBtn">Log Out</button>
       </div>
@@ -91,8 +115,11 @@
       const token = getToken();
       if (!token) return null;
       try {
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        return payload.email;
+        // JWT payload 段是 base64url：-/_ 需归一为标准 base64 并补齐 padding
+        let seg = String(token).split('.')[1] || '';
+        seg = seg.replace(/-/g, '+').replace(/_/g, '/');
+        while (seg.length % 4) seg += '=';
+        return JSON.parse(atob(seg)).email;
       } catch { return null; }
     }
 
@@ -266,6 +293,7 @@
       // Show logged-in view, hide forms
       loginForm.classList.add('hidden');
       registerForm.classList.add('hidden');
+      document.getElementById('googleSection').classList.add('hidden'); // 登录态隐藏 Google 按钮
       document.querySelector('.auth-tabs').classList.add('hidden');
       document.getElementById('loggedInView').classList.remove('hidden');
       consumeRedirect();
@@ -279,12 +307,8 @@
       document.querySelector('.auth-tabs').classList.remove('hidden');
       tabLogin.click();
       showSuccess('Logged out successfully.');
+      initGoogle(); // 重新显隐 Google 按钮（按当前无 token 状态）
     });
-
-    // --- Auto-check on page load ---
-    if (getToken()) {
-      checkStatusAndShow();
-    }
 
     // --- Handle redirect param ---
     const params = new URLSearchParams(window.location.search);
@@ -302,6 +326,99 @@
         return true;
       }
       return false;
+    }
+
+    // --- Google OAuth ---
+    const GOOGLE_STATE_KEY = 'jingmark-oauth-state';
+    function googleRedirectUri() {
+      // 授权回跳地址必须与 Google Cloud 后台登记的 Authorized redirect URI 逐字一致
+      return window.location.origin + window.location.pathname;
+    }
+    async function initGoogle() {
+      // 仅在正式 https 站点启用：Google 要求回跳 URI 与后台登记的
+      // https://jingmark-reader.github.io/login.html 逐字一致——本地 file:// 打开
+      // 必然被 Google 拒绝（invalid_request / OAuth policy），按钮隐藏以免误触
+      if (window.location.protocol !== 'https:' || window.location.hostname !== 'jingmark-reader.github.io') return;
+      let enabled = false;
+      try {
+        const res = await fetch(API_BASE + '/api/auth/google');
+        const cfg = await res.json();
+        enabled = !!cfg.enabled && !!cfg.clientId;
+        if (enabled) window.GOOGLE_CLIENT_ID = cfg.clientId;
+      } catch (e) { /* 网络失败保持隐藏 */ }
+      if (enabled && !getToken()) document.getElementById('googleSection').classList.remove('hidden');
+    }
+    document.getElementById('googleBtn').addEventListener('click', () => {
+      if (!window.GOOGLE_CLIENT_ID) return;
+      // state 防 CSRF：随机串入 localStorage，回跳时比对
+      const state = [...crypto.getRandomValues(new Uint8Array(16))].map(b => b.toString(16).padStart(2, '0')).join('');
+      localStorage.setItem(GOOGLE_STATE_KEY, state);
+      const authUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' + new URLSearchParams({
+        client_id: window.GOOGLE_CLIENT_ID,
+        redirect_uri: googleRedirectUri(),
+        response_type: 'code',
+        scope: 'openid email profile',
+        state,
+        prompt: 'select_account'
+      });
+      window.location.href = authUrl;
+    });
+    async function handleGoogleCallback() {
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get('code');
+      const state = params.get('state');
+      const oauthError = params.get('error');
+      if (!code && !state && !oauthError) return false; // 非 OAuth 回跳
+
+      // 清掉 URL 参数，防止刷新重复处理
+      window.history.replaceState({}, '', window.location.pathname + (params.get('redirect') ? '?redirect=' + encodeURIComponent(params.get('redirect')) : ''));
+
+      if (oauthError) {
+        if (oauthError !== 'access_denied') showAlert('Google sign-in failed: ' + oauthError);
+        return true;
+      }
+      const expected = localStorage.getItem(GOOGLE_STATE_KEY);
+      localStorage.removeItem(GOOGLE_STATE_KEY);
+      if (!code || !state || !expected || state !== expected) {
+        showAlert('Sign-in session expired or invalid. Please try again.');
+        return true;
+      }
+
+      const btn = document.getElementById('googleBtn');
+      btn.querySelector('.btn-text').classList.add('hidden');
+      btn.querySelector('#googleSpinner').classList.remove('hidden');
+      btn.disabled = true;
+      try {
+        const res = await fetch(API_BASE + '/api/auth/google', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code, redirectUri: googleRedirectUri() })
+        });
+        const data = await res.json();
+        if (data.token) {
+          setToken(data.token);
+          await checkStatusAndShow();
+        } else {
+          showAlert(data.error || 'Google sign-in failed.');
+        }
+      } catch (err) {
+        showAlert('Network error. Please check your connection and try again.');
+      } finally {
+        btn.querySelector('.btn-text').classList.remove('hidden');
+        btn.querySelector('#googleSpinner').classList.add('hidden');
+        btn.disabled = false;
+      }
+      return true;
+    }
+
+    // --- Auto-check on page load / OAuth 回跳处理 ---
+    // 有 token → 直接进登录态（Google 按钮由 checkStatusAndShow 隐藏）；
+    // 无 token → 初始化 Google 按钮 + 处理 OAuth 回跳
+    if (getToken()) {
+      checkStatusAndShow();
+    } else {
+      initGoogle();
+      handleGoogleCallback();
     }
   </script>
 </body>
