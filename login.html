@@ -18,6 +18,8 @@
     .btn-google:hover { background: #faf7f2; }
     .btn-google:disabled { opacity: 0.6; cursor: wait; }
     .btn-google svg { flex: none; }
+    .buy-for{font-size:12.5px;color:#9a8b76;margin:-6px 0 14px}
+    .buy-for b{color:#8b5e3c}
   </style>
 </head>
 <body>
@@ -91,6 +93,7 @@
           <p class="text-muted" style="font-size:14px;">Your Pro status has been synced to the extension.</p>
           <p class="text-muted mt-8" style="font-size:13px;">You can close this page and return to JingMark.</p>
         </div>
+        <div id="buyFor" class="buy-for"></div>
         <div id="upgradeCta" class="mt-24">
           <a href="pricing.html" class="btn btn-primary btn-block">Upgrade to Pro — $4.99</a>
         </div>
@@ -288,6 +291,9 @@
         badge.className = 'badge badge-free';
         upgradeCta.classList.remove('hidden');
         proStatus.classList.add('hidden');
+        var bf = document.getElementById('buyFor');
+        bf.textContent = email ? 'Purchasing for: ' : '';
+        if (email) { var b = document.createElement('b'); b.textContent = email; bf.appendChild(b); }
       }
 
       // Show logged-in view, hide forms

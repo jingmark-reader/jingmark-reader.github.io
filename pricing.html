@@ -6,6 +6,9 @@
   <title>JingMark Pro · Pricing</title>
   <link rel="stylesheet" href="assets/style.css">
   <style>
+    /* 付款前账号确认行（防多账号误购） */
+    .buy-for{font-size:12.5px;color:var(--muted,#7a6b5d);margin-bottom:12px}
+    .buy-for b{color:var(--primary,#8b5e3c)}
     /* 早鸟价三段式（与首页 price.pro.cost 口径一致）：现价/划线原价/省钱标签 */
     .price-amount .now{font-size:46px;font-weight:700;color:var(--primary);letter-spacing:-1.5px}
     .price-amount .was{font-size:20px;font-weight:500;color:var(--muted-2);text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:rgba(154,106,67,.5);position:relative;top:-6px;margin-left:6px}
@@ -72,6 +75,7 @@
           <li>Lifetime updates</li>
         </ul>
 
+        <div id="buyFor" class="buy-for"></div>
         <button class="btn btn-primary btn-block btn-lg" id="checkoutBtn">
           <span class="btn-text">Buy Now — $4.99</span>
           <span class="spinner hidden" id="checkoutSpinner"></span>
@@ -205,6 +209,9 @@
         processingView.classList.add('hidden');
         freePlanView.classList.remove('hidden');
         document.getElementById('userEmail').textContent = email || '';
+        var bf = document.getElementById('buyFor');
+        bf.textContent = email ? 'Purchasing for: ' : '';
+        if (email) { var b = document.createElement('b'); b.textContent = email; bf.appendChild(b); }
       }
     }
 
