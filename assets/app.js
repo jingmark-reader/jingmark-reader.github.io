@@ -2324,4 +2324,38 @@
   window.doResetRequest = doResetRequest;
   window.doLogout = doLogout;
 
+  /* ---- Google OAuth（登录弹窗，2026-08-29）----
+     授权回跳固定用已登记的 login.html（Google 要求 URI 逐字一致，不能带当前页路径）；
+     回调由 login.html 的既有处理逻辑接管（state 键同源共享），登录成功后经
+     sessionStorage['jingmark-redirect']='/' 自动跳回本页。 */
+  var GOOGLE_REDIRECT = 'https://jingmark-reader.github.io/login.html';
+  function initGoogleSignin() {
+    var btn = document.getElementById('googleBtn');
+    if (!btn) return;
+    fetch(AUTH_API + '/api/auth/google').then(function (r) { return r.json(); }).then(function (cfg) {
+      if (cfg && cfg.enabled && cfg.clientId && !localStorage.getItem(AUTH_TOKEN_KEY)) {
+        window.GOOGLE_CLIENT_ID = cfg.clientId;
+        document.getElementById('googleSection').style.display = '';
+      }
+    }).catch(function () { /* 探测失败保持隐藏 */ });
+  }
+  function startGoogleSignin() {
+    if (!window.GOOGLE_CLIENT_ID) return;
+    var state = Array.from(crypto.getRandomValues(new Uint8Array(16)), function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+    localStorage.setItem('jingmark-oauth-state', state);            // login.html 回调校验同一键
+    sessionStorage.setItem('jingmark-redirect', '/');               // 登录完成后跳回首页
+    var authUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' + new URLSearchParams({
+      client_id: window.GOOGLE_CLIENT_ID,
+      redirect_uri: GOOGLE_REDIRECT,
+      response_type: 'code',
+      scope: 'openid email profile',
+      state: state,
+      prompt: 'select_account'
+    });
+    window.location.href = authUrl;
+  }
+  var gBtn = document.getElementById('googleBtn');
+  if (gBtn) gBtn.addEventListener('click', startGoogleSignin);
+  initGoogleSignin();
+
 })();
