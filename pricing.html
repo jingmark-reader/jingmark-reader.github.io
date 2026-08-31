@@ -130,7 +130,10 @@
     const CREEM_CHECKOUT_URL = 'https://www.creem.io/payment/prod_2CZgvuTFBQXMiyF0owBU8g';
     function checkoutUrl() {
       const email = getEmail();
-      return CREEM_CHECKOUT_URL + (email ? '?metadata%5Bjingmark_email%5D=' + encodeURIComponent(email) : '');
+      // 未登录返回 '#'（失败即关闭）：本页购买按钮虽在无 token 时已隐藏，
+      // 但万一视图状态异常泄漏出来，也不能让用户在没有 metadata 的情况下付款。
+      if (!email) return '#';
+      return CREEM_CHECKOUT_URL + '?metadata%5Bjingmark_email%5D=' + encodeURIComponent(email);
     }
 
     function getToken() { return localStorage.getItem(TOKEN_KEY); }

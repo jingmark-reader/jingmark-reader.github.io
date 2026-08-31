@@ -34,7 +34,7 @@
     "nav.login": "Sign in",
     "nav.install": "Add to browser",
     "hero.eyebrow": "Local-first · Zero setup · Reads & writes your files",
-    "hero.title": "A lighter browser extension for Markdown",
+    "hero.title": "Read and write Markdown in your browser",
     "hero.sub": "Rich, refined Markdown typography themes built in, offline by design, your files never leave your device.",
     "badge.free": "Free",
     "badge.pro": "Pro",
@@ -163,6 +163,7 @@
     "auth.errShort": "Password must be at least 8 characters",
     "auth.errMatch": "Passwords do not match",
     "auth.errNetwork": "Network error. Please check your connection.",
+    "auth.loginToPurchase": "Please sign in first — your Pro purchase needs to be linked to your account.",
     "auth.errFail": "Something went wrong. Please try again.",
     "auth.successReg": "Account created!",
     "auth.welcome": "Signed in",
@@ -184,7 +185,7 @@
     "nav.login": "登录",
     "nav.install": "安装扩展",
     "hero.eyebrow": "本地优先 · 零配置 · 直读直写你的文件",
-    "hero.title": "更轻的浏览器 Markdown 扩展",
+    "hero.title": "在浏览器里读写 Markdown 文件",
     "hero.sub": "内置丰富精致的 Markdown 排版主题、天生离线，你的文件从不离开本机。",
     "badge.free": "免费",
     "badge.pro": "Pro",
@@ -313,6 +314,7 @@
     "auth.errShort": "密码至少 8 位",
     "auth.errMatch": "两次密码不一致",
     "auth.errNetwork": "网络错误，请检查连接后重试",
+    "auth.loginToPurchase": "请先登录或注册：购买需要关联到你的账户才能生效。",
     "auth.errFail": "操作失败，请重试",
     "auth.successReg": "注册成功！",
     "auth.welcome": "已登录",
@@ -334,7 +336,7 @@
     "nav.login": "登入",
     "nav.install": "安裝擴充功能",
     "hero.eyebrow": "本地優先 · 零設定 · 直讀直寫你的檔案",
-    "hero.title": "更輕的瀏覽器 Markdown 擴充套件",
+    "hero.title": "在瀏覽器裡讀寫 Markdown 檔案",
     "hero.sub": "內建精緻的 Markdown 排版主題、天生離線，你的檔案從不離開本機。",
     "badge.free": "免費",
     "badge.pro": "Pro",
@@ -463,6 +465,7 @@
     "auth.errShort": "密碼至少 8 位",
     "auth.errMatch": "兩次密碼不一致",
     "auth.errNetwork": "網路錯誤，請檢查連線後重試",
+    "auth.loginToPurchase": "請先登入或註冊：購買需要關聯到你的帳號才能生效。",
     "auth.errFail": "操作失敗，請重試",
     "auth.successReg": "註冊成功！",
     "auth.welcome": "已登入",
@@ -484,7 +487,7 @@
     "nav.login": "ログイン",
     "nav.install": "ブラウザに追加",
     "hero.eyebrow": "ローカル優先 · 設定不要 · ファイルをそのまま読み書き",
-    "hero.title": "より軽い、ブラウザ向け Markdown 拡張",
+    "hero.title": "ブラウザで Markdown を読み書き",
     "hero.sub": "洗練された Markdown 用タイポグラフィテーマを内蔵。オフライン設計で、ファイルは端末から出ません。",
     "badge.free": "無料",
     "badge.pro": "Pro",
@@ -613,6 +616,7 @@
     "auth.errShort": "パスワードは 8 文字以上で",
     "auth.errMatch": "パスワードが一致しません",
     "auth.errNetwork": "ネットワークエラー。接続を確認してください。",
+    "auth.loginToPurchase": "先にサインインしてください：購入はアカウントと紐付ける必要があります。",
     "auth.errFail": "処理に失敗しました。もう一度お試しください。",
     "auth.successReg": "アカウントを作成しました！",
     "auth.welcome": "ログイン中",
@@ -634,7 +638,7 @@
     "nav.login": "로그인",
     "nav.install": "브라우저에 추가",
     "hero.eyebrow": "로컬 우선 · 설정 불필요 · 파일을 바로 읽고 씁니다",
-    "hero.title": "더 가벼운 브라우저 Markdown 확장",
+    "hero.title": "브라우저에서 Markdown 읽고 쓰기",
     "hero.sub": "정교한 Markdown 타이포그래피 테마 내장, 오프라인 설계, 파일은 기기를 떠나지 않습니다.",
     "badge.free": "무료",
     "badge.pro": "Pro",
@@ -763,6 +767,7 @@
     "auth.errShort": "비밀번호는 8자 이상",
     "auth.errMatch": "비밀번호가 일치하지 않습니다",
     "auth.errNetwork": "네트워크 오류. 연결을 확인하세요.",
+    "auth.loginToPurchase": "먼저 로그인하세요: 구매는 계정에 연결되어야 합니다.",
     "auth.errFail": "문제가 발생했습니다. 다시 시도하세요.",
     "auth.successReg": "계정이 생성되었습니다!",
     "auth.welcome": "로그인됨",
@@ -784,7 +789,7 @@
     "nav.login": "Se connecter",
     "nav.install": "Ajouter au navigateur",
     "hero.eyebrow": "Local d'abord · Sans configuration · Lit et écrit vos fichiers",
-    "hero.title": "Une extension Markdown plus légère pour le navigateur",
+    "hero.title": "Lire et écrire du Markdown dans le navigateur",
     "hero.sub": "Des thèmes de typographie Markdown riches et raffinés intégrés, conçue pour le hors-ligne, vos fichiers ne quittent jamais votre appareil.",
     "badge.free": "Gratuit",
     "badge.pro": "Pro",
@@ -913,6 +918,7 @@
     "auth.errShort": "Le mot de passe doit faire 8 caractères minimum",
     "auth.errMatch": "Les mots de passe ne correspondent pas",
     "auth.errNetwork": "Erreur réseau. Vérifiez votre connexion.",
+    "auth.loginToPurchase": "Connectez-vous d'abord : votre achat doit être lié à votre compte.",
     "auth.errFail": "Une erreur est survenue. Veuillez réessayer.",
     "auth.successReg": "Compte créé !",
     "auth.welcome": "Connecté",
@@ -934,7 +940,7 @@
     "nav.login": "Anmelden",
     "nav.install": "Zum Browser hinzufügen",
     "hero.eyebrow": "Lokal zuerst · Keine Einrichtung · Liest & schreibt Ihre Dateien",
-    "hero.title": "Eine leichtere Markdown-Erweiterung für den Browser",
+    "hero.title": "Markdown im Browser lesen und schreiben",
     "hero.sub": "Reiche, ausgefeilte Markdown-Typografie-Themen integriert, offline konzipiert, Ihre Dateien verlassen nie Ihr Gerät.",
     "badge.free": "Kostenlos",
     "badge.pro": "Pro",
@@ -1063,6 +1069,7 @@
     "auth.errShort": "Passwort muss mindestens 8 Zeichen lang sein",
     "auth.errMatch": "Passwörter stimmen nicht überein",
     "auth.errNetwork": "Netzwerkfehler. Bitte prüfen Sie Ihre Verbindung.",
+    "auth.loginToPurchase": "Bitte zuerst anmelden — der Kauf muss mit Ihrem Konto verknüpft werden.",
     "auth.errFail": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
     "auth.successReg": "Konto erstellt!",
     "auth.welcome": "Angemeldet",
@@ -1084,7 +1091,7 @@
     "nav.login": "Iniciar sesión",
     "nav.install": "Añadir al navegador",
     "hero.eyebrow": "Local primero · Sin configuración · Lee y escribe tus archivos",
-    "hero.title": "Una extensión Markdown más ligera para el navegador",
+    "hero.title": "Lee y escribe Markdown en tu navegador",
     "hero.sub": "Temas de tipografía Markdown ricos y refinados integrados, pensada para sin conexión, tus archivos nunca salen de tu dispositivo.",
     "badge.free": "Gratis",
     "badge.pro": "Pro",
@@ -1213,6 +1220,7 @@
     "auth.errShort": "La contraseña debe tener al menos 8 caracteres",
     "auth.errMatch": "Las contraseñas no coinciden",
     "auth.errNetwork": "Error de red. Comprueba tu conexión.",
+    "auth.loginToPurchase": "Inicia sesión primero: la compra debe vincularse a tu cuenta.",
     "auth.errFail": "Algo salió mal. Inténtalo de nuevo.",
     "auth.successReg": "¡Cuenta creada!",
     "auth.welcome": "Sesión iniciada",
@@ -1234,7 +1242,7 @@
     "nav.login": "Entrar",
     "nav.install": "Adicionar ao navegador",
     "hero.eyebrow": "Local primeiro · Sem configuração · Lê e escreve seus arquivos",
-    "hero.title": "Uma extensão Markdown mais leve para o navegador",
+    "hero.title": "Leia e escreva Markdown no seu navegador",
     "hero.sub": "Temas de tipografia Markdown ricos e refinados integrados, pensada para offline, seus arquivos nunca saem do seu dispositivo.",
     "badge.free": "Grátis",
     "badge.pro": "Pro",
@@ -1363,6 +1371,7 @@
     "auth.errShort": "A senha deve ter ao menos 8 caracteres",
     "auth.errMatch": "As senhas não coincidem",
     "auth.errNetwork": "Erro de rede. Verifique sua conexão.",
+    "auth.loginToPurchase": "Entre primeiro: a compra precisa estar vinculada à sua conta.",
     "auth.errFail": "Algo deu errado. Tente novamente.",
     "auth.successReg": "Conta criada!",
     "auth.welcome": "Conectado",
@@ -1384,7 +1393,7 @@
     "nav.login": "Войти",
     "nav.install": "Добавить в браузер",
     "hero.eyebrow": "Сначала локально · Без настройки · Читает и пишет ваши файлы",
-    "hero.title": "Более лёгкое расширение Markdown для браузера",
+    "hero.title": "Читайте и пишите Markdown прямо в браузере",
     "hero.sub": "Богатые и изысканные темы типографики Markdown встроены, офлайн по замыслу, ваши файлы никогда не покидают устройство.",
     "badge.free": "Бесплатно",
     "badge.pro": "Pro",
@@ -1513,6 +1522,7 @@
     "auth.errShort": "Пароль должен быть не короче 8 символов",
     "auth.errMatch": "Пароли не совпадают",
     "auth.errNetwork": "Ошибка сети. Проверьте соединение.",
+    "auth.loginToPurchase": "Сначала войдите: покупка должна быть привязана к вашему аккаунту.",
     "auth.errFail": "Что-то пошло не так. Попробуйте ещё раз.",
     "auth.successReg": "Аккаунт создан!",
     "auth.welcome": "Вы вошли",
@@ -1534,7 +1544,7 @@
     "nav.login": "Đăng nhập",
     "nav.install": "Thêm vào trình duyệt",
     "hero.eyebrow": "Ưu tiên cục bộ · Không cấu hình · Đọc và ghi tệp của bạn",
-    "hero.title": "Tiện ích Markdown nhẹ hơn cho trình duyệt",
+    "hero.title": "Đọc và viết Markdown ngay trong trình duyệt",
     "hero.sub": "Các chủ đề kiểu chữ Markdown phong phú và tinh tế được tích hợp sẵn, thiết kế ngoại tuyến, tệp của bạn không rời thiết bị.",
     "badge.free": "Miễn phí",
     "badge.pro": "Pro",
@@ -1663,6 +1673,7 @@
     "auth.errShort": "Mật khẩu ít nhất 8 ký tự",
     "auth.errMatch": "Mật khẩu không khớp",
     "auth.errNetwork": "Lỗi mạng. Kiểm tra kết nối của bạn.",
+    "auth.loginToPurchase": "Vui lòng đăng nhập trước: giao dịch cần được liên kết với tài khoản của bạn.",
     "auth.errFail": "Có lỗi xảy ra. Vui lòng thử lại.",
     "auth.successReg": "Đã tạo tài khoản!",
     "auth.welcome": "Đã đăng nhập",
@@ -1684,7 +1695,7 @@
     "nav.login": "Logga in",
     "nav.install": "Lägg till i webbläsaren",
     "hero.eyebrow": "Lokal först · Ingen inställning · Läser och skriver dina filer",
-    "hero.title": "Ett lättare Markdown-tillägg för webbläsaren",
+    "hero.title": "Läs och skriv Markdown direkt i webbläsaren",
     "hero.sub": "Rika och förfinade Markdown-typografiteman inbyggda, byggd för offline, dina filer lämnar aldrig din enhet.",
     "badge.free": "Gratis",
     "badge.pro": "Pro",
@@ -1813,6 +1824,7 @@
     "auth.errShort": "Lösenordet måste vara minst 8 tecken",
     "auth.errMatch": "Lösenorden matchar inte",
     "auth.errNetwork": "Nätverksfel. Kontrollera din anslutning.",
+    "auth.loginToPurchase": "Logga in först: köpet måste kopplas till ditt konto.",
     "auth.errFail": "Något gick fel. Försök igen.",
     "auth.successReg": "Kontot skapat!",
     "auth.welcome": "Inloggad",
@@ -1834,7 +1846,7 @@
     "nav.login": "تسجيل الدخول",
     "nav.install": "أضف إلى المتصفح",
     "hero.eyebrow": "محلي أولاً · بلا إعداد · يقرأ ملفاتك ويكتبها",
-    "hero.title": "إضافة Markdown أخف لمتصفحك",
+    "hero.title": "اقرأ واكتب Markdown في متصفحك",
     "hero.sub": "سمات تنسيق Markdown غنية ومصقولة مدمجة، مصممة للعمل دون اتصال، وملفاتك لا تغادر جهازك أبدًا.",
     "badge.free": "مجاني",
     "badge.pro": "Pro",
@@ -1963,6 +1975,7 @@
     "auth.errShort": "كلمة المرور 8 أحرف على الأقل",
     "auth.errMatch": "كلمتا المرور غير متطابقتين",
     "auth.errNetwork": "خطأ في الشبكة. تحقق من اتصالك.",
+    "auth.loginToPurchase": "سجّل الدخول أولاً: يجب ربط عملية الشراء بحسابك.",
     "auth.errFail": "حدث خطأ ما. حاول مرة أخرى.",
     "auth.successReg": "تم إنشاء الحساب!",
     "auth.welcome": "تم تسجيل الدخول",
@@ -2032,6 +2045,7 @@
     syncLangUI();
     updateNavAuth();
     syncConditionalUI();
+    gateCheckoutLinks();
   }
 
   /* ---- Conditional UI: WeChat/公众号 shown only in Chinese; typesetting shown otherwise ---- */
@@ -2207,12 +2221,37 @@
   }
   // Checkout: metadata carries the JingMark account email so the Creem webhook
   // can activate the right account even if the payer uses another mailbox.
+  // 结账链接：metadata 带上账户邮箱，webhook 据此把 Pro 开到正确账户。
+  //
+  // 未登录时返回 '#' 而不是裸 Creem 链接 —— 这是刻意改的「失败即关闭」（2026-08-31）。
+  // 旧实现未登录也返回完整 Creem 地址，只靠下面的 click 监听兜底；一旦 JS 报错、
+  // 页面被缓存成旧版、或链接被直接分享出去，用户就会在未登录状态下完成付款，
+  // 而 webhook 拿不到 jingmark_email、该邮箱又没有账户 → 钱收了、Pro 开不了。
+  // （后端已加待认领兜底，能事后补开；但能不产生孤儿付款就别产生。）
+  // 现在：href 只有在确认已登录时才由 JS 注入真实地址，其余情况点击无副作用。
   function buildCheckoutUrl() {
     const email = getAuthEmail();
-    return CREEM_URL + (email ? '?metadata%5Bjingmark_email%5D=' + encodeURIComponent(email) : '');
+    if (!email) return '#';
+    return CREEM_URL + '?metadata%5Bjingmark_email%5D=' + encodeURIComponent(email);
+  }
+  // 付费门控：未登录点击购买 → 拦截并弹登录/注册。
+  // 用 data-creem 标记定位（而不是 href 前缀）——href 现在会变成 '#'，
+  // 按 href 选择会在改过一次之后就再也选不中。
+  function gateCheckoutLinks() {
+    document.querySelectorAll('a[data-creem]').forEach(function (a) {
+      if (a.dataset.creemGated === '1') return; // 避免每次 setLang 重复挂监听
+      a.dataset.creemGated = '1';
+      a.addEventListener("click", function (e) {
+        if (getAuthEmail()) return; // 已登录：链接已带 metadata，放行
+        e.preventDefault();
+        openAuthModal();
+        var t = I18N[currentLang] || {};
+        showAuthAlert("error", t["auth.loginToPurchase"] || "Please sign in first so your Pro purchase is linked to your account.");
+      });
+    });
   }
   function refreshCheckoutLinks() {
-    document.querySelectorAll('a[href^="' + CREEM_URL + '"]').forEach(function (a) { a.href = buildCheckoutUrl(); });
+    document.querySelectorAll('a[data-creem]').forEach(function (a) { a.href = buildCheckoutUrl(); });
   }
   async function doLogin(e) {
     e.preventDefault();

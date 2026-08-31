@@ -391,7 +391,7 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
 <header class="hero">
   <div class="wrap hero-inner">
     <span class="eyebrow" data-i18n="hero.eyebrow">Local-first · Zero setup · Reads &amp; writes your files</span>
-    <h1 data-i18n="hero.title">A calm Markdown reader, made for the browser</h1>
+    <h1 data-i18n="hero.title">Read and write Markdown in your browser</h1>
     <p class="sub" data-i18n="hero.sub">Read and write Markdown like turning the pages of a paper book — warm themes, offline by design, your files never leave your device.</p>
 
     <!-- hero install strip: prominent install pills for supported browsers -->
@@ -555,7 +555,9 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
           <li data-i18n="price.pro.f6" id="proWechat">WeChat one-click publishing</li>
           <li data-i18n="price.pro.f6t" id="proTypeset">Print-grade typesetting engine</li>
         </ul>
-        <a class="price-btn pro-btn" href="https://www.creem.io/payment/prod_2CZgvuTFBQXMiyF0owBU8g" target="_blank" rel="noopener"><span class="pro-btn-text" data-i18n="price.pro.btn">Get Pro for $4.99 →</span><span class="sheen" aria-hidden="true"></span></a>
+        <!-- href 默认 '#'：只有 JS 确认已登录后才注入带 metadata 的真实结账地址。
+             这样"未登录直接付款导致付款无法关联账户"在 JS 失效时也不会发生。 -->
+        <a class="price-btn pro-btn" data-creem href="#" target="_blank" rel="noopener"><span class="pro-btn-text" data-i18n="price.pro.btn">Get Pro for $4.99 →</span><span class="sheen" aria-hidden="true"></span></a>
       </div>
     </div>
   </div>
@@ -697,7 +699,7 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
     <div class="auth-user" id="authUser">
       <div class="email" id="authUserEmail"></div>
       <span class="plan free" id="authUserPlan">Free</span>
-      <a class="auth-upgrade" id="authUpgrade" href="https://www.creem.io/payment/prod_2CZgvuTFBQXMiyF0owBU8g" target="_blank" data-i18n-html="auth.upgrade"></a>
+      <a class="auth-upgrade" id="authUpgrade" data-creem href="#" target="_blank" data-i18n-html="auth.upgrade"></a>
       <button class="auth-logout" onclick="doLogout()" data-i18n="auth.logout">Sign out</button>
     </div>
   </div>
