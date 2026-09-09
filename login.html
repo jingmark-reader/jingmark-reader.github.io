@@ -190,10 +190,11 @@
       return window.location.origin + window.location.pathname;
     }
     async function initGoogle() {
-      // 仅在正式 https 站点启用：Google 要求回跳 URI 与后台登记的
-      // https://jingmark-reader.github.io/login.html 逐字一致——本地 file:// 打开
-      // 必然被 Google 拒绝（invalid_request / OAuth policy），按钮隐藏以免误触
-      if (window.location.protocol !== 'https:' || window.location.hostname !== 'jingmark-reader.github.io') return;
+      // 仅在正式 https 站点启用：Google 要求回跳 URI 与后台登记的一致——
+      // 支持 GitHub Pages 站点与自有域名两种来源（2026-09-09 放开白名单）。
+      // 本地 file:// 打开必然被 Google 拒绝，按钮隐藏以免误触。
+      var authHosts = ['jingmark-reader.github.io', 'jingmark.xyz'];
+      if (window.location.protocol !== 'https:' || authHosts.indexOf(window.location.hostname) === -1) return;
       let enabled = false;
       try {
         const res = await fetch(API_BASE + '/api/auth/google');

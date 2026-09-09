@@ -2364,10 +2364,11 @@
   window.doLogout = doLogout;
 
   /* ---- Google OAuth（登录弹窗，2026-08-29）----
-     授权回跳固定用已登记的 login.html（Google 要求 URI 逐字一致，不能带当前页路径）；
+     授权回跳固定到 /login.html（Google 要求 URI 逐字一致，不能带当前页路径）；
+     redirected 到当前 origin 的 login.html，兼容 GitHub Pages 站点与自有域名（2026-09-09）。
      回调由 login.html 的既有处理逻辑接管（state 键同源共享），登录成功后经
      sessionStorage['jingmark-redirect']='/' 自动跳回本页。 */
-  var GOOGLE_REDIRECT = 'https://jingmark-reader.github.io/login.html';
+  var GOOGLE_REDIRECT = window.location.origin + '/login.html';
   function initGoogleSignin() {
     var btn = document.getElementById('googleBtn');
     if (!btn) return;
