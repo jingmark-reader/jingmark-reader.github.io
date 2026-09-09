@@ -6,9 +6,7 @@
   <title>JingMark · Login</title>
   <link rel="stylesheet" href="assets/style.css">
   <style>
-    /* Google OAuth 按钮（仅本页使用） */
-    .oauth-divider { display: flex; align-items: center; gap: 12px; margin: 18px 0 14px; color: #9a8b76; font-size: 12px; }
-    .oauth-divider::before, .oauth-divider::after { content: ''; flex: 1; height: 1px; background: #e8e0d2; }
+    /* Google OAuth 按钮（唯一登录入口） */
     .btn-google {
       display: flex; align-items: center; justify-content: center; gap: 10px;
       background: #ffffff; color: #3d3327;
@@ -32,50 +30,9 @@
     <div id="alertBox" class="alert alert-error hidden"></div>
     <div id="successBox" class="alert alert-success hidden"></div>
 
-    <div class="auth-tabs">
-      <button class="auth-tab active" id="tabLogin">Login</button>
-      <button class="auth-tab" id="tabRegister">Register</button>
-    </div>
-
-    <!-- Login Form -->
-    <form id="loginForm">
-      <div class="form-group">
-        <label class="form-label" for="loginEmail">Email</label>
-        <input class="form-input" type="email" id="loginEmail" placeholder="you@example.com" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="loginPassword">Password</label>
-        <input class="form-input" type="password" id="loginPassword" placeholder="At least 8 characters" required>
-      </div>
-      <button type="submit" class="btn btn-primary btn-block" id="loginBtn">
-        <span class="btn-text">Login</span>
-        <span class="spinner hidden" id="loginSpinner"></span>
-      </button>
-    </form>
-
-    <!-- Register Form -->
-    <form id="registerForm" class="hidden">
-      <div class="form-group">
-        <label class="form-label" for="regEmail">Email</label>
-        <input class="form-input" type="email" id="regEmail" placeholder="you@example.com" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="regPassword">Password</label>
-        <input class="form-input" type="password" id="regPassword" placeholder="At least 8 characters" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="regPassword2">Confirm Password</label>
-        <input class="form-input" type="password" id="regPassword2" placeholder="Re-enter password" required>
-      </div>
-      <button type="submit" class="btn btn-primary btn-block" id="registerBtn">
-        <span class="btn-text">Create Account</span>
-        <span class="spinner hidden" id="regSpinner"></span>
-      </button>
-    </form>
-
-    <!-- Google OAuth（Worker 未配置时由 JS 隐藏；对登录/注册两态通用，未注册邮箱会自动建号） -->
+    <!-- Google OAuth（唯一登录入口，2026-09-09 收紧；Worker 未配置时由 JS 隐藏，
+         未注册邮箱会自动建号） -->
     <div id="googleSection" class="hidden">
-      <div class="oauth-divider"><span>or</span></div>
       <button type="button" class="btn btn-google btn-block" id="googleBtn">
         <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C36.9 40.4 44 35 44 24c0-1.3-.1-2.7-.4-3.9z"/></svg>
         <span class="btn-text">Continue with Google</span>
@@ -140,111 +97,8 @@
       box.classList.remove('hidden');
       setTimeout(() => box.classList.add('hidden'), 5000);
     }
-    function hideAlerts() {
-      document.getElementById('alertBox').classList.add('hidden');
-      document.getElementById('successBox').classList.add('hidden');
-    }
 
-    // --- Tab switching ---
-    const tabLogin = document.getElementById('tabLogin');
-    const tabRegister = document.getElementById('tabRegister');
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-
-    tabLogin.addEventListener('click', () => {
-      tabLogin.classList.add('active');
-      tabRegister.classList.remove('active');
-      loginForm.classList.remove('hidden');
-      registerForm.classList.add('hidden');
-      hideAlerts();
-    });
-    tabRegister.addEventListener('click', () => {
-      tabRegister.classList.add('active');
-      tabLogin.classList.remove('active');
-      registerForm.classList.remove('hidden');
-      loginForm.classList.add('hidden');
-      hideAlerts();
-    });
-
-    // --- Login ---
-    loginForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      hideAlerts();
-      const email = document.getElementById('loginEmail').value.trim();
-      const password = document.getElementById('loginPassword').value;
-
-      if (!email || !password) { showAlert('Please fill in all fields.'); return; }
-
-      const btn = document.getElementById('loginBtn');
-      btn.querySelector('.btn-text').classList.add('hidden');
-      btn.querySelector('.spinner').classList.remove('hidden');
-      btn.disabled = true;
-
-      try {
-        const res = await fetch(API_BASE + '/api/auth/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, password })
-        });
-        const data = await res.json();
-
-        if (data.token) {
-          setToken(data.token);
-          await checkStatusAndShow();
-        } else {
-          showAlert(data.error || 'Login failed. Please check your credentials.');
-        }
-      } catch (err) {
-        showAlert('Network error. Please check your connection and try again.');
-      } finally {
-        btn.querySelector('.btn-text').classList.remove('hidden');
-        btn.querySelector('.spinner').classList.add('hidden');
-        btn.disabled = false;
-      }
-    });
-
-    // --- Register ---
-    registerForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      hideAlerts();
-      const email = document.getElementById('regEmail').value.trim();
-      const password = document.getElementById('regPassword').value;
-      const password2 = document.getElementById('regPassword2').value;
-
-      if (!email || !password) { showAlert('Please fill in all fields.'); return; }
-      if (password.length < 8) { showAlert('Password must be at least 8 characters.'); return; }
-      if (password !== password2) { showAlert('Passwords do not match.'); return; }
-
-      const btn = document.getElementById('registerBtn');
-      btn.querySelector('.btn-text').classList.add('hidden');
-      btn.querySelector('.spinner').classList.remove('hidden');
-      btn.disabled = true;
-
-      try {
-        const res = await fetch(API_BASE + '/api/auth/register', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, password })
-        });
-        const data = await res.json();
-
-        if (data.token) {
-          setToken(data.token);
-          showSuccess('Account created! Redirecting...');
-          setTimeout(() => checkStatusAndShow(), 800);
-        } else {
-          showAlert(data.error || 'Registration failed.');
-        }
-      } catch (err) {
-        showAlert('Network error. Please check your connection and try again.');
-      } finally {
-        btn.querySelector('.btn-text').classList.remove('hidden');
-        btn.querySelector('.spinner').classList.add('hidden');
-        btn.disabled = false;
-      }
-    });
-
-    // --- Check status and show logged-in view ---
+    // --- Login（仅 Google 入口，2026-09-09 收紧） ---
     async function checkStatusAndShow() {
       const token = getToken();
       if (!token) return;
@@ -297,11 +151,8 @@
         if (email) { var b = document.createElement('b'); b.textContent = email; bf.appendChild(b); }
       }
 
-      // Show logged-in view, hide forms
-      loginForm.classList.add('hidden');
-      registerForm.classList.add('hidden');
+      // Show logged-in view, hide Google button
       document.getElementById('googleSection').classList.add('hidden'); // 登录态隐藏 Google 按钮
-      document.querySelector('.auth-tabs').classList.add('hidden');
       document.getElementById('loggedInView').classList.remove('hidden');
       consumeRedirect();
     }
@@ -310,9 +161,6 @@
     document.getElementById('logoutBtn').addEventListener('click', () => {
       clearToken();
       document.getElementById('loggedInView').classList.add('hidden');
-      loginForm.classList.remove('hidden');
-      document.querySelector('.auth-tabs').classList.remove('hidden');
-      tabLogin.click();
       showSuccess('Logged out successfully.');
       initGoogle(); // 重新显隐 Google 按钮（按当前无 token 状态）
     });
