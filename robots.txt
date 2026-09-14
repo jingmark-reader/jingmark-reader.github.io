@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jingmark-reader.github.io/sitemap.xml
+Sitemap: https://jingmark.xyz/sitemap.xml
