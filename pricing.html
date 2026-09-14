@@ -296,6 +296,22 @@
       }, 5000);
       setTimeout(() => clearInterval(pollInterval), 300000); // 5 min timeout
     }
+
+    // 限时免费（PROMO_FREE）：隐藏金额/购买按钮/Creem 提示，改为「Free during launch」徽标
+    fetch(API_BASE + '/api/promo').then(function (r) { return r.json(); }).then(function (d) {
+      if (!d || !d.promoFree) return;
+      var btn = document.getElementById('checkoutBtn');
+      if (btn) btn.style.display = 'none';
+      var bf = document.getElementById('buyFor');
+      if (bf) bf.style.display = 'none';
+      document.querySelectorAll('.price-amount').forEach(function (el) {
+        el.innerHTML = '<span style="font-size:52px;font-weight:700;color:var(--primary,inherit);letter-spacing:-1.5px;display:inline-block">Free</span><span class="save">during launch</span>';
+      });
+      var period = document.querySelector('.price-period');
+      if (period) period.textContent = 'Limited-time free · sign up and Pro is auto-unlocked';
+      var creemP = Array.prototype.slice.call(document.querySelectorAll('p')).filter(function (p) { return /Creem/i.test(p.textContent) && !p.querySelector('a'); })[0];
+      if (creemP) creemP.style.display = 'none';
+    }).catch(function () {});
   </script>
 </body>
 </html>

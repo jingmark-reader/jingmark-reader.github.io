@@ -276,6 +276,16 @@
       initGoogle();
       handleGoogleCallback();
     }
+
+    // 限时免费（PROMO_FREE）：开启时隐藏付费升级 CTA 与购买目标提示
+    fetch(API_BASE + '/api/promo').then(function (r) { return r.json(); }).then(function (d) {
+      if (d && d.promoFree) {
+        var u = document.getElementById('upgradeCta');
+        if (u) u.classList.add('hidden');
+        var b = document.getElementById('buyFor');
+        if (b) b.style.display = 'none';
+      }
+    }).catch(function () {});
   </script>
 </body>
 </html>

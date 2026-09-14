@@ -102,6 +102,7 @@
     "price.pro.tag": "Most popular",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">Save 50%</span>",
+    "price.promoFree": "Free during launch",
     "price.pro.early": "Limited early bird · reverts to $9.99",
     "price.pro.note": "One-time purchase · Lifetime updates",
     "price.pro.f1": "All 46 themes (six families)",
@@ -253,6 +254,7 @@
     "price.pro.tag": "最受欢迎",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">立省 50%</span>",
+    "price.promoFree": "限时免费",
     "price.pro.early": "限时早鸟价 · 售完即恢复 $9.99",
     "price.pro.note": "一次性买断 · 终身更新",
     "price.pro.f1": "全部 46 套主题（六大分类）",
@@ -404,6 +406,7 @@
     "price.pro.tag": "最受歡迎",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">省 50%</span>",
+    "price.promoFree": "限時免費",
     "price.pro.early": "限時早鳥價 · 售完即恢復 $9.99",
     "price.pro.note": "一次性買斷 · 終身更新",
     "price.pro.f1": "全部 46 套主題（六大分類）",
@@ -555,6 +558,7 @@
     "price.pro.tag": "人気",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">50% OFF</span>",
+    "price.promoFree": "期間限定で無料",
     "price.pro.early": "早割限定 · 終了後は $9.99",
     "price.pro.note": "買い切り · 永久アップデート",
     "price.pro.f1": "全 46 テーマ（6 系統）",
@@ -706,6 +710,7 @@
     "price.pro.tag": "인기",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">50% 할인</span>",
+    "price.promoFree": "출시 기간 무료",
     "price.pro.early": "얼리버드 한정 · 종료 후 $9.99",
     "price.pro.note": "일시불 · 평생 업데이트",
     "price.pro.f1": "전체 46 테마 (6 계열)",
@@ -857,6 +862,7 @@
     "price.pro.tag": "Le plus populaire",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">−50%</span>",
+    "price.promoFree": "Gratuit au lancement",
     "price.pro.early": "Offre de lancement · repasse à 9,99 $",
     "price.pro.note": "Achat unique · Mises à jour à vie",
     "price.pro.f1": "Les 46 thèmes (six familles)",
@@ -1008,6 +1014,7 @@
     "price.pro.tag": "Am beliebtesten",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">−50%</span>",
+    "price.promoFree": "Beim Start kostenlos",
     "price.pro.early": "Frühbucher-Aktion · danach 9,99 $",
     "price.pro.note": "Einmaliger Kauf · Lebenslange Updates",
     "price.pro.f1": "Alle 46 Themen (sechs Familien)",
@@ -1159,6 +1166,7 @@
     "price.pro.tag": "Más popular",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">−50%</span>",
+    "price.promoFree": "Gratis durante el lanzamiento",
     "price.pro.early": "Oferta inicial · vuelve a 9,99 $",
     "price.pro.note": "Pago único · Actualizaciones de por vida",
     "price.pro.f1": "Los 46 temas (seis familias)",
@@ -1310,6 +1318,7 @@
     "price.pro.tag": "Mais popular",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">−50%</span>",
+    "price.promoFree": "Grátis no lançamento",
     "price.pro.early": "Oferta de lançamento · volta a $9,99",
     "price.pro.note": "Pagamento único · Atualizações vitalícias",
     "price.pro.f1": "Os 46 temas (seis famílias)",
@@ -1461,6 +1470,7 @@
     "price.pro.tag": "Популярно",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">−50%</span>",
+    "price.promoFree": "Бесплатно при запуске",
     "price.pro.early": "Ранняя цена · далее 9,99 $",
     "price.pro.note": "Разовая покупка · Обновления навсегда",
     "price.pro.f1": "Все 46 тем (шесть семейств)",
@@ -1612,6 +1622,7 @@
     "price.pro.tag": "Phổ biến nhất",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">Giảm 50%</span>",
+    "price.promoFree": "Miễn phí khi ra mắt",
     "price.pro.early": "Giá sớm có hạn · quay lại $9,99",
     "price.pro.note": "Mua một lần · Cập nhật trọn đời",
     "price.pro.f1": "Đủ 46 chủ đề (sáu hệ)",
@@ -1763,6 +1774,7 @@
     "price.pro.tag": "Populärast",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">−50%</span>",
+    "price.promoFree": "Gratis vid lansering",
     "price.pro.early": "Begränsad early bird · återgår till $9,99",
     "price.pro.note": "Engångsköp · Livstidsuppdateringar",
     "price.pro.f1": "Alla 46 teman (sex familjer)",
@@ -1914,6 +1926,7 @@
     "price.pro.tag": "الأكثر رواجًا",
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">خصم 50%</span>",
+    "price.promoFree": "مجاني أثناء الإطلاق",
     "price.pro.early": "سعر مبكر محدود · يعود إلى 9.99$",
     "price.pro.note": "دفعة واحدة · تحديثات مدى الحياة",
     "price.pro.f1": "كل السمات الـ46 (ست عائلات)",
@@ -2253,6 +2266,26 @@
   function refreshCheckoutLinks() {
     document.querySelectorAll('a[data-creem]').forEach(function (a) { a.href = buildCheckoutUrl(); });
   }
+  // 限时免费（PROMO_FREE）：拉取后端开关，开启时隐藏金额/购买 CTA，改为「限时免费」徽标。
+  function applyPromoUI() {
+    var tb = (I18N[currentLang] || {}).price || {};
+    var label = tb.promoFree || 'Free during launch';
+    document.querySelectorAll('.price-amount[data-i18n-html="price.pro.cost"], .price-btn.pro-btn, #authUpgrade, a[data-creem]').forEach(function (el) {
+      el.style.display = 'none';
+    });
+    if (document.getElementById('promoBanner')) return;
+    var banner = document.createElement('div');
+    banner.id = 'promoBanner';
+    banner.textContent = label;
+    banner.style.cssText = 'text-align:center;margin:20px auto 24px;padding:13px 26px;border-radius:999px;background:linear-gradient(135deg,#b07a4d 0%,#9a6a43 50%,#7d5536 100%);color:#fff;font-weight:700;font-size:17px;letter-spacing:.02em;max-width:480px;box-shadow:0 12px 26px rgba(154,106,67,.3)';
+    var sec = document.getElementById('pricing');
+    if (sec) sec.insertBefore(banner, sec.firstChild);
+  }
+  function loadPromo() {
+    fetch(AUTH_API + '/api/promo').then(function (r) { return r.json(); }).then(function (d) {
+      if (d && d.promoFree) applyPromoUI();
+    }).catch(function () {});
+  }
   async function doLogin(e) {
     e.preventDefault();
     const email = document.getElementById('loginEmail').value.trim();
@@ -2349,6 +2382,7 @@
     if (authOverlay) authOverlay.addEventListener('click', function (e) { if (e.target === authOverlay) closeAuthModal(); });
     // Inject the logged-in email into static checkout links (#authUpgrade / .price-btn)
     refreshCheckoutLinks();
+    loadPromo(); // 限时免费开关：开启时隐藏金额/购买入口
   });
 
   /* Expose auth handlers so the inline on* handlers in index.html can reach them.
