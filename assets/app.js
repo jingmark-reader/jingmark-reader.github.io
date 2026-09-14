@@ -2059,6 +2059,7 @@
     updateNavAuth();
     syncConditionalUI();
     gateCheckoutLinks();
+    if (window.__jmkPromoFree) applyPromoUI(); // 限时免费：语言切换后重绘促销态
   }
 
   /* ---- Conditional UI: WeChat/公众号 shown only in Chinese; typesetting shown otherwise ---- */
@@ -2266,24 +2267,52 @@
   function refreshCheckoutLinks() {
     document.querySelectorAll('a[data-creem]').forEach(function (a) { a.href = buildCheckoutUrl(); });
   }
-  // 限时免费（PROMO_FREE）：拉取后端开关，开启时隐藏金额/购买 CTA，改为「限时免费」徽标。
+  // 限时免费（PROMO_FREE）：保留 $9.99 划线价与功能清单，CTA 改为「限时免费」并点击弹登录框。
   function applyPromoUI() {
     var tb = (I18N[currentLang] || {}).price || {};
-    var label = tb.promoFree || 'Free during launch';
-    document.querySelectorAll('.price-amount[data-i18n-html="price.pro.cost"], .price-btn.pro-btn, #authUpgrade, a[data-creem]').forEach(function (el) {
-      el.style.display = 'none';
+    var label = tb.promoFree || '限时免费';
+
+    // 1) 价格区：隐藏 $4.99 现价与 Save 徽章，仅保留 $9.99 并加粗加大 + 红色划线
+    document.querySelectorAll('.price-amount[data-i18n-html="price.pro.cost"]').forEach(function (el) {
+      var now = el.querySelector('.now'); if (now) now.style.display = 'none';
+      var save = el.querySelector('.save'); if (save) save.style.display = 'none';
+      var was = el.querySelector('.was');
+      if (was) was.style.cssText = 'font-size:52px;font-weight:700;color:#9a6a43;letter-spacing:-1.5px;text-decoration:line-through;text-decoration-color:#c0392b;text-decoration-thickness:3px;text-decoration-skip-ink:none';
     });
-    if (document.getElementById('promoBanner')) return;
-    var banner = document.createElement('div');
-    banner.id = 'promoBanner';
-    banner.textContent = label;
-    banner.style.cssText = 'text-align:center;margin:20px auto 24px;padding:13px 26px;border-radius:999px;background:linear-gradient(135deg,#b07a4d 0%,#9a6a43 50%,#7d5536 100%);color:#fff;font-weight:700;font-size:17px;letter-spacing:.02em;max-width:480px;box-shadow:0 12px 26px rgba(154,106,67,.3)';
-    var sec = document.getElementById('pricing');
-    if (sec) sec.insertBefore(banner, sec.firstChild);
+
+    // 2) Pro CTA：文案改为「限时免费」，移除 Creem 跳转，点击弹登录框
+    document.querySelectorAll('a.price-btn.pro-btn[data-creem], a.price-btn.pro-btn#promoFreeBtn').forEach(function (a) {
+      if (!a.dataset.promoWired) {
+        a.dataset.promoWired = '1';
+        a.removeAttribute('data-creem'); a.removeAttribute('target'); a.removeAttribute('rel');
+        a.href = '#';
+        a.addEventListener('click', function (e) { e.preventDefault(); if (typeof openAuthModal === 'function') openAuthModal(); });
+      }
+      a.id = 'promoFreeBtn';
+      var txt = a.querySelector('.pro-btn-text');
+      if (txt) txt.textContent = label;
+    });
+
+    // 3) 账户面板升级按钮同步改为「限时免费」并弹登录框
+    var au = document.getElementById('authUpgrade');
+    if (au) {
+      if (!au.dataset.promoWired) {
+        au.dataset.promoWired = '1';
+        au.removeAttribute('data-creem'); au.removeAttribute('target');
+        au.href = '#';
+        au.addEventListener('click', function (e) { e.preventDefault(); if (typeof openAuthModal === 'function') openAuthModal(); });
+      }
+      au.style.display = '';
+      au.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;padding:12px 26px;border-radius:12px;background:linear-gradient(135deg,#b07a4d 0%,#9a6a43 50%,#7d5536 100%);color:#fff;font-size:16px;font-weight:700;text-decoration:none';
+      au.textContent = label;
+    }
+
+    // 4) 移除之前版本的独立 banner（不再使用）
+    var b = document.getElementById('promoBanner'); if (b) b.remove();
   }
   function loadPromo() {
     fetch(AUTH_API + '/api/promo').then(function (r) { return r.json(); }).then(function (d) {
-      if (d && d.promoFree) applyPromoUI();
+      if (d && d.promoFree) { window.__jmkPromoFree = true; applyPromoUI(); }
     }).catch(function () {});
   }
   async function doLogin(e) {
