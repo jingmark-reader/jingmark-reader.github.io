@@ -359,8 +359,12 @@
     // --- Google OAuth ---
     const GOOGLE_STATE_KEY = 'jingmark-oauth-state';
     function googleRedirectUri() {
-      // 授权回跳地址必须与 Google Cloud 后台登记的 Authorized redirect URI 逐字一致
-      return window.location.origin + window.location.pathname;
+      // 授权回跳地址必须与 Google Cloud 后台登记的 Authorized redirect URI 逐字一致。
+      // 这里**固定**写死 /login.html，不能用 window.location.pathname：
+      // Cloudflare Pages 会把 /login.html 301 到 /login（干净 URL，平台默认行为，.pages.dev 上同样如此），
+      // pathname 随之变成 /login，与登记值不符 → redirect_uri_mismatch（弹窗不回落，表现为"登录没反应"）。
+      // 落地页 assets/app.js 的 GOOGLE_REDIRECT 一直是固定写法，两处必须保持一致。
+      return window.location.origin + '/login.html';
     }
     async function initGoogle() {
       // 仅在正式 https 站点启用：Google 要求回跳 URI 与后台登记的一致——
