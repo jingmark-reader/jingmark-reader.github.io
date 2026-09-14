@@ -158,6 +158,11 @@
     "auth.email": "Email",
     "auth.password": "Password",
     "auth.confirm": "Confirm password",
+    "auth.inviteCode": "Invite code",
+    "auth.invitePlaceholder": "Enter your invite code",
+    "auth.inviteRequired": "Invite code is required.",
+    "auth.inviteInvalid": "Invalid or expired invite code.",
+    "auth.inviteUsed": "This invite code has already been used.",
     "auth.upgrade": "<span class='au-label'>Get Pro</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>Save 50%</span>",
     "auth.logout": "Sign out",
     "auth.errEmpty": "Please fill in all fields",
@@ -310,6 +315,11 @@
     "auth.email": "邮箱",
     "auth.password": "密码",
     "auth.confirm": "确认密码",
+    "auth.inviteCode": "邀请码",
+    "auth.invitePlaceholder": "请输入邀请码",
+    "auth.inviteRequired": "请填写邀请码。",
+    "auth.inviteInvalid": "邀请码无效或已失效。",
+    "auth.inviteUsed": "该邀请码已被使用。",
     "auth.upgrade": "<span class='au-label'>购买 Pro</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>立省 50%</span>",
     "auth.logout": "退出登录",
     "auth.errEmpty": "请填写所有字段",
@@ -462,6 +472,11 @@
     "auth.email": "郵箱",
     "auth.password": "密碼",
     "auth.confirm": "確認密碼",
+    "auth.inviteCode": "邀請碼",
+    "auth.invitePlaceholder": "請輸入邀請碼",
+    "auth.inviteRequired": "請填寫邀請碼。",
+    "auth.inviteInvalid": "邀請碼無效或已失效。",
+    "auth.inviteUsed": "該邀請碼已被使用。",
     "auth.upgrade": "<span class='au-label'>購買 Pro</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>立省 50%</span>",
     "auth.logout": "登出",
     "auth.errEmpty": "請填寫所有欄位",
@@ -614,6 +629,11 @@
     "auth.email": "メールアドレス",
     "auth.password": "パスワード",
     "auth.confirm": "パスワード（確認）",
+    "auth.inviteCode": "招待コード",
+    "auth.invitePlaceholder": "招待コードを入力",
+    "auth.inviteRequired": "招待コードを入力してください。",
+    "auth.inviteInvalid": "招待コードが無効か、有効期限が切れています。",
+    "auth.inviteUsed": "この招待コードは既に使用されています。",
     "auth.upgrade": "<span class='au-label'>Pro を購入</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>50% お得</span>",
     "auth.logout": "ログアウト",
     "auth.errEmpty": "すべての項目を入力してください",
@@ -766,6 +786,11 @@
     "auth.email": "이메일",
     "auth.password": "비밀번호",
     "auth.confirm": "비밀번호 확인",
+    "auth.inviteCode": "초대 코드",
+    "auth.invitePlaceholder": "초대 코드를 입력하세요",
+    "auth.inviteRequired": "초대 코드를 입력해 주세요.",
+    "auth.inviteInvalid": "초대 코드가 유효하지 않거나 만료되었습니다.",
+    "auth.inviteUsed": "이미 사용된 초대 코드입니다.",
     "auth.upgrade": "<span class='au-label'>Pro 구매</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>50% 절약</span>",
     "auth.logout": "로그아웃",
     "auth.errEmpty": "모든 항목을 입력하세요",
@@ -918,6 +943,11 @@
     "auth.email": "E-mail",
     "auth.password": "Mot de passe",
     "auth.confirm": "Confirmer le mot de passe",
+    "auth.inviteCode": "Code d'invitation",
+    "auth.invitePlaceholder": "Saisissez votre code d'invitation",
+    "auth.inviteRequired": "Le code d'invitation est requis.",
+    "auth.inviteInvalid": "Code d'invitation invalide ou expiré.",
+    "auth.inviteUsed": "Ce code d'invitation a déjà été utilisé.",
     "auth.upgrade": "<span class='au-label'>Obtenir Pro</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>-50%</span>",
     "auth.logout": "Se déconnecter",
     "auth.errEmpty": "Veuillez remplir tous les champs",
@@ -1070,6 +1100,11 @@
     "auth.email": "E-Mail",
     "auth.password": "Passwort",
     "auth.confirm": "Passwort bestätigen",
+    "auth.inviteCode": "Einladungscode",
+    "auth.invitePlaceholder": "Einladungscode eingeben",
+    "auth.inviteRequired": "Einladungscode ist erforderlich.",
+    "auth.inviteInvalid": "Einladungscode ungültig oder abgelaufen.",
+    "auth.inviteUsed": "Dieser Einladungscode wurde bereits verwendet.",
     "auth.upgrade": "<span class='au-label'>Pro holen</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>50% sparen</span>",
     "auth.logout": "Abmelden",
     "auth.errEmpty": "Bitte füllen Sie alle Felder aus",
@@ -1222,6 +1257,11 @@
     "auth.email": "Correo",
     "auth.password": "Contraseña",
     "auth.confirm": "Confirmar contraseña",
+    "auth.inviteCode": "Código de invitación",
+    "auth.invitePlaceholder": "Introduce tu código de invitación",
+    "auth.inviteRequired": "El código de invitación es obligatorio.",
+    "auth.inviteInvalid": "Código de invitación no válido o caducado.",
+    "auth.inviteUsed": "Este código de invitación ya se ha utilizado.",
     "auth.upgrade": "<span class='au-label'>Obtener Pro</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>Ahorra 50%</span>",
     "auth.logout": "Cerrar sesión",
     "auth.errEmpty": "Por favor completa todos los campos",
@@ -1374,6 +1414,11 @@
     "auth.email": "E-mail",
     "auth.password": "Senha",
     "auth.confirm": "Confirmar senha",
+    "auth.inviteCode": "Código de convite",
+    "auth.invitePlaceholder": "Introduza o seu código de convite",
+    "auth.inviteRequired": "O código de convite é obrigatório.",
+    "auth.inviteInvalid": "Código de convite inválido ou expirado.",
+    "auth.inviteUsed": "Este código de convite já foi utilizado.",
     "auth.upgrade": "<span class='au-label'>Obter Pro</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>Economize 50%</span>",
     "auth.logout": "Sair",
     "auth.errEmpty": "Por favor preencha todos os campos",
@@ -1526,6 +1571,11 @@
     "auth.email": "E-mail",
     "auth.password": "Пароль",
     "auth.confirm": "Подтвердите пароль",
+    "auth.inviteCode": "Код приглашения",
+    "auth.invitePlaceholder": "Введите код приглашения",
+    "auth.inviteRequired": "Код приглашения обязателен.",
+    "auth.inviteInvalid": "Код приглашения недействителен или истёк.",
+    "auth.inviteUsed": "Этот код приглашения уже использован.",
     "auth.upgrade": "<span class='au-label'>Купить Pro</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>Экономия 50%</span>",
     "auth.logout": "Выйти",
     "auth.errEmpty": "Заполните все поля",
@@ -1678,6 +1728,11 @@
     "auth.email": "Email",
     "auth.password": "Mật khẩu",
     "auth.confirm": "Xác nhận mật khẩu",
+    "auth.inviteCode": "Mã mời",
+    "auth.invitePlaceholder": "Nhập mã mời của bạn",
+    "auth.inviteRequired": "Vui lòng nhập mã mời.",
+    "auth.inviteInvalid": "Mã mời không hợp lệ hoặc đã hết hạn.",
+    "auth.inviteUsed": "Mã mời này đã được sử dụng.",
     "auth.upgrade": "<span class='au-label'>Mua Pro</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>Tiết kiệm 50%</span>",
     "auth.logout": "Đăng xuất",
     "auth.errEmpty": "Vui lòng điền đầy đủ các trường",
@@ -1830,6 +1885,11 @@
     "auth.email": "E-post",
     "auth.password": "Lösenord",
     "auth.confirm": "Bekräfta lösenord",
+    "auth.inviteCode": "Inbjudningskod",
+    "auth.invitePlaceholder": "Ange din inbjudningskod",
+    "auth.inviteRequired": "Inbjudningskod krävs.",
+    "auth.inviteInvalid": "Ogiltig eller utgången inbjudningskod.",
+    "auth.inviteUsed": "Den här inbjudningskoden har redan använts.",
     "auth.upgrade": "<span class='au-label'>Skaffa Pro</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>Spara 50%</span>",
     "auth.logout": "Logga ut",
     "auth.errEmpty": "Fyll i alla fält",
@@ -1982,6 +2042,11 @@
     "auth.email": "البريد الإلكتروني",
     "auth.password": "كلمة المرور",
     "auth.confirm": "تأكيد كلمة المرور",
+    "auth.inviteCode": "رمز الدعوة",
+    "auth.invitePlaceholder": "أدخل رمز الدعوة",
+    "auth.inviteRequired": "رمز الدعوة مطلوب.",
+    "auth.inviteInvalid": "رمز الدعوة غير صالح أو منتهي الصلاحية.",
+    "auth.inviteUsed": "تم استخدام رمز الدعوة هذا بالفعل.",
     "auth.upgrade": "<span class='au-label'>احصل على Pro</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>وفّر 50%</span>",
     "auth.logout": "تسجيل الخروج",
     "auth.errEmpty": "يرجى ملء جميع الحقول",
@@ -2038,6 +2103,11 @@
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       const key = el.getAttribute('data-i18n');
       if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    // 输入框的 placeholder 走独立属性（data-i18n 只能写 textContent，对 input 无效）
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
     });
     document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
       const key = el.getAttribute('data-i18n-html');
@@ -2206,11 +2276,15 @@
     const overlay = document.getElementById('authOverlay');
     if (overlay) overlay.classList.remove('show');
   }
+  // 下面两个切换函数历史上曾因首页弹窗整块移除表单而变成"裸 getElementById(...).classList"，
+  // 一旦被调到就 TypeError（节点不存在）。这里统一先判空——恢复表单后它们是可达的，
+  // 但守卫留着，避免下次再动标记时复发。
   function switchAuthTab(tab) {
     const tl = document.getElementById('tabLogin'), tr = document.getElementById('tabRegister');
     const lf = document.getElementById('loginForm'), rf = document.getElementById('registerForm');
     const resetF = document.getElementById('resetForm');
     const alertEl = document.getElementById('authAlert');
+    if (!tl || !tr || !lf || !rf || !resetF || !alertEl) return;
     alertEl.classList.remove('show', 'error', 'success');
     resetF.classList.add('hidden');
     if (tab === 'login') { tl.classList.add('active'); tr.classList.remove('active'); lf.classList.remove('hidden'); rf.classList.add('hidden'); }
@@ -2220,6 +2294,7 @@
     const lf = document.getElementById('loginForm'), rf = document.getElementById('registerForm'), resetF = document.getElementById('resetForm');
     const tl = document.getElementById('tabLogin'), tr = document.getElementById('tabRegister');
     const alertEl = document.getElementById('authAlert');
+    if (!lf || !rf || !resetF || !tl || !tr || !alertEl) return;
     alertEl.classList.remove('show', 'error', 'success');
     if (view === 'reset') { lf.classList.add('hidden'); rf.classList.add('hidden'); resetF.classList.remove('hidden'); tl.classList.remove('active'); tr.classList.remove('active'); }
     else { resetF.classList.add('hidden'); lf.classList.remove('hidden'); rf.classList.add('hidden'); tl.classList.add('active'); tr.classList.remove('active'); }
@@ -2330,21 +2405,35 @@
     } catch (e) { showAuthAlert('error', t['auth.errNetwork']); }
     btn.disabled = false; return false;
   }
+  // 邀请码类失败的本地化。后端为此类失败额外回传机器可读的 code 字段，这里映射到
+  // 13 语言文案（与扩展端 jingmark/ui.js 的 inviteErrorMessage 同一套 code 与键名）；
+  // 其余错误（邮箱已注册、密码太短等）保持既有的原样直显。
+  function inviteErrorMessage(result) {
+    const code = result && result.code;
+    if (code === 'invite_required') return I18N[currentLang]['auth.inviteRequired'];
+    if (code === 'invite_used') return I18N[currentLang]['auth.inviteUsed'];
+    if (code === 'invite_invalid') return I18N[currentLang]['auth.inviteInvalid'];
+    return '';
+  }
   async function doRegister(e) {
     e.preventDefault();
     const email = document.getElementById('regEmail').value.trim();
     const password = document.getElementById('regPassword').value;
     const password2 = document.getElementById('regPassword2').value;
+    const invite = document.getElementById('regInvite');
+    const inviteCode = invite ? invite.value.trim() : '';
     const t = I18N[currentLang];
     if (!email || !password) { showAuthAlert('error', t['auth.errEmpty']); return false; }
     if (password.length < 8) { showAuthAlert('error', t['auth.errShort']); return false; }
     if (password !== password2) { showAuthAlert('error', t['auth.errMatch']); return false; }
+    // 空邀请码在前端直接拦下，不白跑一趟网络（后端仍会再校验一次）
+    if (!inviteCode) { showAuthAlert('error', t['auth.inviteRequired']); return false; }
     const btn = document.getElementById('registerBtn'); btn.disabled = true;
     try {
-      const res = await fetch(AUTH_API + '/api/auth/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password }) });
+      const res = await fetch(AUTH_API + '/api/auth/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password, inviteCode }) });
       const data = await res.json();
       if (data.token) { localStorage.setItem(AUTH_TOKEN_KEY, data.token); await checkAuthStatus(); }
-      else showAuthAlert('error', data.error || t['auth.errFail']);
+      else showAuthAlert('error', inviteErrorMessage(data) || data.error || t['auth.errFail']);
     } catch (e) { showAuthAlert('error', t['auth.errNetwork']); }
     btn.disabled = false; return false;
   }
