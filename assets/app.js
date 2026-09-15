@@ -105,6 +105,7 @@
     "price.promoFree": "Free during launch",
     "price.promoFreePrice": "Free",
     "price.promoFreeNote": "Limited-time free · reverts to $9.99 after launch",
+    "price.pro.pendingNote": "New payment provider in review · purchases paused for now",
     "price.pro.early": "Limited early bird · reverts to $9.99",
     "price.pro.note": "One-time purchase · Lifetime updates",
     "price.pro.f1": "All 46 themes (six families)",
@@ -119,6 +120,7 @@
     "t6t.desc": "Serif headings, justified body, minimal tables — editorial polish in every theme.",
     "price.pro.f6t": "Print-grade typesetting engine",
     "price.pro.btn": "Get Pro for $4.99 →",
+    "price.pro.btnPending": "Payments paused",
     "steps.title": "Three steps to paper-like reading",
     "steps.sub": "No complex setup — as simple as opening a book.",
     "s1.title": "Pick a folder",
@@ -136,7 +138,7 @@
     "faq.q3": "Which browsers are supported?",
     "faq.a3": "Any Chromium-based browser (Chrome, Edge, Brave, Arc, and so on) with File System Access API support (Chrome 86+).",
     "faq.q4": "How do I activate Pro after buying?",
-    "faq.a4": "Click 'Upgrade' in the extension, sign in with your email, and pay through Creem. Your Pro status syncs automatically.",
+    "faq.a4": "Click 'Upgrade' in the extension and sign in with your email. Your Pro status syncs automatically.",
     "faq.q5": "Can I use Pro on multiple computers?",
     "faq.a5": "Pro is tied to your email account and works on up to 3 devices. On a 4th device you will not get Pro — you are not signed out, and your other devices are unaffected. Remove an unused device in Account panel → Authorized devices to free the slot.",
     "faq.q6": "Does it support math equations and diagrams?",
@@ -264,6 +266,7 @@
     "price.promoFree": "限时免费",
     "price.promoFreePrice": "免费",
     "price.promoFreeNote": "限时免费 · 活动结束后恢复 $9.99",
+    "price.pro.pendingNote": "新支付服务商审核中 · 暂时无法购买",
     "price.pro.early": "限时早鸟价 · 售完即恢复 $9.99",
     "price.pro.note": "一次性买断 · 终身更新",
     "price.pro.f1": "全部 46 套主题（六大分类）",
@@ -278,6 +281,7 @@
     "t6t.desc": "衬线标题、两端对齐正文、极简表格——每套主题都自带编辑级排版。",
     "price.pro.f6t": "印刷级排版引擎",
     "price.pro.btn": "立即获取 Pro · $4.99 →",
+    "price.pro.btnPending": "支付通道升级中",
     "steps.title": "三步开启纸书阅读",
     "steps.sub": "无需复杂配置，像打开一本书一样简单。",
     "s1.title": "选择文件夹",
@@ -295,7 +299,7 @@
     "faq.q3": "支持哪些浏览器？",
     "faq.a3": "任何基于 Chromium 的浏览器（Chrome、Edge、Brave、Arc 等），且支持 File System Access API（Chrome 86+）。",
     "faq.q4": "购买 Pro 后如何激活？",
-    "faq.a4": "点击插件内「升级 Pro」，用邮箱登录并完成 Creem 支付，状态自动同步。",
+    "faq.a4": "点击插件内「升级 Pro」，用邮箱登录即可，状态自动同步。",
     "faq.q5": "我可以在多台电脑上使用 Pro 吗？",
     "faq.a5": "Pro 与你的邮箱账户绑定，最多可在 3 台设备上使用。第 4 台设备不会获得 Pro 功能，但不会被登出，其他设备也不受影响；在「账户面板 → 已授权设备」里移除一台不再使用的设备，名额即释放。",
     "faq.q6": "是否支持数学公式与图表？",
@@ -423,6 +427,7 @@
     "price.promoFree": "限時免費",
     "price.promoFreePrice": "免費",
     "price.promoFreeNote": "限時免費 · 活動結束後恢復 $9.99",
+    "price.pro.pendingNote": "新支付服務商審核中 · 暫時無法購買",
     "price.pro.early": "限時早鳥價 · 售完即恢復 $9.99",
     "price.pro.note": "一次性買斷 · 終身更新",
     "price.pro.f1": "全部 46 套主題（六大分類）",
@@ -437,6 +442,7 @@
     "t6t.desc": "襯線標題、兩端對齊正文、極簡表格——每套主題都自帶編輯級排版。",
     "price.pro.f6t": "印刷級排版引擎",
     "price.pro.btn": "立即獲取 Pro · $4.99 →",
+    "price.pro.btnPending": "支付通道升級中",
     "steps.title": "三步開啟紙本閱讀",
     "steps.sub": "無需複雜設定，像打開一本書一樣簡單。",
     "s1.title": "選擇資料夾",
@@ -454,7 +460,7 @@
     "faq.q3": "支援哪些瀏覽器？",
     "faq.a3": "任何基於 Chromium 的瀏覽器（Chrome、Edge、Brave、Arc 等），且支援 File System Access API（Chrome 86+）。",
     "faq.q4": "購買 Pro 後如何啟用？",
-    "faq.a4": "點擊擴充功能內「升級 Pro」，用郵箱登入並完成 Creem 支付，狀態自動同步。",
+    "faq.a4": "點擊擴充功能內「升級 Pro」，用郵箱登入即可，狀態自動同步。",
     "faq.q5": "我可以在多台電腦上使用 Pro 嗎？",
     "faq.a5": "Pro 與你的郵箱帳號綁定，最多可在 3 台裝置上使用。第 4 台裝置不會取得 Pro 功能，但不會被登出，其他裝置也不受影響；在「帳戶面板 → 已授權裝置」裡移除一台不再使用的裝置，名額即釋放。",
     "faq.q6": "是否支援數學公式與圖表？",
@@ -582,6 +588,7 @@
     "price.promoFree": "期間限定で無料",
     "price.promoFreePrice": "無料",
     "price.promoFreeNote": "期間限定無料 · 終了後は $9.99 に戻ります",
+    "price.pro.pendingNote": "新しい決済サービスを審査中 · 現在は購入できません",
     "price.pro.early": "早割限定 · 終了後は $9.99",
     "price.pro.note": "買い切り · 永久アップデート",
     "price.pro.f1": "全 46 テーマ（6 系統）",
@@ -596,6 +603,7 @@
     "t6t.desc": "セリフ見出し、両端揃え本文、ミニマルな表——すべてのテーマに編集品質の組版。",
     "price.pro.f6t": "印刷グレードの組版エンジン",
     "price.pro.btn": "Pro を $4.99 で入手 →",
+    "price.pro.btnPending": "決済を準備中",
     "steps.title": "3 ステップで紙のような読書",
     "steps.sub": "複雑な設定は不要。本を開くように簡単。",
     "s1.title": "フォルダを選ぶ",
@@ -613,7 +621,7 @@
     "faq.q3": "対応ブラウザは？",
     "faq.a3": "File System Access API をサポートする Chromium 系ブラウザ（Chrome・Edge・Brave・Arc など、Chrome 86 以降）。",
     "faq.q4": "購入後に Pro をどう有効化しますか？",
-    "faq.a4": "拡張機能の「アップグレード」をクリックし、メールでログインして Creem で支払うと、Pro 状態が自動で同期されます。",
+    "faq.a4": "拡張機能の「アップグレード」をクリックし、メールでログインすると、Pro 状態が自動で同期されます。",
     "faq.q5": "Pro を複数のパソコンで使えますか？",
     "faq.a5": "Pro はメールアカウントに紐づいており、最大 3 台の端末で利用できます。4 台目では Pro 機能が有効になりませんが、ログアウトされず、他の端末にも影響しません。「認証済み端末」で使わなくなった端末を削除すると枠が空きます。",
     "faq.q6": "数式や図表に対応していますか？",
@@ -741,6 +749,7 @@
     "price.promoFree": "출시 기간 무료",
     "price.promoFreePrice": "무료",
     "price.promoFreeNote": "기간 한정 무료 · 종료 후 $9.99로 복귀",
+    "price.pro.pendingNote": "새 결제 서비스 심사 중 · 현재 구매할 수 없습니다",
     "price.pro.early": "얼리버드 한정 · 종료 후 $9.99",
     "price.pro.note": "일시불 · 평생 업데이트",
     "price.pro.f1": "전체 46 테마 (6 계열)",
@@ -755,6 +764,7 @@
     "t6t.desc": "세리프 제목, 양쪽 맞춤 본문, 미니멀 표——모든 테마에 편집급 조판.",
     "price.pro.f6t": "인쇄급 조판 엔진",
     "price.pro.btn": "$4.99 에 Pro 받기 →",
+    "price.pro.btnPending": "결제 준비 중",
     "steps.title": "세 단계로 종이책 같은 읽기",
     "steps.sub": "복잡한 설정 없이, 책을 여는 것만큼 간단하게.",
     "s1.title": "폴더 선택",
@@ -772,7 +782,7 @@
     "faq.q3": "지원하는 브라우저는?",
     "faq.a3": "File System Access API를 지원하는 Chromium 기반 브라우저(Chrome·Edge·Brave·Arc 등, Chrome 86 이상).",
     "faq.q4": "구매 후 Pro를 어떻게 활성화하나요?",
-    "faq.a4": "확장 프로그램의 '업그레이드'를 클릭해 이메일로 로그인하고 Creem에서 결제하면 Pro 상태가 자동 동기화됩니다.",
+    "faq.a4": "확장 프로그램의 '업그레이드'를 클릭해 이메일로 로그인하면 Pro 상태가 자동 동기화됩니다.",
     "faq.q5": "Pro를 여러 대의 컴퓨터에서 사용할 수 있나요?",
     "faq.a5": "Pro는 이메일 계정에 연결되며 최대 3대의 기기에서 사용할 수 있습니다. 4번째 기기에서는 Pro 기능이 활성화되지 않지만 로그아웃되지 않고 다른 기기도 영향을 받지 않습니다. '인증된 기기'에서 사용하지 않는 기기를 제거하면 자리가 비워집니다.",
     "faq.q6": "수식과 다이어그램을 지원하나요?",
@@ -900,6 +910,7 @@
     "price.promoFree": "Gratuit au lancement",
     "price.promoFreePrice": "Gratuit",
     "price.promoFreeNote": "Gratuit pour une durée limitée · retour à 9,99 $ après le lancement",
+    "price.pro.pendingNote": "Nouveau prestataire en cours de validation · achats suspendus",
     "price.pro.early": "Offre de lancement · repasse à 9,99 $",
     "price.pro.note": "Achat unique · Mises à jour à vie",
     "price.pro.f1": "Les 46 thèmes (six familles)",
@@ -914,6 +925,7 @@
     "t6t.desc": "Titres serif, corps justifié, tables minimales — une finition éditoriale dans chaque thème.",
     "price.pro.f6t": "Moteur de typographie de qualité imprimerie",
     "price.pro.btn": "Obtenir Pro pour 4,99 $ →",
+    "price.pro.btnPending": "Paiements en pause",
     "steps.title": "Trois étapes vers une lecture papier",
     "steps.sub": "Aucune configuration complexe — aussi simple qu'ouvrir un livre.",
     "s1.title": "Choisir un dossier",
@@ -931,7 +943,7 @@
     "faq.q3": "Quels navigateurs sont pris en charge ?",
     "faq.a3": "Tout navigateur Chromium (Chrome, Edge, Brave, Arc, etc.) avec l'API File System Access (Chrome 86+).",
     "faq.q4": "Comment activer Pro après l'achat ?",
-    "faq.a4": "Cliquez « Mettre à niveau » dans l'extension, connectez-vous par e-mail et payez via Creem. Votre statut Pro se synchronise automatiquement.",
+    "faq.a4": "Cliquez « Mettre à niveau » dans l'extension et connectez-vous par e-mail. Votre statut Pro se synchronise automatiquement.",
     "faq.q5": "Puis-je utiliser Pro sur plusieurs ordinateurs ?",
     "faq.a5": "Pro est lié à votre compte e-mail et fonctionne sur 3 appareils maximum. Sur un 4e appareil, Pro ne s'active pas : vous n'êtes pas déconnecté et vos autres appareils ne sont pas affectés. Retirez un appareil inutilisé depuis le panneau du compte pour libérer une place.",
     "faq.q6": "Prenez-vous en charge les équations mathématiques et les diagrammes ?",
@@ -1059,6 +1071,7 @@
     "price.promoFree": "Beim Start kostenlos",
     "price.promoFreePrice": "Kostenlos",
     "price.promoFreeNote": "Zeitlich begrenzt kostenlos · danach wieder 9,99 $",
+    "price.pro.pendingNote": "Neuer Zahlungsanbieter in Prüfung · Käufe derzeit pausiert",
     "price.pro.early": "Frühbucher-Aktion · danach 9,99 $",
     "price.pro.note": "Einmaliger Kauf · Lebenslange Updates",
     "price.pro.f1": "Alle 46 Themen (sechs Familien)",
@@ -1073,6 +1086,7 @@
     "t6t.desc": "Serifen-Überschriften, Blocksatz, schlichte Tabellen — editorialer Schliff in jedem Thema.",
     "price.pro.f6t": "Satz-Engine in Druckqualität",
     "price.pro.btn": "Pro für 4,99 $ holen →",
+    "price.pro.btnPending": "Zahlungen pausiert",
     "steps.title": "Drei Schritte zum Papier-Lesen",
     "steps.sub": "Keine komplizierte Einrichtung — so einfach wie ein Buch öffnen.",
     "s1.title": "Ordner wählen",
@@ -1090,7 +1104,7 @@
     "faq.q3": "Welche Browser werden unterstützt?",
     "faq.a3": "Jeder Chromium-Browser (Chrome, Edge, Brave, Arc usw.) mit File System Access API (Chrome 86+).",
     "faq.q4": "Wie aktiviere ich Pro nach dem Kauf?",
-    "faq.a4": "Klicken Sie in der Erweiterung auf „Upgraden“, melden Sie sich per E-Mail an und zahlen Sie über Creem. Ihr Pro-Status wird automatisch synchronisiert.",
+    "faq.a4": "Klicken Sie in der Erweiterung auf „Upgraden“ und melden Sie sich per E-Mail an. Ihr Pro-Status wird automatisch synchronisiert.",
     "faq.q5": "Kann ich Pro auf mehreren Computern nutzen?",
     "faq.a5": "Pro ist an Ihr E-Mail-Konto gebunden und funktioniert auf bis zu 3 Geräten. Auf einem 4. Gerät wird Pro nicht aktiviert — Sie werden nicht abgemeldet und Ihre anderen Geräte bleiben unberührt. Entfernen Sie ein ungenutztes Gerät im Kontobereich, um einen Platz freizugeben.",
     "faq.q6": "Werden mathematische Formeln und Diagramme unterstützt?",
@@ -1218,6 +1232,7 @@
     "price.promoFree": "Gratis durante el lanzamiento",
     "price.promoFreePrice": "Gratis",
     "price.promoFreeNote": "Gratis por tiempo limitado · vuelve a 9,99 $ tras el lanzamiento",
+    "price.pro.pendingNote": "Nuevo proveedor en revisión · compras en pausa por ahora",
     "price.pro.early": "Oferta inicial · vuelve a 9,99 $",
     "price.pro.note": "Pago único · Actualizaciones de por vida",
     "price.pro.f1": "Los 46 temas (seis familias)",
@@ -1232,6 +1247,7 @@
     "t6t.desc": "Títulos serif, cuerpo justificado, tablas mínimas — acabado de edición en cada tema.",
     "price.pro.f6t": "Motor de maquetación de grado imprenta",
     "price.pro.btn": "Obtener Pro por 4,99 $ →",
+    "price.pro.btnPending": "Pagos en pausa",
     "steps.title": "Tres pasos hacia una lectura de papel",
     "steps.sub": "Sin configuración compleja — tan simple como abrir un libro.",
     "s1.title": "Elegir carpeta",
@@ -1249,7 +1265,7 @@
     "faq.q3": "¿Qué navegadores se admiten?",
     "faq.a3": "Cualquier navegador basado en Chromium (Chrome, Edge, Brave, Arc, etc.) con la API File System Access (Chrome 86+).",
     "faq.q4": "¿Cómo activo Pro tras la compra?",
-    "faq.a4": "Haz clic en «Mejorar» en la extensión, inicia sesión con tu correo y paga vía Creem. Tu estado Pro se sincroniza automáticamente.",
+    "faq.a4": "Haz clic en «Mejorar» en la extensión e inicia sesión con tu correo. Tu estado Pro se sincroniza automáticamente.",
     "faq.q5": "¿Puedo usar Pro en varios ordenadores?",
     "faq.a5": "Pro está vinculado a tu cuenta de correo y funciona en hasta 3 dispositivos. En un 4.º dispositivo no se activa Pro: no se cierra tu sesión y tus otros dispositivos no se ven afectados. Elimina un dispositivo sin usar desde el panel de cuenta para liberar una plaza.",
     "faq.q6": "¿Admite ecuaciones matemáticas y diagramas?",
@@ -1377,6 +1393,7 @@
     "price.promoFree": "Grátis no lançamento",
     "price.promoFreePrice": "Grátis",
     "price.promoFreeNote": "Grátis por tempo limitado · volta a US$ 9,99 após o lançamento",
+    "price.pro.pendingNote": "Novo provedor em análise · compras em pausa por enquanto",
     "price.pro.early": "Oferta de lançamento · volta a $9,99",
     "price.pro.note": "Pagamento único · Atualizações vitalícias",
     "price.pro.f1": "Os 46 temas (seis famílias)",
@@ -1391,6 +1408,7 @@
     "t6t.desc": "Títulos serif, corpo justificado, tabelas mínimas — acabamento editorial em cada tema.",
     "price.pro.f6t": "Motor de tipografia de grau impressão",
     "price.pro.btn": "Obter Pro por $4,99 →",
+    "price.pro.btnPending": "Pagamentos em pausa",
     "steps.title": "Três passos para uma leitura de papel",
     "steps.sub": "Sem configuração complexa — tão simples quanto abrir um livro.",
     "s1.title": "Escolher pasta",
@@ -1408,7 +1426,7 @@
     "faq.q3": "Quais navegadores são suportados?",
     "faq.a3": "Qualquer navegador baseado em Chromium (Chrome, Edge, Brave, Arc etc.) com a API File System Access (Chrome 86+).",
     "faq.q4": "Como ativo o Pro após a compra?",
-    "faq.a4": "Clique em «Melhorar» na extensão, entre com seu e-mail e pague via Creem. Seu status Pro sincroniza automaticamente.",
+    "faq.a4": "Clique em «Melhorar» na extensão e entre com seu e-mail. Seu status Pro sincroniza automaticamente.",
     "faq.q5": "Posso usar o Pro em vários computadores?",
     "faq.a5": "O Pro está vinculado à sua conta de e-mail e funciona em até 3 dispositivos. No 4.º dispositivo o Pro não é ativado — você não é desconectado e seus outros dispositivos não são afetados. Remova um dispositivo sem uso no painel da conta para liberar uma vaga.",
     "faq.q6": "Você suporta equações matemáticas e diagramas?",
@@ -1536,6 +1554,7 @@
     "price.promoFree": "Бесплатно при запуске",
     "price.promoFreePrice": "Бесплатно",
     "price.promoFreeNote": "Бесплатно ограниченное время · затем снова $9.99",
+    "price.pro.pendingNote": "Новый платёжный провайдер на проверке · покупки приостановлены",
     "price.pro.early": "Ранняя цена · далее 9,99 $",
     "price.pro.note": "Разовая покупка · Обновления навсегда",
     "price.pro.f1": "Все 46 тем (шесть семейств)",
@@ -1550,6 +1569,7 @@
     "t6t.desc": "Заголовки с засечками, выключка по ширине, минимальные таблицы — редакционная отделка в каждой теме.",
     "price.pro.f6t": "Движок вёрстки уровня печати",
     "price.pro.btn": "Купить Pro за 4,99 $ →",
+    "price.pro.btnPending": "Оплата приостановлена",
     "steps.title": "Три шага к чтению как на бумаге",
     "steps.sub": "Без сложных настроек — просто как открыть книгу.",
     "s1.title": "Выбрать папку",
@@ -1567,7 +1587,7 @@
     "faq.q3": "Какие браузеры поддерживаются?",
     "faq.a3": "Любой браузер на базе Chromium (Chrome, Edge, Brave, Arc и др.) с поддержкой File System Access API (Chrome 86+).",
     "faq.q4": "Как активировать Pro после покупки?",
-    "faq.a4": "Нажмите «Обновить» в расширении, войдите по почте и оплатите через Creem. Статус Pro синхронизируется автоматически.",
+    "faq.a4": "Нажмите «Обновить» в расширении и войдите по почте. Статус Pro синхронизируется автоматически.",
     "faq.q5": "Можно ли использовать Pro на нескольких компьютерах?",
     "faq.a5": "Pro привязан к вашей учётной записи электронной почты и работает максимум на 3 устройствах. На 4-м устройстве Pro не активируется — вас не разлогинивает, а другие устройства продолжают работать. Удалите неиспользуемое устройство в панели аккаунта, чтобы освободить слот.",
     "faq.q6": "Поддерживаются ли математические формулы и диаграммы?",
@@ -1695,6 +1715,7 @@
     "price.promoFree": "Miễn phí khi ra mắt",
     "price.promoFreePrice": "Miễn phí",
     "price.promoFreeNote": "Miễn phí có thời hạn · trở lại $9.99 sau khi ra mắt",
+    "price.pro.pendingNote": "Nhà cung cấp mới đang thẩm định · tạm dừng mua hàng",
     "price.pro.early": "Giá sớm có hạn · quay lại $9,99",
     "price.pro.note": "Mua một lần · Cập nhật trọn đời",
     "price.pro.f1": "Đủ 46 chủ đề (sáu hệ)",
@@ -1709,6 +1730,7 @@
     "t6t.desc": "Tiêu đề chữ serif, thân bài căn đều, bảng tối giản—chất lượng báo chí trong mọi chủ đề.",
     "price.pro.f6t": "Công cụ sắp chữ chuẩn in",
     "price.pro.btn": "Nhận Pro với $4,99 →",
+    "price.pro.btnPending": "Tạm dừng thanh toán",
     "steps.title": "Ba bước đến trải nghiệm giấy",
     "steps.sub": "Không cấu hình phức tạp — đơn giản như mở một cuốn sách.",
     "s1.title": "Chọn thư mục",
@@ -1726,7 +1748,7 @@
     "faq.q3": "Trình duyệt nào được hỗ trợ?",
     "faq.a3": "Mọi trình duyệt dựa trên Chromium (Chrome, Edge, Brave, Arc…) có File System Access API (Chrome 86+).",
     "faq.q4": "Sau khi mua, cách kích hoạt Pro?",
-    "faq.a4": "Bấm «Nâng cấp» trong tiện ích, đăng nhập bằng email và thanh toán qua Creem. Trạng thái Pro tự đồng bộ.",
+    "faq.a4": "Bấm «Nâng cấp» trong tiện ích và đăng nhập bằng email. Trạng thái Pro tự đồng bộ.",
     "faq.q5": "Tôi có thể dùng Pro trên nhiều máy tính không?",
     "faq.a5": "Pro được liên kết với tài khoản email của bạn và dùng được trên tối đa 3 thiết bị. Ở thiết bị thứ 4, Pro sẽ không được bật — bạn không bị đăng xuất và các thiết bị khác vẫn hoạt động bình thường. Hãy xoá một thiết bị không dùng trong bảng tài khoản để giải phóng suất.",
     "faq.q6": "Có hỗ trợ công thức toán học và sơ đồ không?",
@@ -1854,6 +1876,7 @@
     "price.promoFree": "Gratis vid lansering",
     "price.promoFreePrice": "Gratis",
     "price.promoFreeNote": "Gratis under en begränsad tid · återgår till $9.99 efter lanseringen",
+    "price.pro.pendingNote": "Ny betalningsleverantör granskas · köp pausade tills vidare",
     "price.pro.early": "Begränsad early bird · återgår till $9,99",
     "price.pro.note": "Engångsköp · Livstidsuppdateringar",
     "price.pro.f1": "Alla 46 teman (sex familjer)",
@@ -1868,6 +1891,7 @@
     "t6t.desc": "Serif-rubriker, marginaljusterad brödtext, minimala tabeller — redaktionell finish i varje tema.",
     "price.pro.f6t": "Typsättningsmotor i tryckkvalitet",
     "price.pro.btn": "Skaffa Pro för $4,99 →",
+    "price.pro.btnPending": "Betalningar pausade",
     "steps.title": "Tre steg till pappersläsning",
     "steps.sub": "Ingen krånglig inställning — lika enkelt som att öppna en bok.",
     "s1.title": "Välj en mapp",
@@ -1885,7 +1909,7 @@
     "faq.q3": "Vilka webbläsare stöds?",
     "faq.a3": "Alla Chromium-baserade webbläsare (Chrome, Edge, Brave, Arc med flera) med File System Access API (Chrome 86+).",
     "faq.q4": "Hur aktiverar jag Pro efter köp?",
-    "faq.a4": "Klicka på «Uppgradera» i tillägget, logga in med din e-post och betala via Creem. Din Pro-status synkroniseras automatiskt.",
+    "faq.a4": "Klicka på «Uppgradera» i tillägget och logga in med din e-post. Din Pro-status synkroniseras automatiskt.",
     "faq.q5": "Kan jag använda Pro på flera datorer?",
     "faq.a5": "Pro är kopplad till ditt e-postkonto och fungerar på upp till 3 enheter. På en 4:e enhet aktiveras inte Pro — du loggas inte ut och dina andra enheter påverkas inte. Ta bort en oanvänd enhet i kontopanelen för att frigöra en plats.",
     "faq.q6": "Stöds matematiska formler och diagram?",
@@ -2013,6 +2037,7 @@
     "price.promoFree": "مجاني أثناء الإطلاق",
     "price.promoFreePrice": "مجاني",
     "price.promoFreeNote": "مجاني لفترة محدودة · يعود إلى 9.99 $ بعد الإطلاق",
+    "price.pro.pendingNote": "مزوّد دفع جديد قيد المراجعة · الشراء متوقف مؤقتًا",
     "price.pro.early": "سعر مبكر محدود · يعود إلى 9.99$",
     "price.pro.note": "دفعة واحدة · تحديثات مدى الحياة",
     "price.pro.f1": "كل السمات الـ46 (ست عائلات)",
@@ -2027,6 +2052,7 @@
     "t6t.desc": "عناوين بخط serif وجسم مضبوط وجداول بسيطة—لمسة تحريرية في كل سمة.",
     "price.pro.f6t": "محرك تنضيد بجودة الطباعة",
     "price.pro.btn": "احصل على Pro مقابل 4.99$ →",
+    "price.pro.btnPending": "المدفوعات متوقفة مؤقتًا",
     "steps.title": "ثلاث خطوات لقراءة كالورق",
     "steps.sub": "بلا إعداد معقد — ببساطة فتح كتاب.",
     "s1.title": "اختر مجلدًا",
@@ -2044,7 +2070,7 @@
     "faq.q3": "أي المتصفحات مدعومة؟",
     "faq.a3": "أي متصفح قائم على Chromium (Chrome وEdge وBrave وArc وغيرها) يدعم File System Access API (Chrome 86+).",
     "faq.q4": "كيف أُفعّل Pro بعد الشراء؟",
-    "faq.a4": "انقر «ترقية» في الإضافة، سجّل الدخول ببريدك وادفع عبر Creem. تتم مزامنة حالة Pro تلقائيًا.",
+    "faq.a4": "انقر «ترقية» في الإضافة وسجّل الدخول ببريدك. تتم مزامنة حالة Pro تلقائيًا.",
     "faq.q5": "هل يمكنني استخدام Pro على عدة أجهزة كمبيوتر؟",
     "faq.a5": "يرتبط Pro بحساب بريدك الإلكتروني ويعمل على 3 أجهزة كحد أقصى. على الجهاز الرابع لن تُفعَّل ميزات Pro — لن يتم تسجيل خروجك ولن تتأثر أجهزتك الأخرى. أزِل جهازًا غير مستخدم من لوحة الحساب لتحرير مكان.",
     "faq.q6": "هل يدعم المعادلات الرياضية والرسوم البيانية؟",
@@ -2101,6 +2127,9 @@
   /* ============================ UI logic ============================ */
   const STORE_KEY = 'jingmark-lang';
   const CREEM_URL = 'https://www.creem.io/payment/prod_2CZgvuTFBQXMiyF0owBU8g';
+  // 支付通道状态：Creem 已于 2026-09-15 弃用，新通道仍在审核中。
+  // 通道过审后只改这里改成 true —— 文案、href、点击守卫全部跟着它走，不必再散改。
+  const PAY_CHANNEL_READY = false;
   const AUTH_API = 'https://jingmark-api.fenghua25.workers.dev';
   const AUTH_TOKEN_KEY = 'jingmark-jwt';
   const AUTH_STATUS_KEY = 'jingmark-pro-status';
@@ -2156,6 +2185,7 @@
     syncConditionalUI();
     gateCheckoutLinks();
     if (window.__jmkPromoFree) applyPromoUI(); // 限时免费：语言切换后重绘促销态
+    applyChannelUI();                          // 通道未就绪：重绘禁用态（促销态下自行让位）
   }
 
   /* ---- Conditional UI: WeChat/公众号 shown only in Chinese; typesetting shown otherwise ---- */
@@ -2344,7 +2374,13 @@
   // 而 webhook 拿不到 jingmark_email、该邮箱又没有账户 → 钱收了、Pro 开不了。
   // （后端已加待认领兜底，能事后补开；但能不产生孤儿付款就别产生。）
   // 现在：href 只有在确认已登录时才由 JS 注入真实地址，其余情况点击无副作用。
+  // 「当前是否禁止暴露结账入口」的唯一判定：促销期（免费，无购买语义）或通道未就绪。
+  // 两态原因不同、要求一致，合并成一个判定，免得两处守卫各自漂移。
+  function checkoutBlocked() { return !!window.__jmkPromoFree || !PAY_CHANNEL_READY; }
   function buildCheckoutUrl() {
+    // 通道未就绪一律返回 '#'：即便某个调用点漏了 checkoutBlocked()，也绝不把
+    // 真实结账地址写进 DOM（与上面「失败即关闭」同一思路）。
+    if (!PAY_CHANNEL_READY) return '#';
     const email = getAuthEmail();
     if (!email) return '#';
     return CREEM_URL + '?metadata%5Bjingmark_email%5D=' + encodeURIComponent(email);
@@ -2357,6 +2393,8 @@
       if (a.dataset.creemGated === '1') return; // 避免每次 setLang 重复挂监听
       a.dataset.creemGated = '1';
       a.addEventListener("click", function (e) {
+        // 无可用通道（促销期 / 通道未就绪）时 href 是 '#'，点击不该有任何副作用
+        if (checkoutBlocked()) { e.preventDefault(); return; }
         if (getAuthEmail()) return; // 已登录：链接已带 metadata，放行
         e.preventDefault();
         openAuthModal();
@@ -2366,7 +2404,7 @@
     });
   }
   function refreshCheckoutLinks() {
-    document.querySelectorAll('a[data-creem]').forEach(function (a) { a.href = window.__jmkPromoFree ? '#' : buildCheckoutUrl(); });
+    document.querySelectorAll('a[data-creem]').forEach(function (a) { a.href = checkoutBlocked() ? '#' : buildCheckoutUrl(); });
   }
   // 限时免费（PROMO_FREE）：保留 $9.99 划线价与功能清单，CTA 改为「限时免费」并点击弹登录框。
   function applyPromoUI() {
@@ -2396,13 +2434,18 @@
     });
 
     // 2) Pro CTA：文案改为「限时免费」，移除 Creem 跳转，点击弹登录框
-    document.querySelectorAll('a.price-btn.pro-btn[data-creem], a.price-btn.pro-btn#promoFreeBtn').forEach(function (a) {
+    document.querySelectorAll('a.price-btn.pro-btn[data-creem], a.price-btn.pro-btn#promoFreeBtn, a.price-btn.pro-btn#payPendingBtn').forEach(function (a) {
       if (!a.dataset.promoWired) {
         a.dataset.promoWired = '1';
         a.removeAttribute('data-creem'); a.removeAttribute('target'); a.removeAttribute('rel');
         a.href = '#';
         a.addEventListener('click', function (e) { e.preventDefault(); if (typeof openAuthModal === 'function') openAuthModal(); });
       }
+      // 清掉「通道未就绪」态留下的禁用样式：loadPromo() 是异步的，两条路径可能
+      // 先后到达同一个按钮（先被 applyChannelUI 禁用，再被促销态接管）。不清的话
+      // 按钮文案写着「限时免费」、却因为 pointer-events:none 点不动。
+      a.style.opacity = ''; a.style.pointerEvents = ''; a.style.cursor = '';
+      a.removeAttribute('aria-disabled');
       a.id = 'promoFreeBtn';
       var txt = a.querySelector('.pro-btn-text');
       if (txt) txt.textContent = label;
@@ -2424,6 +2467,39 @@
 
     // 4) 移除之前版本的独立 banner（不再使用）
     var b = document.getElementById('promoBanner'); if (b) b.remove();
+  }
+  // 支付通道未就绪（Creem 已弃用、新通道审核中）：价格照常展示，但购买入口必须
+  // 禁用并说明原因 —— 否则用户会点进一个已经没有实名主体的结账页。
+  // 促销态优先：免费期的 CTA 由 applyPromoUI 负责，这里直接让位。
+  function applyChannelUI() {
+    if (PAY_CHANNEL_READY || window.__jmkPromoFree) return;
+    var dict = I18N[currentLang] || {};
+    // 兜底写英文（不是中文）：applyPromoUI 曾因 || '限时免费' 让 12 种语言看到中文按钮。
+    var label = dict['price.pro.btnPending'] || 'Payments paused';
+    var note = dict['price.pro.pendingNote'] || '';
+    // 1) 价格卡 CTA：摘掉跳转与 data-creem，并挡住中键/右键「新标签页打开」
+    document.querySelectorAll('a.price-btn.pro-btn[data-creem], a.price-btn.pro-btn#payPendingBtn').forEach(function (a) {
+      a.removeAttribute('data-creem'); a.removeAttribute('target'); a.removeAttribute('rel');
+      a.href = '#';
+      a.id = 'payPendingBtn';
+      a.setAttribute('aria-disabled', 'true');
+      a.style.opacity = '.55';
+      a.style.pointerEvents = 'none';
+      var txt = a.querySelector('.pro-btn-text'); if (txt) txt.textContent = label;
+    });
+    // 2)「限时早鸟价 · 售完即恢复」换成通道说明 —— 一个买不了的价格配「售完即恢复」自相矛盾
+    document.querySelectorAll('[data-i18n="price.pro.early"]').forEach(function (el) {
+      if (note) el.textContent = note;
+    });
+    // 3) 账户面板升级入口：data-i18n-html 会把它填回含价格的 HTML，必须先摘掉
+    var au = document.getElementById('authUpgrade');
+    if (au) {
+      au.removeAttribute('data-i18n-html');
+      au.removeAttribute('data-creem'); au.removeAttribute('target'); au.href = '#';
+      au.setAttribute('aria-disabled', 'true');
+      au.style.pointerEvents = 'none';
+      au.textContent = label;
+    }
   }
   // 促销开关探测失败会【静默保留 $4.99 购买入口】—— 免费期里这等于引导用户付款，
   // 所以失败要重试（原实现一次失败就放弃）。重试仍失败则保持现状：不猜、不硬编码。
@@ -2518,7 +2594,7 @@
           // 促销期不得写回 Creem 地址：applyPromoUI 已把 href 摘成 "#"，这里写回会得到
           // 一个「文案写着限时免费、href 却是真实结账页」的活链接。左键被 preventDefault
           // 挡住，但中键与右键「在新标签页打开」照样会跳 Creem（实测复现路径见 qa/）。
-          upgrade.href = window.__jmkPromoFree ? '#' : buildCheckoutUrl();
+          upgrade.href = checkoutBlocked() ? '#' : buildCheckoutUrl();
         }
       }
     } catch (e) {

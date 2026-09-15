@@ -83,8 +83,8 @@
           <span class="spinner hidden" id="checkoutSpinner"></span>
         </button>
 
-        <p class="text-muted mt-16" style="font-size:12px;">
-          Secure checkout by Creem. Instant activation.
+        <p class="text-muted mt-16" id="checkoutNote" style="font-size:12px;">
+          Payments are handled by a third-party payment provider.
         </p>
       </div>
     </div>
@@ -129,9 +129,14 @@
   <script>
     const API_BASE = 'https://jingmark-api.fenghua25.workers.dev';
     const TOKEN_KEY = 'jingmark-jwt';
-    // Creem checkout URL：metadata 带登录邮箱，webhook 据此开通对应账户
+    // 支付通道状态：Creem 已于 2026-09-15 弃用，新通道仍在审核中。
+    // 通道过审后把这里改成 true —— 按钮文案、跳转、点击守卫全部跟着它走。
+    const PAY_CHANNEL_READY = false;
+    // 旧 Creem 结账地址仅作常量保留，PAY_CHANNEL_READY=false 时永不使用。
+    // metadata 带登录邮箱，webhook 据此开通对应账户。
     const CREEM_CHECKOUT_URL = 'https://www.creem.io/payment/prod_2CZgvuTFBQXMiyF0owBU8g';
     function checkoutUrl() {
+      if (!PAY_CHANNEL_READY) return '#';
       const email = getEmail();
       // 未登录返回 '#'（失败即关闭）：本页购买按钮虽在无 token 时已隐藏，
       // 但万一视图状态异常泄漏出来，也不能让用户在没有 metadata 的情况下付款。
@@ -227,13 +232,14 @@
 
     // --- Checkout ---
     document.getElementById('checkoutBtn').addEventListener('click', async () => {
-      if (PROMO) return; // 促销期不得进入 Creem 结账流程
+      if (PROMO) return;              // 促销期不进入结账流程
+      if (!PAY_CHANNEL_READY) return; // 通道未就绪：不打开任何结账页
       const btn = document.getElementById('checkoutBtn');
       btn.querySelector('.btn-text').classList.add('hidden');
       btn.querySelector('.spinner').classList.remove('hidden');
       btn.disabled = true;
 
-      // Open Creem checkout in new tab
+      // Open the payment provider checkout in a new tab
       window.open(checkoutUrl(), '_blank');
 
       // Switch to processing view
@@ -337,12 +343,30 @@
       // 5) 购买入口与付款提示：双保险（按钮已 display:none 时这里无副作用）
       var btn = document.getElementById('checkoutBtn'); if (btn) btn.style.display = 'none';
       var bf = document.getElementById('buyFor'); if (bf) bf.style.display = 'none';
-      Array.prototype.slice.call(document.querySelectorAll('p')).forEach(function (p) {
-        if (/Creem/i.test(p.textContent) && !p.querySelector('a')) p.style.display = 'none';
-      });
+      // 按 id 定位。原实现靠 /Creem/i 匹配文案找这行 —— 文案里一旦不再出现 "Creem"
+      // 就会静默失配，促销期这行付款提示会照常露出来（改文案时的连带陷阱）。
+      var note = document.getElementById('checkoutNote'); if (note) note.style.display = 'none';
     }
+    // --- 支付通道未就绪（Creem 已弃用 / 新通道审核中）---
+    // 与促销态是两件事，但都要求「页面不暴露结账入口」：促销态是免费、无购买语义；
+    // 未就绪态是有价格但买不了。促销优先，PROMO 为真时本函数直接让位。
+    function applyChannelState() {
+      if (PAY_CHANNEL_READY || PROMO) return;
+      var btn = document.getElementById('checkoutBtn');
+      if (btn) {
+        btn.disabled = true;
+        btn.style.opacity = '.6';
+        btn.style.cursor = 'not-allowed';
+        var t = btn.querySelector('.btn-text');
+        if (t) t.textContent = 'Payments paused';
+      }
+      var bf = document.getElementById('buyFor'); if (bf) bf.style.display = 'none';
+      var note = document.getElementById('checkoutNote');
+      if (note) note.textContent = 'New payment provider in review. Purchases are paused for now — thanks for your patience.';
+    }
+    applyChannelState();
     fetch(API_BASE + '/api/promo').then(function (r) { return r.json(); }).then(function (d) {
-      if (d && d.promoFree) { PROMO = true; applyPromoPricing(); }
+      if (d && d.promoFree) { PROMO = true; applyPromoPricing(); applyChannelState(); }
     }).catch(function () {});
   </script>
 </body>
