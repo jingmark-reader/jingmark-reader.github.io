@@ -42,8 +42,8 @@
     "diff1.desc": "No servers and no account required. Everything runs in your browser; your files never leave your device.",
     "diff2.title": "Direct file read & write",
     "diff2.desc": "Open real .md files through the File System Access API and save edits straight back — no copies, no sync conflicts.",
-    "diff3.title": "Native Word export",
-    "diff3.desc": "Export genuine, editable Word documents — real Word objects, not flattened pasted HTML.",
+    "diff3.title": "Word import & export",
+    "diff3.desc": "Open .docx in a Word-like view without an office suite, convert to editable Markdown, or export real Word objects.",
     "diff4.title": "WeChat-ready copy",
     "diff4.desc": "Your chosen theme's styling is inlined so pasted content keeps its look inside the WeChat editor.",
     "feat.title": "A reader built for Markdown",
@@ -103,6 +103,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">Save 50%</span>",
     "price.promoFree": "Free during launch",
+    "price.promoFreePrice": "Free",
+    "price.promoFreeNote": "Limited-time free · reverts to $9.99 after launch",
     "price.pro.early": "Limited early bird · reverts to $9.99",
     "price.pro.note": "One-time purchase · Lifetime updates",
     "price.pro.f1": "All 46 themes (six families)",
@@ -130,13 +132,13 @@
     "faq.q1": "Are my files uploaded to a server?",
     "faq.a1": "No. JingMark is local-first — every file read and write happens in your browser through the File System Access API. Nothing is uploaded. Pro status is verified by email; only your email and payment state are stored.",
     "faq.q2": "What is the difference between Free and Pro?",
-    "faq.a2": "Free includes full Markdown reading, 6 curated themes, and single-root browsing. Pro unlocks all 46 themes, native Word/PDF export, WYSIWYG editing with write-back, multi-root management, split-preview, saving web docs, and more. Reading stays free forever.",
+    "faq.a2": "Free includes full Markdown reading, 6 curated themes, and single-root browsing. Pro unlocks all 46 themes, native Word/PDF export, Word .docx import to editable Markdown, WYSIWYG editing with write-back, multi-root management, split-preview, saving web docs, and more. Reading stays free forever.",
     "faq.q3": "Which browsers are supported?",
     "faq.a3": "Any Chromium-based browser (Chrome, Edge, Brave, Arc, and so on) with File System Access API support (Chrome 86+).",
     "faq.q4": "How do I activate Pro after buying?",
-    "faq.a4": "Click 'Upgrade' in the extension, sign in with your email, and pay through Creem. Your Pro status syncs automatically. In regions without Creem, an activation key will be available soon.",
+    "faq.a4": "Click 'Upgrade' in the extension, sign in with your email, and pay through Creem. Your Pro status syncs automatically.",
     "faq.q5": "Can I use Pro on multiple computers?",
-    "faq.a5": "Pro is tied to your email account and works across devices. Activation keys are issued per device for offline use, so you can sign in on any computer to access Pro features.",
+    "faq.a5": "Pro is tied to your email account and works on up to 3 devices. On a 4th device you will not get Pro — you are not signed out, and your other devices are unaffected. Remove an unused device in Account panel → Authorized devices to free the slot.",
     "faq.q6": "Does it support math equations and diagrams?",
     "faq.a6": "Yes. JingMark renders KaTeX math formulas and Mermaid diagrams natively — just write standard LaTeX or Mermaid syntax in your Markdown.",
     "faq.q7": "How many languages are supported?",
@@ -179,7 +181,7 @@
     "auth.backLogin": "Back to sign in",
     "auth.resetSent": "Reset email sent. Please check your inbox.",
     "auth.resetSuccess": "Password reset successful! Please sign in again.",
-    "meta.desc": "Local-first Markdown reader & writer. 22 hand-crafted themes, native Word export, and direct file read/write. No uploads, no server.",
+    "meta.desc": "Local-first Markdown reader & writer. 46 hand-crafted themes, native Word export, and direct file read/write. No uploads, no server.",
     "page.title": "JingMark · A warm Markdown reader & writer for the browser"
   },
   "zh": {
@@ -199,8 +201,8 @@
     "diff1.desc": "无需服务器，也无需注册。一切都在你的浏览器中运行，文件从不离开本机。",
     "diff2.title": "文件系统直读直写",
     "diff2.desc": "通过 File System Access API 打开真实的 .md 文件，修改直接写回——无副本、无同步冲突。",
-    "diff3.title": "原生 Word 导出",
-    "diff3.desc": "导出真正可编辑的 Word 文档——真 Word 对象，而非粘贴的扁平化 HTML。",
+    "diff3.title": "原生 Word 导入与导出",
+    "diff3.desc": "导出真 Word 对象，而非扁平化 HTML；也能在仿 Word 版式下打开 .docx（无需 Office），转为可编辑 Markdown。",
     "diff4.title": "公众号一键复制",
     "diff4.desc": "按所选主题样式全内联，粘贴到公众号编辑器也不丢格式。",
     "feat.title": "为 Markdown 而生的阅读器",
@@ -260,6 +262,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">立省 50%</span>",
     "price.promoFree": "限时免费",
+    "price.promoFreePrice": "免费",
+    "price.promoFreeNote": "限时免费 · 活动结束后恢复 $9.99",
     "price.pro.early": "限时早鸟价 · 售完即恢复 $9.99",
     "price.pro.note": "一次性买断 · 终身更新",
     "price.pro.f1": "全部 46 套主题（六大分类）",
@@ -287,13 +291,13 @@
     "faq.q1": "我的文件会上传到服务器吗？",
     "faq.a1": "不会。JingMark 是本地优先架构，所有文件读写都在你的浏览器内通过 File System Access API 完成，不会上传到任何服务器。Pro 付费状态通过邮箱验证，仅存储你的邮箱与付费状态。",
     "faq.q2": "免费版和 Pro 有什么区别？",
-    "faq.a2": "免费版包含完整的 Markdown 阅读、6 套精选主题与单根目录浏览。Pro 解锁全部 46 套主题、原生 Word/PDF 导出、所见即所得编辑写回、多根目录管理、收藏网页文档、公众号推送等更多能力。阅读功能永久免费。",
+    "faq.a2": "免费版包含完整的 Markdown 阅读、6 套精选主题与单根目录浏览。Pro 解锁全部 46 套主题、原生 Word/PDF 导出、Word .docx 导入并转为可编辑 Markdown、所见即所得编辑写回、多根目录管理、收藏网页文档、公众号推送等更多能力。阅读功能永久免费。",
     "faq.q3": "支持哪些浏览器？",
     "faq.a3": "任何基于 Chromium 的浏览器（Chrome、Edge、Brave、Arc 等），且支持 File System Access API（Chrome 86+）。",
     "faq.q4": "购买 Pro 后如何激活？",
-    "faq.a4": "点击插件内「升级 Pro」，用邮箱登录并完成 Creem 支付，状态自动同步。Creem 暂不可用的地区，激活 Key 将很快上线。",
+    "faq.a4": "点击插件内「升级 Pro」，用邮箱登录并完成 Creem 支付，状态自动同步。",
     "faq.q5": "我可以在多台电脑上使用 Pro 吗？",
-    "faq.a5": "Pro 与你的邮箱账户绑定，可在多台设备间通用。离线激活按设备发放激活 Key，因此在任意电脑登录即可使用 Pro 功能。",
+    "faq.a5": "Pro 与你的邮箱账户绑定，最多可在 3 台设备上使用。第 4 台设备不会获得 Pro 功能，但不会被登出，其他设备也不受影响；在「账户面板 → 已授权设备」里移除一台不再使用的设备，名额即释放。",
     "faq.q6": "是否支持数学公式与图表？",
     "faq.a6": "支持。JingMark 原生渲染 KaTeX 数学公式与 Mermaid 图表——只需在 Markdown 中书写标准 LaTeX 或 Mermaid 语法即可。",
     "faq.q7": "支持多少种语言？",
@@ -356,8 +360,8 @@
     "diff1.desc": "無需伺服器，也無需註冊。一切都在你的瀏覽器中執行，檔案從不離開本機。",
     "diff2.title": "檔案系統直讀直寫",
     "diff2.desc": "透過 File System Access API 開啟真實的 .md 檔案，修改直接寫回——無副本、無同步衝突。",
-    "diff3.title": "原生 Word 匯出",
-    "diff3.desc": "匯出真正可編輯的 Word 文件——真 Word 物件，而非貼上的扁平化 HTML。",
+    "diff3.title": "原生 Word 匯入與匯出",
+    "diff3.desc": "匯出真 Word 物件，而非扁平化 HTML；也能在仿 Word 版式下開啟 .docx（無需 Office），轉為可編輯 Markdown。",
     "diff4.title": "公眾號一鍵複製",
     "diff4.desc": "依所選主題樣式全內聯，貼到公眾號編輯器也不丟格式。",
     "feat.title": "為 Markdown 而生的閱讀器",
@@ -417,6 +421,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">省 50%</span>",
     "price.promoFree": "限時免費",
+    "price.promoFreePrice": "免費",
+    "price.promoFreeNote": "限時免費 · 活動結束後恢復 $9.99",
     "price.pro.early": "限時早鳥價 · 售完即恢復 $9.99",
     "price.pro.note": "一次性買斷 · 終身更新",
     "price.pro.f1": "全部 46 套主題（六大分類）",
@@ -444,13 +450,13 @@
     "faq.q1": "我的檔案會上傳到伺服器嗎？",
     "faq.a1": "不會。JingMark 是本地優先架構，所有檔案讀寫都在你的瀏覽器內透過 File System Access API 完成，不會上傳到任何伺服器。Pro 付費狀態透過郵箱驗證，僅儲存你的郵箱與付費狀態。",
     "faq.q2": "免費版和 Pro 有什麼差別？",
-    "faq.a2": "免費版包含完整的 Markdown 閱讀、6 套精選主題與單根目錄瀏覽。Pro 解鎖全部 46 套主題、原生 Word/PDF 匯出、所見即所得編輯寫回、多根目錄管理、收藏網頁文件、公眾號推送等更多能力。閱讀功能永久免費。",
+    "faq.a2": "免費版包含完整的 Markdown 閱讀、6 套精選主題與單根目錄瀏覽。Pro 解鎖全部 46 套主題、原生 Word/PDF 匯出、Word .docx 匯入並轉為可編輯 Markdown、所見即所得編輯寫回、多根目錄管理、收藏網頁文件、公眾號推送等更多能力。閱讀功能永久免費。",
     "faq.q3": "支援哪些瀏覽器？",
     "faq.a3": "任何基於 Chromium 的瀏覽器（Chrome、Edge、Brave、Arc 等），且支援 File System Access API（Chrome 86+）。",
     "faq.q4": "購買 Pro 後如何啟用？",
-    "faq.a4": "點擊擴充功能內「升級 Pro」，用郵箱登入並完成 Creem 支付，狀態自動同步。Creem 暫不可用的地區，啟用 Key 將很快上線。",
+    "faq.a4": "點擊擴充功能內「升級 Pro」，用郵箱登入並完成 Creem 支付，狀態自動同步。",
     "faq.q5": "我可以在多台電腦上使用 Pro 嗎？",
-    "faq.a5": "Pro 與你的郵箱帳號綁定，可在多台裝置間通用。離線啟用會依裝置發放啟用 Key，因此在任意電腦登入即可使用 Pro 功能。",
+    "faq.a5": "Pro 與你的郵箱帳號綁定，最多可在 3 台裝置上使用。第 4 台裝置不會取得 Pro 功能，但不會被登出，其他裝置也不受影響；在「帳戶面板 → 已授權裝置」裡移除一台不再使用的裝置，名額即釋放。",
     "faq.q6": "是否支援數學公式與圖表？",
     "faq.a6": "支援。JingMark 原生渲染 KaTeX 數學公式與 Mermaid 圖表——只需在 Markdown 中書寫標準 LaTeX 或 Mermaid 語法即可。",
     "faq.q7": "支援多少種語言？",
@@ -513,8 +519,8 @@
     "diff1.desc": "サーバーもアカウントも不要。すべてブラウザ内で動き、ファイルは端末から出ません。",
     "diff2.title": "ファイルの直接読み書き",
     "diff2.desc": "File System Access API で本物の .md を開き、編集をそのまま書き戻し。コピーも衝突もなし。",
-    "diff3.title": "ネイティブ Word 書き出し",
-    "diff3.desc": "本当に編集可能な Word 文書を書き出し。貼り付けた HTML ではなく、本物の Word オブジェクト。",
+    "diff3.title": "Word 読み書き",
+    "diff3.desc": "Office なしで .docx をワープロ風の表示で開き、編集可能な Markdown に変換。本物の Word オブジェクトの書き出しも。",
     "diff4.title": "微信（WeChat）向けコピー",
     "diff4.desc": "選んだテーマのスタイルがインライン化され、微信エディタでも見た目を維持。",
     "feat.title": "Markdown のために作られたリーダー",
@@ -574,6 +580,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">50% OFF</span>",
     "price.promoFree": "期間限定で無料",
+    "price.promoFreePrice": "無料",
+    "price.promoFreeNote": "期間限定無料 · 終了後は $9.99 に戻ります",
     "price.pro.early": "早割限定 · 終了後は $9.99",
     "price.pro.note": "買い切り · 永久アップデート",
     "price.pro.f1": "全 46 テーマ（6 系統）",
@@ -601,13 +609,13 @@
     "faq.q1": "ファイルはサーバーにアップロードされますか？",
     "faq.a1": "いいえ。JingMark はローカル優先です。すべての読み書きはブラウザ内の File System Access API で行われ、アップロードはありません。Pro の状態はメールで検証され、保存されるのはメールアドレスと支払い状況のみです。",
     "faq.q2": "無料版と Pro の違いは？",
-    "faq.a2": "無料版は Markdown の全文閲覧、6 つの厳選テーマ、単一ルートの閲覧を含みます。Pro は全 46 テーマ、ネイティブ Word/PDF 書き出し、WYSIWYG 編集と書き戻し、複数ルート管理、Web 文書の保存などを解放します。読書は永久無料です。",
+    "faq.a2": "無料版は Markdown の全文閲覧、6 つの厳選テーマ、単一ルートの閲覧を含みます。Pro は全 46 テーマ、ネイティブ Word/PDF 書き出し、Word .docx の取り込みと Markdown 変換、WYSIWYG 編集と書き戻し、複数ルート管理、Web 文書の保存などを解放します。読書は永久無料です。",
     "faq.q3": "対応ブラウザは？",
     "faq.a3": "File System Access API をサポートする Chromium 系ブラウザ（Chrome・Edge・Brave・Arc など、Chrome 86 以降）。",
     "faq.q4": "購入後に Pro をどう有効化しますか？",
-    "faq.a4": "拡張機能の「アップグレード」をクリックし、メールでログインして Creem で支払うと、Pro 状態が自動で同期されます。Creem が使えない地域には、順次アクティベーション キーを提供予定です。",
+    "faq.a4": "拡張機能の「アップグレード」をクリックし、メールでログインして Creem で支払うと、Pro 状態が自動で同期されます。",
     "faq.q5": "Pro を複数のパソコンで使えますか？",
-    "faq.a5": "Pro はメールアカウントに紐づき、複数のデバイスで共通して使えます。オフライン有効化はデバイスごとにアクティベーション キーを発行するため、どのパソコンからでもログインして Pro 機能を利用できます。",
+    "faq.a5": "Pro はメールアカウントに紐づいており、最大 3 台の端末で利用できます。4 台目では Pro 機能が有効になりませんが、ログアウトされず、他の端末にも影響しません。「認証済み端末」で使わなくなった端末を削除すると枠が空きます。",
     "faq.q6": "数式や図表に対応していますか？",
     "faq.a6": "はい。JingMark は KaTeX の数式と Mermaid の図表をネイティブに描画します——Markdown に標準的な LaTeX または Mermaid の構文を書くだけで大丈夫です。",
     "faq.q7": "対応言語はいくつありますか？",
@@ -650,7 +658,7 @@
     "auth.backLogin": "ログインに戻る",
     "auth.resetSent": "再設定メールを送信しました。受信箱をご確認ください。",
     "auth.resetSuccess": "パスワードの再設定が完了しました。再度ログインしてください。",
-    "meta.desc": "ローカル優先の Markdown リーダー＆ライター。22 のテーマ、ネイティブ Word 書き出し、ファイルの直接読み書き。アップロードなし、サーバーなし。",
+    "meta.desc": "ローカル優先の Markdown リーダー＆ライター。46 のテーマ、ネイティブ Word 書き出し、ファイルの直接読み書き。アップロードなし、サーバーなし。",
     "page.title": "JingMark · ブラウザ向けの温かい Markdown リーダー＆ライター"
   },
   "ko": {
@@ -670,8 +678,8 @@
     "diff1.desc": "서버도 계정도 필요 없습니다. 모든 작업이 브라우저에서 이루어지고 파일은 기기를 떠나지 않습니다.",
     "diff2.title": "파일 직접 읽기/쓰기",
     "diff2.desc": "File System Access API로 실제 .md를 열고 편집을 그대로 저장합니다. 사본도 충돌도 없죠.",
-    "diff3.title": "네이티브 Word 내보내기",
-    "diff3.desc": "진짜로 편집 가능한 Word 문서를 내보냅니다. 붙여넣은 HTML이 아닌 진짜 Word 객체죠.",
+    "diff3.title": "Word 읽기·쓰기",
+    "diff3.desc": "Office 없이 .docx를 워드 프로세서 같은 화면으로 열어 편집 가능한 Markdown으로 변환하고, 진짜 Word 객체로 내보냅니다.",
     "diff4.title": "위챗(WeChat) 복사",
     "diff4.desc": "선택한 테마 스타일이 인라인화되어 위챗 편집기에서도 모양이 유지됩니다.",
     "feat.title": "Markdown을 위해 만든 리더",
@@ -731,6 +739,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">50% 할인</span>",
     "price.promoFree": "출시 기간 무료",
+    "price.promoFreePrice": "무료",
+    "price.promoFreeNote": "기간 한정 무료 · 종료 후 $9.99로 복귀",
     "price.pro.early": "얼리버드 한정 · 종료 후 $9.99",
     "price.pro.note": "일시불 · 평생 업데이트",
     "price.pro.f1": "전체 46 테마 (6 계열)",
@@ -758,13 +768,13 @@
     "faq.q1": "내 파일이 서버에 업로드되나요?",
     "faq.a1": "아니요. JingMark는 로컬 우선입니다. 모든 읽기와 쓰기는 브라우저의 File System Access API에서 이루어지며 업로드되지 않습니다. Pro 상태는 이메일로 확인되며, 저장되는 것은 이메일과 결제 상태뿐입니다.",
     "faq.q2": "무료와 Pro의 차이는?",
-    "faq.a2": "무료는 Markdown 전체 읽기, 6개 엄선 테마, 단일 루트 탐색을 포함합니다. Pro는 전체 46 테마, 네이티브 Word/PDF 내보내기, WYSIWYG 편집 및 저장, 다중 루트 관리, 웹 문서 저장 등을 해제합니다. 읽기는 영구 무료입니다.",
+    "faq.a2": "무료는 Markdown 전체 읽기, 6개 엄선 테마, 단일 루트 탐색을 포함합니다. Pro는 전체 46 테마, 네이티브 Word/PDF 내보내기, Word .docx 가져오기 및 Markdown 변환, WYSIWYG 편집 및 저장, 다중 루트 관리, 웹 문서 저장 등을 해제합니다. 읽기는 영구 무료입니다.",
     "faq.q3": "지원하는 브라우저는?",
     "faq.a3": "File System Access API를 지원하는 Chromium 기반 브라우저(Chrome·Edge·Brave·Arc 등, Chrome 86 이상).",
     "faq.q4": "구매 후 Pro를 어떻게 활성화하나요?",
-    "faq.a4": "확장 프로그램의 '업그레이드'를 클릭해 이메일로 로그인하고 Creem에서 결제하면 Pro 상태가 자동 동기화됩니다. Creem을 쓸 수 없는 지역에는 곧 활성화 키를 제공할 예정입니다.",
+    "faq.a4": "확장 프로그램의 '업그레이드'를 클릭해 이메일로 로그인하고 Creem에서 결제하면 Pro 상태가 자동 동기화됩니다.",
     "faq.q5": "Pro를 여러 대의 컴퓨터에서 사용할 수 있나요?",
-    "faq.a5": "Pro는 이메일 계정에 연결되어 여러 기기에서 공통으로 사용할 수 있습니다. 오프라인 정품 인증은 기기별로 활성화 키를 발급하므로, 어떤 컴퓨터에서든 로그인해 Pro 기능을 이용할 수 있습니다.",
+    "faq.a5": "Pro는 이메일 계정에 연결되며 최대 3대의 기기에서 사용할 수 있습니다. 4번째 기기에서는 Pro 기능이 활성화되지 않지만 로그아웃되지 않고 다른 기기도 영향을 받지 않습니다. '인증된 기기'에서 사용하지 않는 기기를 제거하면 자리가 비워집니다.",
     "faq.q6": "수식과 다이어그램을 지원하나요?",
     "faq.a6": "예. JingMark는 KaTeX 수식과 Mermaid 다이어그램을 네이티브로 렌더링합니다——Markdown에 표준 LaTeX 또는 Mermaid 구문을 작성하기만 하면 됩니다.",
     "faq.q7": "몇 개의 언어를 지원하나요?",
@@ -807,7 +817,7 @@
     "auth.backLogin": "로그인으로 돌아가기",
     "auth.resetSent": "재설정 메일을 보냈습니다. 받은 편지를 확인하세요.",
     "auth.resetSuccess": "비밀번호 재설정 완료! 다시 로그인하세요.",
-    "meta.desc": "로컬 우선 Markdown 리더 & 라이터. 22개 테마, 네이티브 Word 내보내기, 파일 직접 읽기/쓰기. 업로드 없음, 서버 없음.",
+    "meta.desc": "로컬 우선 Markdown 리더 & 라이터. 46개 테마, 네이티브 Word 내보내기, 파일 직접 읽기/쓰기. 업로드 없음, 서버 없음.",
     "page.title": "JingMark · 브라우저용 따뜻한 Markdown 리더 & 라이터"
   },
   "fr": {
@@ -827,8 +837,8 @@
     "diff1.desc": "Aucun serveur ni compte requis. Tout s'exécute dans votre navigateur ; vos fichiers ne quittent jamais votre appareil.",
     "diff2.title": "Lecture & écriture directes",
     "diff2.desc": "Ouvrez de vrais fichiers .md via l'API File System Access et enregistrez directement — sans copie, sans conflit.",
-    "diff3.title": "Export Word natif",
-    "diff3.desc": "Exportez de vrais documents Word modifiables — de vrais objets Word, pas du HTML collé à plat.",
+    "diff3.title": "Import/export Word",
+    "diff3.desc": "Ouvrez vos .docx sans suite bureautique, convertissez-les en Markdown modifiable, ou exportez de vrais objets Word.",
     "diff4.title": "Copie prête pour WeChat",
     "diff4.desc": "Le style de votre thème est intégré en ligne, le collage conserve son apparence dans l'éditeur WeChat.",
     "feat.title": "Un lecteur conçu pour Markdown",
@@ -888,6 +898,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">−50%</span>",
     "price.promoFree": "Gratuit au lancement",
+    "price.promoFreePrice": "Gratuit",
+    "price.promoFreeNote": "Gratuit pour une durée limitée · retour à 9,99 $ après le lancement",
     "price.pro.early": "Offre de lancement · repasse à 9,99 $",
     "price.pro.note": "Achat unique · Mises à jour à vie",
     "price.pro.f1": "Les 46 thèmes (six familles)",
@@ -915,13 +927,13 @@
     "faq.q1": "Mes fichiers sont-ils envoyés sur un serveur ?",
     "faq.a1": "Non. JingMark est local d'abord — toute lecture et écriture se fait dans votre navigateur via l'API File System Access. Rien n'est envoyé. Le statut Pro est vérifié par e-mail ; seuls votre e-mail et l'état du paiement sont stockés.",
     "faq.q2": "Quelle est la différence entre Gratuit et Pro ?",
-    "faq.a2": "Gratuit inclut la lecture complète Markdown, 6 thèmes sélectionnés et la navigation à racine unique. Pro débloque les 46 thèmes, l'export Word/PDF natif, l'édition WYSIWYG avec réécriture, la gestion multi-racines, la sauvegarde de docs web et plus. La lecture reste gratuite à toujours.",
+    "faq.a2": "Gratuit inclut la lecture complète Markdown, 6 thèmes sélectionnés et la navigation à racine unique. Pro débloque les 46 thèmes, l'export Word/PDF natif, l'import Word .docx vers Markdown éditable, l'édition WYSIWYG avec réécriture, la gestion multi-racines, la sauvegarde de docs web et plus. La lecture reste gratuite à toujours.",
     "faq.q3": "Quels navigateurs sont pris en charge ?",
     "faq.a3": "Tout navigateur Chromium (Chrome, Edge, Brave, Arc, etc.) avec l'API File System Access (Chrome 86+).",
     "faq.q4": "Comment activer Pro après l'achat ?",
-    "faq.a4": "Cliquez « Mettre à niveau » dans l'extension, connectez-vous par e-mail et payez via Creem. Votre statut Pro se synchronise automatiquement. Dans les régions sans Creem, une clé d'activation sera bientôt disponible.",
+    "faq.a4": "Cliquez « Mettre à niveau » dans l'extension, connectez-vous par e-mail et payez via Creem. Votre statut Pro se synchronise automatiquement.",
     "faq.q5": "Puis-je utiliser Pro sur plusieurs ordinateurs ?",
-    "faq.a5": "Pro est lié à votre compte e-mail et fonctionne sur plusieurs appareils. Les clés d'activation sont délivrées par appareil pour une utilisation hors ligne, vous pouvez donc vous connecter sur n'importe quel ordinateur pour accéder aux fonctions Pro.",
+    "faq.a5": "Pro est lié à votre compte e-mail et fonctionne sur 3 appareils maximum. Sur un 4e appareil, Pro ne s'active pas : vous n'êtes pas déconnecté et vos autres appareils ne sont pas affectés. Retirez un appareil inutilisé depuis le panneau du compte pour libérer une place.",
     "faq.q6": "Prenez-vous en charge les équations mathématiques et les diagrammes ?",
     "faq.a6": "Oui. JingMark rend nativement les formules KaTeX et les diagrammes Mermaid — il suffit d'écrire la syntaxe LaTeX ou Mermaid standard dans votre Markdown.",
     "faq.q7": "Combien de langues sont prises en charge ?",
@@ -984,8 +996,8 @@
     "diff1.desc": "Kein Server und kein Konto nötig. Alles läuft im Browser; Ihre Dateien verlassen nie Ihr Gerät.",
     "diff2.title": "Direktes Lesen & Schreiben",
     "diff2.desc": "Öffnen Sie echte .md-Dateien über die File System Access API und speichern Sie direkt — keine Kopien, keine Konflikte.",
-    "diff3.title": "Native Word-Export",
-    "diff3.desc": "Exportieren Sie echte, bearbeitbare Word-Dokumente — echte Word-Objekte, kein flaches eingefügtes HTML.",
+    "diff3.title": "Word-Import & -Export",
+    "diff3.desc": "Öffnen Sie .docx ohne Office-Suite, wandeln Sie sie in bearbeitbares Markdown um oder exportieren Sie echte Word-Objekte.",
     "diff4.title": "WeChat-fertige Kopie",
     "diff4.desc": "Der Stil Ihres Themas wird inline eingefügt, damit der Inhalt im WeChat-Editor sein Aussehen behält.",
     "feat.title": "Ein für Markdown gemachter Leser",
@@ -1045,6 +1057,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">−50%</span>",
     "price.promoFree": "Beim Start kostenlos",
+    "price.promoFreePrice": "Kostenlos",
+    "price.promoFreeNote": "Zeitlich begrenzt kostenlos · danach wieder 9,99 $",
     "price.pro.early": "Frühbucher-Aktion · danach 9,99 $",
     "price.pro.note": "Einmaliger Kauf · Lebenslange Updates",
     "price.pro.f1": "Alle 46 Themen (sechs Familien)",
@@ -1072,13 +1086,13 @@
     "faq.q1": "Werden meine Dateien auf einen Server hochgeladen?",
     "faq.a1": "Nein. JingMark ist lokal zuerst — jedes Lesen und Schreiben erfolgt im Browser über die File System Access API. Es wird nichts hochgeladen. Der Pro-Status wird per E-Mail verifiziert; nur Ihre E-Mail und der Zahlungsstatus werden gespeichert.",
     "faq.q2": "Was ist der Unterschied zwischen Kostenlos und Pro?",
-    "faq.a2": "Kostenlos umfasst das vollständige Markdown-Lesen, 6 ausgewählte Themen und die Navigation mit einer Wurzel. Pro schaltet alle 46 Themen, nativen Word/PDF-Export, WYSIWYG-Bearbeitung mit Rückschreiben, Mehrfach-Wurzeln, Web-Doc-Speicherung und mehr frei. Lesen bleibt für immer kostenlos.",
+    "faq.a2": "Kostenlos umfasst das vollständige Markdown-Lesen, 6 ausgewählte Themen und die Navigation mit einer Wurzel. Pro schaltet alle 46 Themen, nativen Word/PDF-Export, Word-.docx-Import nach bearbeitbarem Markdown, WYSIWYG-Bearbeitung mit Rückschreiben, Mehrfach-Wurzeln, Web-Doc-Speicherung und mehr frei. Lesen bleibt für immer kostenlos.",
     "faq.q3": "Welche Browser werden unterstützt?",
     "faq.a3": "Jeder Chromium-Browser (Chrome, Edge, Brave, Arc usw.) mit File System Access API (Chrome 86+).",
     "faq.q4": "Wie aktiviere ich Pro nach dem Kauf?",
-    "faq.a4": "Klicken Sie in der Erweiterung auf „Upgraden\", melden Sie sich per E-Mail an und zahlen Sie über Creem. Ihr Pro-Status wird automatisch synchronisiert. In Regionen ohne Creem wird bald ein Aktivierungsschlüssel verfügbar sein.",
+    "faq.a4": "Klicken Sie in der Erweiterung auf „Upgraden“, melden Sie sich per E-Mail an und zahlen Sie über Creem. Ihr Pro-Status wird automatisch synchronisiert.",
     "faq.q5": "Kann ich Pro auf mehreren Computern nutzen?",
-    "faq.a5": "Pro ist an Ihr E-Mail-Konto gebunden und funktioniert geräteübergreifend. Aktivierungsschlüssel werden pro Gerät für die Offline-Nutzung ausgestellt, sodass Sie sich auf jedem Computer anmelden und Pro-Funktionen nutzen können.",
+    "faq.a5": "Pro ist an Ihr E-Mail-Konto gebunden und funktioniert auf bis zu 3 Geräten. Auf einem 4. Gerät wird Pro nicht aktiviert — Sie werden nicht abgemeldet und Ihre anderen Geräte bleiben unberührt. Entfernen Sie ein ungenutztes Gerät im Kontobereich, um einen Platz freizugeben.",
     "faq.q6": "Werden mathematische Formeln und Diagramme unterstützt?",
     "faq.a6": "Ja. JingMark rendert KaTeX-Formeln und Mermaid-Diagramme nativ — schreiben Sie einfach Standard-LaTeX- oder Mermaid-Syntax in Ihr Markdown.",
     "faq.q7": "Wie viele Sprachen werden unterstützt?",
@@ -1141,8 +1155,8 @@
     "diff1.desc": "No hace falta servidor ni cuenta. Todo ocurre en tu navegador; tus archivos nunca salen de tu dispositivo.",
     "diff2.title": "Lectura y escritura directa",
     "diff2.desc": "Abre archivos .md reales con la API File System Access y guarda directamente — sin copias, sin conflictos.",
-    "diff3.title": "Exportar a Word nativo",
-    "diff3.desc": "Exporta documentos Word reales y editables — verdaderos objetos Word, no HTML pegado y aplanado.",
+    "diff3.title": "Importar y exportar",
+    "diff3.desc": "Abre tus .docx sin suite ofimática, conviértelos en Markdown editable o expórtalos como objetos Word reales.",
     "diff4.title": "Copia lista para WeChat",
     "diff4.desc": "El estilo de tu tema se inserta en línea, así el contenido conserva su aspecto en el editor de WeChat.",
     "feat.title": "Un lector hecho para Markdown",
@@ -1202,6 +1216,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">−50%</span>",
     "price.promoFree": "Gratis durante el lanzamiento",
+    "price.promoFreePrice": "Gratis",
+    "price.promoFreeNote": "Gratis por tiempo limitado · vuelve a 9,99 $ tras el lanzamiento",
     "price.pro.early": "Oferta inicial · vuelve a 9,99 $",
     "price.pro.note": "Pago único · Actualizaciones de por vida",
     "price.pro.f1": "Los 46 temas (seis familias)",
@@ -1229,13 +1245,13 @@
     "faq.q1": "¿Se suben mis archivos a un servidor?",
     "faq.a1": "No. JingMark es local primero — toda lectura y escritura ocurre en tu navegador mediante la API File System Access. Nada se sube. El estado Pro se verifica por correo; solo se guardan tu correo y el estado de pago.",
     "faq.q2": "¿Cuál es la diferencia entre Gratis y Pro?",
-    "faq.a2": "Gratis incluye la lectura completa de Markdown, 6 temas seleccionados y la navegación con raíz única. Pro desbloquea los 46 temas, el export nativo Word/PDF, la edición WYSIWYG con reescritura, la gestión multi-raíz, guardar docs web y más. Leer sigue siendo gratis para siempre.",
+    "faq.a2": "Gratis incluye la lectura completa de Markdown, 6 temas seleccionados y la navegación con raíz única. Pro desbloquea los 46 temas, el export nativo Word/PDF, la importación de Word .docx a Markdown editable, la edición WYSIWYG con reescritura, la gestión multi-raíz, guardar docs web y más. Leer sigue siendo gratis para siempre.",
     "faq.q3": "¿Qué navegadores se admiten?",
     "faq.a3": "Cualquier navegador basado en Chromium (Chrome, Edge, Brave, Arc, etc.) con la API File System Access (Chrome 86+).",
     "faq.q4": "¿Cómo activo Pro tras la compra?",
-    "faq.a4": "Haz clic en «Mejorar» en la extensión, inicia sesión con tu correo y paga vía Creem. Tu estado Pro se sincroniza automáticamente. En regiones sin Creem, pronto habrá una clave de activación.",
+    "faq.a4": "Haz clic en «Mejorar» en la extensión, inicia sesión con tu correo y paga vía Creem. Tu estado Pro se sincroniza automáticamente.",
     "faq.q5": "¿Puedo usar Pro en varios ordenadores?",
-    "faq.a5": "Pro está vinculado a tu cuenta de correo y funciona en varios dispositivos. Las claves de activación se emiten por dispositivo para uso sin conexión, así que puedes iniciar sesión en cualquier ordenador para acceder a las funciones Pro.",
+    "faq.a5": "Pro está vinculado a tu cuenta de correo y funciona en hasta 3 dispositivos. En un 4.º dispositivo no se activa Pro: no se cierra tu sesión y tus otros dispositivos no se ven afectados. Elimina un dispositivo sin usar desde el panel de cuenta para liberar una plaza.",
     "faq.q6": "¿Admite ecuaciones matemáticas y diagramas?",
     "faq.a6": "Sí. JingMark renderiza fórmulas KaTeX y diagramas Mermaid de forma nativa — solo tienes que escribir la sintaxis LaTeX o Mermaid estándar en tu Markdown.",
     "faq.q7": "¿Cuántos idiomas se admiten?",
@@ -1298,8 +1314,8 @@
     "diff1.desc": "Nenhum servidor ou conta necessários. Tudo roda no navegador; seus arquivos nunca saem do dispositivo.",
     "diff2.title": "Leitura e escrita direta",
     "diff2.desc": "Abra arquivos .md reais pela API File System Access e salve direto — sem cópias, sem conflitos.",
-    "diff3.title": "Exportação Word nativa",
-    "diff3.desc": "Exporte documentos Word reais e editáveis — verdadeiros objetos Word, não HTML colado e achatado.",
+    "diff3.title": "Importar e exportar",
+    "diff3.desc": "Abra seus .docx sem suíte de escritório, converta-os em Markdown editável ou exporte objetos Word reais.",
     "diff4.title": "Cópia pronta para WeChat",
     "diff4.desc": "O estilo do seu tema é inline, então o conteúdo mantém a aparência no editor do WeChat.",
     "feat.title": "Um leitor feito para Markdown",
@@ -1359,6 +1375,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">−50%</span>",
     "price.promoFree": "Grátis no lançamento",
+    "price.promoFreePrice": "Grátis",
+    "price.promoFreeNote": "Grátis por tempo limitado · volta a US$ 9,99 após o lançamento",
     "price.pro.early": "Oferta de lançamento · volta a $9,99",
     "price.pro.note": "Pagamento único · Atualizações vitalícias",
     "price.pro.f1": "Os 46 temas (seis famílias)",
@@ -1386,13 +1404,13 @@
     "faq.q1": "Meus arquivos são enviados a um servidor?",
     "faq.a1": "Não. O JingMark é local primeiro — toda leitura e escrita acontece no navegador via API File System Access. Nada é enviado. O status Pro é verificado por e-mail; só são armazenados seu e-mail e o estado do pagamento.",
     "faq.q2": "Qual a diferença entre Grátis e Pro?",
-    "faq.a2": "Grátis inclui a leitura completa de Markdown, 6 temas selecionados e a navegação com raiz única. Pro libera os 46 temas, o export nativo Word/PDF, a edição WYSIWYG com reescrita, a gestão multi-raiz, salvar docs web e mais. Ler segue grátis para sempre.",
+    "faq.a2": "Grátis inclui a leitura completa de Markdown, 6 temas selecionados e a navegação com raiz única. Pro libera os 46 temas, o export nativo Word/PDF, a importação de Word .docx para Markdown editável, a edição WYSIWYG com reescrita, a gestão multi-raiz, salvar docs web e mais. Ler segue grátis para sempre.",
     "faq.q3": "Quais navegadores são suportados?",
     "faq.a3": "Qualquer navegador baseado em Chromium (Chrome, Edge, Brave, Arc etc.) com a API File System Access (Chrome 86+).",
     "faq.q4": "Como ativo o Pro após a compra?",
-    "faq.a4": "Clique em «Melhorar» na extensão, entre com seu e-mail e pague via Creem. Seu status Pro sincroniza automaticamente. Em regiões sem Creem, uma chave de ativação estará disponível em breve.",
+    "faq.a4": "Clique em «Melhorar» na extensão, entre com seu e-mail e pague via Creem. Seu status Pro sincroniza automaticamente.",
     "faq.q5": "Posso usar o Pro em vários computadores?",
-    "faq.a5": "O Pro está vinculado à sua conta de e-mail e funciona em vários dispositivos. As chaves de ativação são emitidas por dispositivo para uso offline, então você pode entrar em qualquer computador para acessar os recursos Pro.",
+    "faq.a5": "O Pro está vinculado à sua conta de e-mail e funciona em até 3 dispositivos. No 4.º dispositivo o Pro não é ativado — você não é desconectado e seus outros dispositivos não são afetados. Remova um dispositivo sem uso no painel da conta para liberar uma vaga.",
     "faq.q6": "Você suporta equações matemáticas e diagramas?",
     "faq.a6": "Sim. O JingMark renderiza fórmulas KaTeX e diagramas Mermaid nativamente — basta escrever a sintaxe LaTeX ou Mermaid padrão no seu Markdown.",
     "faq.q7": "Quantos idiomas são suportados?",
@@ -1455,8 +1473,8 @@
     "diff1.desc": "Не нужны ни сервер, ни аккаунт. Всё работает в браузере, файлы не покидают устройство.",
     "diff2.title": "Прямое чтение и запись",
     "diff2.desc": "Открывайте настоящие .md через File System Access API и сохраняйте сразу — без копий, без конфликтов.",
-    "diff3.title": "Нативный экспорт в Word",
-    "diff3.desc": "Экспортируйте настоящие редактируемые документы Word — реальные объекты Word, а не вставленный HTML.",
+    "diff3.title": "Импорт/экспорт Word",
+    "diff3.desc": "Открывайте .docx без Office, конвертируйте в Markdown или экспортируйте настоящие объекты Word.",
     "diff4.title": "Копия для WeChat",
     "diff4.desc": "Стиль вашей темы встраивается в строку, и в редакторе WeChat вид сохраняется.",
     "feat.title": "Ридер, созданный для Markdown",
@@ -1516,6 +1534,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">−50%</span>",
     "price.promoFree": "Бесплатно при запуске",
+    "price.promoFreePrice": "Бесплатно",
+    "price.promoFreeNote": "Бесплатно ограниченное время · затем снова $9.99",
     "price.pro.early": "Ранняя цена · далее 9,99 $",
     "price.pro.note": "Разовая покупка · Обновления навсегда",
     "price.pro.f1": "Все 46 тем (шесть семейств)",
@@ -1543,13 +1563,13 @@
     "faq.q1": "Мои файлы загружаются на сервер?",
     "faq.a1": "Нет. JingMark сначала локальный — любое чтение и запись происходят в браузере через File System Access API. Ничего не загружается. Статус Pro проверяется по почте; сохраняются только ваш e-mail и состояние оплаты.",
     "faq.q2": "В чём разница между Бесплатно и Pro?",
-    "faq.a2": "Бесплатно включает полное чтение Markdown, 6 отборных тем и навигацию с одним корнем. Pro открывает все 46 тем, нативный экспорт Word/PDF, редактирование WYSIWYG с автозаписью, управление несколькими корнями, сохранение веб-доков и другое. Чтение остаётся бесплатным навсегда.",
+    "faq.a2": "Бесплатно включает полное чтение Markdown, 6 отборных тем и навигацию с одним корнем. Pro открывает все 46 тем, нативный экспорт Word/PDF, импорт Word .docx в редактируемый Markdown, редактирование WYSIWYG с автозаписью, управление несколькими корнями, сохранение веб-доков и другое. Чтение остаётся бесплатным навсегда.",
     "faq.q3": "Какие браузеры поддерживаются?",
     "faq.a3": "Любой браузер на базе Chromium (Chrome, Edge, Brave, Arc и др.) с поддержкой File System Access API (Chrome 86+).",
     "faq.q4": "Как активировать Pro после покупки?",
-    "faq.a4": "Нажмите «Обновить» в расширении, войдите по почте и оплатите через Creem. Статус Pro синхронизируется автоматически. В регионах без Creem скоро появится ключ активации.",
+    "faq.a4": "Нажмите «Обновить» в расширении, войдите по почте и оплатите через Creem. Статус Pro синхронизируется автоматически.",
     "faq.q5": "Можно ли использовать Pro на нескольких компьютерах?",
-    "faq.a5": "Pro привязан к вашей учётной записи электронной почты и работает на разных устройствах. Ключи активации выдаются для каждого устройства для автономного использования, поэтому вы можете войти с любого компьютера и получить доступ к функциям Pro.",
+    "faq.a5": "Pro привязан к вашей учётной записи электронной почты и работает максимум на 3 устройствах. На 4-м устройстве Pro не активируется — вас не разлогинивает, а другие устройства продолжают работать. Удалите неиспользуемое устройство в панели аккаунта, чтобы освободить слот.",
     "faq.q6": "Поддерживаются ли математические формулы и диаграммы?",
     "faq.a6": "Да. JingMark отображает формулы KaTeX и диаграммы Mermaid встроенными средствами — достаточно написать стандартный синтаксис LaTeX или Mermaid в вашем Markdown.",
     "faq.q7": "Сколько языков поддерживается?",
@@ -1612,8 +1632,8 @@
     "diff1.desc": "Không cần máy chủ hay tài khoản. Mọi thứ chạy trong trình duyệt; tệp không rời thiết bị.",
     "diff2.title": "Đọc & ghi trực tiếp",
     "diff2.desc": "Mở tệp .md thật qua File System Access API và lưu trực tiếp — không bản sao, không xung đột.",
-    "diff3.title": "Xuất Word gốc",
-    "diff3.desc": "Xuất tài liệu Word thật, có thể chỉnh sửa — đối tượng Word thật, không phải HTML dán phẳng.",
+    "diff3.title": "Nhập và xuất Word",
+    "diff3.desc": "Mở .docx không cần bộ Office, chuyển thành Markdown có thể chỉnh sửa hoặc xuất đối tượng Word thật.",
     "diff4.title": "Bản sao sẵn sàng cho WeChat",
     "diff4.desc": "Kiểu chủ đề của bạn được inline, nên khi dán vào trình soạn thảo WeChat vẫn giữ nguyên hình thức.",
     "feat.title": "Trình đọc được làm cho Markdown",
@@ -1673,6 +1693,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">Giảm 50%</span>",
     "price.promoFree": "Miễn phí khi ra mắt",
+    "price.promoFreePrice": "Miễn phí",
+    "price.promoFreeNote": "Miễn phí có thời hạn · trở lại $9.99 sau khi ra mắt",
     "price.pro.early": "Giá sớm có hạn · quay lại $9,99",
     "price.pro.note": "Mua một lần · Cập nhật trọn đời",
     "price.pro.f1": "Đủ 46 chủ đề (sáu hệ)",
@@ -1700,13 +1722,13 @@
     "faq.q1": "Tệp của tôi có được tải lên máy chủ không?",
     "faq.a1": "Không. JingMark ưu tiên cục bộ — mọi đọc/ghi đều diễn ra trong trình duyệt qua File System Access API. Không tải lên gì cả. Trạng thái Pro xác thực qua email; chỉ lưu email và trạng thái thanh toán của bạn.",
     "faq.q2": "Khác biệt giữa Miễn phí và Pro?",
-    "faq.a2": "Miễn phí gồm đọc Markdown đầy đủ, 6 chủ đề tuyển chọn và duyệt một gốc. Pro mở khoá 46 chủ đề, xuất Word/PDF gốc, soạn WYSIWYG ghi lại, quản lý nhiều gốc, lưu tài liệu web và hơn thế. Đọc vẫn miễn phí mãi mãi.",
+    "faq.a2": "Miễn phí gồm đọc Markdown đầy đủ, 6 chủ đề tuyển chọn và duyệt một gốc. Pro mở khoá 46 chủ đề, xuất Word/PDF gốc, nhập Word .docx sang Markdown có thể chỉnh sửa, soạn WYSIWYG ghi lại, quản lý nhiều gốc, lưu tài liệu web và hơn thế. Đọc vẫn miễn phí mãi mãi.",
     "faq.q3": "Trình duyệt nào được hỗ trợ?",
     "faq.a3": "Mọi trình duyệt dựa trên Chromium (Chrome, Edge, Brave, Arc…) có File System Access API (Chrome 86+).",
     "faq.q4": "Sau khi mua, cách kích hoạt Pro?",
-    "faq.a4": "Bấm «Nâng cấp» trong tiện ích, đăng nhập bằng email và thanh toán qua Creem. Trạng thái Pro tự đồng bộ. Tại vùng chưa có Creem, khoá kích hoạt sẽ sớm có.",
+    "faq.a4": "Bấm «Nâng cấp» trong tiện ích, đăng nhập bằng email và thanh toán qua Creem. Trạng thái Pro tự đồng bộ.",
     "faq.q5": "Tôi có thể dùng Pro trên nhiều máy tính không?",
-    "faq.a5": "Pro được liên kết với tài khoản email của bạn và hoạt động trên nhiều thiết bị. Khóa kích hoạt được cấp cho từng thiết bị để dùng ngoại tuyến, vì vậy bạn có thể đăng nhập trên bất kỳ máy tính nào để sử dụng tính năng Pro.",
+    "faq.a5": "Pro được liên kết với tài khoản email của bạn và dùng được trên tối đa 3 thiết bị. Ở thiết bị thứ 4, Pro sẽ không được bật — bạn không bị đăng xuất và các thiết bị khác vẫn hoạt động bình thường. Hãy xoá một thiết bị không dùng trong bảng tài khoản để giải phóng suất.",
     "faq.q6": "Có hỗ trợ công thức toán học và sơ đồ không?",
     "faq.a6": "Có. JingMark hiển thị trực tiếp công thức KaTeX và sơ đồ Mermaid — bạn chỉ cần viết cú pháp LaTeX hoặc Mermaid chuẩn trong Markdown.",
     "faq.q7": "Có bao nhiêu ngôn ngữ được hỗ trợ?",
@@ -1769,8 +1791,8 @@
     "diff1.desc": "Ingen server eller konto behövs. Allt körs i webbläsaren; dina filer lämnar aldrig enheten.",
     "diff2.title": "Direkt läsning & skrivning",
     "diff2.desc": "Öppna riktiga .md-filer via File System Access API och spara direkt — inga kopior, inga konflikter.",
-    "diff3.title": "Navt Word-export",
-    "diff3.desc": "Exportera äkta, redigerbara Word-dokument — riktiga Word-objekt, inte platt inklistrad HTML.",
+    "diff3.title": "Import/export Word",
+    "diff3.desc": "Öppna .docx utan kontorssvit, konvertera till redigerbar Markdown eller exportera riktiga Word-objekt.",
     "diff4.title": "WeChat-klar kopia",
     "diff4.desc": "Ditt temas stil läggs inline så att innehållet behåller utseendet i WeChat-redigeraren.",
     "feat.title": "En läsare gjord för Markdown",
@@ -1782,7 +1804,7 @@
     "f3.title": "Mappbibliotek",
     "f3.desc": "Flera rötter, direktsökning, bildförhandsvisning — hantera dokument som en bokhylla.",
     "f4.title": "Exportera med ett klick",
-    "f4.desc": "Exportera till HTML, PDF eller navt redigerbart Word för att dela eller arkivera.",
+    "f4.desc": "Exportera till HTML, PDF eller nativt redigerbart Word för att dela eller arkivera.",
     "f5.title": "Flikar & disposition",
     "f5.desc": "Flertabsredigering, rubrikdisposition, live KaTeX-formler och Mermaid-diagram.",
     "f6.title": "Sök & dra",
@@ -1830,6 +1852,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">−50%</span>",
     "price.promoFree": "Gratis vid lansering",
+    "price.promoFreePrice": "Gratis",
+    "price.promoFreeNote": "Gratis under en begränsad tid · återgår till $9.99 efter lanseringen",
     "price.pro.early": "Begränsad early bird · återgår till $9,99",
     "price.pro.note": "Engångsköp · Livstidsuppdateringar",
     "price.pro.f1": "Alla 46 teman (sex familjer)",
@@ -1851,19 +1875,19 @@
     "s2.title": "Välj ett tema",
     "s2.desc": "Välj bland 46 teman i sex familjer och byt stil med ett klick.",
     "s3.title": "Redigera & skriv tillbaka",
-    "s3.desc": "Ändringar sparas direkt i original-.md, eller exportera till HTML, PDF eller navt Word.",
+    "s3.desc": "Ändringar sparas direkt i original-.md, eller exportera till HTML, PDF eller nativt Word.",
     "faq.title": "Vanliga frågor",
     "faq.sub": "Svar om integritet, funktioner och köp.",
     "faq.q1": "Laddas mina filer upp till en server?",
     "faq.a1": "Nej. JingMark är lokal först — all läsning och skrivning sker i webbläsaren via File System Access API. Inget laddas upp. Pro-status verifieras via e-post; endast din e-post och betalningsstatus lagras.",
     "faq.q2": "Vad skiljer Gratis och Pro?",
-    "faq.a2": "Gratis innehåller fullständig Markdown-läsning, 6 utvalda teman och navigering med en rot. Pro låser upp alla 46 teman, navt Word/PDF-export, WYSIWYG-redigering med tillbakaskrivning, hantering med flera rötter, sparande av webbdok och mer. Läsning är gratis för alltid.",
+    "faq.a2": "Gratis innehåller fullständig Markdown-läsning, 6 utvalda teman och navigering med en rot. Pro låser upp alla 46 teman, nativt Word/PDF-export, import av Word .docx till redigerbar Markdown, WYSIWYG-redigering med tillbakaskrivning, hantering med flera rötter, sparande av webbdok och mer. Läsning är gratis för alltid.",
     "faq.q3": "Vilka webbläsare stöds?",
     "faq.a3": "Alla Chromium-baserade webbläsare (Chrome, Edge, Brave, Arc med flera) med File System Access API (Chrome 86+).",
     "faq.q4": "Hur aktiverar jag Pro efter köp?",
-    "faq.a4": "Klicka på «Uppgradera» i tillägget, logga in med din e-post och betala via Creem. Din Pro-status synkroniseras automatiskt. I regioner utan Creem kommer en aktiveringsnyckel snart.",
+    "faq.a4": "Klicka på «Uppgradera» i tillägget, logga in med din e-post och betala via Creem. Din Pro-status synkroniseras automatiskt.",
     "faq.q5": "Kan jag använda Pro på flera datorer?",
-    "faq.a5": "Pro är kopplad till ditt e-postkonto och fungerar på flera enheter. Aktiveringsnycklar utfärdas per enhet för offlineanvändning, så du kan logga in på valfri dator för att komma åt Pro-funktionerna.",
+    "faq.a5": "Pro är kopplad till ditt e-postkonto och fungerar på upp till 3 enheter. På en 4:e enhet aktiveras inte Pro — du loggas inte ut och dina andra enheter påverkas inte. Ta bort en oanvänd enhet i kontopanelen för att frigöra en plats.",
     "faq.q6": "Stöds matematiska formler och diagram?",
     "faq.a6": "Ja. JingMark återger KaTeX-formler och Mermaid-diagram nativt — du skriver bara standard LaTeX- eller Mermaid-syntax i din Markdown.",
     "faq.q7": "Hur många språk stöds?",
@@ -1906,7 +1930,7 @@
     "auth.backLogin": "Tillbaka till inloggningen",
     "auth.resetSent": "Återställningsmejl skickat. Kolla inkorgen.",
     "auth.resetSuccess": "Lösenordet återställt! Logga in igen.",
-    "meta.desc": "Lokal-first Markdown-läsare & -skrivare. 46 teman, navt Word-export, direkt läsning/skrivning av filer. Inga uppladdningar, ingen server.",
+    "meta.desc": "Lokal-first Markdown-läsare & -skrivare. 46 teman, nativt Word-export, direkt läsning/skrivning av filer. Inga uppladdningar, ingen server.",
     "page.title": "JingMark · Varm Markdown-läsare & -skrivare för webbläsaren"
   },
   "ar": {
@@ -1926,8 +1950,8 @@
     "diff1.desc": "لا حاجة لخادم أو حساب. كل شيء يعمل في متصفحك، وملفاتك لا تغادر جهازك.",
     "diff2.title": "قراءة وكتابة مباشرة",
     "diff2.desc": "افتح ملفات .md الحقيقية عبر File System Access API واحفظ مباشرة — بلا نسخ، بلا تعارض.",
-    "diff3.title": "تصدير أصيل إلى Word",
-    "diff3.desc": "صدّر مستندات Word حقيقية قابلة للتحرير — كائنات Word الأصلية، لا HTML ملصوق مسطح.",
+    "diff3.title": "استيراد وتصدير Word",
+    "diff3.desc": "افتح ملفات .docx دون حزمة مكتبية، وحوّلها إلى Markdown قابل للتحرير، أو صدّر كائنات Word حقيقية.",
     "diff4.title": "نسخة جاهزة لـ WeChat",
     "diff4.desc": "يُدمج أسلوب سمتك ضمن السطر، فيحافظ المحتوى على مظهره داخل محرر WeChat.",
     "feat.title": "قارئ صُنع من أجل Markdown",
@@ -1987,6 +2011,8 @@
     "price.pro.plan": "Pro",
     "price.pro.cost": "<span class=\"now\">$4.99</span><span class=\"was\">$9.99</span><span class=\"save\">خصم 50%</span>",
     "price.promoFree": "مجاني أثناء الإطلاق",
+    "price.promoFreePrice": "مجاني",
+    "price.promoFreeNote": "مجاني لفترة محدودة · يعود إلى 9.99 $ بعد الإطلاق",
     "price.pro.early": "سعر مبكر محدود · يعود إلى 9.99$",
     "price.pro.note": "دفعة واحدة · تحديثات مدى الحياة",
     "price.pro.f1": "كل السمات الـ46 (ست عائلات)",
@@ -2014,13 +2040,13 @@
     "faq.q1": "هل تُرفع ملفاتي إلى خادم؟",
     "faq.a1": "لا. JingMark محلي أولًا — كل قراءة وكتابة تحدث في متصفحك عبر File System Access API. لا شيء يُرفع. تُتحقق حالة Pro عبر البريد؛ لا يُخزَّن سوى بريدك وحالة الدفع.",
     "faq.q2": "ما الفرق بين المجاني وPro؟",
-    "faq.a2": "يتضمن المجاني القراءة الكاملة لـ Markdown، 6 سمات مختارة، وتصفّحاً بجذر واحد. يفتح Pro كل السمات الـ46، وتصدير Word/PDF الأصلي، وتحرير WYSIWYG مع كتابة تلقائية، وإدارة مجلدات متعددة الجذور، وحفظ مستندات الويب، والمزيد. تبقى القراءة مجانية للأبد.",
+    "faq.a2": "يتضمن المجاني القراءة الكاملة لـ Markdown، 6 سمات مختارة، وتصفّحاً بجذر واحد. يفتح Pro كل السمات الـ46، وتصدير Word/PDF الأصلي، واستيراد Word .docx إلى Markdown قابل للتحرير، وتحرير WYSIWYG مع كتابة تلقائية، وإدارة مجلدات متعددة الجذور، وحفظ مستندات الويب، والمزيد. تبقى القراءة مجانية للأبد.",
     "faq.q3": "أي المتصفحات مدعومة؟",
     "faq.a3": "أي متصفح قائم على Chromium (Chrome وEdge وBrave وArc وغيرها) يدعم File System Access API (Chrome 86+).",
     "faq.q4": "كيف أُفعّل Pro بعد الشراء؟",
-    "faq.a4": "انقر «ترقية» في الإضافة، سجّل الدخول ببريدك وادفع عبر Creem. تتم مزامنة حالة Pro تلقائيًا. في المناطق التي لا يتوفر فيها Creem، سيتوفر مفتاح تفعيل قريبًا.",
+    "faq.a4": "انقر «ترقية» في الإضافة، سجّل الدخول ببريدك وادفع عبر Creem. تتم مزامنة حالة Pro تلقائيًا.",
     "faq.q5": "هل يمكنني استخدام Pro على عدة أجهزة كمبيوتر؟",
-    "faq.a5": "يرتبط Pro بحساب بريدك الإلكتروني ويعمل عبر عدة أجهزة. تُصدر مفاتيح التفعيل لكل جهاز للاستخدام دون اتصال، لذا يمكنك تسجيل الدخول من أي جهاز كمبيوتر للوصول إلى ميزات Pro.",
+    "faq.a5": "يرتبط Pro بحساب بريدك الإلكتروني ويعمل على 3 أجهزة كحد أقصى. على الجهاز الرابع لن تُفعَّل ميزات Pro — لن يتم تسجيل خروجك ولن تتأثر أجهزتك الأخرى. أزِل جهازًا غير مستخدم من لوحة الحساب لتحرير مكان.",
     "faq.q6": "هل يدعم المعادلات الرياضية والرسوم البيانية؟",
     "faq.a6": "نعم. يعرض JingMark معادلات KaTeX ومخططات Mermaid أصليًا — ما عليك سوى كتابة صيغة LaTeX أو Mermaid القياسية في Markdown الخاص بك.",
     "faq.q7": "كم عدد اللغات المدعومة؟",
@@ -2340,19 +2366,33 @@
     });
   }
   function refreshCheckoutLinks() {
-    document.querySelectorAll('a[data-creem]').forEach(function (a) { a.href = buildCheckoutUrl(); });
+    document.querySelectorAll('a[data-creem]').forEach(function (a) { a.href = window.__jmkPromoFree ? '#' : buildCheckoutUrl(); });
   }
   // 限时免费（PROMO_FREE）：保留 $9.99 划线价与功能清单，CTA 改为「限时免费」并点击弹登录框。
   function applyPromoUI() {
-    var tb = (I18N[currentLang] || {}).price || {};
-    var label = tb.promoFree || '限时免费';
+    // 注意：I18N[lang] 是【扁平 map】——键自带点号（"price.promoFree"），不是嵌套对象，
+    // 全文件其他地方都是 dict[key]。原实现写 I18N[currentLang].price → 恒为 {}，
+    // 于是 label 一直落在 || 兜底上：非中文用户看到的促销按钮是中文。
+    var dict = I18N[currentLang] || {};
+    var label = dict['price.promoFree'] || '限时免费';
+    var freePrice = dict['price.promoFreePrice'] || 'Free';
+    var freeNote = dict['price.promoFreeNote'] || '';
 
-    // 1) 价格区：隐藏 $4.99 现价与 Save 徽章，仅保留 $9.99 并加粗加大 + 红色划线
+    // 1) 价格区：主价改成「免费」，$9.99 退回普通划线锚点。
+    //    原实现把 $4.99 现价整块隐藏、只把 $9.99 放大加粗加红线，实测结果是
+    //    价格区里没有任何「免费」的价格陈述，只剩一个被划掉的原价 —— 与「限时免费」矛盾。
     document.querySelectorAll('.price-amount[data-i18n-html="price.pro.cost"]').forEach(function (el) {
-      var now = el.querySelector('.now'); if (now) now.style.display = 'none';
+      var now = el.querySelector('.now');
+      if (now) { now.style.display = ''; now.textContent = freePrice; }
       var save = el.querySelector('.save'); if (save) save.style.display = 'none';
-      var was = el.querySelector('.was');
-      if (was) was.style.cssText = 'font-size:52px;font-weight:700;color:#9a6a43;letter-spacing:-1.5px;text-decoration:line-through;text-decoration-color:#c0392b;text-decoration-thickness:3px;text-decoration-skip-ink:none';
+      // 清掉上一次可能留下的内联样式，交还给样式表里的 .was 规则
+      var was = el.querySelector('.was'); if (was) was.removeAttribute('style');
+    });
+
+    // 1b)「限时早鸟价 · 售完即恢复 $9.99」是配合 $4.99 现价写的，现价已改成免费，
+    //     这句必须一起换，否则价格区自相矛盾（活动结束恢复 $9.99 才是真的）。
+    document.querySelectorAll('[data-i18n="price.pro.early"]').forEach(function (el) {
+      el.textContent = freeNote;
     });
 
     // 2) Pro CTA：文案改为「限时免费」，移除 Creem 跳转，点击弹登录框
@@ -2385,10 +2425,15 @@
     // 4) 移除之前版本的独立 banner（不再使用）
     var b = document.getElementById('promoBanner'); if (b) b.remove();
   }
-  function loadPromo() {
+  // 促销开关探测失败会【静默保留 $4.99 购买入口】—— 免费期里这等于引导用户付款，
+  // 所以失败要重试（原实现一次失败就放弃）。重试仍失败则保持现状：不猜、不硬编码。
+  function loadPromo(attempt) {
+    attempt = attempt || 0;
     fetch(AUTH_API + '/api/promo').then(function (r) { return r.json(); }).then(function (d) {
       if (d && d.promoFree) { window.__jmkPromoFree = true; applyPromoUI(); }
-    }).catch(function () {});
+    }).catch(function () {
+      if (attempt < 2) setTimeout(function () { loadPromo(attempt + 1); }, 1500);
+    });
   }
   async function doLogin(e) {
     e.preventDefault();
@@ -2466,7 +2511,16 @@
       const badge = document.getElementById('authUserPlan');
       const upgrade = document.getElementById('authUpgrade');
       if (data.paid) { badge.textContent = 'Pro'; badge.className = 'plan pro'; if (upgrade) upgrade.style.display = 'none'; }
-      else { badge.textContent = 'Free'; badge.className = 'plan free'; if (upgrade) { upgrade.style.display = ''; upgrade.href = buildCheckoutUrl(); } }
+      else {
+        badge.textContent = 'Free'; badge.className = 'plan free';
+        if (upgrade) {
+          upgrade.style.display = '';
+          // 促销期不得写回 Creem 地址：applyPromoUI 已把 href 摘成 "#"，这里写回会得到
+          // 一个「文案写着限时免费、href 却是真实结账页」的活链接。左键被 preventDefault
+          // 挡住，但中键与右键「在新标签页打开」照样会跳 Creem（实测复现路径见 qa/）。
+          upgrade.href = window.__jmkPromoFree ? '#' : buildCheckoutUrl();
+        }
+      }
     } catch (e) {
       const cached = JSON.parse(localStorage.getItem(AUTH_STATUS_KEY) || '{}');
       const badge = document.getElementById('authUserPlan');

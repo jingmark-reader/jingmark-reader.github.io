@@ -41,6 +41,7 @@
           <li>File management (multi-root / drag-and-drop)</li>
           <li>All 46 themes</li>
           <li>HTML / PDF / Word export</li>
+          <li>Word .docx import → editable Markdown</li>
           <li>Save external documents locally</li>
           <li>Lifetime updates</li>
         </ul>
@@ -71,6 +72,7 @@
           <li>File management (multi-root / drag-and-drop)</li>
           <li>All 46 themes</li>
           <li>HTML / PDF / Word export</li>
+          <li>Word .docx import → editable Markdown</li>
           <li>Save external documents locally</li>
           <li>Lifetime updates</li>
         </ul>
@@ -188,6 +190,9 @@
         }
         const data = await res.json();
         paid = data.paid;
+        // 促销标志随 status 一起回来（后端 handleUserStatus 已回传）：不必单等 /api/promo，
+        // 也就不会因为那一个请求失败就把购买入口亮出来。
+        if (data.promoFree) PROMO = true;
         localStorage.setItem('jingmark-pro-status', JSON.stringify({
           paid: data.paid,
           plan: data.plan,
@@ -217,10 +222,12 @@
         bf.textContent = email ? 'Purchasing for: ' : '';
         if (email) { var b = document.createElement('b'); b.textContent = email; bf.appendChild(b); }
       }
+      applyPromoPricing();
     }
 
     // --- Checkout ---
     document.getElementById('checkoutBtn').addEventListener('click', async () => {
+      if (PROMO) return; // 促销期不得进入 Creem 结账流程
       const btn = document.getElementById('checkoutBtn');
       btn.querySelector('.btn-text').classList.add('hidden');
       btn.querySelector('.spinner').classList.remove('hidden');
@@ -297,20 +304,45 @@
       setTimeout(() => clearInterval(pollInterval), 300000); // 5 min timeout
     }
 
-    // 限时免费（PROMO_FREE）：隐藏金额/购买按钮/Creem 提示，改为「Free during launch」徽标
-    fetch(API_BASE + '/api/promo').then(function (r) { return r.json(); }).then(function (d) {
-      if (!d || !d.promoFree) return;
-      var btn = document.getElementById('checkoutBtn');
-      if (btn) btn.style.display = 'none';
-      var bf = document.getElementById('buyFor');
-      if (bf) bf.style.display = 'none';
+    // --- 限时免费（PROMO_FREE）---
+    // 促销态必须同时满足两点：价格区读作「免费」、页面不留任何可达的 Creem 入口。
+    // 原实现两处坑（2026-09-15 用路由拦截强制促销态实测出来的）：
+    //   ① 只用 querySelector(".price-period") 改了第一处，而本页有两个
+    //      （#loginPrompt / #freePlanView），另一处仍是 "one-time payment · lifetime updates"，
+    //      于是「Free during launch」下面还写着「一次性付款」。
+    //   ② 未登录视图的 CTA 与两处标题/副标题仍讲「购买 / 一次性付款」。
+    // PROMO 声明放在这里也安全：本脚本体是同步跑完的，checkStatus() 的 await 续体
+    // 只可能在这之后执行，不会把 PROMO = false 覆盖到已置真的值上。
+    var PROMO = false;
+    function applyPromoPricing() {
+      if (!PROMO) return;
+      // 1) 价格：两块 .price-amount 全部换成 Free 徽标
       document.querySelectorAll('.price-amount').forEach(function (el) {
         el.innerHTML = '<span style="font-size:52px;font-weight:700;color:var(--primary,inherit);letter-spacing:-1.5px;display:inline-block">Free</span><span class="save">during launch</span>';
       });
-      var period = document.querySelector('.price-period');
-      if (period) period.textContent = 'Limited-time free · sign up and Pro is auto-unlocked';
-      var creemP = Array.prototype.slice.call(document.querySelectorAll('p')).filter(function (p) { return /Creem/i.test(p.textContent) && !p.querySelector('a'); })[0];
-      if (creemP) creemP.style.display = 'none';
+      // 2) 周期行：两处都要改（原实现只改第一处）
+      document.querySelectorAll('.price-period').forEach(function (el) {
+        el.textContent = 'Limited-time free · sign up and Pro is auto-unlocked';
+      });
+      // 3) 促销期不再讲「一次性付款」
+      var sub1 = document.querySelector('#loginPrompt .text-muted.mb-24');
+      if (sub1) sub1.textContent = 'Free during launch. Sign up and Pro is unlocked automatically.';
+      var h2 = document.querySelector('#freePlanView h1');
+      if (h2) h2.textContent = 'Free during launch';
+      var sub2 = document.querySelector('#freePlanView .text-muted.mb-24');
+      if (sub2) sub2.textContent = 'Sign up and Pro is unlocked automatically.';
+      // 4) 未登录 CTA 文案（链接仍是 login.html?redirect=/pricing，不是 Creem）
+      var lp = document.querySelector('#loginPrompt a.btn.btn-primary');
+      if (lp) lp.textContent = 'Sign up free';
+      // 5) 购买入口与付款提示：双保险（按钮已 display:none 时这里无副作用）
+      var btn = document.getElementById('checkoutBtn'); if (btn) btn.style.display = 'none';
+      var bf = document.getElementById('buyFor'); if (bf) bf.style.display = 'none';
+      Array.prototype.slice.call(document.querySelectorAll('p')).forEach(function (p) {
+        if (/Creem/i.test(p.textContent) && !p.querySelector('a')) p.style.display = 'none';
+      });
+    }
+    fetch(API_BASE + '/api/promo').then(function (r) { return r.json(); }).then(function (d) {
+      if (d && d.promoFree) { PROMO = true; applyPromoPricing(); }
     }).catch(function () {});
   </script>
 </body>
