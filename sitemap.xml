@@ -11,18 +11,27 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jingmark.xyz/login.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://jingmark.xyz/reset.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://jingmark.xyz/support.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://jingmark.xyz/changelog.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url><loc>https://jingmark.xyz/login.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://jingmark.xyz/reset.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://jingmark.xyz/zh/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jingmark.xyz/zh-tw/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jingmark.xyz/ja/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jingmark.xyz/ko/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jingmark.xyz/fr/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jingmark.xyz/de/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jingmark.xyz/es/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jingmark.xyz/pt/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jingmark.xyz/ru/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jingmark.xyz/vi/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jingmark.xyz/sv/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jingmark.xyz/ar/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
 </urlset>

@@ -183,8 +183,8 @@
     "auth.backLogin": "Back to sign in",
     "auth.resetSent": "Reset email sent. Please check your inbox.",
     "auth.resetSuccess": "Password reset successful! Please sign in again.",
-    "meta.desc": "Local-first Markdown reader & writer. 46 hand-crafted themes, native Word export, and direct file read/write. No uploads, no server.",
-    "page.title": "JingMark · A warm Markdown reader & writer for the browser"
+    "meta.desc": "Local-first Markdown reader & writer Chrome extension. 46 hand-crafted themes, native Word import/export, direct file read/write. No uploads, no server.",
+    "page.title": "JingMark — Local-first Markdown Reader & Writer Chrome Extension"
   },
   "zh": {
     "brand": "境相阅读",
@@ -2137,6 +2137,7 @@
   function getLangMeta(code) { return LANGS.find(function (l) { return l.code === code; }) || null; }
 
   function detectLang() {
+    if (window.JINGMARK_FORCE_LOCALE && I18N[window.JINGMARK_FORCE_LOCALE]) return window.JINGMARK_FORCE_LOCALE;
     let stored = null;
     try { stored = localStorage.getItem(STORE_KEY); } catch (e) {}
     if (stored && I18N[stored]) return stored;
