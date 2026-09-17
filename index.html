@@ -60,6 +60,32 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="favicon.svg">
 
@@ -173,7 +199,7 @@ nav#nav.scrolled{border-color:var(--line);box-shadow:0 6px 24px rgba(70,55,38,.0
 .lang-panel{position:absolute;top:calc(100% + 10px);right:0;min-width:210px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);padding:8px;display:none;max-height:min(70vh,420px);overflow-y:auto;z-index:80}
 .lang-dropdown.open .lang-panel{display:block;animation:pop .16s ease}
 @keyframes pop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-.lang-item{display:flex;align-items:center;gap:11px;width:100%;background:none;border:none;padding:9px 11px;border-radius:9px;text-align:left;font-family:var(--sans);font-size:14px;color:var(--ink-soft);transition:background .15s}
+.lang-item{display:flex;align-items:center;gap:11px;width:100%;background:none;border:none;padding:9px 11px;border-radius:9px;text-align:left;text-decoration:none;font-family:var(--sans);font-size:14px;color:var(--ink-soft);transition:background .15s}
 .lang-item:hover{background:var(--primary-soft)}
 .lang-item.active{background:var(--primary-soft);color:var(--primary);font-weight:600}
 .lang-item .lang-dot{width:26px;height:26px;border-radius:8px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--primary);flex-shrink:0}
@@ -453,7 +479,7 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
           <span class="lang-current-label">English</span>
           <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="lang-panel"></div>
+        <div class="lang-panel"><a class="lang-item active" href="/" hreflang="en" data-code="en">English</a><a class="lang-item" href="/zh/" hreflang="zh" data-code="zh">中文</a><a class="lang-item" href="/zh-tw/" hreflang="zh-tw" data-code="zh-tw">繁體中文</a><a class="lang-item" href="/ja/" hreflang="ja" data-code="ja">日本語</a><a class="lang-item" href="/ko/" hreflang="ko" data-code="ko">한국어</a><a class="lang-item" href="/fr/" hreflang="fr" data-code="fr">Français</a><a class="lang-item" href="/de/" hreflang="de" data-code="de">Deutsch</a><a class="lang-item" href="/es/" hreflang="es" data-code="es">Español</a><a class="lang-item" href="/pt/" hreflang="pt" data-code="pt">Português</a><a class="lang-item" href="/ru/" hreflang="ru" data-code="ru">Русский</a><a class="lang-item" href="/vi/" hreflang="vi" data-code="vi">Tiếng Việt</a><a class="lang-item" href="/sv/" hreflang="sv" data-code="sv">Svenska</a><a class="lang-item" href="/ar/" hreflang="ar" data-code="ar">العربية</a></div>
       </div>
     </div>
   </div>
@@ -464,7 +490,7 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
   <div class="wrap hero-inner">
     <span class="eyebrow" data-i18n="hero.eyebrow">Local-first · Zero setup · Reads &amp; writes your files</span>
     <h1 data-i18n="hero.title">Read and write Markdown in your browser</h1>
-    <p class="sub" data-i18n="hero.sub">Read and write Markdown like turning the pages of a paper book — warm themes, offline by design, your files never leave your device.</p>
+    <p class="sub" data-i18n="hero.sub">Rich, refined Markdown typography themes built in, offline by design, your files never leave your device.</p>
 
     <!-- hero install strip: prominent install pills for supported browsers -->
     <div class="hero-install" data-reveal>
@@ -475,7 +501,7 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
         <img src="Edge.png" alt="Edge"><span data-i18n="dl.edge">Edge</span>
       </a>
       <a class="hi-item" href="#download">
-        <img src="Firefox.png" alt="Firefox"><span data-i18n="dl.firefox">Firefox</span><span class="hi-soon" data-i18n="dl.soon">Soon</span>
+        <img src="Firefox.png" alt="Firefox"><span data-i18n="dl.firefox">Firefox</span><span class="hi-soon" data-i18n="dl.soon">Coming soon</span>
       </a>
     </div>
 
@@ -544,15 +570,15 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
     <div class="sec-head" data-reveal>
       <span class="eyebrow" data-i18n="nav.themes">Themes</span>
       <h2 data-i18n="themes.title">46 themes across 6 families</h2>
-      <p data-i18n="themes.sub">Aura · Paper · Rhythm · Archive · Dark · Editorial — for reading, writing, and typesetting.</p>
+      <p data-i18n="themes.sub">Aura · Paper · Rhythm · Archive · Dark · Editorial — for reading, writing, and editorial typesetting.</p>
     </div>
     <div class="theme-grid">
       <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/mobai.svg" alt="Aura Warm theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t1.name">Aura · Warm</h3><p data-i18n="t1.desc">Amber-brown · Serif body · Paper-book feel</p></div></div>
-      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/xuanzhi.svg" alt="Paper Letter theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t2.name">Paper · Letter</h3><p data-i18n="t2.desc">Rice-paper cream · Eastern typography · Classic</p></div></div>
-      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/mori-journal.svg" alt="Rhythm Journal theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t3.name">Rhythm · Journal</h3><p data-i18n="t3.desc">Forest green · Washi tape · Fresh</p></div></div>
-      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/cream-orange.svg" alt="Archive Cream theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t4.name">Archive · Cream</h3><p data-i18n="t4.desc">Dessert tones · Rounded · Cozy</p></div></div>
-      <div class="theme-card dark" data-reveal><div class="shot"><img src="assets/themes/night-film.svg" alt="Dark Night Film theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t5.name">Dark · Night Film</h3><p data-i18n="t5.desc">Cinema dark · Immersive · Easy on the eyes</p></div></div>
-      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/mono-editorial.svg" alt="Editorial Mono theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t6t.name">Editorial · Mono</h3><p data-i18n="t6t.desc">Monochrome · Swiss grid · Magazine polish</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/xuanzhi.svg" alt="Paper Letter theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t2.name">Paper · Song</h3><p data-i18n="t2.desc">Rice-paper cream · Eastern typography · Classic</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/mori-journal.svg" alt="Rhythm Journal theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t3.name">Rhythm · Forest</h3><p data-i18n="t3.desc">Forest green · Journal layout · Fresh</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/cream-orange.svg" alt="Archive Cream theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t4.name">Archive · Latte</h3><p data-i18n="t4.desc">Coffee tones · Rounded weight · Cozy</p></div></div>
+      <div class="theme-card dark" data-reveal><div class="shot"><img src="assets/themes/night-film.svg" alt="Dark Night Film theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t5.name">Dark · Night</h3><p data-i18n="t5.desc">Deep film · Immersive · Easy on the eyes</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="assets/themes/mono-editorial.svg" alt="Editorial Mono theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t6t.name">Typeset · Refined</h3><p data-i18n="t6t.desc">Serif headings, justified body, minimal tables — editorial polish in every theme.</p></div></div>
     </div>
   </div>
 </section>
@@ -658,7 +684,7 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
       </div>
       <div class="faq-item" data-reveal>
         <button class="faq-q"><span data-i18n="faq.q4">How do I activate Pro after buying?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a4">Click &#39;Upgrade&#39; in the extension and sign in with your email. Your Pro status syncs automatically.</p></div>
+        <div class="faq-a"><p data-i18n="faq.a4">Click 'Upgrade' in the extension and sign in with your email. Your Pro status syncs automatically.</p></div>
       </div>
       <div class="faq-item" data-reveal>
         <button class="faq-q"><span data-i18n="faq.q5">Can I use Pro on multiple computers?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -674,7 +700,7 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
       </div>
       <div class="faq-item" data-reveal>
         <button class="faq-q"><span data-i18n="faq.q8">Can I preview before exporting?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a8">Yes. The split-preview mode shows your content in narrow (680px), medium (820px), or wide (960px) widths, with a fullscreen option for distraction-free proofreading.</p></div>
+        <div class="faq-a"><p data-i18n="faq.a8">Yes. Split-preview shows your content at narrow (680px), medium (820px), or wide (960px) widths, with a fullscreen mode for distraction-free proofreading.</p></div>
       </div>
     </div>
   </div>
@@ -699,7 +725,7 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
       <a class="browser-badge" aria-disabled="true" onclick="return false">
         <span class="b-logo"><img src="Firefox.png" alt="Firefox"></span>
         <span class="b-text"><span class="b-label" data-i18n="nav.install">Add to browser</span><span class="b-name" data-i18n="dl.firefox">Firefox</span></span>
-        <span class="b-soon" data-i18n="dl.soon">Soon</span>
+        <span class="b-soon" data-i18n="dl.soon">Coming soon</span>
       </a>
     </div>
     <p class="dl-note" data-i18n="dl.note">Now available on Chrome and Edge — install today. Brave, Arc, and Firefox coming soon.</p>
@@ -752,11 +778,11 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
         <div class="field"><label data-i18n="auth.password">Password</label><input id="regPassword" type="password" autocomplete="new-password"></div>
         <div class="field"><label data-i18n="auth.confirm">Confirm password</label><input id="regPassword2" type="password" autocomplete="new-password"></div>
         <!-- 邀请码闸门（与扩展端策略一致）：仅注册态出现，空值前端直接拦下，不打扰后端 -->
-        <div class="field"><label data-i18n="auth.inviteCode">Invite code</label><input id="regInvite" type="text" autocomplete="off" spellcheck="false" autocapitalize="characters" data-i18n-placeholder="auth.invitePlaceholder" placeholder="XXXX-XXXX-XXXX" style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em"></div>
+        <div class="field"><label data-i18n="auth.inviteCode">Invite code</label><input id="regInvite" type="text" autocomplete="off" spellcheck="false" autocapitalize="characters" data-i18n-placeholder="" placeholder="XXXX-XXXX-XXXX" style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em"></div>
         <button class="auth-btn" id="registerBtn" type="submit" data-i18n="auth.register">Create account</button>
       </form>
       <form class="auth-form hidden" id="resetForm" onsubmit="return doResetRequest(event)">
-        <p class="auth-reset-hint" data-i18n="auth.resetHint" style="font-size:13px;color:var(--muted);text-align:center;margin-bottom:4px;line-height:1.5">Enter your registered email and we'll send a password reset link</p>
+        <p class="auth-reset-hint" data-i18n="auth.resetHint" style="font-size:13px;color:var(--muted);text-align:center;margin-bottom:4px;line-height:1.5">Enter your registered email and we'll send a password reset link.</p>
         <div class="field"><label data-i18n="auth.email">Email</label><input id="resetEmail" type="email"></div>
         <button class="auth-btn" id="resetBtn" type="submit" data-i18n="auth.sendReset">Send reset email</button>
         <a class="auth-forgot" onclick="switchAuthView('login')" data-i18n="auth.backLogin">Back to sign in</a>
@@ -774,15 +800,16 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
     <div class="auth-user" id="authUser">
       <div class="email" id="authUserEmail"></div>
       <span class="plan free" id="authUserPlan">Free</span>
-      <a class="auth-upgrade" id="authUpgrade" data-creem href="#" target="_blank" data-i18n-html="auth.upgrade"></a>
+      <a class="auth-upgrade" id="authUpgrade" data-creem href="#" target="_blank" data-i18n-html="auth.upgrade"><span class='au-label'>Get Pro</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>Save 50%</span></a>
       <button class="auth-logout" onclick="doLogout()" data-i18n="auth.logout">Sign out</button>
     </div>
   </div>
 </div>
 
-<script>window.JINGMARK_FORCE_LOCALE=null;</script>
-<script>window.JINGMARK_FORCE_LOCALE=null;</script>
-<script>window.JINGMARK_FORCE_LOCALE=null;</script>
+
+
+
+
 <script>window.JINGMARK_FORCE_LOCALE=null;</script>
 <script src="assets/app.js"></script>
 </body>

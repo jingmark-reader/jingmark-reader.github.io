@@ -15,19 +15,19 @@ if (!m) { console.error('I18N not found'); process.exit(1); }
 const I18N = eval('(' + m[1] + ')');
 
 const LANGS = [
-  { code: 'en',     dir: 'ltr' },
-  { code: 'zh',     dir: 'ltr' },
-  { code: 'zh-tw',  dir: 'ltr' },
-  { code: 'ja',     dir: 'ltr' },
-  { code: 'ko',     dir: 'ltr' },
-  { code: 'fr',     dir: 'ltr' },
-  { code: 'de',     dir: 'ltr' },
-  { code: 'es',     dir: 'ltr' },
-  { code: 'pt',     dir: 'ltr' },
-  { code: 'ru',     dir: 'ltr' },
-  { code: 'vi',     dir: 'ltr' },
-  { code: 'sv',     dir: 'ltr' },
-  { code: 'ar',     dir: 'rtl' },
+  { code: 'en',     dir: 'ltr', name: 'English' },
+  { code: 'zh',     dir: 'ltr', name: '中文' },
+  { code: 'zh-tw',  dir: 'ltr', name: '繁體中文' },
+  { code: 'ja',     dir: 'ltr', name: '日本語' },
+  { code: 'ko',     dir: 'ltr', name: '한국어' },
+  { code: 'fr',     dir: 'ltr', name: 'Français' },
+  { code: 'de',     dir: 'ltr', name: 'Deutsch' },
+  { code: 'es',     dir: 'ltr', name: 'Español' },
+  { code: 'pt',     dir: 'ltr', name: 'Português' },
+  { code: 'ru',     dir: 'ltr', name: 'Русский' },
+  { code: 'vi',     dir: 'ltr', name: 'Tiếng Việt' },
+  { code: 'sv',     dir: 'ltr', name: 'Svenska' },
+  { code: 'ar',     dir: 'rtl', name: 'العربية' },
 ];
 const BASE = 'https://jingmark.xyz';
 
@@ -44,6 +44,71 @@ function hreflangBlock() {
 // Escape for use inside an HTML attribute
 function escAttr(s) {
   return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// Escape plain text for use as element text content
+function escapeHtml(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// Static, crawlable + no-JS language switcher links (mirrors app.js LANGS).
+// Clicking navigates to the locale's dedicated URL; root-relative so it works
+// from both '/' and '/xx/' depths. Active class marks the current locale.
+function langPanelHtml(currentCode) {
+  return LANGS.map(function (l) {
+    const active = l.code === currentCode ? ' active' : '';
+    const href = l.code === 'en' ? '/' : '/' + l.code + '/';
+    return '<a class="lang-item' + active + '" href="' + href + '" hreflang="' + l.code +
+      '" data-code="' + l.code + '">' + escapeHtml(l.name) + '</a>';
+  }).join('');
+}
+
+// Pre-render [data-i18n] / [data-i18n-html] / [data-i18n-placeholder] into the
+// static HTML so each locale page is fully translated without JS (matches the
+// runtime applyText() in app.js).
+function applyI18nToHtml(html, dict) {
+  // Pass A: placeholder attributes (input fields)
+  html = html.replace(/<[a-zA-Z0-9]+(?:\s[^>]*)?data-i18n-placeholder="([^"]+)"(?:\s[^>]*)?>/g, function (full, key) {
+    const val = dict[key] !== undefined ? dict[key] : '';
+    return full.replace(/placeholder="[^"]*"/, 'placeholder="' + escAttr(val) + '"');
+  });
+  // Pass B: inner content for data-i18n-html (innerHTML) and data-i18n (textContent)
+  const attrRe = /data-i18n-html="([^"]+)"|data-i18n="([^"]+)"/g;
+  let result = '';
+  let cursor = 0;
+  let m;
+  while ((m = attrRe.exec(html))) {
+    const isHtml = m[1] !== undefined;
+    const key = isHtml ? m[1] : m[2];
+    const idx = m.index;
+    const tagStart = html.lastIndexOf('<', idx);
+    const gt = html.indexOf('>', idx);
+    if (tagStart === -1 || gt === -1) { cursor = idx + m[0].length; continue; }
+    const tagMatch = html.slice(tagStart).match(/^<([a-zA-Z0-9]+)/);
+    const tag = tagMatch ? tagMatch[1] : null;
+    const closeRe = new RegExp('</' + tag + '>', 'g');
+    closeRe.lastIndex = gt + 1;
+    const cm = closeRe.exec(html);
+    // Always emit the opening tag; only replace inner when it's a real element we own.
+    result += html.slice(cursor, gt + 1);
+    cursor = gt + 1;
+    if (cm && tag !== 'meta' && tag !== 'title') {
+      const inner = html.slice(gt + 1, cm.index);
+      let newInner;
+      if (isHtml) {
+        newInner = dict[key] !== undefined ? dict[key] : inner;
+      } else {
+        const val = dict[key];
+        newInner = val !== undefined ? escapeHtml(val) : inner;
+      }
+      result += newInner + '</' + tag + '>';
+      cursor = cm.index + ('</' + tag + '>').length;
+      attrRe.lastIndex = cursor;
+    }
+    // meta/title are handled separately (head tags); elements without a close tag are left intact.
+  }
+  result += html.slice(cursor);
+  return result;
 }
 
 function buildPage(langCode) {
@@ -87,6 +152,9 @@ function buildPage(langCode) {
     (_, a) => a + hreflangBlock());
 
   // 7. Resource path prefix for subdirs
+  // Strip any pre-existing FORCE_LOCALE script first so repeated builds stay idempotent
+  // (index.html is itself a committed build artifact that may already carry one).
+  out = out.replace(/\n?<script>window\.JINGMARK_FORCE_LOCALE=[^;]*;<\/script>\n?/g, '\n');
   if (!isEn) {
     out = out.replace('<script src="assets/app.js"></script>',
       `<script>window.JINGMARK_FORCE_LOCALE=${JSON.stringify(langCode)};</script>\n<script src="../assets/app.js"></script>`);
@@ -96,6 +164,10 @@ function buildPage(langCode) {
     out = out.replace('<script src="assets/app.js"></script>',
       `<script>window.JINGMARK_FORCE_LOCALE=null;</script>\n<script src="assets/app.js"></script>`);
   }
+
+  // 8. Pre-render translated body text + inject static language switcher links
+  out = applyI18nToHtml(out, dict);
+  out = out.replace(/<div class="lang-panel">[\s\S]*?<\/div>/, '<div class="lang-panel">' + langPanelHtml(langCode) + '</div>');
 
   return out;
 }

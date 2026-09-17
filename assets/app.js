@@ -2206,22 +2206,21 @@
     if (!wrap) return;
     const btn = wrap.querySelector('.lang-current');
     const panel = wrap.querySelector('.lang-panel');
-    LANGS.forEach(function (l) {
-      const item = document.createElement('button');
-      item.className = 'lang-item';
-      item.setAttribute('data-code', l.code);
-      item.setAttribute('data-i18n-name', l.code);
-      item.innerHTML = '<span class="lang-dot">' + (l.dir === 'rtl' ? 'ا' : l.name.charAt(0)) + '</span><span class="lang-label">' + l.name + '</span>';
-      item.addEventListener('click', function () {
-        setLang(l.code);
-        closeLangPanel();
+    // Static <a class="lang-item"> links are injected at build time (SEO: crawlable + works without JS).
+    // Clicking navigates to the locale's dedicated URL; we just persist the choice for the root fallback.
+    if (panel) {
+      panel.querySelectorAll('.lang-item').forEach(function (a) {
+        a.addEventListener('click', function () {
+          try { localStorage.setItem(STORE_KEY, a.getAttribute('data-code')); } catch (e) {}
+        });
       });
-      panel.appendChild(item);
-    });
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      toggleLangPanel();
-    });
+    }
+    if (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        toggleLangPanel();
+      });
+    }
     document.addEventListener('click', function (e) {
       if (wrap && !wrap.contains(e.target)) closeLangPanel();
     });

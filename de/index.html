@@ -60,6 +60,32 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="apple-touch-icon" href="../favicon.svg">
 
@@ -173,7 +199,7 @@ nav#nav.scrolled{border-color:var(--line);box-shadow:0 6px 24px rgba(70,55,38,.0
 .lang-panel{position:absolute;top:calc(100% + 10px);right:0;min-width:210px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);padding:8px;display:none;max-height:min(70vh,420px);overflow-y:auto;z-index:80}
 .lang-dropdown.open .lang-panel{display:block;animation:pop .16s ease}
 @keyframes pop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-.lang-item{display:flex;align-items:center;gap:11px;width:100%;background:none;border:none;padding:9px 11px;border-radius:9px;text-align:left;font-family:var(--sans);font-size:14px;color:var(--ink-soft);transition:background .15s}
+.lang-item{display:flex;align-items:center;gap:11px;width:100%;background:none;border:none;padding:9px 11px;border-radius:9px;text-align:left;text-decoration:none;font-family:var(--sans);font-size:14px;color:var(--ink-soft);transition:background .15s}
 .lang-item:hover{background:var(--primary-soft)}
 .lang-item.active{background:var(--primary-soft);color:var(--primary);font-weight:600}
 .lang-item .lang-dot{width:26px;height:26px;border-radius:8px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--primary);flex-shrink:0}
@@ -443,17 +469,17 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="menu"><span></span></button>
     <div class="nav-links" id="navLinks">
-      <a class="navlink" href="#features" data-i18n="nav.features">Features</a>
-      <a class="navlink" href="#themes" data-i18n="nav.themes">Themes</a>
-      <a class="navlink" href="#pricing" data-i18n="nav.pricing">Pricing</a>
+      <a class="navlink" href="#features" data-i18n="nav.features">Funktionen</a>
+      <a class="navlink" href="#themes" data-i18n="nav.themes">Themen</a>
+      <a class="navlink" href="#pricing" data-i18n="nav.pricing">Preise</a>
       <a class="navlink" href="#faq" data-i18n="nav.faq">FAQ</a>
-      <a class="navlink nav-login" href="#" data-i18n="nav.login" onclick="openAuthModal();return false">Sign in</a>
+      <a class="navlink nav-login" href="#" data-i18n="nav.login" onclick="openAuthModal();return false">Anmelden</a>
       <div class="lang-dropdown" id="langDropdown">
         <button class="lang-current" aria-label="language">
           <span class="lang-current-label">English</span>
           <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="lang-panel"></div>
+        <div class="lang-panel"><a class="lang-item" href="/" hreflang="en" data-code="en">English</a><a class="lang-item" href="/zh/" hreflang="zh" data-code="zh">中文</a><a class="lang-item" href="/zh-tw/" hreflang="zh-tw" data-code="zh-tw">繁體中文</a><a class="lang-item" href="/ja/" hreflang="ja" data-code="ja">日本語</a><a class="lang-item" href="/ko/" hreflang="ko" data-code="ko">한국어</a><a class="lang-item" href="/fr/" hreflang="fr" data-code="fr">Français</a><a class="lang-item active" href="/de/" hreflang="de" data-code="de">Deutsch</a><a class="lang-item" href="/es/" hreflang="es" data-code="es">Español</a><a class="lang-item" href="/pt/" hreflang="pt" data-code="pt">Português</a><a class="lang-item" href="/ru/" hreflang="ru" data-code="ru">Русский</a><a class="lang-item" href="/vi/" hreflang="vi" data-code="vi">Tiếng Việt</a><a class="lang-item" href="/sv/" hreflang="sv" data-code="sv">Svenska</a><a class="lang-item" href="/ar/" hreflang="ar" data-code="ar">العربية</a></div>
       </div>
     </div>
   </div>
@@ -462,9 +488,9 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
 <!-- HERO -->
 <header class="hero">
   <div class="wrap hero-inner">
-    <span class="eyebrow" data-i18n="hero.eyebrow">Local-first · Zero setup · Reads &amp; writes your files</span>
-    <h1 data-i18n="hero.title">Read and write Markdown in your browser</h1>
-    <p class="sub" data-i18n="hero.sub">Read and write Markdown like turning the pages of a paper book — warm themes, offline by design, your files never leave your device.</p>
+    <span class="eyebrow" data-i18n="hero.eyebrow">Lokal zuerst · Keine Einrichtung · Liest &amp; schreibt Ihre Dateien</span>
+    <h1 data-i18n="hero.title">Markdown im Browser lesen und schreiben</h1>
+    <p class="sub" data-i18n="hero.sub">Reiche, ausgefeilte Markdown-Typografie-Themen integriert, offline konzipiert, Ihre Dateien verlassen nie Ihr Gerät.</p>
 
     <!-- hero install strip: prominent install pills for supported browsers -->
     <div class="hero-install" data-reveal>
@@ -475,7 +501,7 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
         <img src="../Edge.png" alt="Edge"><span data-i18n="dl.edge">Edge</span>
       </a>
       <a class="hi-item" href="#download">
-        <img src="../Firefox.png" alt="Firefox"><span data-i18n="dl.firefox">Firefox</span><span class="hi-soon" data-i18n="dl.soon">Soon</span>
+        <img src="../Firefox.png" alt="Firefox"><span data-i18n="dl.firefox">Firefox</span><span class="hi-soon" data-i18n="dl.soon">Demnächst verfügbar</span>
       </a>
     </div>
 
@@ -491,28 +517,28 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
   <div class="wrap pillar-grid">
     <div class="pillar" data-reveal>
       <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9a6a43" stroke-width="1.8"><path d="M12 2L4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3zm-1 13l-3-3 1.4-1.4L11 12.2l4.6-4.6L17 9l-6 6z"/></svg></span>
-      <h3 data-i18n="diff1.title">Local-first, no uploads</h3>
-      <p data-i18n="diff1.desc">No servers and no account required. Everything runs in your browser; your files never leave your device.</p>
+      <h3 data-i18n="diff1.title">Lokal zuerst, keine Uploads</h3>
+      <p data-i18n="diff1.desc">Kein Server und kein Konto nötig. Alles läuft im Browser; Ihre Dateien verlassen nie Ihr Gerät.</p>
     </div>
     <div class="pillar" data-reveal>
       <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9a6a43" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></span>
-      <h3 data-i18n="diff2.title">Direct file read &amp; write</h3>
-      <p data-i18n="diff2.desc">Open real .md files through the File System Access API and save edits straight back — no copies, no sync conflicts.</p>
+      <h3 data-i18n="diff2.title">Direktes Lesen &amp; Schreiben</h3>
+      <p data-i18n="diff2.desc">Öffnen Sie echte .md-Dateien über die File System Access API und speichern Sie direkt — keine Kopien, keine Konflikte.</p>
     </div>
     <div class="pillar" data-reveal>
       <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9a6a43" stroke-width="1.8"><path d="M4 4h13l3 3v13a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1zm3 8h10M7 15h7"/></svg></span>
-      <h3 data-i18n="diff3.title">Word import &amp; export</h3>
-      <p data-i18n="diff3.desc">Open .docx in a Word-like view without an office suite, convert to editable Markdown, or export real Word objects.</p>
+      <h3 data-i18n="diff3.title">Word-Import &amp; -Export</h3>
+      <p data-i18n="diff3.desc">Öffnen Sie .docx ohne Office-Suite, wandeln Sie sie in bearbeitbares Markdown um oder exportieren Sie echte Word-Objekte.</p>
     </div>
     <div class="pillar" data-reveal id="pillarWechat">
       <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9a6a43" stroke-width="1.8"><path d="M4 12a8 8 0 0114-5l2 2M20 12a8 8 0 01-14 5l-2-2M18 4v3h-3M6 20v-3h3"/></svg></span>
-      <h3 data-i18n="diff4.title">WeChat-ready copy</h3>
-      <p data-i18n="diff4.desc">Your chosen theme's styling is inlined so pasted content keeps its look inside the WeChat editor.</p>
+      <h3 data-i18n="diff4.title">WeChat-fertige Kopie</h3>
+      <p data-i18n="diff4.desc">Der Stil Ihres Themas wird inline eingefügt, damit der Inhalt im WeChat-Editor sein Aussehen behält.</p>
     </div>
     <div class="pillar" data-reveal id="pillarTypeset">
       <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9a6a43" stroke-width="1.8"><path d="M5 6h14M5 10h9M5 14h14M5 18h9"/></svg></span>
-      <h3 data-i18n="diff4t.title">Print-ready typesetting</h3>
-      <p data-i18n="diff4t.desc">Vertical rhythm, a locked measure, and tuned spacing make long reads feel effortless.</p>
+      <h3 data-i18n="diff4t.title">Druckreifes Satzbild</h3>
+      <p data-i18n="diff4t.desc">Vertikaler Rhythmus, feste Zeilenbreite und abgestimmter Abstand machen langes Lesen mühelos.</p>
     </div>
   </div>
 </section>
@@ -521,19 +547,19 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
 <section class="block" id="features">
   <div class="wrap">
     <div class="sec-head" data-reveal>
-      <span class="eyebrow" data-i18n="nav.features">Features</span>
-      <h2 data-i18n="feat.title">A reader built for Markdown</h2>
-      <p data-i18n="feat.sub">Warm, focused, and endlessly customizable — every session feels like reading on paper.</p>
+      <span class="eyebrow" data-i18n="nav.features">Funktionen</span>
+      <h2 data-i18n="feat.title">Ein für Markdown gemachter Leser</h2>
+      <p data-i18n="feat.sub">Warm, fokussiert und endlos anpassbar — jede Lesung fühlt sich wie Papier an.</p>
     </div>
     <div class="feat-grid">
-      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 109 9 9 9 0 00-9-9zm1 4v5l3 2"/></svg></span><h3 data-i18n="f1.title">46 themes, 6 families</h3><p data-i18n="f1.desc">Aura, Paper, Rhythm, Archive, Dark, and Editorial families for reading, writing, and typesetting.</p></div>
-      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h16M4 16h10M4 12h16M4 8h10"/></svg></span><h3 data-i18n="f2.title">WYSIWYG editing</h3><p data-i18n="f2.desc">Edit what you see and write changes back to the original file — no duplicate copies.</p></div>
-      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h7l2 2h9v10a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1z"/></svg></span><h3 data-i18n="f3.title">Folder library</h3><p data-i18n="f3.desc">Multiple roots, instant search, image preview — manage docs like a bookshelf.</p></div>
-      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg></span><h3 data-i18n="f4.title">One-click export</h3><p data-i18n="f4.desc">Export to HTML, PDF, or native editable Word to share or archive.</p></div>
-      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h11M4 12h11M4 19h7M18 4v16M18 4l2 2-2 2M18 20l-2-2 2-2"/></svg></span><h3 data-i18n="f5.title">Tabs &amp; outline</h3><p data-i18n="f5.desc">Multi-tab editing, heading outline navigation, live KaTeX math and Mermaid diagrams.</p></div>
-      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 4a7 7 0 105 12l5 5M8 11h6"/></svg></span><h3 data-i18n="f6.title">Search &amp; drag</h3><p data-i18n="f6.desc">Instant filtering and cross-folder drag to move files with image links auto-rewritten.</p></div>
-      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c-4 0-7 3-7 7 0 5 7 11 7 11s7-6 7-11c0-4-3-7-7-7zm0 5a2 2 0 110 4 2 2 0 010-4z"/></svg></span><h3 data-i18n="f7.title">Save web docs</h3><p data-i18n="f7.desc">Save Markdown pages from the web to your local library for offline reading.</p></div>
-      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 109 9M21 12V3M21 12l-5-2 5-2"/></svg></span><h3 data-i18n="f8.title">Session restore</h3><p data-i18n="f8.desc">Open tabs and paths persist; everything returns after a reload — no re-authorizing.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 109 9 9 9 0 00-9-9zm1 4v5l3 2"/></svg></span><h3 data-i18n="f1.title">46 Themen, 6 Familien</h3><p data-i18n="f1.desc">Familien Aura, Paper, Rhythm, Dark und Archive zum Lesen, Schreiben und Setzen.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h16M4 16h10M4 12h16M4 8h10"/></svg></span><h3 data-i18n="f2.title">WYSIWYG-Bearbeitung</h3><p data-i18n="f2.desc">Bearbeiten Sie, was Sie sehen, und schreiben Sie zurück in die Originaldatei — keine Kopien.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h7l2 2h9v10a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1z"/></svg></span><h3 data-i18n="f3.title">Ordner-Bibliothek</h3><p data-i18n="f3.desc">Mehrere Wurzeln, Sofort-Suche, Bildvorschau — verwalten Sie Docs wie ein Bücherregal.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg></span><h3 data-i18n="f4.title">Export mit einem Klick</h3><p data-i18n="f4.desc">Exportieren Sie nach HTML, PDF oder nativem bearbeitbarem Word zum Teilen oder Archivieren.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h11M4 12h11M4 19h7M18 4v16M18 4l2 2-2 2M18 20l-2-2 2-2"/></svg></span><h3 data-i18n="f5.title">Tabs &amp; Gliederung</h3><p data-i18n="f5.desc">Mehrfach-Tab-Bearbeitung, Übersicht nach Überschriften, live KaTeX-Mathematik und Mermaid-Diagramme.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 4a7 7 0 105 12l5 5M8 11h6"/></svg></span><h3 data-i18n="f6.title">Suche &amp; Ziehen</h3><p data-i18n="f6.desc">Sofortige Filterung und Ordner-übergreifendes Ziehen, Bildlinks werden automatisch umgeschrieben.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c-4 0-7 3-7 7 0 5 7 11 7 11s7-6 7-11c0-4-3-7-7-7zm0 5a2 2 0 110 4 2 2 0 010-4z"/></svg></span><h3 data-i18n="f7.title">Web-Docs speichern</h3><p data-i18n="f7.desc">Speichern Sie Markdown-Seiten aus dem Web in Ihrer lokalen Bibliothek für Offline-Lesung.</p></div>
+      <div class="feat" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 109 9M21 12V3M21 12l-5-2 5-2"/></svg></span><h3 data-i18n="f8.title">Sitzungs-Wiederherstellung</h3><p data-i18n="f8.desc">Offene Tabs und Pfade bleiben erhalten; nach Neuladen ist alles zurück — ohne erneute Autorisierung.</p></div>
     </div>
   </div>
 </section>
@@ -542,17 +568,17 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
 <section class="block alt" id="themes">
   <div class="wrap">
     <div class="sec-head" data-reveal>
-      <span class="eyebrow" data-i18n="nav.themes">Themes</span>
-      <h2 data-i18n="themes.title">46 themes across 6 families</h2>
-      <p data-i18n="themes.sub">Aura · Paper · Rhythm · Archive · Dark · Editorial — for reading, writing, and typesetting.</p>
+      <span class="eyebrow" data-i18n="nav.themes">Themen</span>
+      <h2 data-i18n="themes.title">46 Themen, 6 Familien</h2>
+      <p data-i18n="themes.sub">Aura · Paper · Rhythm · Dark · Archive — zum Lesen, Schreiben und für den Buchsatz.</p>
     </div>
     <div class="theme-grid">
-      <div class="theme-card" data-reveal><div class="shot"><img src="../assets/themes/mobai.svg" alt="Aura Warm theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t1.name">Aura · Warm</h3><p data-i18n="t1.desc">Amber-brown · Serif body · Paper-book feel</p></div></div>
-      <div class="theme-card" data-reveal><div class="shot"><img src="../assets/themes/xuanzhi.svg" alt="Paper Letter theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t2.name">Paper · Letter</h3><p data-i18n="t2.desc">Rice-paper cream · Eastern typography · Classic</p></div></div>
-      <div class="theme-card" data-reveal><div class="shot"><img src="../assets/themes/mori-journal.svg" alt="Rhythm Journal theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t3.name">Rhythm · Journal</h3><p data-i18n="t3.desc">Forest green · Washi tape · Fresh</p></div></div>
-      <div class="theme-card" data-reveal><div class="shot"><img src="../assets/themes/cream-orange.svg" alt="Archive Cream theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t4.name">Archive · Cream</h3><p data-i18n="t4.desc">Dessert tones · Rounded · Cozy</p></div></div>
-      <div class="theme-card dark" data-reveal><div class="shot"><img src="../assets/themes/night-film.svg" alt="Dark Night Film theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t5.name">Dark · Night Film</h3><p data-i18n="t5.desc">Cinema dark · Immersive · Easy on the eyes</p></div></div>
-      <div class="theme-card" data-reveal><div class="shot"><img src="../assets/themes/mono-editorial.svg" alt="Editorial Mono theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t6t.name">Editorial · Mono</h3><p data-i18n="t6t.desc">Monochrome · Swiss grid · Magazine polish</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="../assets/themes/mobai.svg" alt="Aura Warm theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t1.name">Aura · Warm</h3><p data-i18n="t1.desc">Bernsteinbraun · Serifen-Text · Papierbuch-Gefühl</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="../assets/themes/xuanzhi.svg" alt="Paper Letter theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t2.name">Paper · Song</h3><p data-i18n="t2.desc">ReisPapier-Creme · Östliche Typografie · Klassisch</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="../assets/themes/mori-journal.svg" alt="Rhythm Journal theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t3.name">Rhythm · Wald</h3><p data-i18n="t3.desc">Waldgrün · Journal-Layout · Frisch</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="../assets/themes/cream-orange.svg" alt="Archive Cream theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t4.name">Archive · Latte</h3><p data-i18n="t4.desc">Kaffee-Töne · Runde Schriftstärke · Gemütlich</p></div></div>
+      <div class="theme-card dark" data-reveal><div class="shot"><img src="../assets/themes/night-film.svg" alt="Dark Night Film theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t5.name">Dark · Nacht</h3><p data-i18n="t5.desc">Tiefer Film · Immersiv · Augenschonend</p></div></div>
+      <div class="theme-card" data-reveal><div class="shot"><img src="../assets/themes/mono-editorial.svg" alt="Editorial Mono theme preview" loading="lazy"></div><div class="meta"><h3 data-i18n="t6t.name">Satz · Edel</h3><p data-i18n="t6t.desc">Serifen-Überschriften, Blocksatz, schlichte Tabellen — editorialer Schliff in jedem Thema.</p></div></div>
     </div>
   </div>
 </section>
@@ -562,14 +588,14 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <span class="eyebrow">Privacy</span>
-      <h2 data-i18n="privacy.title">Your documents stay on your device</h2>
-      <p data-i18n="privacy.sub">Local-first: your documents stay on your device. We only send the minimum data needed to operate your account and Pro license.</p>
+      <h2 data-i18n="privacy.title">Ihre Dokumente bleiben auf Ihrem Gerät</h2>
+      <p data-i18n="privacy.sub">Lokal zuerst: Ihre Dokumente bleiben auf Ihrem Gerät. Wir senden nur die minimalen Daten, die zum Betrieb Ihres Kontos und Ihrer Pro-Lizenz nötig sind.</p>
     </div>
     <div class="trust-grid">
-      <div class="trust" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/></svg></span><h3 data-i18n="p1.title">No uploads</h3><p data-i18n="p1.desc">Nothing is sent to a server; all processing stays on your machine.</p></div>
-      <div class="trust" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h7l2 2h9v10a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1z"/></svg></span><h3 data-i18n="p2.title">Authorized folders only</h3><p data-i18n="p2.desc">We read and write only folders you allow, and you can revoke access anytime.</p></div>
-      <div class="trust" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V6l8-4z"/></svg></span><h3 data-i18n="p3.title">Sanitized &amp; strict CSP</h3><p data-i18n="p3.desc">Rendering and export are double-sanitized; only local scripts ever run.</p></div>
-      <div class="trust" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8zM3 8l9 5 9-5M12 13v8"/></svg></span><h3 data-i18n="p4.title">Libraries bundled locally</h3><p data-i18n="p4.desc">marked, Vditor, and docx ship inside the extension — no remote loads.</p></div>
+      <div class="trust" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/></svg></span><h3 data-i18n="p1.title">Keine Uploads</h3><p data-i18n="p1.desc">Nichts wird an einen Server gesendet; alle Verarbeitung bleibt auf Ihrem Rechner.</p></div>
+      <div class="trust" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h7l2 2h9v10a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1z"/></svg></span><h3 data-i18n="p2.title">Nur erlaubte Ordner</h3><p data-i18n="p2.desc">Wir lesen und schreiben nur Ordner, die Sie erlauben — jederzeit widerrufbar.</p></div>
+      <div class="trust" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V6l8-4z"/></svg></span><h3 data-i18n="p3.title">Bereinigt &amp; strenge CSP</h3><p data-i18n="p3.desc">Rendering und Export sind doppelt bereinigt; nur lokale Skripte laufen.</p></div>
+      <div class="trust" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8zM3 8l9 5 9-5M12 13v8"/></svg></span><h3 data-i18n="p4.title">Bibliotheken lokal gebündelt</h3><p data-i18n="p4.desc">marked, Vditor und docx sind in der Erweiterung enthalten — keine Fernladung.</p></div>
     </div>
   </div>
 </section>
@@ -579,13 +605,13 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <span class="eyebrow">How it works</span>
-      <h2 data-i18n="steps.title">Three steps to paper-like reading</h2>
-      <p data-i18n="steps.sub">No complex setup — as simple as opening a book.</p>
+      <h2 data-i18n="steps.title">Drei Schritte zum Papier-Lesen</h2>
+      <p data-i18n="steps.sub">Keine komplizierte Einrichtung — so einfach wie ein Buch öffnen.</p>
     </div>
     <div class="steps-grid">
-      <div class="step" data-reveal><span class="num">1</span><h3 data-i18n="s1.title">Pick a folder</h3><p data-i18n="s1.desc">Authorize one or more local Markdown folders as your library roots and browse them recursively.</p></div>
-      <div class="step" data-reveal><span class="num">2</span><h3 data-i18n="s2.title">Pick a theme</h3><p data-i18n="s2.desc">Choose from 46 themes across six families and switch the look in one click.</p></div>
-      <div class="step" data-reveal><span class="num">3</span><h3 data-i18n="s3.title">Edit &amp; write back</h3><p data-i18n="s3.desc">Edits save straight to the original .md, or export to HTML, PDF, or native Word.</p></div>
+      <div class="step" data-reveal><span class="num">1</span><h3 data-i18n="s1.title">Ordner wählen</h3><p data-i18n="s1.desc">Erlauben Sie einen oder mehrere lokale Markdown-Ordner als Wurzeln und durchsuchen Sie sie rekursiv.</p></div>
+      <div class="step" data-reveal><span class="num">2</span><h3 data-i18n="s2.title">Thema wählen</h3><p data-i18n="s2.desc">Wählen Sie aus 46 Themen in sechs Familien und wechseln Sie den Stil mit einem Klick.</p></div>
+      <div class="step" data-reveal><span class="num">3</span><h3 data-i18n="s3.title">Bearbeiten &amp; zurückschreiben</h3><p data-i18n="s3.desc">Bearbeitungen speichern direkt in der originalen .md oder exportieren nach HTML, PDF oder nativem Word.</p></div>
     </div>
   </div>
 </section>
@@ -594,42 +620,42 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
 <section class="block" id="pricing">
   <div class="wrap">
     <div class="sec-head" data-reveal>
-      <span class="eyebrow" data-i18n="nav.pricing">Pricing</span>
-      <h2 data-i18n="pricing.title">Start free, upgrade when you need</h2>
-      <p data-i18n="pricing.sub">Reading is free forever. Unlock themes, export, and editing with a one-time Pro purchase.</p>
+      <span class="eyebrow" data-i18n="nav.pricing">Preise</span>
+      <h2 data-i18n="pricing.title">Kostenlos starten, bei Bedarf upgraden</h2>
+      <p data-i18n="pricing.sub">Lesen ist für immer kostenlos. Themen, Export und Bearbeitung mit einem einmaligen Pro-Kauf freischalten.</p>
     </div>
     <div class="price-grid">
       <div class="price-card" data-reveal>
-        <div class="price-plan" data-i18n="price.free.plan">Free</div>
-        <div class="price-amount" data-i18n="price.free.cost">Free forever</div>
+        <div class="price-plan" data-i18n="price.free.plan">Kostenlos</div>
+        <div class="price-amount" data-i18n="price.free.cost">Für immer kostenlos</div>
         <ul class="price-feat">
-          <li data-i18n="price.free.f1">Markdown rendering &amp; reading</li>
-          <li data-i18n="price.free.f2">6 curated themes</li>
-          <li data-i18n="price.free.f3">Single-root folder browsing</li>
-          <li data-i18n="price.free.f4">Local files stay on your device</li>
-          <li data-i18n="price.free.f5">Recent folders &amp; quick open</li>
-          <li data-i18n="price.free.f6">Keyboard shortcuts &amp; search</li>
+          <li data-i18n="price.free.f1">Markdown-Rendering &amp; Lesen</li>
+          <li data-i18n="price.free.f2">6 ausgewählte Themen</li>
+          <li data-i18n="price.free.f3">Ordner-Navigation mit einer Wurzel</li>
+          <li data-i18n="price.free.f4">Lokale Dateien bleiben auf deinem Gerät</li>
+          <li data-i18n="price.free.f5">Zuletzt verwendete Ordner &amp; Schnellöffnung</li>
+          <li data-i18n="price.free.f6">Tastaturkürzel &amp; Volltextsuche</li>
         </ul>
-        <a class="price-btn free-btn" href="#download"><span class="free-btn-text" data-i18n="price.free.btn">Add to browser</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></a>
+        <a class="price-btn free-btn" href="#download"><span class="free-btn-text" data-i18n="price.free.btn">Zum Browser hinzufügen</span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></a>
       </div>
       <div class="price-card pro" data-reveal>
-        <span class="price-tag" data-i18n="price.pro.tag">Most popular</span>
+        <span class="price-tag" data-i18n="price.pro.tag">Am beliebtesten</span>
         <div class="price-plan" data-i18n="price.pro.plan">Pro</div>
-        <div class="price-amount" data-i18n-html="price.pro.cost"><span class="now">$4.99</span><span class="was">$9.99</span><span class="save">Save 50%</span></div>
-        <p class="price-early" data-i18n="price.pro.early">Limited early bird · reverts to $9.99</p>
-        <span class="unit" data-i18n="price.pro.note">One-time purchase · Lifetime updates</span>
+        <div class="price-amount" data-i18n-html="price.pro.cost"><span class="now">$4.99</span><span class="was">$9.99</span><span class="save">−50%</span></div>
+        <p class="price-early" data-i18n="price.pro.early">Frühbucher-Aktion · danach 9,99 $</p>
+        <span class="unit" data-i18n="price.pro.note">Einmaliger Kauf · Lebenslange Updates</span>
         <ul class="price-feat">
-          <li data-i18n="price.pro.f1">All 46 themes (six families)</li>
-          <li data-i18n="price.pro.f2">Native Word / PDF / HTML export</li>
-          <li data-i18n="price.pro.f3">WYSIWYG editing with auto write-back</li>
-          <li data-i18n="price.pro.f4">Multi-root folder management</li>
-          <li data-i18n="price.pro.f5">Save web docs to your library</li>
-          <li data-i18n="price.pro.f6" id="proWechat">WeChat one-click publishing</li>
-          <li data-i18n="price.pro.f6t" id="proTypeset">Print-grade typesetting engine</li>
+          <li data-i18n="price.pro.f1">Alle 46 Themen (sechs Familien)</li>
+          <li data-i18n="price.pro.f2">Native Word-/PDF-/HTML-Export</li>
+          <li data-i18n="price.pro.f3">WYSIWYG-Bearbeitung mit Auto-Rückschreiben</li>
+          <li data-i18n="price.pro.f4">Ordner-Verwaltung mit mehreren Wurzeln</li>
+          <li data-i18n="price.pro.f5">Web-Docs in Bibliothek speichern</li>
+          <li data-i18n="price.pro.f6" id="proWechat">WeChat-Veröffentlichung mit einem Klick</li>
+          <li data-i18n="price.pro.f6t" id="proTypeset">Satz-Engine in Druckqualität</li>
         </ul>
         <!-- href 默认 '#'：只有 JS 确认已登录后才注入带 metadata 的真实结账地址。
              这样"未登录直接付款导致付款无法关联账户"在 JS 失效时也不会发生。 -->
-        <a class="price-btn pro-btn" data-creem href="#" target="_blank" rel="noopener"><span class="pro-btn-text" data-i18n="price.pro.btn">Get Pro for $4.99 →</span><span class="sheen" aria-hidden="true"></span></a>
+        <a class="price-btn pro-btn" data-creem href="#" target="_blank" rel="noopener"><span class="pro-btn-text" data-i18n="price.pro.btn">Pro für 4,99 $ holen →</span><span class="sheen" aria-hidden="true"></span></a>
       </div>
     </div>
   </div>
@@ -640,41 +666,41 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <span class="eyebrow" data-i18n="nav.faq">FAQ</span>
-      <h2 data-i18n="faq.title">Frequently asked questions</h2>
-      <p data-i18n="faq.sub">Answers about privacy, features, and purchasing.</p>
+      <h2 data-i18n="faq.title">Häufige Fragen</h2>
+      <p data-i18n="faq.sub">Antworten zu Datenschutz, Funktionen und Kauf.</p>
     </div>
     <div class="faq-list">
       <div class="faq-item" data-reveal>
-        <button class="faq-q"><span data-i18n="faq.q1">Are my files uploaded to a server?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a1">No. JingMark is local-first — every file read and write happens in your browser through the File System Access API. Nothing is uploaded. Pro status is verified by email; only your email and payment state are stored.</p></div>
+        <button class="faq-q"><span data-i18n="faq.q1">Werden meine Dateien auf einen Server hochgeladen?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a1">Nein. JingMark ist lokal zuerst — jedes Lesen und Schreiben erfolgt im Browser über die File System Access API. Es wird nichts hochgeladen. Der Pro-Status wird per E-Mail verifiziert; nur Ihre E-Mail und der Zahlungsstatus werden gespeichert.</p></div>
       </div>
       <div class="faq-item" data-reveal>
-        <button class="faq-q"><span data-i18n="faq.q2">What is the difference between Free and Pro?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a2">Free includes full Markdown reading, 6 curated themes, and single-root browsing. Pro unlocks all 46 themes, native Word/PDF export, Word .docx import to editable Markdown, WYSIWYG editing with write-back, multi-root management, split-preview, saving web docs, and more. Reading stays free forever.</p></div>
+        <button class="faq-q"><span data-i18n="faq.q2">Was ist der Unterschied zwischen Kostenlos und Pro?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a2">Kostenlos umfasst das vollständige Markdown-Lesen, 6 ausgewählte Themen und die Navigation mit einer Wurzel. Pro schaltet alle 46 Themen, nativen Word/PDF-Export, Word-.docx-Import nach bearbeitbarem Markdown, WYSIWYG-Bearbeitung mit Rückschreiben, Mehrfach-Wurzeln, Web-Doc-Speicherung und mehr frei. Lesen bleibt für immer kostenlos.</p></div>
       </div>
       <div class="faq-item" data-reveal>
-        <button class="faq-q"><span data-i18n="faq.q3">Which browsers are supported?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a3">Any Chromium-based browser (Chrome, Edge, Brave, Arc, and so on) with File System Access API support (Chrome 86+).</p></div>
+        <button class="faq-q"><span data-i18n="faq.q3">Welche Browser werden unterstützt?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a3">Jeder Chromium-Browser (Chrome, Edge, Brave, Arc usw.) mit File System Access API (Chrome 86+).</p></div>
       </div>
       <div class="faq-item" data-reveal>
-        <button class="faq-q"><span data-i18n="faq.q4">How do I activate Pro after buying?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a4">Click &#39;Upgrade&#39; in the extension and sign in with your email. Your Pro status syncs automatically.</p></div>
+        <button class="faq-q"><span data-i18n="faq.q4">Wie aktiviere ich Pro nach dem Kauf?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a4">Klicken Sie in der Erweiterung auf „Upgraden“ und melden Sie sich per E-Mail an. Ihr Pro-Status wird automatisch synchronisiert.</p></div>
       </div>
       <div class="faq-item" data-reveal>
-        <button class="faq-q"><span data-i18n="faq.q5">Can I use Pro on multiple computers?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a5">Pro is tied to your email account and works on up to 3 devices. On a 4th device you will not get Pro — you are not signed out, and your other devices are unaffected. Remove an unused device in Account panel → Authorized devices to free the slot.</p></div>
+        <button class="faq-q"><span data-i18n="faq.q5">Kann ich Pro auf mehreren Computern nutzen?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a5">Pro ist an Ihr E-Mail-Konto gebunden und funktioniert auf bis zu 3 Geräten. Auf einem 4. Gerät wird Pro nicht aktiviert — Sie werden nicht abgemeldet und Ihre anderen Geräte bleiben unberührt. Entfernen Sie ein ungenutztes Gerät im Kontobereich, um einen Platz freizugeben.</p></div>
       </div>
       <div class="faq-item" data-reveal>
-        <button class="faq-q"><span data-i18n="faq.q6">Does it support math equations and diagrams?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a6">Yes. JingMark renders KaTeX math formulas and Mermaid diagrams natively — just write standard LaTeX or Mermaid syntax in your Markdown.</p></div>
+        <button class="faq-q"><span data-i18n="faq.q6">Werden mathematische Formeln und Diagramme unterstützt?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a6">Ja. JingMark rendert KaTeX-Formeln und Mermaid-Diagramme nativ — schreiben Sie einfach Standard-LaTeX- oder Mermaid-Syntax in Ihr Markdown.</p></div>
       </div>
       <div class="faq-item" data-reveal>
-        <button class="faq-q"><span data-i18n="faq.q7">How many languages are supported?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a7">The interface is available in 13 languages: English, 中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Português, Русский, Tiếng Việt, Svenska, and العربية (RTL).</p></div>
+        <button class="faq-q"><span data-i18n="faq.q7">Wie viele Sprachen werden unterstützt?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a7">Die Oberfläche ist in 13 Sprachen verfügbar: English, 中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Español, Português, Русский, Tiếng Việt, Svenska und العربية (RTL).</p></div>
       </div>
       <div class="faq-item" data-reveal>
-        <button class="faq-q"><span data-i18n="faq.q8">Can I preview before exporting?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="faq-a"><p data-i18n="faq.a8">Yes. The split-preview mode shows your content in narrow (680px), medium (820px), or wide (960px) widths, with a fullscreen option for distraction-free proofreading.</p></div>
+        <button class="faq-q"><span data-i18n="faq.q8">Kann ich vor dem Export eine Vorschau ansehen?</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p data-i18n="faq.a8">Ja. Die geteilte Vorschau zeigt Ihren Inhalt in schmaler (680px), mittlerer (820px) oder weiter (960px) Breite, mit einem Vollbildmodus für konzentriertes Korrekturlesen.</p></div>
       </div>
     </div>
   </div>
@@ -684,25 +710,25 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
 <section class="download" id="download">
   <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:30px">
     <div class="sec-head" data-reveal style="margin:0">
-      <h2 data-i18n="dl.title" style="color:#fff">Choose your browser and start reading</h2>
-      <p class="dl-sub" data-i18n="dl.sub">No account, no server — install and feel the paper-book calm right away.</p>
+      <h2 data-i18n="dl.title" style="color:#fff">Wählen Sie Ihren Browser und lesen Sie los</h2>
+      <p class="dl-sub" data-i18n="dl.sub">Kein Konto, kein Server — installieren und spüren Sie sofort die Papier-Ruhe.</p>
     </div>
     <div class="browser-badges">
       <a class="browser-badge" href="https://chromewebstore.google.com/detail/jingmark/pnnampcdajgjjjlbobohjboocogkppio" target="_blank" rel="noopener">
         <span class="b-logo"><img src="../Chrome.png" alt="Chrome"></span>
-        <span class="b-text"><span class="b-label" data-i18n="nav.install">Add to browser</span><span class="b-name" data-i18n="dl.chrome">Chrome</span></span>
+        <span class="b-text"><span class="b-label" data-i18n="nav.install">Zum Browser hinzufügen</span><span class="b-name" data-i18n="dl.chrome">Chrome</span></span>
       </a>
       <a class="browser-badge" href="https://microsoftedge.microsoft.com/addons/detail/dbkgmkoihlolhaelfdfbnpjglkgbggll" target="_blank" rel="noopener">
         <span class="b-logo"><img src="../Edge.png" alt="Edge"></span>
-        <span class="b-text"><span class="b-label" data-i18n="nav.install">Add to browser</span><span class="b-name" data-i18n="dl.edge">Edge</span></span>
+        <span class="b-text"><span class="b-label" data-i18n="nav.install">Zum Browser hinzufügen</span><span class="b-name" data-i18n="dl.edge">Edge</span></span>
       </a>
       <a class="browser-badge" aria-disabled="true" onclick="return false">
         <span class="b-logo"><img src="../Firefox.png" alt="Firefox"></span>
-        <span class="b-text"><span class="b-label" data-i18n="nav.install">Add to browser</span><span class="b-name" data-i18n="dl.firefox">Firefox</span></span>
-        <span class="b-soon" data-i18n="dl.soon">Soon</span>
+        <span class="b-text"><span class="b-label" data-i18n="nav.install">Zum Browser hinzufügen</span><span class="b-name" data-i18n="dl.firefox">Firefox</span></span>
+        <span class="b-soon" data-i18n="dl.soon">Demnächst verfügbar</span>
       </a>
     </div>
-    <p class="dl-note" data-i18n="dl.note">Now available on Chrome and Edge — install today. Brave, Arc, and Firefox coming soon.</p>
+    <p class="dl-note" data-i18n="dl.note">Jetzt für Chrome und Edge verfügbar — installieren Sie es heute. Brave, Arc und Firefox folgen bald.</p>
   </div>
 </section>
 
@@ -713,18 +739,18 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
       <span class="logo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10.5" rx="4.5" ry="5.5" fill="#fff4d8" fill-opacity="0.4"/><circle cx="24" cy="10.5" r="1.6" fill="#fffaf0"/><path d="M23 12.5L12.2 35c-.5 1 .5 1.3 1.5 1.3H17c1 0 1.5-.3 2-1.3l2.5-6.5H23Z" fill="#fffdf8"/><path d="M25 12.5L35.8 35c.5 1-.5 1.3-1.5 1.3H31c-1 0-1.5-.3-2-1.3l-2.5-6.5H25Z" fill="#fffdf8" fill-opacity="0.85"/><path d="M21.8 27 24 23.2 26.2 27Z" fill="#9a6a43"/></svg></span>
       <span class="name" data-i18n="brand">JingMark</span>
     </div>
-    <p class="foot-tag" data-i18n="footer.tagline">Crafted for readers who love paper.</p>
+    <p class="foot-tag" data-i18n="footer.tagline">Gemacht für Leser, die Papier lieben.</p>
     <p style="font-size:13.5px;color:var(--night-muted);margin-top:8px">Need help? Email <a href="mailto:support@jingmark.xyz">support@jingmark.xyz</a> — we reply within 2 business days.</p>
     <div class="foot-links">
-      <a href="#features" data-i18n="nav.features">Features</a>
-      <a href="#themes" data-i18n="nav.themes">Themes</a>
-      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+      <a href="#features" data-i18n="nav.features">Funktionen</a>
+      <a href="#themes" data-i18n="nav.themes">Themen</a>
+      <a href="#pricing" data-i18n="nav.pricing">Preise</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
     </div>
-    <p class="foot-copy" data-i18n="footer.copy">© 2026 JingMark · A warm Markdown reader &amp; writer for the browser.</p>
+    <p class="foot-copy" data-i18n="footer.copy">© 2026 JingMark · Ein warmer Markdown-Leser &amp; -Schreiber für den Browser</p>
   </div>
 </footer>
 
@@ -738,28 +764,28 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
     </div>
     <div id="authForms">
       <div class="auth-tabs">
-        <button class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')" data-i18n="auth.login">Sign in</button>
-        <button class="auth-tab" id="tabRegister" onclick="switchAuthTab('register')" data-i18n="auth.register">Create account</button>
+        <button class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')" data-i18n="auth.login">Anmelden</button>
+        <button class="auth-tab" id="tabRegister" onclick="switchAuthTab('register')" data-i18n="auth.register">Konto erstellen</button>
       </div>
       <form class="auth-form" id="loginForm" onsubmit="return doLogin(event)">
-        <div class="field"><label data-i18n="auth.email">Email</label><input id="loginEmail" type="email" autocomplete="username" placeholder="you@example.com"></div>
-        <div class="field"><label data-i18n="auth.password">Password</label><input id="loginPassword" type="password" autocomplete="current-password"></div>
-        <button class="auth-btn" id="loginBtn" type="submit" data-i18n="auth.login">Sign in</button>
-        <a class="auth-forgot" onclick="switchAuthView('reset')" data-i18n="auth.forgot">Forgot password?</a>
+        <div class="field"><label data-i18n="auth.email">E-Mail</label><input id="loginEmail" type="email" autocomplete="username" placeholder="you@example.com"></div>
+        <div class="field"><label data-i18n="auth.password">Passwort</label><input id="loginPassword" type="password" autocomplete="current-password"></div>
+        <button class="auth-btn" id="loginBtn" type="submit" data-i18n="auth.login">Anmelden</button>
+        <a class="auth-forgot" onclick="switchAuthView('reset')" data-i18n="auth.forgot">Passwort vergessen?</a>
       </form>
       <form class="auth-form hidden" id="registerForm" onsubmit="return doRegister(event)">
-        <div class="field"><label data-i18n="auth.email">Email</label><input id="regEmail" type="email" autocomplete="username"></div>
-        <div class="field"><label data-i18n="auth.password">Password</label><input id="regPassword" type="password" autocomplete="new-password"></div>
-        <div class="field"><label data-i18n="auth.confirm">Confirm password</label><input id="regPassword2" type="password" autocomplete="new-password"></div>
+        <div class="field"><label data-i18n="auth.email">E-Mail</label><input id="regEmail" type="email" autocomplete="username"></div>
+        <div class="field"><label data-i18n="auth.password">Passwort</label><input id="regPassword" type="password" autocomplete="new-password"></div>
+        <div class="field"><label data-i18n="auth.confirm">Passwort bestätigen</label><input id="regPassword2" type="password" autocomplete="new-password"></div>
         <!-- 邀请码闸门（与扩展端策略一致）：仅注册态出现，空值前端直接拦下，不打扰后端 -->
-        <div class="field"><label data-i18n="auth.inviteCode">Invite code</label><input id="regInvite" type="text" autocomplete="off" spellcheck="false" autocapitalize="characters" data-i18n-placeholder="auth.invitePlaceholder" placeholder="XXXX-XXXX-XXXX" style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em"></div>
-        <button class="auth-btn" id="registerBtn" type="submit" data-i18n="auth.register">Create account</button>
+        <div class="field"><label data-i18n="auth.inviteCode">Einladungscode</label><input id="regInvite" type="text" autocomplete="off" spellcheck="false" autocapitalize="characters" data-i18n-placeholder="" placeholder="XXXX-XXXX-XXXX" style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em"></div>
+        <button class="auth-btn" id="registerBtn" type="submit" data-i18n="auth.register">Konto erstellen</button>
       </form>
       <form class="auth-form hidden" id="resetForm" onsubmit="return doResetRequest(event)">
-        <p class="auth-reset-hint" data-i18n="auth.resetHint" style="font-size:13px;color:var(--muted);text-align:center;margin-bottom:4px;line-height:1.5">Enter your registered email and we'll send a password reset link</p>
-        <div class="field"><label data-i18n="auth.email">Email</label><input id="resetEmail" type="email"></div>
-        <button class="auth-btn" id="resetBtn" type="submit" data-i18n="auth.sendReset">Send reset email</button>
-        <a class="auth-forgot" onclick="switchAuthView('login')" data-i18n="auth.backLogin">Back to sign in</a>
+        <p class="auth-reset-hint" data-i18n="auth.resetHint" style="font-size:13px;color:var(--muted);text-align:center;margin-bottom:4px;line-height:1.5">Geben Sie Ihre E-Mail ein, wir senden einen Link zum Zurücksetzen.</p>
+        <div class="field"><label data-i18n="auth.email">E-Mail</label><input id="resetEmail" type="email"></div>
+        <button class="auth-btn" id="resetBtn" type="submit" data-i18n="auth.sendReset">Reset-E-Mail senden</button>
+        <a class="auth-forgot" onclick="switchAuthView('login')" data-i18n="auth.backLogin">Zurück zum Anmelden</a>
       </form>
       <!-- Google OAuth（Worker 未配置时由 app.js 隐藏；登录/注册两态通用） -->
       <div id="googleSection" style="display:none">
@@ -774,15 +800,16 @@ html[dir="rtl"] .auth-close{right:auto;left:18px}
     <div class="auth-user" id="authUser">
       <div class="email" id="authUserEmail"></div>
       <span class="plan free" id="authUserPlan">Free</span>
-      <a class="auth-upgrade" id="authUpgrade" data-creem href="#" target="_blank" data-i18n-html="auth.upgrade"></a>
-      <button class="auth-logout" onclick="doLogout()" data-i18n="auth.logout">Sign out</button>
+      <a class="auth-upgrade" id="authUpgrade" data-creem href="#" target="_blank" data-i18n-html="auth.upgrade"><span class='au-label'>Pro holen</span><span class='au-now'>$4.99</span><span class='au-was'>$9.99</span><span class='au-save'>50% sparen</span></a>
+      <button class="auth-logout" onclick="doLogout()" data-i18n="auth.logout">Abmelden</button>
     </div>
   </div>
 </div>
 
-<script>window.JINGMARK_FORCE_LOCALE=null;</script>
-<script>window.JINGMARK_FORCE_LOCALE=null;</script>
-<script>window.JINGMARK_FORCE_LOCALE=null;</script>
+
+
+
+
 <script>window.JINGMARK_FORCE_LOCALE="de";</script>
 <script src="../assets/app.js"></script>
 </body>
