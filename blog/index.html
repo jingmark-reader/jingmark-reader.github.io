@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog · Tutorials and Guides | JingMark</title>
+<meta name="description" content="Tutorials and guides for JingMark: open .docx in Chrome, local-first Markdown editing, native Word export, Markdown math and diagrams.">
+<link rel="canonical" href="https://jingmark.xyz/blog/">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JingMark Blog — Tutorials and Guides">
+<meta property="og:description" content="How-to guides for opening .docx in Chrome, local-first Markdown, Word export, and more.">
+<meta property="og:url" content="https://jingmark.xyz/blog/">
+<meta property="og:image" content="https://jingmark.xyz/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "JingMark Blog",
+  "url": "https://jingmark.xyz/blog/",
+  "description": "Tutorials and guides for JingMark, the local-first Markdown reader and editor."
+}
+</script>
+<style>
+:root{
+  --bg:#faf6ef; --paper:#fffdf8; --ink:#2c2620; --muted:#837259; --primary:#9a6a43; --primary-2:#b9824f; --primary-soft:#f1e3d3; --line:#ece1d2; --night:#26201a; --night-muted:#b3a392;
+  --serif:Georgia,"Songti SC",serif; --sans:"Segoe UI",Roboto,"PingFang SC",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+header.nav{position:sticky;top:0;z-index:20;background:rgba(250,246,239,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:960px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink)}
+.back{font-size:14px;font-weight:600;color:var(--primary)}
+main{max-width:760px;margin:0 auto;padding:48px 24px}
+h1{font-family:var(--serif);font-size:38px;font-weight:600;margin-bottom:10px}
+.lead{font-size:17px;color:var(--muted);margin-bottom:40px}
+.post{display:block;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin-bottom:20px;transition:border-color .15s,transform .15s}
+.post:hover{border-color:var(--primary-2);text-decoration:none;transform:translateY(-2px)}
+.post .tag{display:inline-block;background:var(--primary-soft);color:var(--primary);font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:10px}
+.post h2{font-family:var(--serif);font-size:23px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.post p{color:#5a4d3d;font-size:15px;margin:0}
+.post .date{font-size:13px;color:var(--muted);margin-top:12px}
+footer{background:var(--night);color:var(--night-muted);margin-top:50px;padding:36px 24px}
+.foot-inner{max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.foot-links a{font-size:13.5px;color:var(--night-muted)}
+.foot-copy{font-size:12.5px}
+@media(max-width:640px){h1{font-size:30px}.post{padding:20px}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="nav-inner">
+  <a class="brand" href="../index.html"><svg width="20" height="20" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10.5" rx="4.5" ry="5.5" fill="#fff4d8" fill-opacity="0.4"/><circle cx="24" cy="10.5" r="1.6" fill="#fffaf0"/><path d="M23 12.5L12.2 35c-.5 1 .5 1.3 1.5 1.3H17c1 0 1.5-.3 2-1.3l2.5-6.5H23Z" fill="#fffdf8"/><path d="M25 12.5L35.8 35c.5 1-.5 1.3-1.5 1.3H31c-1 0-1.5-.3-2-1.3l-2.5-6.5H25Z" fill="#fffdf8" fill-opacity="0.85"/><path d="M21.8 27 24 23.2 26.2 27Z" fill="#9a6a43"/></svg> JingMark</a>
+  <a class="back" href="../index.html">← Home</a>
+</div></header>
+
+<main>
+  <h1>JingMark Blog</h1>
+  <p class="lead">Practical tutorials for local-first Markdown, Word documents in the browser, and cleaner technical writing.</p>
+
+  <a class="post" href="./how-to-open-docx-in-chrome.html">
+    <span class="tag">Tutorial</span>
+    <h2>How to Open and Read .docx Files in Chrome Without Microsoft Word</h2>
+    <p>Received a .docx but don't have Office? Read it in Chrome, then convert to editable Markdown when you need to make changes — no upload, no WPS ads.</p>
+    <div class="date">September 17, 2026 · 5 min read</div>
+  </a>
+
+  <p style="color:var(--muted);font-size:14px;margin-top:24px">More guides coming soon: native Word export, local-first Markdown editing, math &amp; diagrams, and WeChat-friendly publishing.</p>
+</main>
+
+<footer><div class="foot-inner">
+  <div class="foot-links">
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+    <a href="../changelog.html">Changelog</a>
+    <a href="../index.html">Home</a>
+  </div>
+  <p class="foot-copy">© 2026 JingMark · A warm Markdown reader &amp; writer for the browser.</p>
+</div></footer>
+</body>
+</html>

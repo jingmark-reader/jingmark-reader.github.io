@@ -8,7 +8,7 @@
   <style>
     /* 付款前账号确认行（防多账号误购） */
     .buy-for{font-size:12.5px;color:var(--muted,#7a6b5d);margin-bottom:12px}
-    .buy-for b{color:var(--primary,#8b5e3c)}
+    .buy-for b{color:var(--primary,#2035d1)}
     /* 早鸟价三段式（与首页 price.pro.cost 口径一致）：现价/划线原价/省钱标签 */
     .price-amount .now{font-size:46px;font-weight:700;color:var(--primary);letter-spacing:-1.5px}
     .price-amount .was{font-size:20px;font-weight:500;color:var(--muted-2);text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:rgba(154,106,67,.5);position:relative;top:-6px;margin-left:6px}
@@ -134,7 +134,7 @@
     const PAY_CHANNEL_READY = false;
     // 旧 Creem 结账地址仅作常量保留，PAY_CHANNEL_READY=false 时永不使用。
     // metadata 带登录邮箱，webhook 据此开通对应账户。
-    const CREEM_CHECKOUT_URL = 'https://www.creem.io/payment/prod_2CZgvuTFBQXMiyF0owBU8g';
+    const CREEM_CHECKOUT_URL = ''; // Creem 通道已永久关闭（2026-09），不再使用；接入新支付通道时替换此常量。
     function checkoutUrl() {
       if (!PAY_CHANNEL_READY) return '#';
       const email = getEmail();
@@ -365,6 +365,8 @@
       if (note) note.textContent = 'New payment provider in review. Purchases are paused for now — thanks for your patience.';
     }
     applyChannelState();
+    // 前端硬开关：限时免费即时生效，不依赖后端 /api/promo（Creem 已永久关闭）。
+    PROMO = true; applyPromoPricing(); applyChannelState();
     fetch(API_BASE + '/api/promo').then(function (r) { return r.json(); }).then(function (d) {
       if (d && d.promoFree) { PROMO = true; applyPromoPricing(); applyChannelState(); }
     }).catch(function () {});

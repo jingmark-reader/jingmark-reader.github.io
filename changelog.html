@@ -8,19 +8,20 @@
 <link rel="canonical" href="https://jingmark.xyz/changelog.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://miaoda.feishu.cn"><link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
 :root{
-  --bg:#faf6ef; --paper:#fffdf8; --ink:#2c2620; --muted:#837259; --primary:#9a6a43; --primary-2:#b9824f; --primary-soft:#f1e3d3; --line:#ece1d2; --night:#26201a; --night-muted:#b3a392;
-  --serif:Georgia,"Songti SC",serif; --sans:"Segoe UI",Roboto,"PingFang SC",sans-serif; --maxw:820px;
+  --bg:#f6f7fa; --paper:#ffffff; --ink:#16181d; --muted:#5f6672; --primary:#2035d1; --primary-2:#3b4fe0; --primary-soft:#edf0fd; --line:#e7e9ef; --night:#111421; --night-muted:#9aa1b2;
+  --serif:"Inter","Segoe UI","PingFang SC",sans-serif; --sans:"Inter","Segoe UI",Roboto,"PingFang SC",sans-serif; --maxw:820px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:var(--primary);text-decoration:none}
 a:hover{text-decoration:underline}
-header.nav{position:sticky;top:0;z-index:20;background:rgba(250,246,239,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink)}
+.brand .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(140deg,#3b4fe0,#2035d1);display:flex;align-items:center;justify-content:center}
 .back{font-size:14px;font-weight:600;color:var(--primary)}
 main{max-width:var(--maxw);margin:0 auto;padding:56px 24px 40px}
 .eyebrow{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
@@ -28,13 +29,13 @@ h1{font-family:var(--serif);font-size:38px;font-weight:600;line-height:1.15;marg
 .updated{font-size:13.5px;color:var(--muted);margin-bottom:36px}
 h2{font-family:var(--serif);font-size:22px;font-weight:600;margin:34px 0 4px}
 .vdate{font-size:13px;color:var(--muted);margin-bottom:10px}
-p{font-size:15.5px;color:#4a4138;margin:10px 0}
-ul{margin:8px 0 14px 22px;font-size:15px;color:#4a4138}
+p{font-size:15.5px;color:#444a55;margin:10px 0}
+ul{margin:8px 0 14px 22px;font-size:15px;color:#444a55}
 li{margin:6px 0}
 .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-right:6px}
 .tag.new{background:#e7efe1;color:#3d6b34}
 .tag.imp{background:var(--primary-soft);color:var(--primary)}
-.tag.fix{background:#f5e6e0;color:#a4492e}
+.tag.fix{background:#fdeaea;color:#c0392b}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin:18px 0}
 footer{background:var(--night);color:var(--night-muted);margin-top:60px;padding:40px 24px}
 .foot-inner{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
@@ -46,7 +47,7 @@ footer{background:var(--night);color:var(--night-muted);margin-top:60px;padding:
 </head>
 <body>
 <header class="nav"><div class="nav-inner">
-  <a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10.5" rx="4.5" ry="5.5" fill="#fff4d8" fill-opacity="0.4"/><circle cx="24" cy="10.5" r="1.6" fill="#fffaf0"/><path d="M23 12.5L12.2 35c-.5 1 .5 1.3 1.5 1.3H17c1 0 1.5-.3 2-1.3l2.5-6.5H23Z" fill="#fffdf8"/><path d="M25 12.5L35.8 35c.5 1-.5 1.3-1.5 1.3H31c-1 0-1.5-.3-2-1.3l-2.5-6.5H25Z" fill="#fffdf8" fill-opacity="0.85"/><path d="M21.8 27 24 23.2 26.2 27Z" fill="#9a6a43"/></svg></span>JingMark</a>
+  <a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="10.5" rx="4.5" ry="5.5" fill="#ffffff" fill-opacity="0.4"/><circle cx="24" cy="10.5" r="1.6" fill="#ffffff"/><path d="M23 12.5L12.2 35c-.5 1 .5 1.3 1.5 1.3H17c1 0 1.5-.3 2-1.3l2.5-6.5H23Z" fill="#ffffff"/><path d="M25 12.5L35.8 35c.5 1-.5 1.3-1.5 1.3H31c-1 0-1.5-.3-2-1.3l-2.5-6.5H25Z" fill="#ffffff" fill-opacity="0.85"/><path d="M21.8 27 24 23.2 26.2 27Z" fill="#ffffff"/></svg></span>JingMark</a>
   <a class="back" href="index.html">← Back to home</a>
 </div></header>
 <main>
